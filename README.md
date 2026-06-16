@@ -213,7 +213,14 @@ Cuando cambia algo del briefing maestro, de la estrategia, o de las reglas de pr
 | `feat:` | Funcionalidad nueva |
 | `fix:` | Corrección de bug |
 | `refactor:` | Cambio de código sin cambio funcional |
-| `docs:` | Cambio en README / CLAUDE.md |
+| `docs:` | Cambio en README / CLAUDE.md / docs/* |
+
+---
+
+## Documentación relacionada
+
+- `CLAUDE.md` — convenciones del repo, contrato para agentes de coding.
+- `docs/ARQUITECTURA_v1.0.md` — documento de línea base del sistema al primer despliegue (junio 2026). Versión Word en `docs/ARQUITECTURA_v1.0.docx`.
 
 ---
 
