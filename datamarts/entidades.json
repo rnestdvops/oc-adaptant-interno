@@ -1,0 +1,80 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "publico_hasta_cierto_detalle",
+  "entidades": [
+    {
+      "id": "bhp_sa",
+      "razon_social": "BHP SA",
+      "tipo": "Sociedad Anónima",
+      "ley": "19.550",
+      "pais": "Argentina",
+      "provincia": "San Juan",
+      "cuit": "30-70955349-2",
+      "fecha_constitucion": "2006-05-15",
+      "domicilio_fiscal": "Mendoza Sur 188 2°, San Juan (CP 5400)",
+      "categoria_arca": "IVA Responsable Inscripto",
+      "estado_concursal": "Concurso preventivo iniciado 2017 — fase de cierre, escritos finales presentados",
+      "estado_operativo": "Apagado ordenado en curso. Sin clientes activos locales nuevos.",
+      "bancos": [
+        {
+          "banco": "Banco Supervielle",
+          "sucursal": "San Juan Rivadavia 74 Este",
+          "cc_pesos": "02174486-001",
+          "cbu_pesos": "0270091510021744860016",
+          "cc_usd": "02174486-002",
+          "cbu_usd": "0270091540021744860024"
+        }
+      ],
+      "cuentas_mp": [
+        {"nombre": "MP1", "rol": "principal"},
+        {"nombre": "MP2", "rol": "BHP Global — canal alternativo"}
+      ],
+      "plantilla": [
+        {"nombre": "Ernesto Corona", "rol": "Presidente"},
+        {"nombre": "Franco Buglioni", "rol": "Administrador"},
+        {"nombre": "Carolina Hernández", "rol": "Empleada — situación en revisión"}
+      ],
+      "visibility": "socios_asesores"
+    },
+    {
+      "id": "adaptant_sas",
+      "razon_social": "Adaptant SAS",
+      "tipo": "Sociedad por Acciones Simplificada",
+      "ley": "27.349",
+      "pais": "Argentina",
+      "provincia": "CABA",
+      "estado": "En constitución — estatuto redactado, checklist preparado, ejecución pendiente",
+      "objeto": "Economía del conocimiento: tecnología, software, IA y datos, diseño organizacional, consultoría estratégica, diseño digital, I+D",
+      "proposito_estrategico": "Vehículo limpio para nueva actividad local y eventual recepción de inversión",
+      "composicion_accionaria": [
+        {"socio": "Ernesto Corona", "porcentaje": 50, "rol": "Presidente Titular"},
+        {"socio": "Franco Buglioni", "porcentaje": 50, "rol": "Administrador Suplente"}
+      ],
+      "primer_ingreso": null,
+      "fecha_operativa": null,
+      "capital_social_inscripto": null,
+      "inscripciones_impositivas_pendientes": ["a definir tras inscripción"],
+      "visibility": "publico"
+    },
+    {
+      "id": "dvops_llc",
+      "razon_social": "d-Vops LLC",
+      "tipo": "Multi-member LLC",
+      "estado_constitucion": "Sheridan, Wyoming, EEUU",
+      "domicilio_fiscal": "Miami, Florida",
+      "fecha_inicio_actividad": "2023-01-01",
+      "composicion_accionaria": [
+        {"socio": "Ernesto Corona", "porcentaje": 50},
+        {"socio": "Franco Buglioni", "porcentaje": 50, "nota": "incorporado posterior al SS-4 original"}
+      ],
+      "bancos": [
+        {"banco": "JPMorgan Chase", "cuenta": "929612262", "rol": "principal operativa"},
+        {"banco": "Relay Bank", "rol": "secundaria"}
+      ],
+      "estado_fiscal": "Cumplimiento regularizado — pendiente verificación último año IRS (Form 1065) y ARCA (Bienes Personales Acciones)",
+      "rol_en_el_grupo": "Corazón del cash flow actual. Factura a clientes del exterior. Transfiere a Supervielle (BHP) y a Relay Ernesto.",
+      "visibility": "socios_asesores"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "last_updated": "2026-06-14",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "fecha_intereses": "2026-06-14",
+  "consolidado_bhp_sa": {
+    "moneda": "ARS",
+    "total_general": 78838122.47,
+    "capital_total": 36424543.30,
+    "intereses_resarcitorios_total": 42413579.17,
+    "por_concepto": [
+      {
+        "concepto": "IVA (DJ 2018-2026)",
+        "capital": 29102310.34,
+        "intereses": 26493254.74,
+        "total": 55595565.08,
+        "pct_del_total": 70.5,
+        "nota": "Concentra el 70,5% del total reclamado. Intereses ya superan al capital en períodos 2018-2022. Mayor deuda individual: IVA 07/2024 = $6.884.409 capital + $6.278.015 intereses = $13.162.424 total."
+      },
+      {
+        "concepto": "Ganancias Sociedades (DJ + Anticipos 2021-2024)",
+        "capital": 0,
+        "intereses": 13108953.92,
+        "total": 13108953.92,
+        "detalle": [
+          {"periodo": "Anticipos 2022", "cuotas": 10, "intereses": 2020703},
+          {"periodo": "Anticipos 2023", "cuotas": 10, "intereses": 2291828},
+          {"periodo": "Anticipos 2024", "cuotas": 7, "intereses": 2705115},
+          {"periodo": "DJ Ganancias 2021", "intereses": 4747347, "nota": "deuda más antigua y costosa de este grupo"}
+        ],
+        "ddjj_pendientes": ["Ganancias 2024 (vencida 13/05/2025)", "Ganancias 2025 (vencida 13/05/2026)"]
+      },
+      {
+        "concepto": "Aportes Seg. Social Empleador (2018-2026)",
+        "capital": 3192494.88,
+        "intereses": 744958.35,
+        "total": 3937453.23,
+        "detalle_reciente": {
+          "2026_mar_may": {"capital": 2280649, "intereses": 78171},
+          "08_2025": {"capital": 878964, "intereses": 221573, "vencido_desde": "2025-09-09"}
+        }
+      },
+      {
+        "concepto": "Contribuciones Seg. Social (2018-2026)",
+        "capital": 4127663.00,
+        "intereses": 1988214.55,
+        "total": 6115877.55,
+        "detalle_reciente": {
+          "2026_mar_may": {"capital": 2964357, "intereses": 101642},
+          "08_2025": {"capital": 1141545, "intereses": 287765, "vencido_desde": "2025-09-09"}
+        }
+      },
+      {
+        "concepto": "Bienes Personales — Acciones (2017 y 2020)",
+        "capital": 0,
+        "intereses": 65017.94,
+        "total": 65017.94
+      },
+      {
+        "concepto": "Ret. Art. 79 Ley Ganancias Inc. A, B y C (2018-2019)",
+        "capital": 2075.08,
+        "intereses": 13179.67,
+        "total": 15254.75
+      }
+    ]
+  },
+  "sistema_unico_de_deuda": {
+    "descripcion": "Vista operativa ARCA — base para ejecuciones y planes de pago",
+    "total": 50339482.04,
+    "por_concepto": [
+      {"concepto": "IVA", "saldo_capital": 32890804.14},
+      {"concepto": "Aportes Empleador Seg. Social", "saldo_capital": 8778686.64},
+      {"concepto": "Contribuciones Seg. Social", "saldo_capital": 8227905.38},
+      {"concepto": "Ganancias Sociedades", "saldo_capital": 440000.00},
+      {"concepto": "Ret. Art. 79 / Presentación DJ Ret.", "saldo_capital": 2085.88}
+    ]
+  },
+  "embargos_ejecutados_mayo_2026": {
+    "alerta": "CRÍTICO — empresa quedó sin fondos disponibles",
+    "moneda_principal": "ARS",
+    "movimientos": [
+      {"fecha": "2026-05-15", "cuenta": "CC Pesos 02174486-001 Supervielle", "n_operacion": "1000612500010", "monto": 1787722.18},
+      {"fecha": "2026-05-19", "cuenta": "CC Pesos 02174486-001 Supervielle", "n_operacion": "0010613050012", "monto": 6287695.43},
+      {"fecha": "2026-05-21", "cuenta": "CC Pesos 02174486-001 Supervielle", "n_operacion": "0010613050010", "monto": 1788521.65},
+      {"fecha": "2026-05-15", "cuenta": "CC USD 02174486-002 Supervielle", "n_operacion": "1000612500012", "monto_usd": 192.00, "saldo_remanente_usd": 0.78}
+    ],
+    "total_pesos_embargado": 9863939.26,
+    "nota": "El 18/05/2026 ingresó $6.388.162 (pago proveedores Movistar/AMX) y fue inmediatamente embargado. Tras el embargo del 21/05/2026 la cuenta en pesos quedó en $0."
+  },
+  "ddjj_pendientes_bhp": {
+    "total_pendientes": 76,
+    "alerta": "Implican multas formales automáticas, base para determinación de oficio, posibles cargos adicionales de intereses, imposibilidad de acceder a planes de facilidades",
+    "desglose": [
+      {"tipo": "Reg. Inf. Compras/Ventas (Form. 3685)", "cantidad": 66, "desde": "2015-01"},
+      {"tipo": "Participaciones Societarias (Form. 984)", "cantidad": 7, "desde": "2018"},
+      {"tipo": "Ganancias Sociedades — DJ anual", "cantidad": 2, "periodos": ["2024", "2025"]},
+      {"tipo": "Memoria + Est. Contables + Inf. Auditoría", "cantidad": 2, "periodos": ["2023", "2024"]},
+      {"tipo": "Bienes Personales — Acciones (Form. 211)", "cantidad": 2, "periodos": ["2024", "2025"]},
+      {"tipo": "Ganancia Mínima Presunta", "cantidad": 1, "periodo": "2018"}
+    ],
+    "prioridad": ["Ganancias 2024 (vencida 13/05/2025)", "Ganancias 2025 (vencida 13/05/2026)"]
+  },
+  "analisis_de_riesgo": [
+    {"factor": "Embargo bancario continuado", "descripcion": "Cuenta principal embargada 3 veces en mayo 2026. Riesgo de embargos sobre ingresos futuros.", "nivel": "CRITICO"},
+    {"factor": "Deuda IVA en crecimiento", "descripcion": "Intereses resarcitorios ya superan el capital en períodos 2018-2022. Crecen mes a mes.", "nivel": "MUY ALTO"},
+    {"factor": "DDJJ sin presentar", "descripcion": "76 presentaciones en mora. Multas formales automáticas + habilitan determinación de oficio.", "nivel": "ALTO"},
+    {"factor": "Ganancias sin DJ 2024/2025", "descripcion": "Sin DJ, ARCA puede iniciar determinación de oficio con intereses máximos.", "nivel": "ALTO"},
+    {"factor": "Seg. Social corriente 2026", "descripcion": "Aportes y contribuciones Mar-May con capital + intereses creciendo mes a mes.", "nivel": "ALTO"},
+    {"factor": "Prescripción potencial pre-2018", "descripcion": "Algunas deudas 2017-2018 podrían estar alcanzadas por prescripción de 5 años. Verificar con abogado.", "nivel": "OPORTUNIDAD"}
+  ],
+  "deuda_personal_socios": {
+    "ernesto_corona": {
+      "cuit": "20-22159405-4",
+      "agencia": "ARCA San Juan",
+      "deuda_activa_total": 18684598.50,
+      "fecha_corte": "2026-06-16",
+      "desglose": [
+        {"concepto": "Ganancias PF 2022 — DJ Anual", "capital": 2935930, "intereses": 6967307, "total": 9903237},
+        {"concepto": "Ganancias PF 2022 — Multa", "capital": 1825452, "intereses": 0, "total": 1825452},
+        {"concepto": "Ganancias PF 2023 — Anticipos (5 cuotas)", "capital": 0, "intereses": 14127, "total": 14127},
+        {"concepto": "IVA 2022 — 12 períodos (ene-dic)", "capital": 1649240, "intereses": 4386703, "total": 6035943},
+        {"concepto": "IVA 2022 — Multa dic/2022", "capital": 876849, "intereses": 0, "total": 876849},
+        {"concepto": "Bienes Personales 2016 — DJ Anual", "capital": 2414, "intereses": 26577, "total": 28991}
+      ],
+      "plan_caducado_t732339": {
+        "ley": "27743 (Ley Bases)",
+        "fecha_adhesion": "2024-10-07",
+        "deuda_consolidada": 26877042.95,
+        "pac_pagado": 5375408.59,
+        "fecha_pac": "2024-10-07",
+        "total_pagado": 7542498.94,
+        "estado": "CADUCADO — aprox. marzo 2025 (cuotas 4 y 5 consecutivas impagas)",
+        "saldo_sin_pagar_del_plan": 19334544.01,
+        "deuda_revivida_en_arca": 18684598.50
+      },
+      "historial_planes": {
+        "total_planes_desde_2009": 15,
+        "cumplidos": 3,
+        "caducados": 11,
+        "factor_riesgo": "Patrón recurrente de caducamiento — antecedente para ARCA"
+      },
+      "ddjj_pendientes": ["Ganancias PF 2024 (vencida)", "Bienes Personales 2016"]
+    },
+    "franco_buglioni": {
+      "cuit": "20-24226762-2",
+      "deuda_activa_total": 0,
+      "planes_de_pago_historial": {
+        "total": 1,
+        "detalle": [{"n_plan": "G421093", "anio": 2013, "estado": "CANCELADO correctamente"}]
+      },
+      "ddjj_pendientes": ["Bienes Personales 2017-2021 (5 períodos)"],
+      "perfil": "SÓLIDO — único plan, cumplido al 100%. Sin caducamientos.",
+      "rol_estrategico": "Capacidad de crédito y reputación fiscal limpia ante ARCA. Activo clave para avales, planes y refinanciaciones que requieran responsable con buen historial.",
+      "riesgo_resp_solidaria_bhp": "MEDIO — Socio 50% de BHP SA",
+      "recibo_sueldo_bhp_mar_2026": {
+        "bruto": 5317511.50,
+        "neto": 4413534.55,
+        "categoria": "Administrativa"
+      }
+    },
+    "responsabilidad_solidaria": {
+      "marco_legal": "Ley 11.683 art. 8",
+      "descripcion": "Habilita a ARCA a perseguir al Presidente de la SA por deudas impositivas de la sociedad",
+      "afectado": "Ernesto Corona — Presidente de BHP SA",
+      "alerta": "Los embargos de mayo 2026 pueden ser antecedente de una intimación personal"
+    }
+  }
+}

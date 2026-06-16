@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OC Adaptant Interno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">Adaptant · OC</div>
+        <div class="brand-title">Commons interno</div>
+      </div>
+      <div class="session-info">
+        Nivel: <span class="session-badge" id="session-level">—</span>
+        <button class="logout-btn" id="logout-btn">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <div class="chat-shell">
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3>Preguntas sugeridas</h3>
+          <div id="suggested-questions"></div>
+        </div>
+        <div class="sidebar-section">
+          <h3>Notas</h3>
+          <p style="font-size:11.5px;color:var(--gris);line-height:1.5;">
+            Última actualización del briefing: <span class="mono">16/06/2026</span>.
+            Para datos posteriores, conviene verificar con el contador.
+          </p>
+        </div>
+      </aside>
+
+      <main class="chat-main">
+        <div class="messages" id="messages">
+          <div class="welcome" id="welcome">
+            <h1>Hola.</h1>
+            <p>
+              Preguntá lo que necesites sobre el estado del grupo.
+              Vencimientos, deuda, cash flow, gobierno societario, estrategia.
+              Si una pregunta requiere asesoramiento legal o contable, te lo voy a marcar.
+            </p>
+          </div>
+        </div>
+        <div class="composer">
+          <div class="composer-inner">
+            <textarea
+              id="composer-input"
+              placeholder="¿Qué querés saber?"
+              rows="1"
+            ></textarea>
+            <button id="send-btn">Enviar</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    window.OC_WORKER_URL = "https://oc-adaptant-interno.YOURNAME.workers.dev";
+  </script>
+  <script src="/assets/auth.js"></script>
+  <script src="/assets/chat.js"></script>
+</body>
+</html>

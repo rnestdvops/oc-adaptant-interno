@@ -1,0 +1,133 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "vencimientos": [
+    {
+      "fecha": "2026-06-15",
+      "entidad": "BHP SA",
+      "obligacion": "Primera cuota Plan IIBB San Juan",
+      "monto_ars": 1517748.94,
+      "tipo": "pago",
+      "nivel": "URGENTE",
+      "estado": "vencido_o_dia"
+    },
+    {
+      "fecha": "2026-06-15",
+      "entidad": "BHP SA",
+      "obligacion": "Mutuo Moroni período 8 — intereses",
+      "monto_usd": 203.84,
+      "monto_aprox_ars": 291491,
+      "tc_referencia": 1430,
+      "tipo": "pago",
+      "nivel": "CRITICO",
+      "estado": "vencido_o_dia"
+    },
+    {
+      "fecha": "2026-06-16",
+      "entidad": "BHP SA",
+      "obligacion": "Anticipo Ganancias Sociedades N°1/2026",
+      "tipo": "pago",
+      "nivel": "URGENTE",
+      "estado": "dia"
+    },
+    {
+      "fecha": "2026-06-18",
+      "entidad": "BHP SA",
+      "obligacion": "Reg. Inf. Compras/Ventas 05/2026",
+      "tipo": "presentacion",
+      "nivel": "ALTO",
+      "costo_economico": "sin costo",
+      "estado": "proximo"
+    },
+    {
+      "fecha": "2026-06-19",
+      "entidad": "BHP SA",
+      "obligacion": "IVA DJ 03/2026 — presentación + pago",
+      "monto_ars": 506069.66,
+      "tipo": "pago_y_presentacion",
+      "nivel": "URGENTE",
+      "estado": "proximo"
+    },
+    {
+      "fecha": "2026-06-19",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota 2 Préstamo Banco Macro",
+      "monto_ars": 3958749,
+      "tipo": "pago",
+      "nivel": "ALTO",
+      "estado": "proximo"
+    },
+    {
+      "fecha": "2026-06-30",
+      "entidad": "BHP SA",
+      "obligacion": "Memoria + Estados Contables + Informe Auditoría 2025",
+      "tipo": "presentacion",
+      "nivel": "PENDIENTE",
+      "estado": "proximo"
+    },
+    {
+      "fecha": "2026-07-13",
+      "entidad": "BHP SA",
+      "obligacion": "Anticipo Ganancias N°2/2026 + SUSS 06/2026",
+      "tipo": "pago_y_presentacion",
+      "nivel": "PROXIMO",
+      "estado": "futuro"
+    },
+    {
+      "fecha": "2026-07-15",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota 2 Plan IIBB San Juan",
+      "monto_ars": 1517748.94,
+      "tipo": "pago",
+      "nivel": "ALTO",
+      "estado": "futuro"
+    },
+    {
+      "fecha": "2026-07-15",
+      "entidad": "BHP SA",
+      "obligacion": "Mutuo Moroni período 9 — intereses estimados",
+      "monto_usd_estimado": 200,
+      "tipo": "pago",
+      "nivel": "ALTO",
+      "estado": "futuro"
+    },
+    {
+      "fecha": "2026-07-19",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota 3 Préstamo Banco Macro",
+      "monto_ars": 3958749,
+      "tipo": "pago",
+      "nivel": "ALTO",
+      "estado": "futuro"
+    },
+    {
+      "fecha": "2026-07-21",
+      "entidad": "BHP SA",
+      "obligacion": "IVA 04/2026 vence",
+      "monto_ars": 1694447,
+      "tipo": "pago",
+      "nivel": "PLANIFICAR",
+      "nota": "Aún sin intereses. Próximo en sumar costo financiero si no se paga.",
+      "estado": "futuro"
+    }
+  ],
+  "totales_proximos_30_dias": {
+    "moneda_principal": "ARS",
+    "total_obligaciones_pesos": 11253264,
+    "total_obligaciones_usd": 203.84,
+    "nota": "Incluye: IIBB cuota 1, Anticipo Ganancias N°1, IVA 03/2026, Macro cuota 2, IIBB cuota 2, Macro cuota 3. No incluye Moroni 2 ni IVA 04/2026 que aún no se paga en este rango."
+  },
+  "acciones_estrategicas_30_60_dias": [
+    "Presentar DDJJ Ganancias 2024 y 2025 BHP SA — ya vencidas, cuanto antes menor multa acumulable",
+    "Regularizar DDJJ Participaciones Societarias 2018-2024 — 7 períodos pendientes",
+    "Evaluar prescripción de obligaciones anteriores a 2018 con abogado (art. 56 Ley 11.683)",
+    "Analizar si Reg. Inf. Compras/Ventas 2015-2020 tienen sanción activa o están prescriptos",
+    "Iniciar tratativas con ARCA para plan de facilidades sobre IVA 2024 (mayor masa de deuda)",
+    "Explorar moratoria ARCA vigente para regularizar masa de IVA 2024 con plan de pagos",
+    "Presentar Ganancias PF 2024 — Ernesto Corona (ya vencida, multa creciendo)",
+    "Regularizar Bienes Personales 2017-2021 — Franco Buglioni (5 períodos)",
+    "Evaluar baja como empleados de BHP de Ernesto y Franco — solo rol de directores",
+    "Continuar proceso de constitución Adaptant SAS — ejecución del checklist"
+  ]
+}

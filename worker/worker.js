@@ -1,0 +1,259 @@
+/**
+ * OC Adaptant Interno — Cloudflare Worker
+ *
+ * Responsabilidades:
+ *  1. Validar password del usuario y devolver token de sesión
+ *  2. Proxear llamadas a la API de Anthropic con SYSTEM_PROMPT + datamarts
+ *     correspondientes al nivel del token
+ *  3. Habilitar web_search del lado servidor
+ *
+ * Variables de entorno requeridas (configurar en Cloudflare):
+ *  - ANTHROPIC_API_KEY
+ *  - PWD_SOCIOS
+ *  - PWD_ASESORES
+ *  - PWD_INVERSORES
+ *  - SESSION_SECRET     (clave para firmar tokens, cualquier string largo)
+ */
+
+const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
+const MODEL = "claude-sonnet-4-6";
+const MAX_TOKENS = 4096;
+
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  "Access-Control-Max-Age": "86400",
+};
+
+// ─── Helpers de token ─────────────────────────────────────────────────────────
+
+async function signToken(payload, secret) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(JSON.stringify(payload));
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, data);
+  const sigB64 = btoa(String.fromCharCode(...new Uint8Array(sig)));
+  const payloadB64 = btoa(JSON.stringify(payload));
+  return `${payloadB64}.${sigB64}`;
+}
+
+async function verifyToken(token, secret) {
+  try {
+    const [payloadB64, sigB64] = token.split(".");
+    if (!payloadB64 || !sigB64) return null;
+    const payload = JSON.parse(atob(payloadB64));
+
+    // Expiración 12 horas
+    if (Date.now() - payload.iat > 12 * 60 * 60 * 1000) return null;
+
+    const encoder = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      "raw",
+      encoder.encode(secret),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["verify"]
+    );
+    const sig = Uint8Array.from(atob(sigB64), c => c.charCodeAt(0));
+    const data = encoder.encode(JSON.stringify(payload));
+    const valid = await crypto.subtle.verify("HMAC", key, sig, data);
+    return valid ? payload : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+// ─── Selección de SYSTEM_PROMPT por nivel ─────────────────────────────────────
+
+async function buildSystemPrompt(level, env) {
+  // En producción los .md y .json se cargarán desde KV o R2.
+  // Para el primer deploy, los .md viven inline acá o se sirven desde el sitio
+  // y el Worker hace fetch a esos archivos.
+  // Esta versión usa fetch al sitio Netlify (same domain config en CORS).
+
+  const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
+
+  const fetchText = async (path) => {
+    const r = await fetch(`${SITE_BASE}${path}`);
+    if (!r.ok) throw new Error(`No se pudo cargar ${path}`);
+    return await r.text();
+  };
+
+  const fetchJson = async (path) => {
+    const r = await fetch(`${SITE_BASE}${path}`);
+    if (!r.ok) throw new Error(`No se pudo cargar ${path}`);
+    return await r.json();
+  };
+
+  const parts = [];
+
+  // Capa 00 — siempre
+  parts.push(await fetchText("/system_prompts/00_personalidad.md"));
+
+  if (level === "socios" || level === "asesores") {
+    // Capa 01 — briefing completo
+    parts.push(await fetchText("/system_prompts/01_briefing_completo.md"));
+    // Capa 02 — datamart guide
+    parts.push(await fetchText("/system_prompts/02_datamart_guide.md"));
+    // Capa 04 — modelo privacidad
+    parts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
+
+    // Datamarts inyectados
+    const datamarts = [
+      "entidades.json",
+      "deuda_arca.json",
+      "deuda_privada.json",
+      "vencimientos.json",
+      "adaptant_sas.json",
+      "dvops_llc.json",
+    ];
+    parts.push("\n\n## Datamarts cargados\n");
+    for (const dm of datamarts) {
+      const data = await fetchJson(`/datamarts/${dm}`);
+      parts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
+    }
+  } else if (level === "inversores") {
+    // Solo capa 03 + 04 + datamart Adaptant
+    parts.push(await fetchText("/system_prompts/03_vista_inversor.md"));
+    parts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
+
+    const datamarts = ["entidades.json", "adaptant_sas.json"];
+    parts.push("\n\n## Información disponible\n");
+    for (const dm of datamarts) {
+      const data = await fetchJson(`/datamarts/${dm}`);
+      // Para entidades, filtrar solo Adaptant SAS
+      if (dm === "entidades.json") {
+        const filtered = {
+          ...data,
+          entidades: data.entidades.filter(e => e.visibility === "publico")
+        };
+        parts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(filtered, null, 2)}\n\`\`\`\n`);
+      } else {
+        parts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
+      }
+    }
+  }
+
+  return parts.join("\n\n");
+}
+
+// ─── Endpoints ────────────────────────────────────────────────────────────────
+
+async function handleAuth(request, env) {
+  const body = await request.json();
+  const { password } = body;
+
+  let level = null;
+  if (password === env.PWD_SOCIOS) level = "socios";
+  else if (password === env.PWD_ASESORES) level = "asesores";
+  else if (password === env.PWD_INVERSORES) level = "inversores";
+
+  if (!level) {
+    return new Response(JSON.stringify({ error: "Credenciales inválidas" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const token = await signToken({ level, iat: Date.now() }, env.SESSION_SECRET);
+  return new Response(JSON.stringify({ token, level }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
+async function handleChat(request, env) {
+  const authHeader = request.headers.get("Authorization");
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return new Response(JSON.stringify({ error: "Sin token" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const token = authHeader.replace("Bearer ", "");
+  const payload = await verifyToken(token, env.SESSION_SECRET);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Token inválido o expirado" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const body = await request.json();
+  const { messages } = body;
+
+  let systemPrompt;
+  try {
+    systemPrompt = await buildSystemPrompt(payload.level, env);
+  } catch (e) {
+    return new Response(JSON.stringify({ error: `Build prompt: ${e.message}` }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const anthropicBody = {
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
+    system: systemPrompt,
+    messages,
+    tools: [
+      {
+        type: "web_search_20250305",
+        name: "web_search",
+        max_uses: 3,
+      },
+    ],
+  };
+
+  const anthropicResp = await fetch(ANTHROPIC_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": env.ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify(anthropicBody),
+  });
+
+  const data = await anthropicResp.json();
+  return new Response(JSON.stringify(data), {
+    status: anthropicResp.status,
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
+// ─── Router principal ─────────────────────────────────────────────────────────
+
+export default {
+  async fetch(request, env) {
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: CORS_HEADERS });
+    }
+
+    const url = new URL(request.url);
+
+    if (url.pathname === "/auth" && request.method === "POST") {
+      return handleAuth(request, env);
+    }
+
+    if (url.pathname === "/chat" && request.method === "POST") {
+      return handleChat(request, env);
+    }
+
+    if (url.pathname === "/health") {
+      return new Response(JSON.stringify({ status: "ok" }), {
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      });
+    }
+
+    return new Response("Not found", { status: 404, headers: CORS_HEADERS });
+  },
+};

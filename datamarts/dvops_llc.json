@@ -1,0 +1,51 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "razon_social": "d-Vops LLC",
+  "tipo": "Multi-member Limited Liability Company",
+  "estado_constitucion": "Sheridan, Wyoming, EEUU",
+  "domicilio_fiscal": "Miami, Florida, EEUU",
+  "fecha_inicio_actividad": "2023-01-01",
+  "composicion": [
+    {"socio": "Ernesto Corona", "porcentaje": 50},
+    {"socio": "Franco Buglioni", "porcentaje": 50, "nota": "incorporado posterior al SS-4 original"}
+  ],
+  "rol_en_el_grupo": "Corazón del cash flow actual. Factura a clientes del exterior. Transfiere fondos a Argentina vía wire a Supervielle (BHP) y a Relay Ernesto.",
+  "bancos": [
+    {
+      "banco": "JPMorgan Chase",
+      "tipo": "principal operativa",
+      "numero_cuenta": "929612262"
+    },
+    {
+      "banco": "Relay Bank",
+      "tipo": "secundaria, uso operativo"
+    }
+  ],
+  "estado_fiscal": {
+    "estado_general": "Cumplimiento regularizado",
+    "pendientes_verificacion": [
+      "Presentación último año ante IRS — Form 1065",
+      "Bienes Personales Acciones ante ARCA — DDJJ 2024 y 2025",
+      "Annual report Wyoming",
+      "BOI / FinCEN"
+    ],
+    "asesor_de_referencia": "CPA EEUU"
+  },
+  "cumplimiento_recurrente_requerido": [
+    "IRS Form 1065 + K-1 anual",
+    "ARCA Bienes Personales Acciones anual (Form. 211)",
+    "Annual report Wyoming",
+    "BOI / FinCEN cuando aplica"
+  ],
+  "ingresos_y_clientes": {
+    "estado": "no cargado en datamart",
+    "nota_carga": "Pendiente: cargar extractos Chase + Relay de los últimos 12 meses, identificar clientes, montos, frecuencia, conceptos."
+  },
+  "transferencias_a_argentina": {
+    "estado": "no cargado en datamart",
+    "nota_carga": "Pendiente: registro de wires a Supervielle (BHP) y Relay Ernesto con fecha, monto USD, TC de liquidación, contraparte argentina."
+  },
+  "riesgo_estructural": "BAJO operativamente. Riesgo estratégico: cualquier complicación con cumplimiento fiscal EEUU afecta el corazón del cash flow del grupo."
+}

@@ -1,0 +1,16 @@
+name = "oc-adaptant-interno"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Variables públicas (no sensibles)
+[vars]
+SITE_BASE = "https://oc-adaptant.netlify.app"
+
+# Las siguientes variables sensibles se configuran con:
+#   wrangler secret put ANTHROPIC_API_KEY
+#   wrangler secret put PWD_SOCIOS
+#   wrangler secret put PWD_ASESORES
+#   wrangler secret put PWD_INVERSORES
+#   wrangler secret put SESSION_SECRET
+#
+# NO commitearlas en este archivo.

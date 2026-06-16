@@ -1,0 +1,1017 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "tc_referencia_ars_usd": 1430,
+  "tc_referencia_nota": "TC referencia $1.430 ARS/USD usado para conversiones internas. Para liquidaciones reales, consultar TC del día.",
+  "saldo_inicial": {
+    "fecha": "2026-06-16",
+    "ars": 2700000,
+    "usd_equivalente_ref": 1888.11,
+    "nota": "Saldo de caja consolidado al 16/06/2026"
+  },
+  "supuesto_estructural": {
+    "descripcion": "Todo el pipeline factura a Adaptant SAS. Adaptant alimenta a BHP SA con las transferencias necesarias para cubrir las obligaciones de BHP (Macro, IIBB, Moroni, ARCA según prioridad).",
+    "pregunta_pendiente": "¿Adaptant SAS estará constituida e inscripta para empezar a facturar en julio 2026? Si no, el primer mes de facturación de Adaptant condiciona el inicio del pipeline. Alternativa transitoria: facturar por d-Vops LLC mientras se completa la constitución."
+  },
+  "pipeline_resumen": {
+    "proyectos_totales": 9,
+    "confirmados": 2,
+    "potenciales": 7,
+    "monto_total_confirmado_usd": 24250,
+    "monto_total_potencial_usd": 378000,
+    "monto_total_pipeline_usd": 402250
+  },
+  "pipeline": [
+    {
+      "id": "brou-ti-2026",
+      "cliente": "BROU",
+      "proyecto": "Extensión para equipos actuales de TI",
+      "monto_total_usd": 24000,
+      "duracion_meses": 4,
+      "monto_mes_usd": 8000,
+      "estado": "potencial",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "antel-vs-2026",
+      "cliente": "ANTEL",
+      "proyecto": "Value Stream y Rediseño de Equipos",
+      "monto_total_usd": 96000,
+      "duracion_meses": 6,
+      "monto_mes_usd": 16000,
+      "estado": "potencial",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "gbm-oc-piloto",
+      "cliente": "GBM",
+      "proyecto": "OC Piloto y Experimentación",
+      "monto_total_usd": 30000,
+      "duracion_meses": 3,
+      "monto_mes_usd": 10000,
+      "estado": "potencial",
+      "mes_inicio": "2026-08",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "gbm-hyperauto",
+      "cliente": "GBM",
+      "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+      "monto_total_usd": 18000,
+      "duracion_meses": 3,
+      "monto_mes_usd": 6000,
+      "estado": "potencial",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "antel-vs-fase2-2027",
+      "cliente": "ANTEL",
+      "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+      "monto_total_usd": 180000,
+      "duracion_meses": 6,
+      "monto_mes_usd": 30000,
+      "estado": "potencial",
+      "mes_inicio": "2027-03",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "ispe-anr-ceci",
+      "cliente": "ISPE - ANR CECI",
+      "proyecto": "OC Adopción",
+      "monto_total_usd": 9000,
+      "duracion_meses": 6,
+      "monto_mes_usd": 1500,
+      "estado": "potencial",
+      "mes_inicio": "2026-09",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "gbm-bccr-vs",
+      "cliente": "GBM - BCCR",
+      "proyecto": "Value Stream y Rediseño de Equipos",
+      "monto_total_usd": 20250,
+      "duracion_meses": 3,
+      "montos_mes_explicitos": {
+        "2026-07": 10125,
+        "2026-08": 0,
+        "2026-09": 10125
+      },
+      "estado": "confirmado",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "docuprint",
+      "cliente": "Docuprint",
+      "proyecto": "Rediseño Organizacional",
+      "monto_total_usd": 21000,
+      "duracion_meses": 6,
+      "monto_mes_usd": 2500,
+      "estado": "potencial",
+      "mes_inicio": "2026-10",
+      "entidad": "Adaptant"
+    },
+    {
+      "id": "brou-vs-cuota-final",
+      "cliente": "BROU",
+      "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
+      "monto_total_usd": 4000,
+      "duracion_meses": 1,
+      "monto_mes_usd": 4000,
+      "estado": "confirmado",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant"
+    }
+  ],
+  "ingresos_confirmados_por_mes": {
+    "2026-07": 14125.0,
+    "2026-09": 10125.0
+  },
+  "ingresos_potenciales_por_mes": {
+    "2026-07": 30000.0,
+    "2026-08": 40000.0,
+    "2026-09": 41500.0,
+    "2026-10": 38000.0,
+    "2026-11": 20000.0,
+    "2026-12": 20000.0,
+    "2027-03": 32500.0,
+    "2027-04": 30000.0,
+    "2027-05": 30000.0,
+    "2027-06": 30000.0,
+    "2027-07": 30000.0,
+    "2027-08": 30000.0,
+    "2027-01": 4000.0,
+    "2027-02": 4000.0
+  },
+  "proyeccion_mensual": [
+    {
+      "mes": "2026-06",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": -5762497.9399999995,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2026-07",
+      "ingresos_confirmados_usd": 14125.0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 44125.0,
+      "ingresos_confirmados_ars_equiv": 20198750.0,
+      "ingresos_potenciales_ars_equiv": 42900000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": 14436252.06,
+      "neto_con_potenciales_ars": 57336252.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "BROU",
+          "proyecto": "Extensión para equipos actuales de TI",
+          "monto_usd": 8000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+          "monto_usd": 6000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM - BCCR",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 10125,
+          "estado": "confirmado"
+        },
+        {
+          "cliente": "BROU",
+          "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
+          "monto_usd": 4000,
+          "estado": "confirmado"
+        }
+      ]
+    },
+    {
+      "mes": "2026-08",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 40000.0,
+      "ingresos_totales_usd": 40000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 57200000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": 51437502.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "BROU",
+          "proyecto": "Extensión para equipos actuales de TI",
+          "monto_usd": 8000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "OC Piloto y Experimentación",
+          "monto_usd": 10000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+          "monto_usd": 6000,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2026-09",
+      "ingresos_confirmados_usd": 10125.0,
+      "ingresos_potenciales_usd": 41500.0,
+      "ingresos_totales_usd": 51625.0,
+      "ingresos_confirmados_ars_equiv": 14478750.0,
+      "ingresos_potenciales_ars_equiv": 59345000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": 8716252.06,
+      "neto_con_potenciales_ars": 68061252.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "BROU",
+          "proyecto": "Extensión para equipos actuales de TI",
+          "monto_usd": 8000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "OC Piloto y Experimentación",
+          "monto_usd": 10000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+          "monto_usd": 6000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM - BCCR",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 10125,
+          "estado": "confirmado"
+        }
+      ]
+    },
+    {
+      "mes": "2026-10",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 38000.0,
+      "ingresos_totales_usd": 38000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 54340000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": 48577502.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "BROU",
+          "proyecto": "Extensión para equipos actuales de TI",
+          "monto_usd": 8000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "OC Piloto y Experimentación",
+          "monto_usd": 10000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 2500,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2026-11",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 20000.0,
+      "ingresos_totales_usd": 20000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 28600000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": 22837502.060000002,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 2500,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2026-12",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 20000.0,
+      "ingresos_totales_usd": 20000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 28600000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": 22837502.060000002,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 2500,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-01",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 4000.0,
+      "ingresos_totales_usd": 4000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 5720000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": -42497.93999999948,
+      "ingresos_detalle": [
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 2500,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-02",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 4000.0,
+      "ingresos_totales_usd": 4000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 5720000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": -42497.93999999948,
+      "ingresos_detalle": [
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 2500,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-03",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 32500.0,
+      "ingresos_totales_usd": 32500.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 46475000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": 40712502.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+          "monto_usd": 30000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 2500,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-04",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 30000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 42900000.0,
+      "egresos_ars": 5762497.9399999995,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Préstamo Banco Macro",
+          "monto_ars": 3958749
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -5762497.9399999995,
+      "neto_con_potenciales_ars": 37137502.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+          "monto_usd": 30000,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-05",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 30000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 42900000.0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": 41096251.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+          "monto_usd": 30000,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-06",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 30000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 42900000.0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": 41096251.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+          "monto_usd": 30000,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-07",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 30000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 42900000.0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": 41096251.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+          "monto_usd": 30000,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-08",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 30000.0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 42900000.0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": 41096251.06,
+      "ingresos_detalle": [
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+          "monto_usd": 30000,
+          "estado": "potencial"
+        }
+      ]
+    },
+    {
+      "mes": "2027-09",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2027-10",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2027-11",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2027-12",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2028-01",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2028-02",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2028-03",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2028-04",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    },
+    {
+      "mes": "2028-05",
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 0,
+      "ingresos_totales_usd": 0,
+      "ingresos_confirmados_ars_equiv": 0,
+      "ingresos_potenciales_ars_equiv": 0,
+      "egresos_ars": 1803748.94,
+      "egresos_detalle": [
+        {
+          "concepto": "Plan IIBB San Juan",
+          "monto_ars": 1517748.94
+        },
+        {
+          "concepto": "Intereses Moroni (estimado en pesos)",
+          "monto_usd": 200,
+          "monto_ars_equiv": 286000
+        }
+      ],
+      "neto_solo_confirmados_ars": -1803748.94,
+      "neto_con_potenciales_ars": -1803748.94,
+      "ingresos_detalle": []
+    }
+  ],
+  "totales_horizon_24m": {
+    "ingresos_confirmados_usd": 24250.0,
+    "ingresos_potenciales_usd": 380000.0,
+    "egresos_ars_conocidos": 86836213.55999999
+  },
+  "inconsistencias_a_resolver": [
+    {
+      "proyecto": "BROU — Extensión para equipos actuales de TI",
+      "monto_total_declarado": 24000,
+      "monto_mes_declarado": 8000,
+      "duracion_meses": 4,
+      "monto_total_calculado": 32000,
+      "diferencia": 8000
+    },
+    {
+      "proyecto": "Docuprint — Rediseño Organizacional",
+      "monto_total_declarado": 21000,
+      "monto_mes_declarado": 2500,
+      "duracion_meses": 6,
+      "monto_total_calculado": 15000,
+      "diferencia": -6000
+    }
+  ],
+  "egresos_no_incluidos_aun": [
+    "Cuotas IVA mensuales corrientes BHP",
+    "SUSS mensuales BHP (Aportes + Contribuciones)",
+    "Anticipos Ganancias BHP 2026 (Ant. N°1 16/06, N°2 13/07, N°3-5 pendientes)",
+    "Sueldos: Carolina Hernández, Ernesto, Franco (mientras estén como empleados BHP)",
+    "Costos operativos Adaptant SAS (suscripciones SaaS, infraestructura)",
+    "Alquiler oficina San Juan (Leopoldo Gonzalez Castillo)",
+    "Honorarios asesores (ABG, CNT, CPA EEUU)",
+    "Eventual plan de pagos ARCA / moratoria"
+  ]
+}

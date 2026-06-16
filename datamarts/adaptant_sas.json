@@ -1,0 +1,238 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Franco Buglioni",
+  "visibility": "publico",
+  "razon_social": "Adaptant SAS",
+  "tipo_societario": "Sociedad por Acciones Simplificada",
+  "ley_marco": "27.349",
+  "pais": "Argentina",
+  "provincia": "CABA",
+  "estado_constitucion": {
+    "estatuto_redactado": true,
+    "checklist_preparado": true,
+    "ejecucion_pendiente": true,
+    "inscripcion_completa": false,
+    "fecha_estimada_operatividad": null
+  },
+  "composicion_accionaria": [
+    {
+      "socio": "Ernesto Corona",
+      "porcentaje": 50,
+      "rol": "Presidente Titular"
+    },
+    {
+      "socio": "Franco Buglioni",
+      "porcentaje": 50,
+      "rol": "Administrador Suplente"
+    }
+  ],
+  "objeto_social": "Economía del conocimiento: tecnología, software, IA y datos, diseño organizacional, consultoría estratégica, diseño digital, I+D",
+  "proposito_estrategico": "Vehículo limpio para nueva actividad local en Argentina y eventual recepción de inversión externa",
+  "capital_social_inscripto": null,
+  "primer_ingreso": null,
+  "fecha_primer_ingreso": null,
+  "pipeline": {
+    "estado_actual": "Pipeline cargado al 16/06/2026 — 9 proyectos (2 confirmados, 7 potenciales)",
+    "total_pipeline_usd": 402250,
+    "confirmado_usd": 24250,
+    "potencial_usd": 378000,
+    "proyectos_confirmados": [
+      {
+        "id": "gbm-bccr-vs",
+        "cliente": "GBM - BCCR",
+        "proyecto": "Value Stream y Rediseño de Equipos",
+        "monto_total_usd": 20250,
+        "duracion_meses": 3,
+        "montos_mes_explicitos": {
+          "2026-07": 10125,
+          "2026-08": 0,
+          "2026-09": 10125
+        },
+        "estado": "confirmado",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "brou-vs-cuota-final",
+        "cliente": "BROU",
+        "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
+        "monto_total_usd": 4000,
+        "duracion_meses": 1,
+        "monto_mes_usd": 4000,
+        "estado": "confirmado",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant"
+      }
+    ],
+    "proyectos_potenciales": [
+      {
+        "id": "brou-ti-2026",
+        "cliente": "BROU",
+        "proyecto": "Extensión para equipos actuales de TI",
+        "monto_total_usd": 24000,
+        "duracion_meses": 4,
+        "monto_mes_usd": 8000,
+        "estado": "potencial",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "antel-vs-2026",
+        "cliente": "ANTEL",
+        "proyecto": "Value Stream y Rediseño de Equipos",
+        "monto_total_usd": 96000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 16000,
+        "estado": "potencial",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "gbm-oc-piloto",
+        "cliente": "GBM",
+        "proyecto": "OC Piloto y Experimentación",
+        "monto_total_usd": 30000,
+        "duracion_meses": 3,
+        "monto_mes_usd": 10000,
+        "estado": "potencial",
+        "mes_inicio": "2026-08",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "gbm-hyperauto",
+        "cliente": "GBM",
+        "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+        "monto_total_usd": 18000,
+        "duracion_meses": 3,
+        "monto_mes_usd": 6000,
+        "estado": "potencial",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "antel-vs-fase2-2027",
+        "cliente": "ANTEL",
+        "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+        "monto_total_usd": 180000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 30000,
+        "estado": "potencial",
+        "mes_inicio": "2027-03",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "ispe-anr-ceci",
+        "cliente": "ISPE - ANR CECI",
+        "proyecto": "OC Adopción",
+        "monto_total_usd": 9000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 1500,
+        "estado": "potencial",
+        "mes_inicio": "2026-09",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "docuprint",
+        "cliente": "Docuprint",
+        "proyecto": "Rediseño Organizacional",
+        "monto_total_usd": 21000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 2500,
+        "estado": "potencial",
+        "mes_inicio": "2026-10",
+        "entidad": "Adaptant"
+      }
+    ],
+    "nota": "Detalle mensual completo en cash_flow.json"
+  },
+  "costos_operativos_mensuales": {
+    "fijos": null,
+    "suscripciones_saas": null,
+    "personal": null,
+    "infraestructura": null,
+    "nota_carga": "Pendiente de relevamiento e ingreso al datamart"
+  },
+  "runway": null,
+  "punto_equilibrio_mensual": null,
+  "inscripciones_impositivas": {
+    "estado": "Pendientes — tras inscripción societaria"
+  },
+  "producto_y_mercado": {
+    "linea_principal": "OC Framework — Organizational Commons",
+    "tiers_de_producto": [
+      {
+        "tier": "Native Start",
+        "rango_precio_usd": 2000,
+        "perfil_cliente": "hasta 15 personas"
+      },
+      {
+        "tier": "Native Standard",
+        "rango_precio_usd": 30000,
+        "perfil_cliente": "15-150 personas"
+      },
+      {
+        "tier": "Native Enterprise",
+        "rango_precio_usd_min": 60000,
+        "perfil_cliente": "150+ personas"
+      },
+      {
+        "tier": "Open Standard",
+        "rango_precio_usd": 40000,
+        "perfil_cliente": "15-150 personas con requerimiento de stack agnóstico"
+      },
+      {
+        "tier": "Open Enterprise",
+        "rango_precio_usd_min": 90000,
+        "perfil_cliente": "150+ con requerimiento on-premise / multi-modelo"
+      }
+    ],
+    "clientes_referencia": [
+      {
+        "nombre": "Antel",
+        "pais": "Uruguay",
+        "rol": "cliente piloto fundacional"
+      },
+      {
+        "nombre": "GBM",
+        "pais": "Costa Rica",
+        "rol": "implementación demo activa, proceso de cierre comercial"
+      }
+    ],
+    "partners": [
+      {
+        "nombre": "ITC",
+        "pais": "Uruguay",
+        "rol": "partner de territorio"
+      }
+    ],
+    "aplicaciones_en_curso": [
+      {
+        "organismo": "Anthropic Claude Partner Network",
+        "fecha_aplicacion": "2026-04",
+        "estado": "presentada"
+      }
+    ]
+  },
+  "estrategia_latam": {
+    "version": "v2",
+    "fase_1": {
+      "paises": [
+        "Argentina",
+        "Uruguay"
+      ],
+      "estado": "en curso"
+    },
+    "fase_2": {
+      "paises": [
+        "Colombia",
+        "México"
+      ],
+      "horizonte_meses": "12-24"
+    },
+    "modelo_operativo": "Federado con red de asociados locales por país"
+  },
+  "supuesto_facturacion": {
+    "principio": "Todo el pipeline factura a Adaptant SAS. Adaptant alimenta a BHP SA con transferencias necesarias para cubrir obligaciones BHP.",
+    "pregunta_pendiente": "Adaptant SAS aún figura como 'en constitución' en el briefing. Si los primeros ingresos arrancan en julio 2026, conviene confirmar la fecha real de operatividad o usar d-Vops LLC como facturador transitorio."
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OC Adaptant Interno · Acceso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-mark">Adaptant · OC Interno</div>
+      <h1 class="login-title">Acceso al commons</h1>
+      <p class="login-sub">
+        Memoria operativa compartida sobre BHP SA · Adaptant SAS · d-Vops LLC.
+        Ingresá con la clave que te corresponde según tu rol.
+      </p>
+
+      <form class="login-form" id="login-form" autocomplete="off">
+        <label for="pwd">Clave de acceso</label>
+        <input type="password" id="pwd" name="pwd" placeholder="••••••••••" required />
+        <button type="submit" id="login-btn">Entrar</button>
+        <div class="login-error" id="login-error"></div>
+      </form>
+
+      <div class="login-foot">
+        Información confidencial. El acceso queda registrado.
+        Si no recordás tu clave, escribile a Ernesto o Franco directamente.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.OC_WORKER_URL = "https://oc-adaptant-interno.YOURNAME.workers.dev";
+  </script>
+  <script src="/assets/auth.js"></script>
+  <script>
+    const { login, saveSession, getSession } = window.OCAuth;
+
+    // Si ya hay sesión, ir al chat
+    if (getSession()) window.location.href = "/chat.html";
+
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const pwd = document.getElementById("pwd").value;
+      const errEl = document.getElementById("login-error");
+      const btn = document.getElementById("login-btn");
+      errEl.classList.remove("show");
+      btn.disabled = true;
+      btn.textContent = "Verificando...";
+      try {
+        const session = await login(pwd);
+        saveSession(session);
+        window.location.href = "/chat.html";
+      } catch (err) {
+        errEl.textContent = err.message;
+        errEl.classList.add("show");
+        btn.disabled = false;
+        btn.textContent = "Entrar";
+      }
+    });
+  </script>
+</body>
+</html>

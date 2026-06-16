@@ -1,0 +1,432 @@
+/* ─── Tokens de marca Adaptant ─────────────────────────────────────────────── */
+:root {
+  --tc: #C94B1A;
+  --tc-soft: rgba(201, 75, 26, 0.08);
+  --tc-border: rgba(201, 75, 26, 0.25);
+  --negro: #1A1A1A;
+  --crema: #F5F0EB;
+  --crema2: #EBE4DA;
+  --gris: #666666;
+  --gris2: #999999;
+  --linea: #E5DFD5;
+  --critico: #B83214;
+  --urgente: #D9842B;
+  --ok: #4F7A4F;
+
+  --r-md: 4px;
+  --r-lg: 8px;
+  --shadow-sm: 0 1px 2px rgba(26,26,26,.06);
+  --shadow-md: 0 4px 12px rgba(26,26,26,.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--crema);
+  color: var(--negro);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 38px; line-height: 1.1; margin: 0 0 12px; }
+h2 { font-size: 24px; margin: 32px 0 12px; }
+h3 { font-size: 18px; margin: 24px 0 8px; }
+
+p { margin: 0 0 12px; }
+
+code, .mono {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 12.5px;
+  background: var(--crema2);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ─── Layout principal ────────────────────────────────────────────────────── */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--linea);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--crema);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--tc);
+  text-transform: uppercase;
+}
+
+.brand-title {
+  font-size: 13px;
+  color: var(--gris);
+}
+
+.session-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--gris);
+}
+
+.session-badge {
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--tc-soft);
+  color: var(--tc);
+  border: 1px solid var(--tc-border);
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  color: var(--gris);
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.logout-btn:hover { color: var(--negro); border-color: var(--negro); }
+
+/* ─── Login screen ────────────────────────────────────────────────────────── */
+
+.login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.login-card {
+  max-width: 420px;
+  width: 100%;
+  background: white;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.login-mark {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--tc);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.login-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 4px 0 4px;
+}
+
+.login-sub {
+  font-size: 13px;
+  color: var(--gris);
+  margin-bottom: 28px;
+}
+
+.login-form label {
+  display: block;
+  font-size: 12px;
+  color: var(--gris);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--crema);
+  color: var(--negro);
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--tc);
+}
+
+.login-form button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px 16px;
+  background: var(--tc);
+  color: white;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.login-form button:hover { background: var(--negro); }
+
+.login-error {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--critico);
+  display: none;
+}
+
+.login-error.show { display: block; }
+
+.login-foot {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--linea);
+  font-size: 11.5px;
+  color: var(--gris2);
+  line-height: 1.5;
+}
+
+/* ─── Chat ─────────────────────────────────────────────────────────────────── */
+
+.chat-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  border-right: 1px solid var(--linea);
+  background: var(--crema);
+  padding: 24px 20px;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gris2);
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.suggested-q {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: white;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  padding: 8px 10px;
+  font-size: 12.5px;
+  color: var(--negro);
+  cursor: pointer;
+  margin-bottom: 6px;
+  font-family: inherit;
+  line-height: 1.35;
+  transition: all .12s;
+}
+
+.suggested-q:hover {
+  border-color: var(--tc);
+  color: var(--tc);
+  background: var(--tc-soft);
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.chat-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: white;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+  max-width: 900px;
+  width: 100%;
+  align-self: center;
+}
+
+.message {
+  margin-bottom: 28px;
+}
+
+.message-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gris2);
+  margin-bottom: 6px;
+}
+
+.message.user .message-role { color: var(--gris); }
+.message.assistant .message-role { color: var(--tc); }
+
+.message-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--negro);
+}
+
+.message-body table {
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.message-body th, .message-body td {
+  border: 1px solid var(--linea);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.message-body th {
+  background: var(--crema2);
+  font-weight: 600;
+}
+
+.message-body strong { font-weight: 600; }
+
+.composer {
+  border-top: 1px solid var(--linea);
+  padding: 16px 32px 22px;
+  background: var(--crema);
+}
+
+.composer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+.composer textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+  background: white;
+  color: var(--negro);
+  max-height: 160px;
+  min-height: 46px;
+}
+
+.composer textarea:focus { outline: none; border-color: var(--tc); }
+
+.composer button {
+  background: var(--tc);
+  color: white;
+  border: none;
+  border-radius: var(--r-md);
+  padding: 0 18px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 90px;
+}
+
+.composer button:hover { background: var(--negro); }
+.composer button:disabled { background: var(--gris2); cursor: not-allowed; }
+
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gris);
+  font-size: 13px;
+}
+
+.thinking::after {
+  content: '...';
+  animation: dots 1.4s infinite;
+  width: 14px;
+  display: inline-block;
+}
+
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* ─── Welcome empty state ─────────────────────────────────────────────────── */
+
+.welcome {
+  max-width: 600px;
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+.welcome h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.welcome p {
+  color: var(--gris);
+  font-size: 14px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .chat-shell { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .messages, .composer-inner { padding-left: 16px; padding-right: 16px; }
+  .topbar { padding: 12px 16px; }
+}

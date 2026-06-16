@@ -1,0 +1,132 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "entidad": "BHP SA",
+  "mutuo_moroni": {
+    "acreedor": {"nombre": "Diego Héctor Moroni", "dni": "21.477.749"},
+    "deudora": "BHP SA",
+    "representante_legal_deudora": {"nombre": "Ernesto Raúl Corona", "dni": "22.159.405"},
+    "moneda": "USD",
+    "capital": 20000,
+    "capital_intacto": true,
+    "fecha_origen": "2025-10-29",
+    "tasa_compensatoria_tna": 12,
+    "tasa_moratoria_mensual_sobre_impago": 1,
+    "modalidad_vigente": "Intereses el 15 de cada mes en pesos al TC del día. Capital intacto (Opción B).",
+    "ultimo_pagado": "2026-05-15",
+    "pendiente_actual": {
+      "periodo": 8,
+      "desde": "2026-05-15",
+      "hasta": "2026-06-15",
+      "dias": 31,
+      "interes_usd": 203.84,
+      "fecha_vencimiento": "2026-06-15",
+      "tc_referencia": 1430,
+      "monto_aprox_pesos": 291491,
+      "estado": "PENDIENTE — sin mora formal aún"
+    },
+    "cronograma_pagado": [
+      {"n": 1, "desde": "2025-10-29", "hasta": "2025-11-15", "dias": 17, "interes_usd": 111.78, "estado": "pagado"},
+      {"n": 2, "desde": "2025-11-15", "hasta": "2025-12-15", "dias": 30, "interes_usd": 197.26, "estado": "pagado"},
+      {"n": 3, "desde": "2025-12-15", "hasta": "2026-01-15", "dias": 31, "interes_usd": 203.84, "estado": "pagado"},
+      {"n": 4, "desde": "2026-01-15", "hasta": "2026-02-15", "dias": 31, "interes_usd": 203.84, "estado": "pagado"},
+      {"n": 5, "desde": "2026-02-15", "hasta": "2026-03-15", "dias": 28, "interes_usd": 184.11, "estado": "pagado"},
+      {"n": 6, "desde": "2026-03-15", "hasta": "2026-04-15", "dias": 31, "interes_usd": 203.84, "estado": "pagado"},
+      {"n": 7, "desde": "2026-04-15", "hasta": "2026-05-15", "dias": 30, "interes_usd": 197.26, "tc_ref": 1430, "monto_pesos": 282081.80, "estado": "pagado"}
+    ]
+  },
+  "prestamo_banco_macro": {
+    "banco": "Banco Macro",
+    "titular_formal": {"nombre": "Juan Corona", "tipo": "interpósita persona"},
+    "deudora_economica": "BHP SA",
+    "moneda": "ARS",
+    "monto_solicitado": 40000000,
+    "acreditado_neto_sellos": 39520000,
+    "imp_sellos_descontado_pct": 1.20,
+    "imp_sellos_descontado_monto": 480000,
+    "imp_deb_cred_descontado_pct": 1.20,
+    "imp_deb_cred_descontado_monto": 474240,
+    "total_transferido_a_bhp": 38000000,
+    "transferencias_realizadas": [
+      {"monto": 19000000},
+      {"monto": 19000000}
+    ],
+    "saldo_pendiente_de_transferir": 1045760,
+    "saldo_descontado_de_cuota_1": true,
+    "tna_pct": 33.00,
+    "cft_pct": 45.88,
+    "iva_recuperable_como_credito_fiscal": true,
+    "retencion_iibb": {
+      "estado": "Sin impacto",
+      "razon": "BHP removida del listado (saldo a favor dic/ene)"
+    },
+    "estado_general": "AL DÍA",
+    "proximo_vencimiento": {
+      "cuota": 2,
+      "fecha": "2026-06-19",
+      "monto_neto": 3958749
+    },
+    "cronograma": [
+      {"n": 1, "vencimiento": "2026-05-20", "saldo_capital": 40000000, "capital": 2858748, "interes": 1354005, "neto_a_pagar": 3166993, "nota": "c/descuento $1.045.760", "estado": "PAGADA"},
+      {"n": 2, "vencimiento": "2026-06-19", "saldo_capital": 37141252, "capital": 2937364, "interes": 1021386, "neto_a_pagar": 3958749, "estado": "PROXIMA"},
+      {"n": 3, "vencimiento": "2026-07-19", "saldo_capital": 34203889, "capital": 3018141, "interes": 940608, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 4, "vencimiento": "2026-08-18", "saldo_capital": 31185747, "capital": 3101140, "interes": 857609, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 5, "vencimiento": "2026-09-17", "saldo_capital": 28084607, "capital": 3186422, "interes": 772328, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 6, "vencimiento": "2026-10-17", "saldo_capital": 24898186, "capital": 3274048, "interes": 684701, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 7, "vencimiento": "2026-11-16", "saldo_capital": 21624137, "capital": 3364085, "interes": 594664, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 8, "vencimiento": "2026-12-16", "saldo_capital": 18260053, "capital": 3456597, "interes": 502152, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 9, "vencimiento": "2027-01-15", "saldo_capital": 14803456, "capital": 3551654, "interes": 407095, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 10, "vencimiento": "2027-02-14", "saldo_capital": 11251802, "capital": 3649324, "interes": 309425, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 11, "vencimiento": "2027-03-16", "saldo_capital": 7602478, "capital": 3749681, "interes": 209068, "neto_a_pagar": 3958749, "estado": "pendiente"},
+      {"n": 12, "vencimiento": "2027-04-15", "saldo_capital": 3852797, "capital": 3852797, "interes": 105952, "neto_a_pagar": 3958749, "estado": "pendiente"}
+    ],
+    "total_capital_12_cuotas": 40000000,
+    "total_intereses_12_cuotas": 7758993,
+    "total_neto_a_pagar_12_cuotas": 47713233,
+    "notas": [
+      "Neto a pagar excluye IVA Percepción (1,5%) e IVA normal (10,5%) que BHP recupera como crédito fiscal",
+      "Cuota 1 incluye descuento de $1.045.760 pendiente de transferencia",
+      "Cuotas 2-12 son fijas en $3.958.749",
+      "Sin retención de IIBB por remoción del listado"
+    ]
+  },
+  "plan_iibb_san_juan": {
+    "organismo": "Rentas — Provincia de San Juan (IIBB)",
+    "tipo": "Plan de facilidades de pago",
+    "moneda": "ARS",
+    "deuda_capital": 11912403.32,
+    "intereses_resarcitorios": 10853830.79,
+    "intereses_financieros_del_plan": 13659740.40,
+    "punitorios_honorarios": 0,
+    "total_a_pagar": 36425974.51,
+    "deuda_base_cap_mas_resarc": 22766234.11,
+    "cantidad_cuotas": 24,
+    "cuota_uniforme": 1517748.94,
+    "dia_vencimiento": 15,
+    "primera_cuota_fecha": "2026-06-15",
+    "ultima_cuota_fecha": "2028-05-15",
+    "estado_actual": "Primera cuota vence 15/06/2026",
+    "cronograma_resumen": [
+      {"n": 1, "vencimiento": "2026-06-15", "acumulado": 1517748.94, "estado": "PROXIMA"},
+      {"n": 2, "vencimiento": "2026-07-15", "acumulado": 3035497.88, "estado": "pendiente"},
+      {"n": 3, "vencimiento": "2026-08-15", "acumulado": 4553246.82, "estado": "pendiente"},
+      {"n": 6, "vencimiento": "2026-11-15", "acumulado": 9106493.64, "estado": "pendiente"},
+      {"n": 12, "vencimiento": "2027-05-15", "acumulado": 18212987.28, "estado": "pendiente"},
+      {"n": 24, "vencimiento": "2028-05-15", "acumulado": 36425974.51, "estado": "pendiente"}
+    ]
+  },
+  "pasivo_total_consolidado_bhp_sa": {
+    "ars": {
+      "arca_capital": 36424543,
+      "arca_intereses_resarcitorios": 42413579,
+      "subtotal_arca": 78838122,
+      "macro_cuotas_pendientes_2_a_12": 37141252,
+      "iibb_san_juan_total_plan": 36425974,
+      "total_sin_moroni": 152405348
+    },
+    "usd": {
+      "moroni_capital": 20000
+    }
+  }
+}
