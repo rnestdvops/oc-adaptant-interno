@@ -1,0 +1,152 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Franco Buglioni",
+  "visibility": "socios_asesores",
+  "estado_general": "ESTIMACIÓN INICIAL — Pendiente de relevamiento real. Los rangos están del lado conservador (estimación alta).",
+  "entidad_que_paga": {
+    "actual": "Pagos repartidos hoy entre cuentas personales de los socios y d-Vops LLC. Ninguna suscripción está aún a nombre de Adaptant SAS.",
+    "objetivo": "Una vez constituida Adaptant SAS y abierta su cuenta operativa, migrar todas las suscripciones a Adaptant para que el costo viva en la entidad correcta."
+  },
+  "moneda_principal": "USD",
+  "categorias": [
+    {
+      "categoria": "IA conversacional",
+      "items": [
+        {
+          "item": "Claude Pro",
+          "rango_usd_mes": [
+            20,
+            40
+          ],
+          "estimado_usd_mes": 40,
+          "nota": "Asumiendo 2 cuentas (Ernesto + Franco). Si pasan a Max o Team el costo sube."
+        },
+        {
+          "item": "ChatGPT Plus",
+          "rango_usd_mes": [
+            20,
+            40
+          ],
+          "estimado_usd_mes": 40,
+          "nota": "Asumiendo 2 cuentas."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 80
+    },
+    {
+      "categoria": "Productividad y colaboración",
+      "items": [
+        {
+          "item": "Google Workspace Business Standard",
+          "rango_usd_mes": [
+            14,
+            42
+          ],
+          "estimado_usd_mes": 30,
+          "nota": "USD 14/usuario · estimado para 2 usuarios. Confirmar plan y cantidad."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 30
+    },
+    {
+      "categoria": "Networking y prospección",
+      "items": [
+        {
+          "item": "LinkedIn Premium",
+          "rango_usd_mes": [
+            30,
+            160
+          ],
+          "estimado_usd_mes": 100,
+          "nota": "Career ~$30/mes, Sales Navigator ~$80/mes. Estimación para 1-2 cuentas. Confirmar tier."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 100
+    },
+    {
+      "categoria": "Infraestructura web y dominios",
+      "items": [
+        {
+          "item": "Dominios (adaptant.co + variantes)",
+          "rango_usd_mes": [
+            3,
+            10
+          ],
+          "estimado_usd_mes": 5,
+          "nota": "Renovación anual prorrateada mensual. Confirmar cuántos dominios activos."
+        },
+        {
+          "item": "Hosting (Netlify free tier)",
+          "rango_usd_mes": [
+            0,
+            20
+          ],
+          "estimado_usd_mes": 0,
+          "nota": "OC Framework site + OC Adaptant Interno operan en Netlify free. Sin costo hoy."
+        },
+        {
+          "item": "Cloudflare Workers (free tier)",
+          "rango_usd_mes": [
+            0,
+            5
+          ],
+          "estimado_usd_mes": 0,
+          "nota": "100k requests/día gratis. Sin costo previsible."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 5
+    },
+    {
+      "categoria": "Personal / perks de oficina virtual",
+      "items": [
+        {
+          "item": "Amazon Prime / suscripción",
+          "rango_usd_mes": [
+            10,
+            20
+          ],
+          "estimado_usd_mes": 15,
+          "nota": "Confirmar si es Prime estándar o un servicio adicional."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 15
+    },
+    {
+      "categoria": "Otras herramientas varias",
+      "items": [
+        {
+          "item": "Herramientas varias (buffer)",
+          "rango_usd_mes": [
+            50,
+            100
+          ],
+          "estimado_usd_mes": 100,
+          "nota": "Límite máximo declarado por Ernesto. Cubre herramientas eventuales sin item específico."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 100
+    }
+  ],
+  "totales": {
+    "estimado_usd_mes": 330,
+    "estimado_ars_mes_tc_ref_1430": 471900,
+    "rango_minimo_usd_mes": 147,
+    "rango_maximo_usd_mes": 437
+  },
+  "estimado_uso_api_anthropic_oc_interno": {
+    "rango_usd_mes": [
+      10,
+      40
+    ],
+    "nota": "Costo variable de la API de Anthropic por consultas al OC Adaptant Interno. Depende del volumen de uso de socios + asesores + inversores. No incluido en el total de arriba — es un costo de operación del propio commons."
+  },
+  "no_incluido_aun": [
+    "Servicios contables (CNT mensual)",
+    "Servicios legales (ABG honorarios)",
+    "CPA EEUU (cumplimiento d-Vops LLC) — costo trimestral o anual",
+    "Eventual oficina física si la hay",
+    "Viajes y representación",
+    "Marketing / publicidad pagada",
+    "Eventos y conferencias"
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "estado_del_proyecto": "EN CIERRE — Contrato de cesión firmado el 30/06/2026. Toma de posesión efectiva 01/07/2026. Período de transición durante julio 2026. Autonomía plena del cesionario desde 01/08/2026.",
+  "proyecto": {
+    "nombre": "NERDCUBE",
+    "sitio_web": "https://www.nerdcube.club",
+    "ubicacion": "Calle Mendoza N° 188 (sur), 2° piso, San Juan, Argentina",
+    "tipo": "Coworking + incubadora + espacio de trabajo común",
+    "entidad_titular": "BHP SA",
+    "antiguedad_operacion": "Más de 10 años",
+    "marcas_registradas_inpi": [
+      {
+        "acta": "3527740",
+        "clase_niza": 38,
+        "cobertura": "Servicios de telecomunicaciones"
+      },
+      {
+        "acta": "3527741",
+        "clase_niza": 41,
+        "cobertura": "Servicios de educación, formación y entretenimiento"
+      }
+    ],
+    "dominio": "nerdcube.club"
+  },
+  "cesion": {
+    "cesionario": "NODOS",
+    "fecha_firma": "2026-06-30",
+    "fecha_toma_posesion": "2026-07-01",
+    "fecha_autonomia_plena_cesionario": "2026-08-01",
+    "precio_total_ars": 9000000,
+    "forma_de_pago": "Efectivo (cash) — pago único al momento de la firma",
+    "componentes_cedidos": [
+      "Activos físicos del espacio (mobiliario, equipamiento, bienes muebles — Anexo I)",
+      "Cartera de clientes vigentes de coworking y contratos asociados",
+      "Know-how operativo, procedimientos de gestión, relaciones con proveedores",
+      "Marca registrada NERDCUBE (actas INPI 3527740 y 3527741)",
+      "Dominio nerdcube.club + identidades digitales asociadas (redes sociales, perfiles)"
+    ],
+    "aranceles_inpi_estimados_ars": 149712.64,
+    "aranceles_inpi_a_cargo_de": "NODOS (no afecta a BHP)",
+    "anexos": [
+      {
+        "id": "I",
+        "descripcion": "Inventario detallado de activos físicos",
+        "fecha_firma": "junto al contrato"
+      },
+      {
+        "id": "II",
+        "descripcion": "Acta de entrega y toma de posesión del espacio",
+        "fecha_firma": "2026-07-01"
+      },
+      {
+        "id": "III",
+        "descripcion": "Acta de transferencia de activos digitales y dominio",
+        "fecha_firma": "dentro de 7 días post-contrato"
+      },
+      {
+        "id": "IV",
+        "descripcion": "Documentación INPI — formularios transferencia de marcas",
+        "fecha_firma": "dentro de 30 días post-contrato"
+      }
+    ]
+  },
+  "inventario_activos_fisicos_resumen": {
+    "total_unidades": 90,
+    "categorias": {
+      "escritorios": 24,
+      "mesas": 15,
+      "sillas": 46,
+      "equipamiento": 5
+    },
+    "observaciones": "13 sillas requieren reacondicionamiento o tapizado — a cargo de NODOS sin reclamo. Detalle completo en Anexo I del contrato."
+  },
+  "personal_de_transicion": {
+    "modalidad": "Personal mantenido por BHP durante todo julio 2026",
+    "periodo": {
+      "desde": "2026-07-01",
+      "hasta": "2026-07-31"
+    },
+    "responsabilidad_laboral": "100% de BHP — NODOS no asume vínculo laboral alguno",
+    "fecha_bajas_y_liquidaciones_finales": "2026-07-31",
+    "empleados": [
+      {
+        "nombre_completo": "Pérez Orti, Rocío Bele",
+        "cuit_cuil": "27-40592349-7",
+        "banco": "BBVA Argentina",
+        "cbu": "0170072540000052244315",
+        "monto_transferencia_mensual_ars": 520000,
+        "rol": "Persona operativa NerdCube"
+      },
+      {
+        "nombre_completo": "Castillo, Melisa",
+        "cuit_cuil": "27-32724137-6",
+        "banco_cuenta": "Mercado Pago",
+        "cvu": "0000003100028289647473",
+        "monto_transferencia_mensual_ars": 257124.72,
+        "rol": "Persona operativa NerdCube"
+      },
+      {
+        "nombre_completo": "Pérez Herr, Sara Micae",
+        "cuit_cuil": "27-38591793-2",
+        "banco": "BBVA Argentina",
+        "cbu": "0170072540000055445333",
+        "monto_transferencia_mensual_ars": 520000,
+        "rol": "Persona operativa NerdCube"
+      }
+    ],
+    "totales_mensuales_ars": {
+      "transferencias_personal": 1297124.72,
+      "servicio_limpieza_estimado": "Incluido en la dotación según contrato — costo a confirmar si es facturador separado",
+      "nota": "Estos montos son las transferencias netas. La carga social (si es relación de dependencia) o el régimen impositivo (si son monotributistas) está pendiente de confirmar con CNT — impacta el costo total real y las eventuales obligaciones residuales."
+    },
+    "liquidaciones_finales_31_07_2026": {
+      "estado": "CERRADAS al 31/05/2026 — pendiente actualización al 31/07/2026 (fecha real de baja según contrato)",
+      "fecha_corte_calculo_actual": "2026-05-31",
+      "fecha_baja_segun_contrato": "2026-07-31",
+      "advertencia": "Los montos están calculados con bajas al 31/05/2026. Como las bajas reales son el 31/07/2026 (Cláusula Quinta del contrato), los montos definitivos serán mayores — suman 2 meses más de antigüedad, SAC proporcional adicional y eventual aumento paritario. Pedir reliquidación a CNT con fecha 31/07/2026.",
+      "conceptos_incluidos": [
+        "Indemnización",
+        "SAC",
+        "Preaviso"
+      ],
+      "detalle_al_31_05_2026": [
+        {
+          "persona": "Rocío Pérez",
+          "monto_ars": 2847436.1,
+          "certeza": "Cerrado al 31/05/2026"
+        },
+        {
+          "persona": "Sara Pérez",
+          "monto_ars": 650096.29,
+          "certeza": "Cerrado al 31/05/2026"
+        },
+        {
+          "persona": "Melisa Castillo",
+          "monto_ars": 1876725.23,
+          "certeza": "Cerrado al 31/05/2026"
+        }
+      ],
+      "total_ars_al_31_05_2026": 5374257.62,
+      "monto_a_usar_en_cash_flow_provisional_ars": 5374257.62,
+      "nota_cash_flow": "Usar este monto como provisional hasta tener reliquidación al 31/07/2026. El monto real va a ser algo mayor.",
+      "decision_uso_cash_flow": "Se mantiene el monto al 31/05/2026 ($5.374.257,62) como cifra final para cash flow. NO se reliquida al 31/07 por decisión operativa."
+    }
+  },
+  "costos_operativos_durante_transicion": {
+    "responsable_durante_julio_2026": {
+      "alquiler_local": "NODOS (desde 01/07/2026)",
+      "energia_electrica_EPSE": "NODOS (desde 01/07/2026)",
+      "agua_OSSE": "NODOS (desde 01/07/2026)",
+      "telecomunicaciones": "NODOS (desde 01/07/2026)",
+      "seguridad_Valot": "NODOS (desde 01/07/2026)",
+      "insumos": "NODOS (desde 01/07/2026)",
+      "personal_y_limpieza": "BHP (durante julio 2026)"
+    }
+  },
+  "facturacion_coworkers_julio_2026": {
+    "destinatario_de_la_facturacion": "BHP",
+    "concepto": "Contraprestación por operación de transición y sostenimiento del personal durante el mes de transferencia",
+    "modalidad_a_elegir": "B (CONFIRMADA) — BHP cobra a clientes durante julio según vencimientos habituales. NODOS apoya administrativamente.",
+    "monto_estimado_ars": 4000000,
+    "nota": "Estimación ~$4M ARS. Modalidad de cobro A o B aún por definir — si A, el ingreso entra el 30/06 junto con la cesión; si B, el ingreso entra a lo largo de julio según vencimientos."
+  },
+  "pasivos_preexistentes_a_cargo_de_bhp": {
+    "principio": "Los pasivos previos al 30/06/2026 quedan íntegramente en BHP — NO se transfieren a NODOS (Cláusula Séptima)",
+    "items_identificados": [
+      {
+        "item": "Alquiler adeudado al propietario del inmueble",
+        "periodo": "2 meses",
+        "monto_ars": 5000000,
+        "certeza": "Confirmado",
+        "fecha_pago_acordada": "julio 2026",
+        "nota": "Se difiere a julio (no junio). Ernesto confirmó."
+      },
+      {
+        "item": "Rezagos de impuestos y servicios públicos",
+        "monto_ars": 500000,
+        "certeza": "Estimación redondeada confirmada por Ernesto",
+        "fecha_pago_estimada": "julio 2026",
+        "nota": "Incluye rezagos pendientes de impuestos provinciales/municipales y servicios (EPSE, OSSE, telecom, alarma) sin desglose detallado todavía."
+      }
+    ],
+    "items_aun_no_cuantificados": [],
+    "nota_general": "El contrato menciona estos pasivos como enunciativos y no taxativos. Conviene completar el relevamiento con CNT antes del 30/06/2026.",
+    "total_pasivos_preexistentes_ars": 5500000
+  },
+  "obligaciones_residuales_de_nodos_post_cesion": [
+    {
+      "obligacion": "Almacenamiento de documentación BHP",
+      "detalle": "Espacio físico sin costo para 1 archivero + 2 cajoneras con documentación corporativa, administrativa, contable y societaria de BHP",
+      "plazo": "Menor entre 3 años desde 01/07/2026 o duración del contrato de NODOS en el inmueble",
+      "preaviso_si_NODOS_deja_antes": "90 días corridos a BHP para coordinar retiro o reubicación",
+      "acceso_BHP": "En horario laboral habitual, previa coordinación razonable",
+      "custodia": "BHP custodia el contenido — NODOS no tiene acceso ni responsabilidad sobre la documentación"
+    }
+  ],
+  "marca_NERDCUBE_post_cesion": {
+    "compromiso_de_BHP": "No operar emprendimientos comerciales bajo la marca NERDCUBE ni denominaciones que generen confusión, sin perjuicio de actividades comerciales no comprendidas en el objeto del contrato",
+    "implicancia_estrategica": "El dominio nerdcube.club y la marca dejan de estar disponibles para futuros usos por Adaptant o cualquier entidad del grupo. Si había alguna línea de producto futura pensada en torno a esta marca, queda cerrada."
+  },
+  "confidencialidad": {
+    "plazo": "5 años desde la firma (hasta 30/06/2031)",
+    "alcance": "Términos económicos del contrato y toda información comercial, financiera, operativa o técnica intercambiada"
+  },
+  "ley_jurisdiccion": {
+    "ley_aplicable": "República Argentina",
+    "jurisdiccion": "Tribunales Ordinarios de la Provincia de San Juan"
+  },
+  "impacto_en_cash_flow_consolidado": {
+    "afecta": true,
+    "movimientos_confirmados": [
+      {
+        "fecha": "2026-06-30",
+        "concepto": "Ingreso por cesión NERDCUBE a NODOS",
+        "tipo": "ingreso",
+        "monto_ars": 9000000
+      },
+      {
+        "fecha": "2026-07",
+        "concepto": "Facturación coworkers julio (modalidad B)",
+        "tipo": "ingreso",
+        "monto_ars": 4000000
+      },
+      {
+        "fecha": "2026-07",
+        "concepto": "Pago alquiler atrasado al propietario (2 meses)",
+        "tipo": "egreso",
+        "monto_ars": 5000000
+      },
+      {
+        "fecha": "2026-07",
+        "concepto": "Sueldos personal NerdCube (3 personas, último mes)",
+        "tipo": "egreso",
+        "monto_ars": 1297124.72
+      },
+      {
+        "fecha": "2026-07-31",
+        "concepto": "Liquidaciones finales (cerradas al 31/05)",
+        "tipo": "egreso",
+        "monto_ars": 5374257.62
+      },
+      {
+        "fecha": "2026-07",
+        "concepto": "Rezagos impuestos y servicios",
+        "tipo": "egreso",
+        "monto_ars": 500000
+      }
+    ],
+    "totales": {
+      "ingresos_ars": 13000000,
+      "egresos_ars": 12171382.34,
+      "neto_ars": 828617.66
+    },
+    "calculo_neto": "+$9M cesión + $4M facturación - $5M alquiler - $1,3M sueldos - $5,37M liquidaciones - $0,5M rezagos = +$828.617,66 ARS",
+    "lectura": "La operación NerdCube cierra prácticamente neutra en términos de cash. No genera colchón material — apenas permite cerrar el proyecto sin pérdida."
+  },
+  "pendiente_confirmar": [
+    "Confirmar CUIT, representante legal y datos completos de BHP en el contrato",
+    "Confirmar razón social, CUIT y datos completos de NODOS en el contrato",
+    "Aclaración sobre diferencia de monto de liquidación entre Sara Pérez ($650K) y las otras dos (probablemente refleja antigüedad muy distinta)"
+  ]
+}

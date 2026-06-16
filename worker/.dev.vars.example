@@ -1,0 +1,9 @@
+# Plantilla para variables locales del Worker.
+# Copiar como .dev.vars (NO commitear) para desarrollo local con wrangler dev.
+
+ANTHROPIC_API_KEY=sk-ant-api03-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+PWD_SOCIOS=cambiame-socios
+PWD_ASESORES=cambiame-asesores
+PWD_INVERSORES=cambiame-inversores
+SESSION_SECRET=cualquier-string-largo-aleatorio-de-al-menos-32-caracteres
+SITE_BASE=https://oc-adaptant.netlify.app

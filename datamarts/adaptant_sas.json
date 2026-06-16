@@ -70,7 +70,7 @@
         "cliente": "BROU",
         "proyecto": "Extensión para equipos actuales de TI",
         "monto_total_usd": 24000,
-        "duracion_meses": 4,
+        "duracion_meses": 3,
         "monto_mes_usd": 8000,
         "estado": "potencial",
         "mes_inicio": "2026-07",
@@ -137,7 +137,7 @@
         "proyecto": "Rediseño Organizacional",
         "monto_total_usd": 21000,
         "duracion_meses": 6,
-        "monto_mes_usd": 2500,
+        "monto_mes_usd": 3500,
         "estado": "potencial",
         "mes_inicio": "2026-10",
         "entidad": "Adaptant"
@@ -146,11 +146,22 @@
     "nota": "Detalle mensual completo en cash_flow.json"
   },
   "costos_operativos_mensuales": {
-    "fijos": null,
-    "suscripciones_saas": null,
-    "personal": null,
-    "infraestructura": null,
-    "nota_carga": "Pendiente de relevamiento e ingreso al datamart"
+    "estado": "Estimación inicial cargada — ver costos_operativos.json para detalle",
+    "estimado_usd_mes": 330,
+    "estimado_ars_mes": 471900,
+    "rango_usd_mes": [
+      147,
+      437
+    ],
+    "items_principales": [
+      "Claude Pro + ChatGPT Plus (~$80/mes)",
+      "Google Workspace Business (~$30/mes)",
+      "LinkedIn Premium (~$100/mes)",
+      "Dominios + hosting (~$5/mes)",
+      "Amazon Prime (~$15/mes)",
+      "Herramientas varias buffer (~$100/mes)"
+    ],
+    "pendiente_relevamiento": true
   },
   "runway": null,
   "punto_equilibrio_mensual": null,

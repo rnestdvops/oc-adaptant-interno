@@ -1,0 +1,85 @@
+{
+  "last_updated": "2026-06-16",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "entidad_empleadora": "BHP SA",
+  "fuente": "Recibos de haberes feb/26, mar/26, abr/26 — cifras estables idénticas en los tres períodos",
+  "nota_estrategica": "Línea A del marco estratégico (briefing): evaluar baja como empleados de BHP de Ernesto y Franco — solo rol de directores. Esta acción cortaría la mayor sangría de caja mensual del grupo.",
+  "empleados": [
+    {
+      "nombre_completo": "Ernesto Raúl Corona",
+      "cuil": "20-22159405-4",
+      "categoria": "Director",
+      "fecha_ingreso": "2019-04-29",
+      "rol_societario": "Presidente de BHP SA · Socio 50% Adaptant SAS · Socio 50% d-Vops LLC",
+      "sueldo_bruto_ars": 6749168.2,
+      "retenciones": {
+        "jubilacion_11_pct": 742408.5,
+        "ley_19032_3_pct": 202475.05,
+        "obra_social_3_pct": 202475.05,
+        "total": 1147358.59
+      },
+      "sueldo_neto_ars": 5601809.61
+    },
+    {
+      "nombre_completo": "Franco Buglioni",
+      "cuil": "20-24226762-2",
+      "categoria": "Administrativo",
+      "fecha_ingreso": "2016-08-11",
+      "rol_societario": "Administrador de BHP SA · Socio 50% Adaptant SAS · Socio 50% d-Vops LLC",
+      "sueldo_bruto_ars": 5317511.5,
+      "retenciones": {
+        "jubilacion_11_pct": 584926.27,
+        "ley_19032_3_pct": 159525.35,
+        "obra_social_3_pct": 159525.35,
+        "total": 903976.96
+      },
+      "sueldo_neto_ars": 4413534.55
+    },
+    {
+      "nombre_completo": "Carolina Hernández",
+      "cuil": "27-32689167-9",
+      "categoria": "Administrativo",
+      "fecha_ingreso": "2014-12-01",
+      "rol_societario": "Empleada — situación en revisión (línea F del marco estratégico)",
+      "sueldo_bruto_ars": 2202746.82,
+      "retenciones": {
+        "jubilacion_11_pct": 242302.15,
+        "ley_19032_3_pct": 66082.4,
+        "obra_social_3_pct": 66082.4,
+        "total": 374466.96
+      },
+      "sueldo_neto_ars": 1828279.86
+    }
+  ],
+  "totales_mensuales_ars": {
+    "bruto_total": 14269426.52,
+    "retenciones_total": 2425802.51,
+    "neto_total_egreso_caja": 11843624.02,
+    "contribuciones_patronales_estimadas_pct": 26.4,
+    "contribuciones_patronales_estimadas_ars": 3767128.6,
+    "costo_laboral_total_si_se_paga_arca_al_dia": 18036555.12,
+    "nota_aportes_y_contribuciones": "Los aportes (descontados del bruto) + contribuciones patronales NO se están pagando actualmente — se acumulan como deuda con ARCA. Ver datamart deuda_arca.json: el bloque Aportes Empleador + Contribuciones SS suman $10M en deuda histórica + capital creciente cada mes."
+  },
+  "escenarios": {
+    "escenario_a_status_quo": {
+      "descripcion": "Mantener a los tres como empleados de BHP",
+      "egreso_caja_mensual_ars": 11843624.02,
+      "deuda_arca_acumulada_por_mes": "≈ $6,2M ARS (aportes + contribuciones no pagadas)"
+    },
+    "escenario_b_baja_directores": {
+      "descripcion": "Línea A del briefing: dar de baja a Ernesto y Franco como empleados, mantener solo rol de directores. Carolina permanece (línea F en revisión).",
+      "egreso_caja_mensual_ars": 1828279.86,
+      "ahorro_mensual_caja_ars": 10015344.16,
+      "deuda_arca_acumulada_por_mes": "≈ $1,0M ARS (solo aportes + contribuciones de Carolina)",
+      "ahorro_deuda_arca_mensual": "≈ $5,2M ARS",
+      "consideracion": "Decisión estratégica que requiere acuerdo de ambos socios (Bloque 5.5 briefing). Implica que Ernesto y Franco no perciben sueldo de BHP — pueden cobrar honorarios de director o quedar sin remuneración local, dependiendo del diseño impositivo a definir con CNT."
+    },
+    "escenario_c_baja_total": {
+      "descripcion": "Dar de baja también a Carolina (línea F del briefing — transición a definir, art. 223 bis LCT u otra figura)",
+      "egreso_caja_mensual_ars": 0,
+      "ahorro_mensual_caja_vs_a_ars": 11843624.02,
+      "consideracion": "Requiere indemnización si es despido + tratamiento digno. Decisión sensible que se posterga en el briefing hasta tener mejor definición. NO se modela como activa por ahora."
+    }
+  }
+}
