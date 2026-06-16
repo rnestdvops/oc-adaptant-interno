@@ -215,6 +215,12 @@ La Ley 11.683 art. 8 habilita a ARCA a perseguir al Presidente de la SA por deud
 | E · Regularización fiscal personal | Ernesto: Ganancias 2024, IVA 2022, Bienes Personales 2016. Franco: Bienes Personales 2017–2021. |
 | F · Capital humano | Definir transición de Carolina Hernández (art. 223 bis LCT u otra figura). Trato digno y cumplimiento legal. |
 
+## Significado de los estados en el datamart
+
+Cuando aparezcan los siguientes estados sobre una persona o vínculo contractual, interpretalos con el significado preciso que se define acá — no con sentido común genérico:
+
+- **"en revisión"** (sobre una persona o vínculo contractual): significa que se está evaluando la forma más conveniente de continuidad para *no generar erogación adicional manteniendo el propósito y la contribución a la organización*. **No implica desvinculación.** Cuando encuentres este estado, orientá la respuesta hacia alternativas de reestructuración contractual (cambio de figura, traslado a otra entidad del grupo, esquema mixto), no hacia salida. Recordá siempre que la decisión requiere acuerdo de ambos socios y consulta al abogado para asegurar irreprochabilidad del proceso.
+
 ## Decisiones que requieren acuerdo de ambos socios
 
 - Cualquier modificación al marco rector.
