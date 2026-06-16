@@ -118,6 +118,7 @@ async function buildSystemPrompt(level, env) {
       "personal.json",
       "nerdcube_legacy.json",
       "movimientos_bancarios.json",
+      "chase_dvops.json",
     ];
     parts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {

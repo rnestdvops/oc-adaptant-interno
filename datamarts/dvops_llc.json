@@ -8,19 +8,32 @@
   "domicilio_fiscal": "Miami, Florida, EEUU",
   "fecha_inicio_actividad": "2023-01-01",
   "composicion": [
-    {"socio": "Ernesto Corona", "porcentaje": 50},
-    {"socio": "Franco Buglioni", "porcentaje": 50, "nota": "incorporado posterior al SS-4 original"}
+    {
+      "socio": "Ernesto Corona",
+      "porcentaje": 50
+    },
+    {
+      "socio": "Franco Buglioni",
+      "porcentaje": 50,
+      "nota": "incorporado posterior al SS-4 original"
+    }
   ],
   "rol_en_el_grupo": "Corazón del cash flow actual. Factura a clientes del exterior. Transfiere fondos a Argentina vía wire a Supervielle (BHP) y a Relay Ernesto.",
   "bancos": [
     {
       "banco": "JPMorgan Chase",
       "tipo": "principal operativa",
-      "numero_cuenta": "929612262"
+      "numero_cuenta": "929612262",
+      "id": "chase_dvops",
+      "cuenta": "929612262",
+      "moneda": "USD",
+      "tipo_cuenta": "checking_business",
+      "descripcion": "Cuenta principal operativa d-Vops LLC (Miami). Recibe pagos de clientes GBM/Lat Capital, distribuye a Supervielle AR y entidades del grupo."
     },
     {
       "banco": "Relay Bank",
-      "tipo": "secundaria, uso operativo"
+      "tipo": "secundaria, uso operativo",
+      "descripcion": "Cuenta secundaria empresarial de d-Vops LLC, uso operativo. NO es cuenta personal de Ernesto."
     }
   ],
   "estado_fiscal": {
@@ -40,12 +53,54 @@
     "BOI / FinCEN cuando aplica"
   ],
   "ingresos_y_clientes": {
-    "estado": "no cargado en datamart",
-    "nota_carga": "Pendiente: cargar extractos Chase + Relay de los últimos 12 meses, identificar clientes, montos, frecuencia, conceptos."
+    "estado": "cargado (extractos Chase 2025-01 / 2026-05)",
+    "clientes_confirmados": [
+      {
+        "nombre": "GBM de Costa Rica SA",
+        "canal_pago": "Lat Capital Solutions Inc / Standard Chartered Bank",
+        "moneda": "USD",
+        "pagos_2025_2026_usd": 167928.68,
+        "notas": "Pagos identificados con ref 'Pago GBM' en statements Chase. También 1 pago directo via BAC San Jose abr-2026."
+      },
+      {
+        "nombre": "Lat Capital Solutions Inc",
+        "canal_pago": "Standard Chartered Bank / Standard Chartered",
+        "moneda": "USD",
+        "notas": "Actúa como canal de pago para GBM Costa Rica y como cliente propio."
+      },
+      {
+        "nombre": "Intelicolab Panama SA",
+        "canal_pago": "Banco Lafise Panama",
+        "moneda": "USD",
+        "pagos_2025_usd": 3000,
+        "notas": "3 pagos x USD 1000 (jul, ago, sep 2025). Inv 38, 43, 45."
+      },
+      {
+        "nombre": "Stripe",
+        "canal_pago": "Real Time Payment (RTP)",
+        "moneda": "USD",
+        "pagos_usd": 2703.68,
+        "notas": "2 pagos: jul-2025 USD 1557.08, nov-2025 USD 1146.60"
+      },
+      {
+        "nombre": "Miami Direct Inc",
+        "canal_pago": "Bank of America",
+        "moneda": "USD",
+        "pagos_usd": 6300,
+        "notas": "1 pago dic-2025 USD 6300. Inv 49/50."
+      }
+    ],
+    "nota_carga": "Total ingresos confirmados USD 167.937,87 según summary chase_dvops.json"
   },
   "transferencias_a_argentina": {
-    "estado": "no cargado en datamart",
-    "nota_carga": "Pendiente: registro de wires a Supervielle (BHP) y Relay Ernesto con fecha, monto USD, TC de liquidación, contraparte argentina."
+    "estado": "cargado (extractos Chase 2025-01 / 2026-05)",
+    "total_supervielle_ar_usd": 148700,
+    "total_relay_ernesto_usd": 15650,
+    "total_dvops_mx_usd": 14795,
+    "detalle": "Ver chase_dvops.json y chase_dvops_detalle.json"
   },
-  "riesgo_estructural": "BAJO operativamente. Riesgo estratégico: cualquier complicación con cumplimiento fiscal EEUU afecta el corazón del cash flow del grupo."
+  "riesgo_estructural": "BAJO operativamente. Riesgo estratégico: cualquier complicación con cumplimiento fiscal EEUU afecta el corazón del cash flow del grupo.",
+  "entidades_relacionadas": [
+    "dvops_sa_cv_mx"
+  ]
 }
