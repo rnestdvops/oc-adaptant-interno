@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OC Adaptant Interno · Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">Adaptant · OC</div>
+        <div class="brand-title">Feedback acumulado</div>
+      </div>
+      <div class="session-info">
+        <a class="logout-btn" href="/chat.html">Volver al chat</a>
+      </div>
+    </div>
+
+    <div class="feedback-page">
+      <p id="feedback-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+      <div id="feedback-list"></div>
+    </div>
+  </div>
+
+  <script>
+    window.OC_WORKER_URL = "https://oc-adaptant-interno.ernesto-b02.workers.dev";
+  </script>
+  <script src="/assets/auth.js"></script>
+  <script>
+    const { getSession, WORKER_URL: FB_WORKER_URL } = window.OCAuth;
+
+    function fmtDate(ts) {
+      return new Date(ts).toLocaleString("es-AR");
+    }
+
+    async function loadFeedback() {
+      const session = getSession();
+      const statusEl = document.getElementById("feedback-status");
+      const listEl = document.getElementById("feedback-list");
+
+      if (!session) {
+        window.location.href = "/";
+        return;
+      }
+
+      try {
+        const resp = await fetch(`${FB_WORKER_URL}/feedback`, {
+          headers: { Authorization: `Bearer ${session.token}` },
+        });
+        if (resp.status === 401) {
+          statusEl.textContent = "La sesión expiró. Volvé a entrar.";
+          return;
+        }
+        const data = await resp.json();
+        const entries = data.entries || [];
+
+        if (entries.length === 0) {
+          statusEl.textContent = "Todavía no hay feedback registrado.";
+          return;
+        }
+
+        statusEl.textContent = `${entries.length} registro(s).`;
+        listEl.innerHTML = entries.map(e => `
+          <div class="feedback-entry">
+            <div class="meta">
+              <span class="vote-tag ${e.vote}">${e.vote === "up" ? "👍 ok" : "👎 mejorar"}</span>
+              <span>${e.level}</span>
+              <span>${fmtDate(e.ts)}</span>
+            </div>
+            ${e.question ? `<div class="q">Pregunta: ${escapeHtmlFb(e.question)}</div>` : ""}
+            ${e.answer ? `<div class="a">Respuesta: ${escapeHtmlFb(e.answer).slice(0, 400)}${e.answer.length > 400 ? "…" : ""}</div>` : ""}
+            ${e.comment ? `<div class="comment">"${escapeHtmlFb(e.comment)}"</div>` : ""}
+          </div>
+        `).join("");
+      } catch (err) {
+        statusEl.textContent = `Error cargando feedback: ${err.message}`;
+      }
+    }
+
+    function escapeHtmlFb(s) {
+      return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    document.addEventListener("DOMContentLoaded", loadFeedback);
+  </script>
+</body>
+</html>

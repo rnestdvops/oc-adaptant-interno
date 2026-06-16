@@ -72,8 +72,114 @@ function addMessage(role, text) {
     <div class="message-role">${role === "user" ? "Vos" : "OC Adaptant"}</div>
     <div class="message-body">${renderMarkdown(text)}</div>
   `;
+
+  if (role === "assistant") {
+    const lastUser = [...history].reverse().find(m => m.role === "user");
+    wrap.appendChild(buildFeedbackRow(lastUser ? lastUser.content : "", text));
+  }
+
   messagesEl.appendChild(wrap);
   messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function buildFeedbackRow(question, answer) {
+  const row = document.createElement("div");
+  row.className = "feedback-row";
+
+  const upBtn = document.createElement("button");
+  upBtn.className = "feedback-btn";
+  upBtn.title = "Esta respuesta estuvo bien";
+  upBtn.textContent = "👍";
+
+  const downBtn = document.createElement("button");
+  downBtn.className = "feedback-btn";
+  downBtn.title = "Esta respuesta no estuvo bien";
+  downBtn.textContent = "👎";
+
+  const finish = (label) => {
+    upBtn.disabled = true;
+    downBtn.disabled = true;
+    const thanks = document.createElement("span");
+    thanks.className = "feedback-thanks";
+    thanks.textContent = label;
+    row.appendChild(thanks);
+  };
+
+  upBtn.onclick = async () => {
+    upBtn.classList.add("active", "up");
+    await sendFeedback({ vote: "up", question, answer });
+    finish("Gracias por el feedback.");
+  };
+
+  downBtn.onclick = () => {
+    downBtn.classList.add("active", "down");
+    upBtn.disabled = true;
+    downBtn.disabled = true;
+    row.appendChild(buildFeedbackForm(question, answer, row));
+  };
+
+  row.appendChild(upBtn);
+  row.appendChild(downBtn);
+  return row;
+}
+
+function buildFeedbackForm(question, answer, row) {
+  const form = document.createElement("div");
+  form.className = "feedback-form";
+  form.innerHTML = `
+    <textarea placeholder="¿Qué esperabas o qué faltó en la respuesta?"></textarea>
+    <div class="feedback-form-actions">
+      <button type="button" class="send">Enviar</button>
+      <button type="button" class="cancel">Cancelar</button>
+    </div>
+  `;
+
+  const textarea = form.querySelector("textarea");
+  form.querySelector(".send").onclick = async () => {
+    await sendFeedback({ vote: "down", question, answer, comment: textarea.value });
+    form.remove();
+    const thanks = document.createElement("span");
+    thanks.className = "feedback-thanks";
+    thanks.textContent = "Gracias, lo vamos a revisar.";
+    row.appendChild(thanks);
+  };
+  form.querySelector(".cancel").onclick = () => form.remove();
+
+  return form;
+}
+
+async function sendFeedback(payload) {
+  const session = getSession();
+  if (!session) return;
+  try {
+    await fetch(`${CHAT_WORKER_URL}/feedback`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.token}`,
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) {
+    // Silencioso: no queremos romper el chat si falla el feedback.
+  }
+}
+
+async function loadVersionInfo() {
+  const el = document.getElementById("version-info");
+  if (!el) return;
+  const today = new Date().toLocaleDateString("es-AR");
+  let hash = "dev";
+  try {
+    const resp = await fetch("/version.json", { cache: "no-store" });
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.hash) hash = data.hash;
+    }
+  } catch (e) {
+    // Sin version.json (entorno local) — se queda en "dev".
+  }
+  el.textContent = `v${hash} · ${today}`;
 }
 
 function showThinking() {
@@ -166,6 +272,7 @@ function setupChat() {
   }
 
   document.getElementById("session-level").textContent = session.level;
+  loadVersionInfo();
 
   // Sugeridas
   const sidebar = document.getElementById("suggested-questions");

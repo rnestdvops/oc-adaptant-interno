@@ -6,6 +6,11 @@ compatibility_date = "2025-01-01"
 [vars]
 SITE_BASE = "https://oc-adaptant.netlify.app"
 
+# KV donde se acumula el feedback (pulgar arriba/abajo + comentarios)
+[[kv_namespaces]]
+binding = "FEEDBACK_KV"
+id = "f3ffb30a15a640fc8ec4e38a740c9557"
+
 # Las siguientes variables sensibles se configuran con:
 #   wrangler secret put ANTHROPIC_API_KEY
 #   wrangler secret put PWD_SOCIOS
