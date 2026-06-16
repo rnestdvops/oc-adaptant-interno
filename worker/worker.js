@@ -21,7 +21,7 @@ const MAX_TOKENS = 4096;
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Access-Control-Max-Age": "86400",
 };
@@ -113,6 +113,11 @@ async function buildSystemPrompt(level, env) {
       "vencimientos.json",
       "adaptant_sas.json",
       "dvops_llc.json",
+      "cash_flow.json",
+      "costos_operativos.json",
+      "personal.json",
+      "nerdcube_legacy.json",
+      "movimientos_bancarios.json",
     ];
     parts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {
@@ -230,73 +235,6 @@ async function handleChat(request, env) {
   });
 }
 
-async function requireAuth(request, env) {
-  const authHeader = request.headers.get("Authorization");
-  if (!authHeader || !authHeader.startsWith("Bearer ")) return null;
-  const token = authHeader.replace("Bearer ", "");
-  return await verifyToken(token, env.SESSION_SECRET);
-}
-
-async function handleFeedbackSubmit(request, env) {
-  const payload = await requireAuth(request, env);
-  if (!payload) {
-    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
-      status: 401,
-      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-    });
-  }
-
-  const body = await request.json();
-  const { vote, question, answer, comment } = body;
-
-  if (vote !== "up" && vote !== "down") {
-    return new Response(JSON.stringify({ error: "vote debe ser 'up' o 'down'" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-    });
-  }
-
-  const entry = {
-    vote,
-    level: payload.level,
-    question: question || "",
-    answer: answer || "",
-    comment: comment || "",
-    ts: Date.now(),
-  };
-
-  const key = `feedback:${entry.ts}:${crypto.randomUUID()}`;
-  await env.FEEDBACK_KV.put(key, JSON.stringify(entry));
-
-  return new Response(JSON.stringify({ ok: true }), {
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-  });
-}
-
-async function handleFeedbackList(request, env) {
-  const payload = await requireAuth(request, env);
-  if (!payload) {
-    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
-      status: 401,
-      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-    });
-  }
-
-  const list = await env.FEEDBACK_KV.list({ prefix: "feedback:" });
-  const entries = await Promise.all(
-    list.keys.map(async (k) => {
-      const raw = await env.FEEDBACK_KV.get(k.name);
-      return raw ? JSON.parse(raw) : null;
-    })
-  );
-
-  const sorted = entries.filter(Boolean).sort((a, b) => b.ts - a.ts);
-
-  return new Response(JSON.stringify({ entries: sorted }), {
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-  });
-}
-
 // ─── Router principal ─────────────────────────────────────────────────────────
 
 export default {
@@ -313,14 +251,6 @@ export default {
 
     if (url.pathname === "/chat" && request.method === "POST") {
       return handleChat(request, env);
-    }
-
-    if (url.pathname === "/feedback" && request.method === "POST") {
-      return handleFeedbackSubmit(request, env);
-    }
-
-    if (url.pathname === "/feedback" && request.method === "GET") {
-      return handleFeedbackList(request, env);
     }
 
     if (url.pathname === "/health") {
