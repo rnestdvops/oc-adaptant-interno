@@ -1,0 +1,11 @@
+# Config declarativa de Netlify (queda versionada en el repo).
+# Reemplaza la configuración por UI: si alguien edita esta sección desde la
+# UI de Netlify, este archivo gana en el próximo deploy.
+
+[build]
+  publish = "."
+  # Genera /version.json con el hash corto del commit en cada deploy.
+  # COMMIT_REF es una variable de entorno que Netlify expone automáticamente.
+  # Se consume desde assets/chat.js → loadVersionInfo() para mostrar
+  # "v{hash} · {fecha}" en el header del chat.
+  command = 'echo "{\"hash\":\"${COMMIT_REF:0:7}\"}" > version.json'
