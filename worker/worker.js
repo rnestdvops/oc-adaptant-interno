@@ -229,10 +229,61 @@ async function handleChat(request, env) {
   });
 
   const data = await anthropicResp.json();
+
+  // Si la API de Anthropic devolvió un error, traducir a mensaje amigable
+  // en lugar de propagar el JSON crudo al frontend.
+  if (!anthropicResp.ok || data?.type === "error") {
+    const friendly = mapAnthropicError(data, anthropicResp);
+    return new Response(JSON.stringify({
+      ok: false,
+      friendly_message: friendly.message,
+      retry_after_s: friendly.retry_after_s,
+      error_type: friendly.type,
+    }), {
+      status: anthropicResp.status,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
   return new Response(JSON.stringify(data), {
     status: anthropicResp.status,
     headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
+}
+
+// ─── Mapeo de errores de la API a mensajes amigables ──────────────────────────
+
+function mapAnthropicError(data, resp) {
+  const type = data?.error?.type || "unknown_error";
+  const retryAfter = parseInt(resp.headers.get("retry-after") || "0", 10);
+
+  const MENSAJES = {
+    rate_limit_error: retryAfter > 0
+      ? `Llegamos al techo de uso del modelo por minuto. Esperá ~${retryAfter}s y volvé a preguntar — la pregunta y el contexto siguen acá.`
+      : "Llegamos al techo de uso del modelo por minuto. Esperá un minuto y volvé a preguntar — la pregunta y el contexto siguen acá.",
+    overloaded_error:
+      "El modelo está saturado en este momento. Reintentá en unos segundos.",
+    authentication_error:
+      "Hay un problema con la configuración del servicio. Avisale a Ernesto o Franco para que revisen.",
+    invalid_request_error:
+      "El pedido salió mal armado. Probá reformular la pregunta o cerrar sesión y volver a entrar para limpiar el contexto.",
+    request_too_large:
+      "Esta conversación ya quedó muy larga para que el modelo la procese. Cerrá sesión y arrancá una nueva para limpiar contexto.",
+    not_found_error:
+      "No encontré lo que estabas buscando. Probá reformular la pregunta.",
+    permission_error:
+      "Este recurso no está habilitado para tu nivel de acceso.",
+    api_error:
+      "Algo falló del lado del modelo. Reintentá en unos segundos — si vuelve a pasar, avisame.",
+    unknown_error:
+      "Algo salió mal y no pude completar la consulta. Reintentá en unos segundos.",
+  };
+
+  return {
+    type,
+    message: MENSAJES[type] || MENSAJES.unknown_error,
+    retry_after_s: retryAfter || null,
+  };
 }
 
 // ─── Router principal ─────────────────────────────────────────────────────────

@@ -238,8 +238,19 @@ async function send(userText) {
 
     const data = await resp.json();
 
+    // Error mapeado por el Worker → mensaje amigable en el tono del OC
+    if (data.ok === false && data.friendly_message) {
+      addMessage("assistant", data.friendly_message);
+      // Removemos el último mensaje del usuario del history para que un
+      // reintento no duplique el contexto ni rompa la alternancia user/assistant.
+      history.pop();
+      return;
+    }
+
+    // Fallback defensivo: errores no mapeados que vengan con formato Anthropic.
     if (data.error) {
-      addMessage("assistant", `Error: ${data.error.message || JSON.stringify(data.error)}`);
+      addMessage("assistant", "Algo salió mal procesando la consulta. Reintentá en unos segundos.");
+      history.pop();
       return;
     }
 
@@ -257,7 +268,8 @@ async function send(userText) {
     }
   } catch (e) {
     clearThinking();
-    addMessage("assistant", `Error de red: ${e.message}`);
+    addMessage("assistant", "No pude conectarme con el servidor. Revisá tu conexión y reintentá.");
+    history.pop();
   } finally {
     sendBtn.disabled = false;
     ta.focus();
