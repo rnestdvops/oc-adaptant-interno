@@ -39,7 +39,7 @@
   </script>
   <script src="/assets/auth.js"></script>
   <script>
-    const { login, saveSession, getSession } = window.OCAuth;
+    const { login: ocLogin, saveSession, getSession } = window.OCAuth;
 
     // Si ya hay sesión, ir al chat
     if (getSession()) window.location.href = "/chat.html";
@@ -53,7 +53,7 @@
       btn.disabled = true;
       btn.textContent = "Verificando...";
       try {
-        const session = await login(pwd);
+        const session = await ocLogin(pwd);
         saveSession(session);
         window.location.href = "/chat.html";
       } catch (err) {

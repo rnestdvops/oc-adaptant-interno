@@ -1,6 +1,6 @@
 // chat.js — lógica del chat
 
-const { WORKER_URL, getSession, clearSession, getSugeridas } = window.OCAuth;
+const { WORKER_URL: CHAT_WORKER_URL, getSession, clearSession, getSugeridas } = window.OCAuth;
 
 const history = []; // messages para la API
 
@@ -113,7 +113,7 @@ async function send(userText) {
   showThinking();
 
   try {
-    const resp = await fetch(`${WORKER_URL}/chat`, {
+    const resp = await fetch(`${CHAT_WORKER_URL}/chat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
