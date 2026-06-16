@@ -12,6 +12,11 @@ Esta capa indica cómo conversar sobre los datos estructurados que viven en `/da
 | `vencimientos.json` | Calendario próximo de obligaciones | Socios + Asesores |
 | `adaptant_sas.json` | Estado constitución, primer ingreso, runway | Todos |
 | `dvops_llc.json` | Operación EEUU, bancos, transferencias | Socios + Asesores |
+| `cash_flow.json` | Proyección mensual + escenarios A/B + pipeline | Socios + Asesores |
+| `costos_operativos.json` | Estimación de suscripciones y costos fijos | Socios + Asesores |
+| `personal.json` | Sueldos de empleados BHP con detalle | Socios + Asesores |
+| `nerdcube_legacy.json` | Cesión a NODOS, contrato y movimientos | Socios + Asesores |
+| `movimientos_bancarios.json` | Resumen mensual + movimientos normales Supervielle | Socios + Asesores |
 
 ## Cómo responder preguntas cuantitativas
 
@@ -68,3 +73,34 @@ Cada JSON del datamart tiene un campo `last_updated`. Cuando respondas usando es
 Decilo explícito. No inventes. Ofrecé estructurar la carga.
 
 > "El listado de suscripciones SaaS de Adaptant todavía no está en el datamart. Puedo ayudarte a estructurar el inventario para que lo cargues — necesito: proveedor, producto, monto USD/ARS, frecuencia, fecha de renovación, método de pago, entidad que lo paga."
+
+## Movimientos bancarios — patrón de uso
+
+`movimientos_bancarios.json` tiene dos partes:
+
+1. **`resumen_mensual`** — un agregado por mes y por categoría (todas las categorías están sumarizadas con `movimientos`, `neto_ars`, `neto_usd`). Esto sirve para responder preguntas tipo "cuánto entró de Mercados Energéticos en mayo" o "cuánto pagamos de impuestos al débito y crédito en 2025".
+
+2. **`movimientos_normales`** — movimientos individuales mayores a $100K ARS o USD 100. Esto sirve para responder preguntas tipo "mostrame los embargos" o "qué cobramos del cliente X en tal fecha".
+
+**Movimientos micro (impuestos chicos, comisiones, IVA bancario) NO están en este archivo** — están en `movimientos_bancarios_detalle.json` que no se carga por defecto. Si el usuario pide algo que requiere ese detalle, decilo:
+
+> "Ese movimiento está en el archivo de detalle (movimientos micro, < $100K ARS). Si querés que lo procese, lo puedo cargar bajo demanda."
+
+**Convenciones del datamart de movimientos:**
+
+- `monto` negativo = débito (salida); positivo = crédito (entrada).
+- `saldo_post` = saldo de la cuenta después del movimiento.
+- `categoria` usa vocabulario controlado: `ingreso_cliente`, `ingreso_dvops`, `ingreso_otro`, `pago_impuesto_nacional`, `pago_impuesto_provincial`, `pago_proveedor`, `pago_servicio`, `pago_sueldo`, `embargo`, `movimiento_interno`, `pago_otros`, `indefinido`.
+- `contraparte` aparece cuando se pudo deducir del concepto (Mercados Energéticos, AMX/Movistar, etc.).
+- `cuenta_id` = `supervielle_ars` o `supervielle_usd` (de momento solo Supervielle cargado).
+
+**Bancos no cargados aún:** Chase d-Vops, Mercado Pago MP1, Mercado Pago MP2, Relay d-Vops, Supervielle USD. Si la pregunta requiere datos de esos bancos, decirlo explícito.
+
+## Cuando hay tensión entre datamarts
+
+Si dos datamarts dan información distinta sobre lo mismo (por ejemplo, un movimiento en `movimientos_bancarios.json` muestra un pago de Macro pero `cash_flow.json` lo refleja como pendiente), el orden de prioridad es:
+
+1. **Movimientos bancarios** = realidad operada (lo que ya pasó).
+2. **Vencimientos** y **deuda_***/`cash_flow` = previsión y cronograma (lo que debería pasar).
+
+Si hay diferencia, mencionarla y dar ambas vistas.
