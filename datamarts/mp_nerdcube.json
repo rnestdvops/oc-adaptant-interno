@@ -1,0 +1,642 @@
+{
+  "cuenta": {
+    "id": "mp_nerdcube",
+    "plataforma": "Mercado Pago",
+    "titular_juridico": "BHP SA",
+    "titular_operativo": "Fernando Galvez (ex contador y ex gerente de administración de BHP SA, ya no en la empresa)",
+    "nombre_operativo": "Nerdcube",
+    "moneda": "ARS",
+    "descripcion": "Cuenta Mercado Pago usada para aislar movimientos operativos de Nerdcube. Registra ingresos de clientes (Mercados Energeticos Consultores SA, Mixer SA, otros), pagos de servicios energéticos (Naturgy San Juan, DGR San Juan), pagos a personas (Carolina Hernandez, Franco Buglioni, Ernesto Corona, Verónica Illanes, Sandra Ponce), proveedores (Medyc, Farmacity) y transferencias intercompany con BHP SA/BHP Global.",
+    "estado_actual": "EN CESE — uso esperado por ~2 meses más (hasta ~ago/2026) para cerrar operaciones históricas. Esta cuenta se está dejando de usar; los pagos nuevos se canalizan por la cuenta MP2 (mp_bhp.json) que está a nombre operativo de Ernesto Corona.",
+    "contiene_movimientos_detalle": "datamart mp_nerdcube_detalle.json (NO inyectado al SYSTEM_PROMPT). El presente archivo summary tiene resumen mensual + estadísticas agregadas para razonamiento estratégico."
+  },
+  "periodo_cubierto": "2023-12 / 2026-06",
+  "meses_disponibles": [
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06"
+  ],
+  "meses_faltantes": [],
+  "resumen_mensual": [
+    {
+      "periodo": "2023-12",
+      "saldo_inicio": 87253.55,
+      "saldo_cierre": 77713.02,
+      "ingresos_ars": 586982.45,
+      "egresos_ars": 596522.98,
+      "movimientos": 32,
+      "por_categoria": {
+        "impuesto_extraccion": 622.19,
+        "ingreso_cobro": 294651.45,
+        "ingreso_intercompany": 50000,
+        "movimiento_interno": 14565,
+        "otro": 12373.8,
+        "pago_persona": 688935.55,
+        "pago_proveedor": 10725,
+        "pago_servicio": 68049.52,
+        "pago_servicio_energia": 43582.92
+      }
+    },
+    {
+      "periodo": "2024-01",
+      "saldo_inicio": 77713.02,
+      "saldo_cierre": 339554.97,
+      "ingresos_ars": 983992.34,
+      "egresos_ars": 722150.39,
+      "movimientos": 34,
+      "por_categoria": {
+        "impuesto_extraccion": 2370.09,
+        "ingreso_cobro": 189831.77,
+        "ingreso_intercompany": 591368.91,
+        "otro": 610.33,
+        "pago_persona": 395015.01,
+        "pago_servicio": 483363.7,
+        "pago_servicio_energia": 43582.92
+      }
+    },
+    {
+      "periodo": "2024-02",
+      "saldo_inicio": 339554.97,
+      "saldo_cierre": 136212.72,
+      "ingresos_ars": 702832.1,
+      "egresos_ars": 906174.35,
+      "movimientos": 24,
+      "por_categoria": {
+        "impuesto_extraccion": 4168.55,
+        "ingreso_cliente": 251141.1,
+        "ingreso_cobro": 13804,
+        "ingreso_intercompany": 437887,
+        "pago_persona": 717976.75,
+        "pago_qr": 15000,
+        "pago_servicio": 113630.79,
+        "pago_servicio_energia": 55398.26
+      }
+    },
+    {
+      "periodo": "2024-03",
+      "saldo_inicio": 136212.72,
+      "saldo_cierre": 247129.49,
+      "ingresos_ars": 928867.61,
+      "egresos_ars": 817950.84,
+      "movimientos": 26,
+      "por_categoria": {
+        "impuesto_extraccion": 3367.64,
+        "ingreso_cliente": 501619.61,
+        "ingreso_cobro": 27608,
+        "ingreso_intercompany": 399640,
+        "otro": 88467.64,
+        "pago_persona": 599190.54,
+        "pago_servicio": 71577.25,
+        "pago_servicio_energia": 55347.77
+      }
+    },
+    {
+      "periodo": "2024-04",
+      "saldo_inicio": 247129.49,
+      "saldo_cierre": 472108.35,
+      "ingresos_ars": 1192735.32,
+      "egresos_ars": 967756.46,
+      "movimientos": 21,
+      "por_categoria": {
+        "impuesto_extraccion": 1777.49,
+        "ingreso_cliente": 551715.32,
+        "ingreso_cobro": 69020,
+        "ingreso_intercompany": 572000,
+        "pago_persona": 789188.07,
+        "pago_servicio": 70768.19,
+        "pago_servicio_energia": 106022.71
+      }
+    },
+    {
+      "periodo": "2024-05",
+      "saldo_inicio": 472108.35,
+      "saldo_cierre": 752987.78,
+      "ingresos_ars": 1148422.99,
+      "egresos_ars": 867543.56,
+      "movimientos": 22,
+      "por_categoria": {
+        "comision_mp": 2940,
+        "impuesto_extraccion": 6964.9,
+        "ingreso_cliente": 611744.08,
+        "ingreso_cobro": 24850,
+        "ingreso_intercompany": 505948.91,
+        "otro": 5880,
+        "pago_persona": 658132.44,
+        "pago_qr": 12683.36,
+        "pago_servicio": 80800.15,
+        "pago_servicio_energia": 106022.71
+      }
+    },
+    {
+      "periodo": "2024-06",
+      "saldo_inicio": 752987.78,
+      "saldo_cierre": 940159.19,
+      "ingresos_ars": 1248562.53,
+      "egresos_ars": 1061391.12,
+      "movimientos": 21,
+      "por_categoria": {
+        "impuesto_extraccion": 2215.76,
+        "ingreso_cliente": 611744.08,
+        "ingreso_cobro": 110354.87,
+        "ingreso_intercompany": 526463.58,
+        "pago_persona": 862232.7,
+        "pago_servicio": 50663.9,
+        "pago_servicio_energia": 146278.76
+      }
+    },
+    {
+      "periodo": "2024-07",
+      "saldo_inicio": 940159.19,
+      "saldo_cierre": 761677.03,
+      "ingresos_ars": 1338114.74,
+      "egresos_ars": 1516596.9,
+      "movimientos": 36,
+      "por_categoria": {
+        "impuesto_extraccion": 785.44,
+        "ingreso_cliente": 703405.5,
+        "ingreso_cobro": 328709.24,
+        "ingreso_intercompany": 306000,
+        "pago_persona": 1013478.73,
+        "pago_servicio": 125703.02,
+        "pago_servicio_energia": 376629.71
+      }
+    },
+    {
+      "periodo": "2024-08",
+      "saldo_inicio": 761677.03,
+      "saldo_cierre": 1726940.59,
+      "ingresos_ars": 2835201.49,
+      "egresos_ars": 1869937.93,
+      "movimientos": 39,
+      "por_categoria": {
+        "impuesto_extraccion": 2979.85,
+        "ingreso_cliente": 794761.37,
+        "ingreso_cobro": 254797.98,
+        "ingreso_intercompany": 1785642.14,
+        "otro": 6036,
+        "pago_persona": 1568338.07,
+        "pago_servicio": 292584.01
+      }
+    },
+    {
+      "periodo": "2024-09",
+      "saldo_inicio": 1726940.59,
+      "saldo_cierre": 1416256.2,
+      "ingresos_ars": 1058999.39,
+      "egresos_ars": 1369683.78,
+      "movimientos": 29,
+      "por_categoria": {
+        "impuesto_extraccion": 1123.33,
+        "ingreso_cliente": 913875.39,
+        "ingreso_cobro": 145124,
+        "otro": 3018,
+        "pago_persona": 1020011.47,
+        "pago_servicio": 115331.62,
+        "pago_servicio_energia": 230199.36
+      }
+    },
+    {
+      "periodo": "2024-10",
+      "saldo_inicio": 1416256.2,
+      "saldo_cierre": 833987.18,
+      "ingresos_ars": 1118775.93,
+      "egresos_ars": 1701044.95,
+      "movimientos": 36,
+      "por_categoria": {
+        "impuesto_extraccion": 7807.4,
+        "ingreso_cliente": 1005194.53,
+        "ingreso_cobro": 113581.4,
+        "pago_persona": 1301235.53,
+        "pago_publicidad": 36904.31,
+        "pago_servicio": 106246.57,
+        "pago_servicio_energia": 248851.14
+      }
+    },
+    {
+      "periodo": "2024-11",
+      "saldo_inicio": 833987.18,
+      "saldo_cierre": 886099.23,
+      "ingresos_ars": 1813528.84,
+      "egresos_ars": 1761416.79,
+      "movimientos": 37,
+      "por_categoria": {
+        "impuesto_extraccion": 6152.18,
+        "ingreso_cliente": 1105765.38,
+        "ingreso_cobro": 198790.06,
+        "ingreso_intercompany": 508973.4,
+        "pago_persona": 1273342.73,
+        "pago_publicidad": 82682.44,
+        "pago_servicio": 150554.46,
+        "pago_servicio_energia": 248684.98
+      }
+    },
+    {
+      "periodo": "2024-12",
+      "saldo_inicio": 886099.23,
+      "saldo_cierre": 1386912.05,
+      "ingresos_ars": 2285275.67,
+      "egresos_ars": 1784462.85,
+      "movimientos": 34,
+      "por_categoria": {
+        "impuesto_extraccion": 8724.47,
+        "ingreso_cliente": 1096865.86,
+        "ingreso_cobro": 188409.81,
+        "ingreso_intercompany": 1000000,
+        "otro": 4024,
+        "pago_persona": 1473822.66,
+        "pago_publicidad": 2950.63,
+        "pago_servicio": 143779.7,
+        "pago_servicio_energia": 151161.39
+      }
+    },
+    {
+      "periodo": "2025-01",
+      "saldo_inicio": 1386912.05,
+      "saldo_cierre": 1082786.15,
+      "ingresos_ars": 1578151.41,
+      "egresos_ars": 1882277.31,
+      "movimientos": 27,
+      "por_categoria": {
+        "impuesto_extraccion": 3165.06,
+        "ingreso_cliente": 1139341.97,
+        "ingreso_cobro": 438809.44,
+        "pago_persona": 1597899.01,
+        "pago_servicio": 130051.85,
+        "pago_servicio_energia": 151161.39
+      }
+    },
+    {
+      "periodo": "2025-02",
+      "saldo_inicio": 1082786.15,
+      "saldo_cierre": 721121.09,
+      "ingresos_ars": 1278910.91,
+      "egresos_ars": 1640575.97,
+      "movimientos": 24,
+      "por_categoria": {
+        "impuesto_extraccion": 1325.14,
+        "ingreso_cliente": 1184888.48,
+        "ingreso_cobro": 28633.44,
+        "ingreso_intercompany": 65388.99,
+        "pago_persona": 1299695.49,
+        "pago_servicio": 211950.07,
+        "pago_servicio_energia": 127605.27
+      }
+    },
+    {
+      "periodo": "2025-03",
+      "saldo_inicio": 721121.09,
+      "saldo_cierre": 217144.43,
+      "ingresos_ars": 1438216.98,
+      "egresos_ars": 1942193.64,
+      "movimientos": 22,
+      "por_categoria": {
+        "impuesto_extraccion": 3249,
+        "ingreso_cliente": 1232257.52,
+        "ingreso_cobro": 151459.46,
+        "ingreso_intercompany": 54500,
+        "pago_persona": 1617544.97,
+        "pago_servicio": 193794.4,
+        "pago_servicio_energia": 127605.27
+      }
+    },
+    {
+      "periodo": "2025-04",
+      "saldo_inicio": 217144.43,
+      "saldo_cierre": 425468,
+      "ingresos_ars": 2076751.79,
+      "egresos_ars": 1868428.22,
+      "movimientos": 32,
+      "por_categoria": {
+        "egreso_intercompany": 100000,
+        "impuesto_extraccion": 925.26,
+        "ingreso_cliente": 1281521.31,
+        "ingreso_cobro": 257030.48,
+        "ingreso_intercompany": 143800,
+        "pago_persona": 1601954.16,
+        "pago_proveedor": 27327.32,
+        "pago_servicio": 188983.94,
+        "pago_servicio_energia": 343637.54
+      }
+    },
+    {
+      "periodo": "2025-05",
+      "saldo_inicio": 425468,
+      "saldo_cierre": 778545.4,
+      "ingresos_ars": 3552104.07,
+      "egresos_ars": 3199026.67,
+      "movimientos": 38,
+      "por_categoria": {
+        "impuesto_extraccion": 8816.43,
+        "ingreso_cliente": 1332755.66,
+        "ingreso_cobro": 287244.48,
+        "ingreso_intercompany": 1932103.93,
+        "pago_persona": 2608031.79,
+        "pago_proveedor": 27327.32,
+        "pago_servicio": 211389.37,
+        "pago_servicio_energia": 343461.76
+      }
+    },
+    {
+      "periodo": "2025-06",
+      "saldo_inicio": 778545.4,
+      "saldo_cierre": 512922.28,
+      "ingresos_ars": 1840749.38,
+      "egresos_ars": 2106372.5,
+      "movimientos": 17,
+      "por_categoria": {
+        "impuesto_extraccion": 716.21,
+        "ingreso_cliente": 1386039.38,
+        "ingreso_cobro": 19720,
+        "ingreso_intercompany": 434990,
+        "pago_persona": 1797805.87,
+        "pago_proveedor": 27327.32,
+        "pago_servicio": 156670.85,
+        "pago_servicio_energia": 123852.25
+      }
+    },
+    {
+      "periodo": "2025-07",
+      "saldo_inicio": 512922.28,
+      "saldo_cierre": 244150.53,
+      "ingresos_ars": 2422078.52,
+      "egresos_ars": 2690850.27,
+      "movimientos": 29,
+      "por_categoria": {
+        "impuesto_extraccion": 3862.07,
+        "ingreso_cliente": 1386039.38,
+        "ingreso_cobro": 736039.14,
+        "ingreso_intercompany": 300000,
+        "pago_persona": 2342045.98,
+        "pago_proveedor": 27327.32,
+        "pago_servicio": 193938.87,
+        "pago_servicio_energia": 123676.03
+      }
+    },
+    {
+      "periodo": "2025-08",
+      "saldo_inicio": 244150.53,
+      "saldo_cierre": 91788.17,
+      "ingresos_ars": 1649074.48,
+      "egresos_ars": 1801436.84,
+      "movimientos": 21,
+      "por_categoria": {
+        "impuesto_extraccion": 672.57,
+        "ingreso_cliente": 1386039.38,
+        "ingreso_cobro": 163035.1,
+        "ingreso_intercompany": 100000,
+        "pago_persona": 1245064.04,
+        "pago_proveedor": 35500,
+        "pago_servicio": 340278.59,
+        "pago_servicio_energia": 179921.64
+      }
+    },
+    {
+      "periodo": "2025-09",
+      "saldo_inicio": 91788.17,
+      "saldo_cierre": 273731.94,
+      "ingresos_ars": 2301926.58,
+      "egresos_ars": 2119982.81,
+      "movimientos": 33,
+      "por_categoria": {
+        "impuesto_extraccion": 4053.79,
+        "ingreso_cliente": 1386039.38,
+        "ingreso_cobro": 655887.2,
+        "ingreso_intercompany": 260000,
+        "pago_persona": 1659530.22,
+        "pago_proveedor": 35500,
+        "pago_servicio": 240977.16,
+        "pago_servicio_energia": 179921.64
+      }
+    },
+    {
+      "periodo": "2025-10",
+      "saldo_inicio": 273731.94,
+      "saldo_cierre": 63583.55,
+      "ingresos_ars": 2268428.15,
+      "egresos_ars": 2478576.54,
+      "movimientos": 23,
+      "por_categoria": {
+        "impuesto_extraccion": 9392.61,
+        "ingreso_cliente": 1412361.56,
+        "ingreso_cobro": 606066.59,
+        "ingreso_intercompany": 250000,
+        "pago_persona": 2032933.89,
+        "pago_proveedor": 35500,
+        "pago_publicidad": 12996.35,
+        "pago_servicio": 162074.19,
+        "pago_servicio_energia": 225679.5
+      }
+    },
+    {
+      "periodo": "2025-11",
+      "saldo_inicio": 63583.55,
+      "saldo_cierre": 118827.38,
+      "ingresos_ars": 2100251.97,
+      "egresos_ars": 2045008.14,
+      "movimientos": 26,
+      "por_categoria": {
+        "impuesto_extraccion": 9785.12,
+        "ingreso_cliente": 1441949.07,
+        "ingreso_cobro": 658302.9,
+        "pago_persona": 1595353.55,
+        "pago_proveedor": 35500,
+        "pago_publicidad": 4120.26,
+        "pago_servicio": 179440.85,
+        "pago_servicio_energia": 220808.36
+      }
+    },
+    {
+      "periodo": "2025-12",
+      "saldo_inicio": 118827.38,
+      "saldo_cierre": 370650.42,
+      "ingresos_ars": 3913375.35,
+      "egresos_ars": 3661552.31,
+      "movimientos": 37,
+      "por_categoria": {
+        "impuesto_extraccion": 8812.12,
+        "ingreso_cliente": 1713179.95,
+        "ingreso_cobro": 472195.4,
+        "ingreso_intercompany": 1728000,
+        "pago_persona": 3120752.6,
+        "pago_proveedor": 35500,
+        "pago_servicio": 326678.75,
+        "pago_servicio_energia": 169808.84
+      }
+    },
+    {
+      "periodo": "2026-01",
+      "saldo_inicio": 370650.42,
+      "saldo_cierre": 2347141.45,
+      "ingresos_ars": 4594600.01,
+      "egresos_ars": 2618108.98,
+      "movimientos": 30,
+      "por_categoria": {
+        "impuesto_extraccion": 3033.41,
+        "ingreso_cliente": 1510485.12,
+        "ingreso_cobro": 2681032.6,
+        "otro": 377446.29,
+        "pago_persona": 2210645.77,
+        "pago_proveedor": 39725.2,
+        "pago_qr": 66830,
+        "pago_servicio": 154899.24,
+        "pago_servicio_energia": 168611.36
+      }
+    },
+    {
+      "periodo": "2026-02",
+      "saldo_inicio": 2347141.45,
+      "saldo_cierre": 127359.21,
+      "ingresos_ars": 2682999.05,
+      "egresos_ars": 4902781.29,
+      "movimientos": 29,
+      "por_categoria": {
+        "impuesto_extraccion": 12431.22,
+        "ingreso_cliente": 1552760.16,
+        "ingreso_cobro": 168113,
+        "ingreso_intercompany": 500000,
+        "movimiento_interno": 400000,
+        "otro": 2001775.14,
+        "pago_persona": 2495570.11,
+        "pago_proveedor": 45050.2,
+        "pago_publicidad": 15823.17,
+        "pago_servicio": 189234.19,
+        "pago_servicio_energia": 205023.15
+      }
+    },
+    {
+      "periodo": "2026-03",
+      "saldo_inicio": 127359.21,
+      "saldo_cierre": 13963.64,
+      "ingresos_ars": 5039094.99,
+      "egresos_ars": 5152490.56,
+      "movimientos": 38,
+      "por_categoria": {
+        "impuesto_extraccion": 3515.73,
+        "ingreso_cliente": 1593114.7,
+        "ingreso_cobro": 507104.89,
+        "movimiento_interno": 2943000,
+        "otro": 1713000,
+        "pago_persona": 2906630,
+        "pago_proveedor": 40825,
+        "pago_servicio": 280594.88,
+        "pago_servicio_energia": 203800.35
+      }
+    },
+    {
+      "periodo": "2026-04",
+      "saldo_inicio": 13963.64,
+      "saldo_cierre": 76829.77,
+      "ingresos_ars": 6910302.34,
+      "egresos_ars": 6847436.21,
+      "movimientos": 49,
+      "por_categoria": {
+        "impuesto_extraccion": 2120.66,
+        "ingreso_cliente": 1646008.14,
+        "ingreso_cobro": 352994.2,
+        "ingreso_intercompany": 1765300,
+        "movimiento_interno": 3146000,
+        "otro": 2805000,
+        "pago_persona": 3483531.18,
+        "pago_proveedor": 40825,
+        "pago_servicio": 213568.23,
+        "pago_servicio_energia": 302391.14
+      }
+    },
+    {
+      "periodo": "2026-05",
+      "saldo_inicio": 76829.77,
+      "saldo_cierre": 152279.11,
+      "ingresos_ars": 5596274.09,
+      "egresos_ars": 5520824.75,
+      "movimientos": 50,
+      "por_categoria": {
+        "comision_mp": 5442,
+        "egreso_intercompany": 550000,
+        "impuesto_extraccion": 6530,
+        "ingreso_cliente": 1685177.53,
+        "ingreso_cobro": 1501816.27,
+        "ingreso_intercompany": 2510000,
+        "movimiento_interno": 140000,
+        "otro": 457679.44,
+        "pago_persona": 3672838.33,
+        "pago_qr": 100215.7,
+        "pago_servicio": 184946.65,
+        "pago_servicio_energia": 302184.6,
+        "rendimiento": 268.32
+      }
+    },
+    {
+      "periodo": "2026-06",
+      "saldo_inicio": 152279.11,
+      "saldo_cierre": 104476.92,
+      "ingresos_ars": 14622943.43,
+      "egresos_ars": 14670745.62,
+      "movimientos": 42,
+      "por_categoria": {
+        "comision_mp": 4943.56,
+        "egreso_intercompany": 13660000,
+        "ingreso_cliente": 1728974.93,
+        "ingreso_cobro": 1564116.45,
+        "ingreso_intercompany": 11100000,
+        "movimiento_interno": 227000,
+        "otro": 80000,
+        "pago_persona": 558734,
+        "pago_proveedor": 33369.27,
+        "pago_qr": 69795,
+        "pago_servicio": 68505.54,
+        "pago_servicio_energia": 195398.25,
+        "rendimiento": 2852.05
+      }
+    }
+  ],
+  "estadisticas": {
+    "total_creditos_ars": 83108524.9,
+    "total_debitos_ars": 83091301.53,
+    "total_movimientos": 958,
+    "por_categoria": {
+      "pago_persona": 50207461.21,
+      "ingreso_cliente": 34146765.84,
+      "ingreso_intercompany": 27828006.86,
+      "egreso_intercompany": 14310000,
+      "ingreso_cobro": 13209133.62,
+      "otro": 7555310.64,
+      "movimiento_interno": 6870565,
+      "pago_servicio_energia": 5506310.97,
+      "pago_servicio": 5501030.5,
+      "pago_proveedor": 497328.95,
+      "pago_qr": 264524.06,
+      "pago_publicidad": 155477.16,
+      "impuesto_extraccion": 131465.69,
+      "comision_mp": 13325.56,
+      "rendimiento": 3120.37
+    }
+  }
+}

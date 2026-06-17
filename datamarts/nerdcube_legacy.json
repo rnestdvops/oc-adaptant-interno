@@ -265,10 +265,14 @@
     "contexto": "NerdCube fue un proyecto de coworking de BHP SA donde se reutilizaban las oficinas para alquilarlas a terceras partes. Aunque formalmente NerdCube es un proyecto/UEN de BHP, en la práctica los flujos de pago nunca quedaron operativamente separados — históricamente se mezclaron entre varias cuentas y titulares.",
     "fuentes_de_pago_personal_nerdcube_historicas": [
       {
-        "fuente": "Cuenta Mercado Pago de NerdCube original (a nombre de Fernando Galvez)",
-        "titular_formal": "Fernando Galvez",
-        "rol_de_fernando": "ex contador y ex gerente de administración de BHP SA",
-        "estado": "DESPLAZADA — ya no se usa para nuevos pagos. La cuenta sigue existiendo a nombre de Fernando pero la operación se está limpiando."
+        "fuente": "Cuenta Mercado Pago 'MP1' de NerdCube (a nombre de Fernando Galvez)",
+        "titular_juridico": "BHP SA",
+        "titular_operativo": "Fernando Galvez",
+        "rol_de_fernando": "ex contador y ex gerente de administración de BHP SA, ya no está más en la empresa",
+        "datamart_summary": "mp_nerdcube.json",
+        "datamart_detalle": "mp_nerdcube_detalle.json",
+        "periodo_cubierto_en_datamart": "2023-12 / 2026-06 (31 meses, 958 movimientos, ~$83M ARS de flujo total)",
+        "estado": "EN CESE — uso esperado por ~2 meses más (hasta ~ago/2026) para cerrar operaciones históricas. Ya no se usa para nuevos pagos pero contiene la mayor parte de la historia operativa de NerdCube."
       },
       {
         "fuente": "Cuenta Supervielle de BHP SA",
@@ -277,8 +281,10 @@
       },
       {
         "fuente": "Cuenta Mercado Pago 'MP2' de BHP SA (nueva)",
+        "titular_juridico": "BHP SA",
+        "titular_operativo": "Ernesto Corona (apertura reciente para control directo del cierre)",
         "datamart": "mp_bhp.json",
-        "razon_de_creacion": "Se creó específicamente para reemplazar la cuenta MP NerdCube original a nombre de Fernando Galvez. Parte del proceso de limpieza/ordenamiento.",
+        "razon_de_creacion": "Se abrió específicamente para reemplazar la cuenta MP1 (que sigue a nombre de Fernando Galvez), permitiendo a Ernesto control directo sobre los flujos durante el proceso de ordenamiento/cierre.",
         "estado": "Activa — recibe el grueso de los pagos al personal NerdCube (Castillo Lazo, Perez Orti, Perez Herrera) actualmente."
       }
     ],

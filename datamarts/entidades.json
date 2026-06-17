@@ -29,15 +29,21 @@
       "cuentas_mp": [
         {
           "nombre": "MP1",
+          "id": "mp_nerdcube",
           "titular_juridico": "BHP SA",
-          "uso": "Cuenta operativa de NerdCube (proyecto/UEN de BHP SA, en cesión a NODOS — ver nerdcube_legacy.json). NO mezclar con MP2.",
-          "datamart": "pendiente"
+          "titular_operativo": "Fernando Galvez (ex contador y ex gerente de administración de BHP SA, ya no en la empresa)",
+          "estado": "EN CESE — uso esperado por ~2 meses más (hasta ~ago/2026) para cerrar operaciones históricas de NerdCube",
+          "uso": "Cuenta operativa histórica de NerdCube (proyecto/UEN de BHP SA, en cesión a NODOS — ver nerdcube_legacy.json). Período cubierto en datamart: 2023-12 → 2026-06 (31 meses, 958 movimientos). Acumula la mayor parte de la historia operativa de NerdCube (ingresos de clientes coworking, pagos al personal, servicios energéticos Naturgy/Energía SJ, impuestos provinciales). NO mezclar con MP2 — son cuentas distintas con titulares operativos distintos aunque ambas son jurídicamente de BHP SA.",
+          "datamart_summary": "mp_nerdcube.json",
+          "datamart_detalle": "mp_nerdcube_detalle.json"
         },
         {
           "nombre": "MP2",
           "id": "mp_bhp",
           "titular_juridico": "BHP SA",
-          "uso": "Cuenta operativa general de BHP SA — distribuciones a socios (Ernesto Corona, Franco Buglioni), pagos al personal en general INCLUYENDO al personal de NerdCube (Castillo Lazo, Perez Orti, Perez Herrera) y a Carolina Hernández, proveedores de servicio (Anthropic, Santa Fe 3200, Farmacity, RES), impuestos provinciales (DGR San Juan) y pagos de préstamos (cuota Macro a Juan Corona).",
+          "titular_operativo": "Ernesto Corona (apertura reciente, control directo para el proceso de cierre y limpieza)",
+          "razon_de_creacion": "Se abrió específicamente para reemplazar la cuenta MP1 (que sigue a nombre de Fernando Galvez) en el proceso de ordenamiento. Permite a Ernesto control directo sobre los flujos durante el cierre.",
+          "uso": "Cuenta operativa general de BHP SA, también usada para flujos NerdCube en este proceso de cierre. Distribuciones a socios (Ernesto Corona, Franco Buglioni), pagos al personal en general INCLUYENDO al personal de NerdCube (Castillo Lazo, Perez Orti, Perez Herrera) y a Carolina Hernández, proveedores de servicio (Anthropic, Santa Fe 3200, Farmacity, RES), impuestos provinciales (DGR San Juan) y pagos de préstamos (cuota Macro a Juan Corona).",
           "datamart": "mp_bhp.json"
         }
       ],
