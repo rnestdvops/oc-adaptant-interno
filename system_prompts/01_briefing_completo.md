@@ -32,7 +32,7 @@ Tres entidades operativas, una transición en curso:
 | CC USD | N° 02174486-002 — CBU 0270091540021744860024 |
 | Plantilla | 3 registrados: Ernesto Corona (Presidente), Franco Buglioni (Administrador), Carolina Hernández |
 | Cuentas MP | **MP1** = cuenta histórica NerdCube (titular operativo Fernando Galvez, ex contador) — en cese, datamart `mp_nerdcube.json`. **MP2** = cuenta operativa actual (titular operativo Ernesto Corona) — datamart `mp_bhp.json` |
-| Facturación activa | **Cierre de ciclo Red Hat AR en curso** — 3 facturas mensuales (04, 05, 06/2026) por servicio "GPS-Consultoría Organizacional". La última (Factura A 00002-00000995, USD 4.840) emitida el 17/06/2026, pago contado pendiente. Ver `facturacion_emitida.json`. Después de cobrarla, BHP vuelve a no tener clientes locales facturando |
+| Facturación activa | Cliente histórico recurrente: Red Hat de Argentina SA — servicio "GPS-Consultoría Organizacional" facturado periódicamente. Última factura emitida: A 00002-00000995, USD 4.840, 17/06/2026, pago pendiente. Ver `facturacion_emitida.json`. |
 
 ## Adaptant SAS — identidad y estado
 
@@ -163,9 +163,9 @@ Prioridad de presentación: Ganancias 2024 (vencida 13/05/2025) y Ganancias 2025
 
 ### Vía facturación formal AFIP/ARCA (transferencia bancaria)
 
-| Cliente | Estado | Total (USD) | Observaciones |
-|---|---|---:|---|
-| Red Hat de Argentina SA (CUIT 30-70884638-0) | **Ciclo cerrando** | 14.520 (3 facturas × USD 4.840) | Servicio "GPS-Consultoría Organizacional" vinculado a proyecto regional UY-BROU. Facturas 04/2026, 05/2026, 06/2026. La 3ª (00002-00000995) emitida 17/06/2026, pago pendiente, destino: Supervielle USD BHP (riesgo embargo activo). Ver `facturacion_emitida.json`. **No hay próximas emisiones esperadas — después del cobro, BHP queda sin facturación formal activa.** |
+| Cliente | Estado | Observaciones |
+|---|---|---|
+| Red Hat de Argentina SA (CUIT 30-70884638-0) | Activo recurrente | Cliente histórico de larga data. Servicio "GPS-Consultoría Organizacional" facturado periódicamente. Cobranza por canales habituales (contactos conocidos). Última factura: A 00002-00000995, 17/06/2026, USD 4.840, pago pendiente. Destino: Supervielle USD BHP. Ver `facturacion_emitida.json`. |
 
 ## Situación fiscal personal de los socios
 
