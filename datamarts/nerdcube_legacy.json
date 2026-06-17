@@ -260,5 +260,29 @@
     "Confirmar CUIT, representante legal y datos completos de BHP en el contrato",
     "Confirmar razón social, CUIT y datos completos de NODOS en el contrato",
     "Aclaración sobre diferencia de monto de liquidación entre Sara Pérez ($650K) y las otras dos (probablemente refleja antigüedad muy distinta)"
-  ]
+  ],
+  "historia_operativa_y_pagos_cruzados": {
+    "contexto": "NerdCube fue un proyecto de coworking de BHP SA donde se reutilizaban las oficinas para alquilarlas a terceras partes. Aunque formalmente NerdCube es un proyecto/UEN de BHP, en la práctica los flujos de pago nunca quedaron operativamente separados — históricamente se mezclaron entre varias cuentas y titulares.",
+    "fuentes_de_pago_personal_nerdcube_historicas": [
+      {
+        "fuente": "Cuenta Mercado Pago de NerdCube original (a nombre de Fernando Galvez)",
+        "titular_formal": "Fernando Galvez",
+        "rol_de_fernando": "ex contador y ex gerente de administración de BHP SA",
+        "estado": "DESPLAZADA — ya no se usa para nuevos pagos. La cuenta sigue existiendo a nombre de Fernando pero la operación se está limpiando."
+      },
+      {
+        "fuente": "Cuenta Supervielle de BHP SA",
+        "datamart": "movimientos_bancarios.json",
+        "estado": "Activa — aparecen pagos cruzados a personal y proveedores NerdCube desde acá."
+      },
+      {
+        "fuente": "Cuenta Mercado Pago 'MP2' de BHP SA (nueva)",
+        "datamart": "mp_bhp.json",
+        "razon_de_creacion": "Se creó específicamente para reemplazar la cuenta MP NerdCube original a nombre de Fernando Galvez. Parte del proceso de limpieza/ordenamiento.",
+        "estado": "Activa — recibe el grueso de los pagos al personal NerdCube (Castillo Lazo, Perez Orti, Perez Herrera) actualmente."
+      }
+    ],
+    "implicancia_para_consultas": "Cuando el modelo vea pagos a Castillo Lazo, Perez Orti o Perez Herrera desde cualquier cuenta (MP2 / Supervielle / históricamente la MP original de Fernando), no son pagos genéricos de BHP — son sueldos del personal NerdCube saliendo de cuentas distintas porque la operación nunca quedó separada. Lo mismo aplica a proveedores históricos del coworking. NO interpretar como gastos generales de BHP.",
+    "proceso_de_ordenamiento_actual": "El propio cierre/cesión de NerdCube a NODOS (30/06/2026) es parte del proceso de limpieza más amplio. Una vez cerrada la operación, queda la tarea de cerrar formalmente la cuenta MP NerdCube original a nombre de Fernando Galvez."
+  }
 }
