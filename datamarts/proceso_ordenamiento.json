@@ -20,9 +20,9 @@
         "criticidad": "ALTA — necesario para concurso, expedientes ARCA, transición Carolina, eventual cierre BHP"
       },
       "cpa_eeuu": {
-        "nombre_provisional": "Sociedades Americanas (VERIFICAR nombre exacto — viene de speech-to-text)",
+        "nombre": "Sociedades Americanas",
         "estado": "RELACIÓN ACTIVA — pago pendiente",
-        "rol": "Servicios fiscales d-Vops LLC ante IRS"
+        "rol": "Firma que asesora y mantiene al día los papeles fiscales y societarios de d-Vops LLC en Estados Unidos (presentaciones IRS, mantenimiento societario)"
       }
     }
   },
@@ -210,12 +210,12 @@
       "tareas": [
         {
           "id": "E1",
-          "tarea": "Conversación con Carolina sobre el cuadro actual y cómo se proyecta su rol en el nuevo propósito",
-          "responsable": "Ernesto (familiar directo)",
-          "deadline_objetivo": null,
-          "estado": "pendiente_confirmar (no me dijo si ya se tuvo)",
+          "tarea": "Conversación continua con Carolina sobre el cuadro y cómo se proyecta su rol en el nuevo propósito",
+          "responsable": "Ernesto (familiar directo) + Franco + Carolina",
+          "deadline_objetivo": "flujo continuo, sin evento puntual",
+          "estado": "en_curso",
           "bloqueada_por": null,
-          "notas": "El framing es inclusivo: cómo se proyecta su rol, no cómo desvincular. Tarea de cuidado, no de transición de salida."
+          "notas": "NO es una conversación formal pendiente — es flujo continuo, Carolina está colaborando en el día a día y la conversación va sucediendo. La decisión sobre su proyección en el negocio se toma EN CONJUNTO CON ELLA (co-creada), no sobre ella. Esto refuerza el principio_rector inclusivo y el marco del estado 'en revisión' del briefing."
         },
         {
           "id": "E2",
@@ -249,7 +249,7 @@
     {
       "id": "F",
       "nombre": "Cumplimiento fiscal personal de los socios",
-      "estado_general": "PENDIENTE — sin información operativa reciente provista por el usuario en esta carga inicial",
+      "estado_general": "PENDIENTE de ejecución formal. Nada iniciado todavía porque depende del contador nuevo (BLK1). La información F1-F6 hoy es DE GESTIÓN para los socios (panorama del frente personal para tomar decisiones); cuando llegue el contador se convierte en DE ACCIÓN (órdenes de trabajo concretas con esquema, deadlines y entregables).",
       "tareas": [
         {
           "id": "F1",
@@ -343,11 +343,8 @@
     }
   ],
   "huecos_de_informacion_a_completar": [
-    "Confirmar nombre exacto del CPA EEUU (provisional 'Sociedades Americanas' — proviene de transcripción speech-to-text, alta probabilidad de error)",
-    "Tarea E1: ¿la conversación con Carolina ya se tuvo? ¿Cuándo? ¿Qué se conversó?",
-    "Línea F: el usuario no proveyó información operativa específica sobre el estado de cada cumplimiento fiscal personal en la carga inicial — todas las tareas F1-F6 están marcadas como 'pendiente' por defecto, pero podría haber gestiones ya iniciadas no registradas",
     "Línea D2: posible deuda IIBB en otras jurisdicciones más allá de San Juan — pendiente de confirmar/mapear",
-    "Deadlines concretos en la mayoría de tareas — solo A1 tiene fecha objetivo definida (2026-06-30)"
+    "Deadlines concretos en la mayoría de tareas — solo A1 tiene fecha objetivo definida (2026-06-30). Otras esperan respuesta de terceros (cobro GBM, firma digital Franco, contador nuevo) cuyo timing no controlamos directamente."
   ],
   "planillas_asociadas": {
     "planilla_1_estado_deuda_bhp": "datamart deuda_arca.json + datamart deuda_privada.json",
