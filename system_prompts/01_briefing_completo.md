@@ -213,7 +213,7 @@ La Ley 11.683 art. 8 habilita a ARCA a perseguir al Presidente de la SA por deud
 | C · Mantenimiento d-Vops | Corazón del cash flow. Sostener sin sobresaltos. Confirmar IRS Form 1065, Bienes Personales ARCA, annual report Wyoming, BOI/FinCEN. |
 | D · Monitoreo riesgo ARCA | Mecanismo principal de resolución BHP será probablemente una moratoria. Monitorear aperturas. Mantener DDJJ al día. |
 | E · Regularización fiscal personal | Ernesto: Ganancias 2024, IVA 2022, Bienes Personales 2016. Franco: Bienes Personales 2017–2021. |
-| F · Capital humano | Definir transición de Carolina Hernández (art. 223 bis LCT u otra figura). Trato digno y cumplimiento legal. |
+| F · Capital humano | Definir la forma contractual más conveniente para que Carolina Hernández continúe contribuyendo a la organización sin generar erogación adicional. Evaluar alternativas de reestructuración (cambio de figura, traslado a otra entidad del grupo, esquema mixto). Trato digno y cumplimiento legal — consulta a abogado obligatoria. |
 
 ## Significado de los estados en el datamart
 
