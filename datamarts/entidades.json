@@ -29,11 +29,16 @@
       "cuentas_mp": [
         {
           "nombre": "MP1",
-          "rol": "principal"
+          "titular_juridico": "BHP SA",
+          "uso": "Cuenta operativa de NerdCube (proyecto/UEN de BHP SA, en cesión a NODOS — ver nerdcube_legacy.json). NO mezclar con MP2.",
+          "datamart": "pendiente"
         },
         {
           "nombre": "MP2",
-          "rol": "BHP Global — canal alternativo"
+          "id": "mp_bhp",
+          "titular_juridico": "BHP SA",
+          "uso": "Cuenta operativa general de BHP SA — distribuciones a socios (Ernesto Corona, Franco Buglioni), pagos al personal en general INCLUYENDO al personal de NerdCube (Castillo Lazo, Perez Orti, Perez Herrera) y a Carolina Hernández, proveedores de servicio (Anthropic, Santa Fe 3200, Farmacity, RES), impuestos provinciales (DGR San Juan) y pagos de préstamos (cuota Macro a Juan Corona).",
+          "datamart": "mp_bhp.json"
         }
       ],
       "plantilla": [
