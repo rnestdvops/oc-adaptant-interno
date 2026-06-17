@@ -32,7 +32,7 @@ Tres entidades operativas, una transición en curso:
 | CC USD | N° 02174486-002 — CBU 0270091540021744860024 |
 | Plantilla | 3 registrados: Ernesto Corona (Presidente), Franco Buglioni (Administrador), Carolina Hernández |
 | Cuentas MP | **MP1** = cuenta histórica NerdCube (titular operativo Fernando Galvez, ex contador) — en cese, datamart `mp_nerdcube.json`. **MP2** = cuenta operativa actual (titular operativo Ernesto Corona) — datamart `mp_bhp.json` |
-| Facturación activa | Sin clientes activos locales al cierre de este corte |
+| Facturación activa | **Cierre de ciclo Red Hat AR en curso** — 3 facturas mensuales (04, 05, 06/2026) por servicio "GPS-Consultoría Organizacional". La última (Factura A 00002-00000995, USD 4.840) emitida el 17/06/2026, pago contado pendiente. Ver `facturacion_emitida.json`. Después de cobrarla, BHP vuelve a no tener clientes locales facturando |
 
 ## Adaptant SAS — identidad y estado
 
@@ -150,7 +150,9 @@ Prioridad de presentación: Ganancias 2024 (vencida 13/05/2025) y Ganancias 2025
 | Mutuo Moroni | USD | USD 20.000 |
 | **Total pasivo ARS (sin Moroni)** | **ARS** | **$152.405.348** |
 
-## Clientes activos BHP — vía Mercado Pago
+## Clientes activos BHP
+
+### Vía Mercado Pago (cobros recurrentes)
 
 | Cliente | Pagos | Total ($) | Observaciones |
 |---|---:|---:|---|
@@ -158,6 +160,12 @@ Prioridad de presentación: Ganancias 2024 (vencida 13/05/2025) y Ganancias 2025
 | INFOCONTROL SAS | 16 | 4.514.539 | ACTIVO · cliente nuevo |
 | Leopoldo Gonzalez Castillo | 6 | 3.026.832 | Propietario oficinas — alquileres sede operativa San Juan |
 | Roberto Julian Garcia Nacif | 4 | 4.560.150 | Rol pendiente verificar por Ernesto |
+
+### Vía facturación formal AFIP/ARCA (transferencia bancaria)
+
+| Cliente | Estado | Total (USD) | Observaciones |
+|---|---|---:|---|
+| Red Hat de Argentina SA (CUIT 30-70884638-0) | **Ciclo cerrando** | 14.520 (3 facturas × USD 4.840) | Servicio "GPS-Consultoría Organizacional" vinculado a proyecto regional UY-BROU. Facturas 04/2026, 05/2026, 06/2026. La 3ª (00002-00000995) emitida 17/06/2026, pago pendiente, destino: Supervielle USD BHP (riesgo embargo activo). Ver `facturacion_emitida.json`. **No hay próximas emisiones esperadas — después del cobro, BHP queda sin facturación formal activa.** |
 
 ## Situación fiscal personal de los socios
 

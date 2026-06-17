@@ -1,0 +1,91 @@
+{
+  "last_updated": "2026-06-17",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Tracking de facturas emitidas con ciclo de cobranza, pasivos fiscales asociados y alertas. Cubre el flujo ANTE-cobro (qué se emitió, qué falta cobrar, cuándo vence). El flujo POST-cobro está en los datamarts bancarios (movimientos_bancarios.json, chase_dvops.json, mp_bhp.json).",
+  "facturas": [
+    {
+      "id": "redhat-ar-bhp-00002-00000995",
+      "sociedad_emisora": "BHP SA",
+      "punto_venta": "00002",
+      "numero": "00000995",
+      "tipo_comprobante": "Factura A (cod. 01)",
+      "cae": {
+        "numero": "86240082707364",
+        "fecha_vto": "2026-06-27"
+      },
+      "fecha_emision": "2026-06-17",
+      "periodo_facturado": {
+        "desde": "2026-06-02",
+        "hasta": "2026-07-02"
+      },
+      "cliente": {
+        "razon_social": "RED HAT DE ARGENTINA SA",
+        "cuit": "30-70884638-0",
+        "domicilio": "Butty Enrique Ing. 240 Piso 14, CABA",
+        "condicion_iva": "IVA Responsable Inscripto"
+      },
+      "concepto": "GPS-Consultoría Organizacional · Opp 71265369 · PA 66593 · UY-BROU Standard Purchase Order 2010020425",
+      "vinculacion_proyecto": "Componente regional: el servicio facturado se vincula con BROU (Banco República Oriental del Uruguay). Red Hat AR es contracting entity de un proyecto regional.",
+      "moneda": "USD",
+      "importes_usd": {
+        "neto_gravado": 4000.00,
+        "iva_21": 840.00,
+        "total": 4840.00
+      },
+      "tc_consignado_ars_por_usd": 1436.50,
+      "total_en_ars": 6952660.00,
+      "condicion_pago": "Contado / Cuenta Corriente / Transferencia Bancaria",
+      "fecha_vto_pago": "2026-06-17",
+      "estado_cobro": "pendiente",
+      "monto_cobrado_usd": 0,
+      "cuenta_destino_esperada": {
+        "banco": "Banco Supervielle",
+        "sucursal": "San Juan Rivadavia 74 Este",
+        "cuenta": "CC USD 02174486-002",
+        "cbu": "0270091540021744860024",
+        "titular": "BHP SA"
+      },
+      "alerta_cuenta_destino": "CRÍTICA — La CC USD de BHP en Supervielle está bajo riesgo activo de embargo por ARCA. Embargo ya ejecutado sobre CC Pesos en mayo 2026 ($9,86M) y embargo menor sobre la propia CC USD (USD 192). Aplica directamente la Línea A3 del proceso de ordenamiento (manejo defensivo): al ingresar el cobro, retirar inmediatamente con destino documentable y razonable. NO desviar a Adaptant ni d-Vops (Línea Roja 7 del briefing — continuidad económica disfrazada).",
+      "pasivos_fiscales_generados": {
+        "iva_debito_fiscal_usd": 840.00,
+        "iva_debito_fiscal_ars_aprox": 1206660.00,
+        "iva_periodo_devengamiento": "06/2026",
+        "iva_vto_aprox": "2026-07-21",
+        "iibb_base_imponible_ars": 6952660.00,
+        "iibb_jurisdicciones_a_evaluar": [
+          "San Juan (sede emisora — DGR SJ, ya tiene plan activo)",
+          "CABA (domicilio del cliente — confirmar si requiere alta de IIBB CABA)"
+        ],
+        "nota": "Esta factura agrega obligaciones fiscales nuevas a BHP en el mismo período donde se busca reducción controlada (Línea A). Importante: aunque sea revenue, suma a la deuda con ARCA si no se ingresa el IVA del período."
+      },
+      "serie_relacionada": {
+        "descripcion": "Esta es la TERCERA Y ÚLTIMA factura del servicio 'GPS-Consultoría Organizacional' a Red Hat AR. La serie completa probablemente cubre los meses 04/2026, 05/2026 y 06/2026 (ciclo de 3 meses).",
+        "estado_serie": "CIERRE — esta factura cierra el ciclo, no hay próxima emisión esperada de este servicio",
+        "facturas_anteriores_pendientes_de_cargar": [
+          "Factura 1 de 3 (probablemente período 04/2026) — pendiente de cargar al datamart",
+          "Factura 2 de 3 (probablemente período 05/2026) — pendiente de cargar al datamart"
+        ],
+        "implicancia_estrategica": "Después del cobro de esta factura, BHP vuelve a NO tener clientes locales facturando activamente. La actividad reciente de BHP con Red Hat AR es un evento acotado, no una reactivación comercial sostenida."
+      },
+      "gestiones": [
+        {
+          "fecha": "2026-06-17",
+          "accion": "Factura emitida y autorizada por ARCA — CAE 86240082707364 obtenido"
+        }
+      ],
+      "proxima_accion": "Enviar comprobante a Red Hat AR antes del vencimiento de CAE (2026-06-27) si no se envió ya. Confirmar fecha esperada de pago (la factura es 'Contado' pero en práctica el área de pagos del cliente corporativo suele tener ciclo propio — preguntar a contacto comercial).",
+      "notas": [
+        "Es la última factura del ciclo de 3 con Red Hat AR por este servicio.",
+        "Si las 3 facturas se cobran al mismo precio (USD 4.840), el revenue total bruto del ciclo fue USD 14.520 ≈ ARS 20.857.980 al TC actual.",
+        "Por ser cliente corporativo grande, conviene confirmar con el equipo de pagos de Red Hat la fecha real esperada de transferencia."
+      ]
+    }
+  ],
+  "huecos_de_informacion_a_completar": [
+    "Subir al datamart las 2 facturas anteriores del ciclo Red Hat AR (probablemente períodos 04/2026 y 05/2026) — sus PDFs deberían existir.",
+    "Confirmar si esas 2 facturas anteriores YA fueron cobradas. Si sí: cruzar con movimientos_bancarios.json (Supervielle USD) para identificar los ingresos correspondientes.",
+    "Contacto en Red Hat AR para gestión de cobranza (nombre, email, teléfono) — para poder hacer seguimiento si el pago se demora.",
+    "Confirmar si BHP debe darse de alta en IIBB CABA por el cliente CABA o si se mantiene solo en San Juan."
+  ]
+}

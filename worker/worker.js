@@ -129,6 +129,7 @@ async function buildSystemPrompt(level, env) {
       "mp_bhp.json",
       "mp_nerdcube.json",
       "proceso_ordenamiento.json",
+      "facturacion_emitida.json",
     ];
     datamartParts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {
