@@ -92,18 +92,25 @@ async function buildSystemPrompt(level, env) {
     return await r.json();
   };
 
-  const parts = [];
+  // Separamos en dos bloques para tener dos cache breakpoints independientes:
+  //   1) promptParts  → capas .md (cambian raramente — semanas)
+  //   2) datamartParts → datamarts JSON (cambian semanalmente o más)
+  // Cuando solo cambian los datamarts (caso típico), el cache del bloque 1
+  // se mantiene y solo se reescribe el bloque 2. Ahorra ~90% del costo de
+  // input en queries repetidas dentro de la ventana del cache (5 min TTL).
+  const promptParts = [];
+  const datamartParts = [];
 
   // Capa 00 — siempre
-  parts.push(await fetchText("/system_prompts/00_personalidad.md"));
+  promptParts.push(await fetchText("/system_prompts/00_personalidad.md"));
 
   if (level === "socios" || level === "asesores") {
     // Capa 01 — briefing completo
-    parts.push(await fetchText("/system_prompts/01_briefing_completo.md"));
+    promptParts.push(await fetchText("/system_prompts/01_briefing_completo.md"));
     // Capa 02 — datamart guide
-    parts.push(await fetchText("/system_prompts/02_datamart_guide.md"));
+    promptParts.push(await fetchText("/system_prompts/02_datamart_guide.md"));
     // Capa 04 — modelo privacidad
-    parts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
+    promptParts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
 
     // Datamarts inyectados
     const datamarts = [
@@ -120,18 +127,18 @@ async function buildSystemPrompt(level, env) {
       "movimientos_bancarios.json",
       "chase_dvops.json",
     ];
-    parts.push("\n\n## Datamarts cargados\n");
+    datamartParts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {
       const data = await fetchJson(`/datamarts/${dm}`);
-      parts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
+      datamartParts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
     }
   } else if (level === "inversores") {
     // Solo capa 03 + 04 + datamart Adaptant
-    parts.push(await fetchText("/system_prompts/03_vista_inversor.md"));
-    parts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
+    promptParts.push(await fetchText("/system_prompts/03_vista_inversor.md"));
+    promptParts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
 
     const datamarts = ["entidades.json", "adaptant_sas.json"];
-    parts.push("\n\n## Información disponible\n");
+    datamartParts.push("\n\n## Información disponible\n");
     for (const dm of datamarts) {
       const data = await fetchJson(`/datamarts/${dm}`);
       // Para entidades, filtrar solo Adaptant SAS
@@ -140,14 +147,30 @@ async function buildSystemPrompt(level, env) {
           ...data,
           entidades: data.entidades.filter(e => e.visibility === "publico")
         };
-        parts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(filtered, null, 2)}\n\`\`\`\n`);
+        datamartParts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(filtered, null, 2)}\n\`\`\`\n`);
       } else {
-        parts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
+        datamartParts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
       }
     }
   }
 
-  return parts.join("\n\n");
+  // Devolvemos como array de content blocks con cache_control. Anthropic
+  // intenta cachear todo el prefix hasta cada cache_control. Si el contenido
+  // del bloque es idéntico a una request anterior dentro de los últimos
+  // 5 min, se cobra como cache_read (~10% del costo input). Si no, es
+  // cache_write (~125%) y queda cacheado para las siguientes.
+  return [
+    {
+      type: "text",
+      text: promptParts.join("\n\n"),
+      cache_control: { type: "ephemeral" },
+    },
+    {
+      type: "text",
+      text: datamartParts.join("\n\n"),
+      cache_control: { type: "ephemeral" },
+    },
+  ];
 }
 
 // ─── Endpoints ────────────────────────────────────────────────────────────────
