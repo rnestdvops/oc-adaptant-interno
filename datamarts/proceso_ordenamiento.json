@@ -1,0 +1,357 @@
+{
+  "last_updated": "2026-06-17",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "marco_referencia": "Documento Marco V1.0 — Plan de ordenamiento, transición y crecimiento (BHP → Adaptant con d-Vops LLC, junio 2026). Ver system_prompts/01_briefing_completo.md para principios, líneas rojas, criterios de decisión y gobernanza. ESTE datamart es el TRACKING OPERATIVO (planilla 3 del marco — cronograma de transición y apagado), no el marco rector.",
+  "estado_general_del_proceso": {
+    "fase": "EN CURSO — múltiples líneas avanzando en paralelo",
+    "principal_factor_de_velocidad": "Disponibilidad de asesores adecuados (contador y abogado) y caja para cubrir honorarios pendientes",
+    "asesores": {
+      "contador_actual": {
+        "estado": "DEFICIENTE — no pasa información de forma oportuna",
+        "impacto": "Ernesto suple parcialmente con asistentes IA (especialmente en monitoreo ARCA). Frena líneas A, D, E, F."
+      },
+      "contador_nuevo": {
+        "estado": "EN BÚSQUEDA ACTIVA",
+        "criticidad": "ALTA — desbloquea simultáneamente 4 de las 6 líneas"
+      },
+      "abogado": {
+        "estado": "PENDIENTE de identificar y contratar",
+        "criticidad": "ALTA — necesario para concurso, expedientes ARCA, transición Carolina, eventual cierre BHP"
+      },
+      "cpa_eeuu": {
+        "nombre_provisional": "Sociedades Americanas (VERIFICAR nombre exacto — viene de speech-to-text)",
+        "estado": "RELACIÓN ACTIVA — pago pendiente",
+        "rol": "Servicios fiscales d-Vops LLC ante IRS"
+      }
+    }
+  },
+  "lineas_de_trabajo": [
+    {
+      "id": "A",
+      "nombre": "Reducción controlada BHP",
+      "estado_general": "EN CURSO — varias tareas abiertas",
+      "tareas": [
+        {
+          "id": "A1",
+          "tarea": "Bajas como empleados de Ernesto Corona y Franco Buglioni en BHP SA (quedan solo como directores)",
+          "responsable": "Ernesto + Franco",
+          "deadline_objetivo": "2026-06-30",
+          "estado": "no_iniciada",
+          "prioridad": "ALTA — debería cerrarse este mes según definición del usuario",
+          "bloqueada_por": null,
+          "notas": "Detiene la sangría de obligaciones de aportes/contribuciones sobre los socios como empleados. Confirmar tratamiento previsional/impositivo apropiado con asesor antes de ejecutar."
+        },
+        {
+          "id": "A2",
+          "tarea": "Identificar y dar de baja regímenes en los que BHP está inscripta y ya no aplican",
+          "responsable": "Contador (a definir)",
+          "deadline_objetivo": null,
+          "estado": "bloqueada",
+          "bloqueada_por": "Búsqueda de contador nuevo (BLK1)",
+          "notas": "Cada régimen inscripto sin actividad sigue generando obligación de DDJJ en cero. Reducir el universo de obligaciones formales reduce el riesgo de multas por omisión."
+        },
+        {
+          "id": "A3",
+          "tarea": "Manejo defensivo de cuentas bancarias BHP",
+          "responsable": "Ernesto",
+          "deadline_objetivo": "actividad continua",
+          "estado": "en_curso",
+          "prioridad": "CRÍTICA — riesgo activo de embargos",
+          "bloqueada_por": null,
+          "notas": "Estar muy atento a movimientos de ARCA para retirar fondos ANTES de que ingresen a las cuentas embargables. Acción legítima en la medida que el destino sea documentable y razonable (ver línea roja 6 del briefing — diferencia entre defensa y vaciamiento)."
+        },
+        {
+          "id": "A4",
+          "tarea": "Asegurar que todas las DDJJ formales BHP se sigan presentando, aunque sea en cero",
+          "responsable": "Contador",
+          "deadline_objetivo": "vencimientos mensuales recurrentes",
+          "estado": "parcial",
+          "bloqueada_por": "Coordinación con contador actual (deficiente)",
+          "notas": "El briefing lista 76 DDJJ pendientes — ver sección 'DDJJ pendientes BHP'. Prioridad: Ganancias 2024 (vencida 13/05/2025) y Ganancias 2025 (vencida 13/05/2026)."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "nombre": "Constitución Adaptant SAS",
+      "estado_general": "BLOQUEADA en la habilitación de firma digital de Franco",
+      "tareas": [
+        {
+          "id": "B1",
+          "tarea": "Franco Buglioni habilita su firma digital",
+          "responsable": "Franco",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": null,
+          "notas": "Franco reside en Córdoba. La firma digital es requisito para hacer la constitución de Adaptant SAS de manera remota (sin viajar a CABA, jurisdicción de constitución)."
+        },
+        {
+          "id": "B2",
+          "tarea": "Ejecutar checklist de constitución (estatuto, Registro Público CABA, Boletín Oficial, CUIT, IIBB, cuenta bancaria, libros, IP)",
+          "responsable": "Ernesto + Franco + escribano/abogado",
+          "deadline_objetivo": null,
+          "estado": "bloqueada",
+          "bloqueada_por": "B1 (firma digital Franco) + BLK2 (abogado)",
+          "notas": "Estatuto y checklist YA están preparados. Una vez habilitada la firma digital, el proceso se ejecuta en remoto."
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "nombre": "Mantenimiento d-Vops LLC",
+      "estado_general": "ESPERA DE CAJA — cobro GBM pendiente para destrabar pago CPA",
+      "tareas": [
+        {
+          "id": "C1",
+          "tarea": "Recibir pago de GBM (cliente vía Lat Capital Solutions)",
+          "responsable": "GBM (externo)",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": null,
+          "notas": "Trigger de la cadena: con este ingreso se puede pagar a Sociedades Americanas y destrabar el cumplimiento fiscal d-Vops. Ver historial de pagos GBM en datamart chase_dvops.json."
+        },
+        {
+          "id": "C2",
+          "tarea": "Pagar a Sociedades Americanas (CPA EEUU) para que finalicen presentaciones IRS pendientes",
+          "responsable": "Ernesto",
+          "deadline_objetivo": null,
+          "estado": "bloqueada",
+          "bloqueada_por": "C1 (cobro GBM)",
+          "notas": "Sociedades Americanas es el CPA externo de d-Vops. VERIFICAR nombre exacto de la firma (transcripción speech-to-text). Una vez pagados, ellos completan las presentaciones siguientes."
+        },
+        {
+          "id": "C3",
+          "tarea": "Recibir de Sociedades Americanas los últimos papeles presentados hasta 2024",
+          "responsable": "Sociedades Americanas (externo)",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "C2 (pago a ellos)",
+          "notas": "Confirma estado real de cumplimiento d-Vops hasta 2024. Base para identificar gap de presentaciones 2025+."
+        },
+        {
+          "id": "C4",
+          "tarea": "Verificar Bienes Personales ARCA por participación + Ganancias renta atribuida (jurisdicción AR sobre d-Vops)",
+          "responsable": "Contador AR (nuevo) + CPA EEUU",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK1 (contador nuevo)",
+          "notas": "Aplica a ambos socios — relacionado con tareas F5 y F6. Sin esto el cumplimiento personal queda con hueco visible."
+        },
+        {
+          "id": "C5",
+          "tarea": "Verificar annual report Wyoming + BOI/FinCEN",
+          "responsable": "Ernesto + Sociedades Americanas",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": null,
+          "notas": "Obligación formal recurrente. Confirmar cumplimiento al día — relativamente independiente del cobro GBM."
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "nombre": "Monitoreo riesgo ARCA y preparación para moratoria",
+      "estado_general": "EN CURSO — gestionado por Ernesto + asistentes IA, no por el contador",
+      "tareas": [
+        {
+          "id": "D1",
+          "tarea": "Mantener actualizado el estado de cuenta consolidado ARCA",
+          "responsable": "Ernesto + asistentes IA (provisional)",
+          "deadline_objetivo": "actualización continua",
+          "estado": "en_curso",
+          "prioridad": "ALTA — base para todas las decisiones de ARCA",
+          "bloqueada_por": null,
+          "notas": "Estado actual al 14/06/2026 — datamart deuda_arca.json. Mientras el contador actual no provee información, Ernesto y los asistentes IA del OC suplen el rol."
+        },
+        {
+          "id": "D2",
+          "tarea": "Mantener actualizado detalle de IIBB por jurisdicción",
+          "responsable": "Ernesto + contador (futuro)",
+          "deadline_objetivo": "actualización continua",
+          "estado": "parcial",
+          "bloqueada_por": null,
+          "notas": "IIBB San Juan: ya hay plan de pago activo cargado (deuda_privada.json → plan_iibb_san_juan). Posible deuda en otras jurisdicciones: PENDIENTE de confirmar / mapear."
+        },
+        {
+          "id": "D3",
+          "tarea": "Identificar expedientes en ejecución fiscal activa y su estado procesal",
+          "responsable": "Abogado (a contratar)",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK2 (sin abogado)",
+          "notas": "Los embargos de mayo 2026 son evidencia de ejecución activa (ver briefing). Pendiente mapeo formal de expedientes con números, juzgados, montos y estado procesal."
+        },
+        {
+          "id": "D4",
+          "tarea": "Monitorear apertura de moratorias vigentes o por venir",
+          "responsable": "Ernesto",
+          "deadline_objetivo": "continuo",
+          "estado": "en_curso",
+          "bloqueada_por": null,
+          "notas": "Una moratoria es el mecanismo principal de resolución probable. Cuando se abra alguna, aplicar los criterios de decisión del briefing para evaluar adhesión (quita > costo, caja para 1ra cuota, suspensión de ejecuciones)."
+        },
+        {
+          "id": "D5",
+          "tarea": "Análisis de prescripciones aplicables por impuesto y período",
+          "responsable": "Abogado (a contratar)",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK2 (sin abogado)",
+          "notas": "Cada acción de ARCA y cada adhesión a plan reinicia el reloj. Análisis crítico para evaluar dejar caer planes vs adherir a moratoria."
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "nombre": "Resolución de Carolina Hernández",
+      "estado_general": "EN MARCO INCLUSIVO — proyectarla en el nuevo propósito y función del negocio",
+      "principio_rector": "La resolución de Carolina es SIEMPRE INCLUSIVA. NO se trata de salida sino de cómo se proyecta en el nuevo propósito y la nueva función del negocio. Confirmado por Ernesto: 'la resolución siempre es inclusiva, intentamos que Carolina se proyecte en el negocio con el nuevo propósito y la nueva función'. Coherente con la definición del estado 'en revisión' en el briefing.",
+      "tareas": [
+        {
+          "id": "E1",
+          "tarea": "Conversación con Carolina sobre el cuadro actual y cómo se proyecta su rol en el nuevo propósito",
+          "responsable": "Ernesto (familiar directo)",
+          "deadline_objetivo": null,
+          "estado": "pendiente_confirmar (no me dijo si ya se tuvo)",
+          "bloqueada_por": null,
+          "notas": "El framing es inclusivo: cómo se proyecta su rol, no cómo desvincular. Tarea de cuidado, no de transición de salida."
+        },
+        {
+          "id": "E2",
+          "tarea": "Mantenerla registrada en BHP en el corto plazo mientras se constituye Adaptant",
+          "responsable": "Ernesto + contador",
+          "deadline_objetivo": "actividad continua hasta que Adaptant esté operativa",
+          "estado": "en_curso",
+          "bloqueada_por": null,
+          "notas": "Mientras tanto se siguen acumulando salarios y obligaciones previsionales — ver tarea E3."
+        },
+        {
+          "id": "E3",
+          "tarea": "Cuantificar y regularizar deuda salarial/previsional acumulada con Carolina",
+          "responsable": "Contador",
+          "deadline_objetivo": "cuando haya capacidad de caja",
+          "estado": "pendiente",
+          "bloqueada_por": "Capacidad de caja + BLK1 (contador nuevo)",
+          "notas": "Obligación prioritaria a regularizar — Documento Marco sección 4 línea E."
+        },
+        {
+          "id": "E4",
+          "tarea": "Definir figura de continuidad/proyección hacia Adaptant cuando esté operativa",
+          "responsable": "Ernesto + Franco + abogado",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "B2 (constitución Adaptant) + BLK2 (abogado)",
+          "notas": "Opciones a evaluar: traslado a Adaptant, esquema mixto, nueva función dentro del nuevo propósito. Requiere acuerdo de ambos socios (ver gobernanza)."
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "nombre": "Cumplimiento fiscal personal de los socios",
+      "estado_general": "PENDIENTE — sin información operativa reciente provista por el usuario en esta carga inicial",
+      "tareas": [
+        {
+          "id": "F1",
+          "tarea": "Ernesto — regularizar Ganancias PF 2022 (plan caducado T732339)",
+          "responsable": "Ernesto + contador",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK1 (contador nuevo)",
+          "notas": "Plan Ley Bases T732339 caducó aprox. marzo 2025. Deuda revivida con intereses desde origen. Saldo sin pagar $19.334.544. Ver briefing → 'Situación fiscal personal de los socios'."
+        },
+        {
+          "id": "F2",
+          "tarea": "Ernesto — regularizar IVA 2022 (12 períodos + multa)",
+          "responsable": "Ernesto + contador",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK1 (contador nuevo)",
+          "notas": "Total IVA 2022 PF Ernesto: $6.035.943 + multa dic/2022 $876.849."
+        },
+        {
+          "id": "F3",
+          "tarea": "Ernesto — DDJJ Bienes Personales 2016",
+          "responsable": "Ernesto + contador",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK1 (contador nuevo)",
+          "notas": "Monto chico (~$29K total) pero pendiente formal."
+        },
+        {
+          "id": "F4",
+          "tarea": "Franco — DDJJ Bienes Personales 2017–2021 (5 períodos)",
+          "responsable": "Franco + contador",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "BLK1 (contador nuevo)",
+          "notas": "Franco SIN DEUDA activa ARCA. Su historial limpio es activo estratégico — mantenerlo así. Estas 5 DDJJ son obligación formal sin monto significativo asociado."
+        },
+        {
+          "id": "F5",
+          "tarea": "Ambos socios — declaración correcta participación d-Vops LLC en Bienes Personales",
+          "responsable": "Ernesto + Franco + contador AR + CPA EEUU",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "Coordinación contador AR + CPA EEUU + BLK1 + C2",
+          "notas": "Sin esto el cumplimiento personal queda con un hueco visible para due diligence de un eventual inversor/comprador."
+        },
+        {
+          "id": "F6",
+          "tarea": "Ambos socios — declaración correcta renta atribuida d-Vops LLC en Ganancias (fuente extranjera)",
+          "responsable": "Ernesto + Franco + contador AR + CPA EEUU",
+          "deadline_objetivo": null,
+          "estado": "pendiente",
+          "bloqueada_por": "Coordinación contador AR + CPA EEUU + BLK1 + C2",
+          "notas": "Pareja conceptual con F5 — ambos críticos para el frente personal frente a ARCA."
+        }
+      ]
+    }
+  ],
+  "bloqueos_transversales": [
+    {
+      "id": "BLK1",
+      "titulo": "Contador actual no opera al ritmo necesario; búsqueda de uno nuevo en curso",
+      "afecta_lineas": ["A", "C", "D", "E", "F"],
+      "descripcion": "El contador actual no pasa información de forma oportuna. Frena o ralentiza simultáneamente 5 de las 6 líneas. Ernesto está supliendo parcialmente el monitoreo ARCA con asistentes IA mientras tanto.",
+      "accion_en_curso": "Búsqueda activa de contador nuevo",
+      "prioridad": "CRÍTICA"
+    },
+    {
+      "id": "BLK2",
+      "titulo": "Sin asesor legal específico contratado",
+      "afecta_lineas": ["A", "B", "D", "E"],
+      "descripcion": "Falta abogado de cabecera para: bajas Ernesto/Franco (efectos previsionales), constitución Adaptant, expedientes en ejecución fiscal, análisis de prescripciones, figura de continuidad de Carolina, eventual cierre societario BHP.",
+      "accion_en_curso": "Pendiente identificación y contratación",
+      "prioridad": "ALTA"
+    },
+    {
+      "id": "BLK3",
+      "titulo": "Caja restringida — depende de cobro GBM",
+      "afecta_lineas": ["C", "E"],
+      "descripcion": "El pago a Sociedades Americanas (CPA EEUU) está esperando el ingreso de fondos de GBM. La capacidad de regularizar deuda con Carolina también depende de mejora de caja.",
+      "accion_en_curso": "Seguimiento del cobro pendiente",
+      "prioridad": "MEDIA"
+    },
+    {
+      "id": "BLK4",
+      "titulo": "Firma digital de Franco no habilitada",
+      "afecta_lineas": ["B"],
+      "descripcion": "Sin firma digital habilitada de Franco no se puede ejecutar la constitución remota de Adaptant SAS desde CABA.",
+      "accion_en_curso": "Franco debe iniciar el proceso de habilitación",
+      "prioridad": "MEDIA"
+    }
+  ],
+  "huecos_de_informacion_a_completar": [
+    "Confirmar nombre exacto del CPA EEUU (provisional 'Sociedades Americanas' — proviene de transcripción speech-to-text, alta probabilidad de error)",
+    "Tarea E1: ¿la conversación con Carolina ya se tuvo? ¿Cuándo? ¿Qué se conversó?",
+    "Línea F: el usuario no proveyó información operativa específica sobre el estado de cada cumplimiento fiscal personal en la carga inicial — todas las tareas F1-F6 están marcadas como 'pendiente' por defecto, pero podría haber gestiones ya iniciadas no registradas",
+    "Línea D2: posible deuda IIBB en otras jurisdicciones más allá de San Juan — pendiente de confirmar/mapear",
+    "Deadlines concretos en la mayoría de tareas — solo A1 tiene fecha objetivo definida (2026-06-30)"
+  ],
+  "planillas_asociadas": {
+    "planilla_1_estado_deuda_bhp": "datamart deuda_arca.json + datamart deuda_privada.json",
+    "planilla_2_cash_flow_consolidado": "datamart cash_flow.json (proyección 12-18 meses, tres escenarios pendiente de verificar)",
+    "planilla_3_cronograma_transicion": "ESTE datamart (proceso_ordenamiento.json)"
+  }
+}
