@@ -61,7 +61,7 @@ function renderMarkdown(text) {
   return html;
 }
 
-function addMessage(role, text) {
+function addMessage(role, text, queryId) {
   const messagesEl = document.getElementById("messages");
   const welcome = document.getElementById("welcome");
   if (welcome) welcome.remove();
@@ -75,14 +75,14 @@ function addMessage(role, text) {
 
   if (role === "assistant") {
     const lastUser = [...history].reverse().find(m => m.role === "user");
-    wrap.appendChild(buildFeedbackRow(lastUser ? lastUser.content : "", text));
+    wrap.appendChild(buildFeedbackRow(lastUser ? lastUser.content : "", text, queryId));
   }
 
   messagesEl.appendChild(wrap);
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
 
-function buildFeedbackRow(question, answer) {
+function buildFeedbackRow(question, answer, queryId) {
   const row = document.createElement("div");
   row.className = "feedback-row";
 
@@ -107,7 +107,7 @@ function buildFeedbackRow(question, answer) {
 
   upBtn.onclick = async () => {
     upBtn.classList.add("active", "up");
-    await sendFeedback({ vote: "up", question, answer });
+    await sendFeedback({ vote: "up", question, answer, query_id: queryId });
     finish("Gracias por el feedback.");
   };
 
@@ -115,7 +115,7 @@ function buildFeedbackRow(question, answer) {
     downBtn.classList.add("active", "down");
     upBtn.disabled = true;
     downBtn.disabled = true;
-    row.appendChild(buildFeedbackForm(question, answer, row));
+    row.appendChild(buildFeedbackForm(question, answer, row, queryId));
   };
 
   row.appendChild(upBtn);
@@ -123,7 +123,7 @@ function buildFeedbackRow(question, answer) {
   return row;
 }
 
-function buildFeedbackForm(question, answer, row) {
+function buildFeedbackForm(question, answer, row, queryId) {
   const form = document.createElement("div");
   form.className = "feedback-form";
   form.innerHTML = `
@@ -136,7 +136,7 @@ function buildFeedbackForm(question, answer, row) {
 
   const textarea = form.querySelector("textarea");
   form.querySelector(".send").onclick = async () => {
-    await sendFeedback({ vote: "down", question, answer, comment: textarea.value });
+    await sendFeedback({ vote: "down", question, answer, comment: textarea.value, query_id: queryId });
     form.remove();
     const thanks = document.createElement("span");
     thanks.className = "feedback-thanks";
@@ -273,10 +273,10 @@ async function send(userText) {
       .join("\n\n");
 
     if (textBlocks) {
-      addMessage("assistant", textBlocks);
+      addMessage("assistant", textBlocks, data.query_id);
       history.push({ role: "assistant", content: textBlocks });
     } else {
-      addMessage("assistant", "(sin respuesta de texto)");
+      addMessage("assistant", "(sin respuesta de texto)", data.query_id);
     }
   } catch (e) {
     clearThinking();

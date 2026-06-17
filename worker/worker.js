@@ -200,7 +200,7 @@ async function handleAuth(request, env) {
   });
 }
 
-async function handleChat(request, env) {
+async function handleChat(request, env, ctx) {
   const authHeader = request.headers.get("Authorization");
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return new Response(JSON.stringify({ error: "Sin token" }), {
@@ -272,10 +272,66 @@ async function handleChat(request, env) {
     });
   }
 
-  return new Response(JSON.stringify(data), {
+  // Log automático en KV de cada query exitosa para auditoría y mejora de
+  // datamarts. Asíncrono via ctx.waitUntil — no bloquea la respuesta.
+  // Solo se loguean queries que llegaron a Anthropic con éxito; errores
+  // no se persisten (ya hay rate limit / error_type en el response del worker).
+  const queryId = crypto.randomUUID();
+  ctx.waitUntil(logQuery(env, {
+    query_id: queryId,
+    ts: Date.now(),
+    level: payload.level,
+    messages,
+    response: data,
+  }));
+
+  // Inyectamos query_id en el body de respuesta para que el frontend pueda
+  // adjuntarlo cuando el usuario vote feedback. Es metadata del wrapper,
+  // no toca los content blocks de Anthropic.
+  const enrichedResponse = { ...data, query_id: queryId };
+
+  return new Response(JSON.stringify(enrichedResponse), {
     status: anthropicResp.status,
     headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
+}
+
+// ─── Log automático de queries (auditoría) ────────────────────────────────────
+
+async function logQuery(env, { query_id, ts, level, messages, response }) {
+  try {
+    const lastUser = [...messages].reverse().find(m => m.role === "user");
+    const question = typeof lastUser?.content === "string"
+      ? lastUser.content
+      : (Array.isArray(lastUser?.content)
+          ? lastUser.content.filter(b => b.type === "text").map(b => b.text).join("\n")
+          : "");
+
+    const answerText = (response?.content || [])
+      .filter(b => b.type === "text")
+      .map(b => b.text)
+      .join("\n\n");
+
+    const MAX_PREVIEW = 2000;
+    const answer_preview = answerText.length > MAX_PREVIEW
+      ? answerText.slice(0, MAX_PREVIEW) + "… [truncado]"
+      : answerText;
+
+    const entry = {
+      query_id,
+      ts,
+      level,
+      question,
+      answer_preview,
+      answer_truncated: answerText.length > MAX_PREVIEW,
+      usage: response?.usage || null,
+    };
+
+    const key = `query:${ts}:${query_id}`;
+    await env.FEEDBACK_KV.put(key, JSON.stringify(entry));
+  } catch (e) {
+    // Silencioso: si falla el log no debe romper la conversación.
+  }
 }
 
 // ─── Mapeo de errores de la API a mensajes amigables ──────────────────────────
@@ -313,10 +369,80 @@ function mapAnthropicError(data, resp) {
   };
 }
 
+// ─── Endpoints de feedback (KV) ───────────────────────────────────────────────
+
+async function requireAuth(request, env) {
+  const authHeader = request.headers.get("Authorization");
+  if (!authHeader || !authHeader.startsWith("Bearer ")) return null;
+  const token = authHeader.replace("Bearer ", "");
+  return await verifyToken(token, env.SESSION_SECRET);
+}
+
+async function handleFeedbackSubmit(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const body = await request.json();
+  const { vote, question, answer, comment, query_id } = body;
+
+  if (vote !== "up" && vote !== "down") {
+    return new Response(JSON.stringify({ error: "vote debe ser 'up' o 'down'" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const entry = {
+    vote,
+    level: payload.level,
+    question: question || "",
+    answer: answer || "",
+    comment: comment || "",
+    query_id: query_id || null,
+    ts: Date.now(),
+  };
+
+  const key = `feedback:${entry.ts}:${crypto.randomUUID()}`;
+  await env.FEEDBACK_KV.put(key, JSON.stringify(entry));
+
+  return new Response(JSON.stringify({ ok: true }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
+async function handleFeedbackList(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const list = await env.FEEDBACK_KV.list({ prefix: "feedback:" });
+  const entries = await Promise.all(
+    list.keys.map(async (k) => {
+      const raw = await env.FEEDBACK_KV.get(k.name);
+      return raw ? JSON.parse(raw) : null;
+    })
+  );
+
+  const sorted = entries.filter(Boolean).sort((a, b) => b.ts - a.ts);
+
+  return new Response(JSON.stringify({ entries: sorted }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
 // ─── Router principal ─────────────────────────────────────────────────────────
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
@@ -328,7 +454,15 @@ export default {
     }
 
     if (url.pathname === "/chat" && request.method === "POST") {
-      return handleChat(request, env);
+      return handleChat(request, env, ctx);
+    }
+
+    if (url.pathname === "/feedback" && request.method === "POST") {
+      return handleFeedbackSubmit(request, env);
+    }
+
+    if (url.pathname === "/feedback" && request.method === "GET") {
+      return handleFeedbackList(request, env);
     }
 
     if (url.pathname === "/health") {
