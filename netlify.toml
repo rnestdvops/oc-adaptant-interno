@@ -8,4 +8,4 @@
   # COMMIT_REF es una variable de entorno que Netlify expone automáticamente.
   # Se consume desde assets/chat.js → loadVersionInfo() para mostrar
   # "v{hash} · {fecha}" en el header del chat.
-  command = 'echo "{\"hash\":\"${COMMIT_REF:0:7}\"}" > version.json'
+  command = 'echo "{\"hash\":\"${COMMIT_REF:0:7}\",\"deployed_at\":\"$(date -u +%Y-%m-%d)\"}" > version.json'

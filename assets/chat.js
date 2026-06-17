@@ -166,20 +166,32 @@ async function sendFeedback(payload) {
 }
 
 async function loadVersionInfo() {
-  const el = document.getElementById("version-info");
-  if (!el) return;
+  const headerEl = document.getElementById("version-info");
+  const lastUpdateEl = document.getElementById("last-update-date");
   const today = new Date().toLocaleDateString("es-AR");
   let hash = "dev";
+  let deployedAt = null;
   try {
     const resp = await fetch("/version.json", { cache: "no-store" });
     if (resp.ok) {
       const data = await resp.json();
       if (data.hash) hash = data.hash;
+      if (data.deployed_at) deployedAt = data.deployed_at;
     }
   } catch (e) {
-    // Sin version.json (entorno local) — se queda en "dev".
+    // Sin version.json (entorno local) — se queda en "dev" sin fecha.
   }
-  el.textContent = `v${hash} · ${today}`;
+  if (headerEl) headerEl.textContent = `v${hash} · ${today}`;
+  if (lastUpdateEl) {
+    if (deployedAt) {
+      // deployed_at viene como "YYYY-MM-DD" desde Netlify build → reformat a dd/mm/yyyy.
+      const [y, m, d] = deployedAt.split("-");
+      lastUpdateEl.textContent = `${d}/${m}/${y}`;
+    } else {
+      // Fallback (local o version.json sin deployed_at): mostrar fecha de hoy.
+      lastUpdateEl.textContent = today;
+    }
+  }
 }
 
 function showThinking() {
