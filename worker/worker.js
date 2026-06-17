@@ -439,6 +439,37 @@ async function handleFeedbackList(request, env) {
   });
 }
 
+async function handleQueriesList(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // KV list devuelve hasta 1000 keys por llamada sin cursor. Para uso interno
+  // del OC esto es suficiente por mucho tiempo; cuando se acerque al límite
+  // habrá que paginar con cursor o migrar a D1 con índices.
+  const list = await env.FEEDBACK_KV.list({ prefix: "query:" });
+  const entries = await Promise.all(
+    list.keys.map(async (k) => {
+      const raw = await env.FEEDBACK_KV.get(k.name);
+      return raw ? JSON.parse(raw) : null;
+    })
+  );
+
+  const sorted = entries.filter(Boolean).sort((a, b) => b.ts - a.ts);
+
+  return new Response(JSON.stringify({
+    entries: sorted,
+    total: sorted.length,
+    list_complete: list.list_complete === true,
+  }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
 // ─── Router principal ─────────────────────────────────────────────────────────
 
 export default {
@@ -463,6 +494,10 @@ export default {
 
     if (url.pathname === "/feedback" && request.method === "GET") {
       return handleFeedbackList(request, env);
+    }
+
+    if (url.pathname === "/queries" && request.method === "GET") {
+      return handleQueriesList(request, env);
     }
 
     if (url.pathname === "/health") {

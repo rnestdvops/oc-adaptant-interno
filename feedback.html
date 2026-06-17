@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OC Adaptant Interno · Feedback</title>
+  <title>OC Adaptant Interno · Insights de uso</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
     <div class="topbar">
       <div class="brand">
         <div class="brand-mark">Adaptant · OC</div>
-        <div class="brand-title">Feedback acumulado</div>
+        <div class="brand-title">Insights de uso</div>
       </div>
       <div class="session-info">
         <a class="logout-btn" href="/chat.html">Volver al chat</a>
@@ -23,8 +23,20 @@
     </div>
 
     <div class="feedback-page">
-      <p id="feedback-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
-      <div id="feedback-list"></div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="feedback">Feedback</button>
+        <button class="tab-btn" data-tab="queries">Historial de consultas</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-feedback">
+        <p id="feedback-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+        <div id="feedback-list"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-queries">
+        <p id="queries-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+        <div id="queries-list"></div>
+      </div>
     </div>
   </div>
 
@@ -39,15 +51,14 @@
       return new Date(ts).toLocaleString("es-AR");
     }
 
+    function escapeHtmlFb(s) {
+      return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
     async function loadFeedback() {
       const session = getSession();
       const statusEl = document.getElementById("feedback-status");
       const listEl = document.getElementById("feedback-list");
-
-      if (!session) {
-        window.location.href = "/";
-        return;
-      }
 
       try {
         const resp = await fetch(`${FB_WORKER_URL}/feedback`, {
@@ -65,13 +76,14 @@
           return;
         }
 
-        statusEl.textContent = `${entries.length} registro(s).`;
+        statusEl.textContent = `${entries.length} registro(s) de feedback.`;
         listEl.innerHTML = entries.map(e => `
           <div class="feedback-entry">
             <div class="meta">
               <span class="vote-tag ${e.vote}">${e.vote === "up" ? "👍 ok" : "👎 mejorar"}</span>
               <span>${e.level}</span>
               <span>${fmtDate(e.ts)}</span>
+              ${e.query_id ? `<span class="query-link" title="${escapeHtmlFb(e.query_id)}">linked</span>` : ""}
             </div>
             ${e.question ? `<div class="q">Pregunta: ${escapeHtmlFb(e.question)}</div>` : ""}
             ${e.answer ? `<div class="a">Respuesta: ${escapeHtmlFb(e.answer).slice(0, 400)}${e.answer.length > 400 ? "…" : ""}</div>` : ""}
@@ -83,11 +95,97 @@
       }
     }
 
-    function escapeHtmlFb(s) {
-      return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    function renderQueryEntry(e) {
+      const u = e.usage || {};
+      const tokensSummary = u.input_tokens != null
+        ? `<span class="tok">in:${u.input_tokens} · cache_read:${u.cache_read_input_tokens || 0} · cache_write:${u.cache_creation_input_tokens || 0} · out:${u.output_tokens || 0}</span>`
+        : "";
+      const truncatedTag = e.answer_truncated ? `<span class="trunc-tag">truncado</span>` : "";
+
+      return `
+        <details class="query-entry">
+          <summary>
+            <div class="query-summary-row">
+              <span class="level-tag ${e.level}">${e.level}</span>
+              <span class="query-date">${fmtDate(e.ts)}</span>
+              ${tokensSummary}
+              ${truncatedTag}
+            </div>
+            <div class="query-question">${escapeHtmlFb(e.question || "(sin pregunta)")}</div>
+          </summary>
+          <div class="query-details">
+            <div class="query-answer">${escapeHtmlFb(e.answer_preview || "(sin respuesta)")}</div>
+            <div class="query-meta-row">
+              <span class="mono">query_id: ${escapeHtmlFb(e.query_id || "—")}</span>
+            </div>
+          </div>
+        </details>
+      `;
     }
 
-    document.addEventListener("DOMContentLoaded", loadFeedback);
+    async function loadQueries() {
+      const session = getSession();
+      const statusEl = document.getElementById("queries-status");
+      const listEl = document.getElementById("queries-list");
+
+      try {
+        const resp = await fetch(`${FB_WORKER_URL}/queries`, {
+          headers: { Authorization: `Bearer ${session.token}` },
+        });
+        if (resp.status === 401) {
+          statusEl.textContent = "La sesión expiró. Volvé a entrar.";
+          return;
+        }
+        const data = await resp.json();
+        const entries = data.entries || [];
+
+        if (entries.length === 0) {
+          statusEl.textContent = "Todavía no hay consultas registradas. Hacé una pregunta en el chat y volvé.";
+          return;
+        }
+
+        const totalTokens = entries.reduce((acc, e) => acc + ((e.usage?.input_tokens || 0) + (e.usage?.output_tokens || 0)), 0);
+        const cacheRead = entries.reduce((acc, e) => acc + (e.usage?.cache_read_input_tokens || 0), 0);
+        const cachePct = totalTokens > 0 ? Math.round((cacheRead / (totalTokens + cacheRead)) * 100) : 0;
+
+        statusEl.innerHTML = `
+          <strong>${entries.length}</strong> consulta(s) registrada(s) ·
+          tokens nuevos: <strong>${totalTokens.toLocaleString("es-AR")}</strong> ·
+          cache hit: <strong>${cachePct}%</strong>
+          ${data.list_complete === false ? "<br><em>Atención: la lista podría estar incompleta (más de 1000 entries en KV).</em>" : ""}
+        `;
+        listEl.innerHTML = entries.map(renderQueryEntry).join("");
+      } catch (err) {
+        statusEl.textContent = `Error cargando consultas: ${err.message}`;
+      }
+    }
+
+    function setupTabs() {
+      const buttons = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".tab-panel");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.tab;
+          buttons.forEach(b => b.classList.toggle("active", b === btn));
+          panels.forEach(p => p.classList.toggle("active", p.id === `tab-${target}`));
+        });
+      });
+    }
+
+    async function init() {
+      const session = getSession();
+      if (!session) {
+        window.location.href = "/";
+        return;
+      }
+      setupTabs();
+      // Cargo ambos en paralelo — la pestaña inactiva queda lista para mostrar
+      // sin nuevo round-trip cuando el usuario haga click.
+      await Promise.all([loadFeedback(), loadQueries()]);
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
   </script>
 </body>
 </html>
