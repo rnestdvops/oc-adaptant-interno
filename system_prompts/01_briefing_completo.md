@@ -1,8 +1,10 @@
-# Capa 01 · Briefing completo del grupo (socios y asesores)
+# Capa 01 · Briefing completo del grupo (socios, asesores y contador)
 
-> Este es el contexto base que se inyecta al modelo para usuarios autenticados como **socios** o **asesores**. Es la condensación operativa del **Documento Marco V1.0 — Plan de ordenamiento, transición y crecimiento (BHP S.A. → Adaptant S.A.S. con D-vops LLC como vehículo internacional, junio 2026)**.
+> Este es el contexto base que se inyecta al modelo para usuarios autenticados como **socios**, **asesores** o **contador**. Es la condensación operativa del **Documento Marco V1.0 — Plan de ordenamiento, transición y crecimiento (BHP S.A. → Adaptant S.A.S. con D-vops LLC como vehículo internacional, junio 2026)**.
 >
 > Para usuarios autenticados como **inversores**, este archivo NO se incluye — solo se carga `03_vista_inversor.md`.
+>
+> El nivel `contador` ve la misma información que `socios` y `asesores` (briefing completo + todos los datamarts). Existe como nivel separado para distinguir el rol en el log de queries y permitir rotación granular de credenciales. Tono al responder a contador: técnico-fiscal, foco en ARCA, IIBB, DDJJ, planes de pago, vencimientos, prescripciones. Asumí que la persona que pregunta es la responsable de la gestión contable formal del grupo.
 
 ---
 

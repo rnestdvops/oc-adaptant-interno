@@ -104,7 +104,7 @@ async function buildSystemPrompt(level, env) {
   // Capa 00 — siempre
   promptParts.push(await fetchText("/system_prompts/00_personalidad.md"));
 
-  if (level === "socios" || level === "asesores") {
+  if (level === "socios" || level === "asesores" || level === "contador") {
     // Capa 01 — briefing completo
     promptParts.push(await fetchText("/system_prompts/01_briefing_completo.md"));
     // Capa 02 — datamart guide
@@ -186,6 +186,7 @@ async function handleAuth(request, env) {
   let level = null;
   if (password === env.PWD_SOCIOS) level = "socios";
   else if (password === env.PWD_ASESORES) level = "asesores";
+  else if (password === env.PWD_CONTADOR) level = "contador";
   else if (password === env.PWD_INVERSORES) level = "inversores";
 
   if (!level) {

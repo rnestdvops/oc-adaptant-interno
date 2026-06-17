@@ -28,6 +28,17 @@
       "Cumplimiento fiscal d-Vops LLC — pendientes",
       "Estructura societaria y composición accionaria",
     ],
+    contador: [
+      "Estado de cuenta consolidado ARCA por impuesto y período",
+      "Listado completo de DDJJ pendientes BHP — orden de prioridad",
+      "Plan caducado T732339 (Ley Bases) Ernesto — situación actual",
+      "Pasivos fiscales generados por facturación Red Hat AR en curso",
+      "Vencimientos fiscales próximos 30 días con monto y CBU/CUIT",
+      "Detalle IVA Débito vs Crédito Fiscal BHP por período",
+      "Situación de DDJJ Bienes Personales pendientes (socios)",
+      "Plan IIBB San Juan — estado cuotas y próximos vencimientos",
+      "Embargos ejecutados sobre cuentas BHP en 2026",
+    ],
     inversores: [
       "¿Qué es el OC Framework de Adaptant?",
       "Tracción comercial actual",
