@@ -46,6 +46,15 @@
       "Líneas de producto y rango de precios",
       "Partners y aplicaciones en curso",
     ],
+    demo: [
+      "¿Cómo está estructurado el grupo Adaptant / d-Vops / BHP?",
+      "¿Qué clientes tiene d-Vops LLC actualmente?",
+      "¿Cómo funciona el OC como herramienta de gestión organizacional?",
+      "¿Qué es Adaptant SAS y cuál es su propuesta al mercado?",
+      "¿Qué agentes tiene activos este OC?",
+      "¿Cuál es el roadmap de la plataforma OC?",
+      "¿Qué diferencia a este OC de un BI o dashboard tradicional?",
+    ],
   };
 
   async function login(password) {

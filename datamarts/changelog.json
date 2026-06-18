@@ -1,10 +1,22 @@
 {
-  "last_updated": "2026-06-17",
+  "last_updated": "2026-06-18",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "proposito": "Bitácora curada de actualizaciones del OC Adaptant Interno, versión a versión. Sigue la convención Keep a Changelog (keepachangelog.com). Cada release agrupa cambios por categoría: Added (nuevas features), Changed (cambios en comportamiento existente), Fixed (bugs corregidos), Removed (features quitadas). Las entradas son curadas — los commits individuales son ruido, las releases son la señal.",
   "convencion_versionado": "Semver pre-1.0 (0.X.Y) — pre-producción. 0.X cuando hay cambios significativos visibles para el usuario; 0.X.Y para fixes menores y refinamientos.",
   "releases": [
+    {
+      "version": "0.7.0",
+      "fecha": "2026-06-18",
+      "titulo": "Perfil demo — datos reales sin información sensible",
+      "added": [
+        "Quinto nivel de acceso: 'demo' con clave propia (PWD_DEMO), diseñado para mostrar el OC a prospectos, partners o audiencias externas con datos reales.",
+        "System prompt 05_vista_demo.md: postura demostrativa, foco en estructura organizacional, operación activa y el OC como producto.",
+        "7 preguntas sugeridas para nivel demo orientadas a estructura, clientes, pipeline y capacidades del OC.",
+        "Datamarts cargados en demo: entidades.json, adaptant_sas.json, dvops_llc.json, facturacion_emitida.json, costos_operativos.json, plan_agentizacion.json, agentes_activos.json, changelog.json.",
+        "Privacidad por naturaleza: deuda_arca.json, deuda_privada.json, vencimientos.json, movimientos_bancarios.json, mp_bhp.json, mp_nerdcube.json, chase_dvops.json, proceso_ordenamiento.json, personal.json y nerdcube_legacy.json no entran al contexto demo — no hay información sensible que el modelo deba 'no decir'."
+      ]
+    },
     {
       "version": "0.6.0",
       "fecha": "2026-06-17",

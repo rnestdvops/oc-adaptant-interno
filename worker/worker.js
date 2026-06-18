@@ -11,7 +11,9 @@
  *  - ANTHROPIC_API_KEY
  *  - PWD_SOCIOS
  *  - PWD_ASESORES
+ *  - PWD_CONTADOR
  *  - PWD_INVERSORES
+ *  - PWD_DEMO          (perfil para demos a prospectos — sin info sensible)
  *  - SESSION_SECRET     (clave para firmar tokens, cualquier string largo)
  */
 
@@ -159,6 +161,27 @@ async function buildSystemPrompt(level, env) {
         datamartParts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
       }
     }
+  } else if (level === "demo") {
+    // Capa 05 — vista demo: estructura, pipeline, OC como producto
+    // La información sensible (deuda, embargos, fiscal personal) no entra al
+    // contexto en absoluto — privacidad por naturaleza, no por instrucción.
+    promptParts.push(await fetchText("/system_prompts/05_vista_demo.md"));
+
+    const datamarts = [
+      "entidades.json",
+      "adaptant_sas.json",
+      "dvops_llc.json",
+      "facturacion_emitida.json",
+      "costos_operativos.json",
+      "plan_agentizacion.json",
+      "agentes_activos.json",
+      "changelog.json",
+    ];
+    datamartParts.push("\n\n## Información disponible en este demo\n");
+    for (const dm of datamarts) {
+      const data = await fetchJson(`/datamarts/${dm}`);
+      datamartParts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
+    }
   }
 
   // Devolvemos como array de content blocks con cache_control. Anthropic
@@ -191,6 +214,7 @@ async function handleAuth(request, env) {
   else if (password === env.PWD_ASESORES) level = "asesores";
   else if (password === env.PWD_CONTADOR) level = "contador";
   else if (password === env.PWD_INVERSORES) level = "inversores";
+  else if (password === env.PWD_DEMO) level = "demo";
 
   if (!level) {
     return new Response(JSON.stringify({ error: "Credenciales inválidas" }), {
