@@ -290,14 +290,18 @@
         const data = await resp.json();
         const entries = data.entries || [];
 
-        const runBtn = session.level === "socios"
+        const isSocios = session.level === "socios";
+        const runBtn = isSocios
           ? `<button class="run-agent-btn" id="run-vencimientos-btn">Disparar agente Vencimientos 7d ahora</button>`
+          : "";
+        const clearBtn = isSocios
+          ? `<button class="run-agent-btn" id="clear-alerts-btn" style="background:var(--gris);margin-left:6px;">Limpiar alertas</button>`
           : "";
 
         if (entries.length === 0) {
           statusEl.innerHTML = `Todavía no hay alertas generadas por agentes. ${runBtn}`;
         } else {
-          statusEl.innerHTML = `<strong>${entries.length}</strong> alerta(s) registradas. ${runBtn}`;
+          statusEl.innerHTML = `<strong>${entries.length}</strong> alerta(s) registradas. ${runBtn}${clearBtn}`;
           listEl.innerHTML = entries.map(renderAlertEntry).join("");
         }
 
@@ -319,6 +323,27 @@
             } catch (err) {
               btn.disabled = false;
               btn.textContent = `Error: ${err.message}`;
+            }
+          };
+        }
+
+        const clearBtn = document.getElementById("clear-alerts-btn");
+        if (clearBtn) {
+          clearBtn.onclick = async () => {
+            if (!confirm("¿Eliminar todas las alertas? Esta acción no se puede deshacer.")) return;
+            clearBtn.disabled = true;
+            clearBtn.textContent = "Eliminando...";
+            try {
+              const r = await fetch(`${FB_WORKER_URL}/alerts`, {
+                method: "DELETE",
+                headers: { Authorization: `Bearer ${session.token}` },
+              });
+              const d = await r.json();
+              clearBtn.textContent = `Limpiar alertas (${d.deleted || 0} eliminadas)`;
+              await loadAlerts();
+            } catch (err) {
+              clearBtn.disabled = false;
+              clearBtn.textContent = `Error: ${err.message}`;
             }
           };
         }

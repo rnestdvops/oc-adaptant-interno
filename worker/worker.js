@@ -23,7 +23,7 @@ const MAX_TOKENS = 4096;
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Access-Control-Max-Age": "86400",
 };
@@ -620,6 +620,25 @@ async function handleAlertsList(request, env) {
   });
 }
 
+// ─── Endpoint DELETE /alerts — limpiar alertas (socios only) ─────────────────
+
+async function handleAlertsDelete(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload || payload.level !== "socios") {
+    return new Response(JSON.stringify({ error: "Solo socios pueden eliminar alertas" }), {
+      status: 403,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const list = await env.FEEDBACK_KV.list({ prefix: "alert:" });
+  await Promise.all(list.keys.map(k => env.FEEDBACK_KV.delete(k.name)));
+
+  return new Response(JSON.stringify({ ok: true, deleted: list.keys.length }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
 // ─── Endpoint /agents/run — disparar un agente manualmente (testing) ──────────
 
 async function handleAgentRun(request, env) {
@@ -678,6 +697,10 @@ export default {
 
     if (url.pathname === "/alerts" && request.method === "GET") {
       return handleAlertsList(request, env);
+    }
+
+    if (url.pathname === "/alerts" && request.method === "DELETE") {
+      return handleAlertsDelete(request, env);
     }
 
     if (url.pathname === "/agents/run" && request.method === "POST") {

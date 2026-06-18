@@ -241,9 +241,17 @@ code, .mono {
 
 .chat-shell {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 240px 1fr 220px;
   flex: 1;
   min-height: 0;
+}
+
+.chat-shell.alerts-hidden {
+  grid-template-columns: 240px 1fr;
+}
+
+.chat-shell.alerts-hidden .alert-sidebar {
+  display: none;
 }
 
 .sidebar {
@@ -908,11 +916,177 @@ code, .mono {
   font-size: 14px;
 }
 
+/* ─── Alert sidebar derecho (C4b) ─────────────────────────────────────────── */
+
+.alert-sidebar {
+  border-left: 1px solid var(--linea);
+  background: var(--crema);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.alert-sidebar-header {
+  padding: 14px 12px 10px;
+  border-bottom: 1px solid var(--linea);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.alert-sidebar-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gris2);
+  font-weight: 600;
+}
+
+.alert-sidebar-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(184,50,20,.1);
+  color: var(--critico);
+  font-weight: 600;
+}
+
+.alert-sidebar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gris2);
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+  margin-left: auto;
+}
+
+.alert-sidebar-toggle:hover { color: var(--negro); }
+
+.alert-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 10px;
+}
+
+.alert-sidebar-empty {
+  font-size: 11.5px;
+  color: var(--gris2);
+  text-align: center;
+  padding: 28px 8px;
+  line-height: 1.6;
+}
+
+.alert-card {
+  border: 1px solid var(--linea);
+  border-left: 3px solid var(--linea);
+  border-radius: var(--r-md);
+  padding: 8px 9px;
+  margin-bottom: 8px;
+  background: white;
+}
+
+.alert-card.critico { border-left-color: var(--critico); }
+.alert-card.urgente { border-left-color: var(--urgente); }
+
+.alert-card-fecha {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gris2);
+  margin-bottom: 3px;
+}
+
+.alert-card-obligacion {
+  font-size: 11.5px;
+  color: var(--negro);
+  line-height: 1.4;
+  margin-bottom: 3px;
+}
+
+.alert-card-entidad {
+  font-size: 10.5px;
+  color: var(--gris);
+}
+
+.alert-card-monto {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gris);
+  margin: 3px 0 5px;
+}
+
+.alert-card-nivel {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 7px;
+}
+
+.alert-card-nivel.critico { background: rgba(184,50,20,.1); color: var(--critico); }
+.alert-card-nivel.urgente { background: rgba(217,132,43,.1); color: var(--urgente); }
+
+.alert-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: var(--r-md);
+  padding: 5px 8px;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .12s;
+}
+
+.alert-wa-btn:hover { background: #128C7E; color: white; }
+
+.alerts-open-btn {
+  background: none;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  color: var(--gris);
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  display: none;
+}
+
+.alerts-open-btn:hover { color: var(--negro); border-color: var(--negro); }
+.alerts-open-btn.visible { display: inline-flex; align-items: center; gap: 5px; }
+
+.alerts-open-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: rgba(184,50,20,.12);
+  color: var(--critico);
+  font-weight: 600;
+}
+
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   .chat-shell { grid-template-columns: 1fr; }
   .sidebar { display: none; }
+  .alert-sidebar { display: none; }
   .messages, .composer-inner { padding-left: 16px; padding-right: 16px; }
   .topbar { padding: 12px 16px; }
 }
