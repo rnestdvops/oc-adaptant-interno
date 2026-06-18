@@ -6,6 +6,31 @@
   "convencion_versionado": "Semver pre-1.0 (0.X.Y) — pre-producción. 0.X cuando hay cambios significativos visibles para el usuario; 0.X.Y para fixes menores y refinamientos.",
   "releases": [
     {
+      "version": "0.8.0",
+      "fecha": "2026-06-18",
+      "titulo": "Sidebar de alertas con CTA WhatsApp + actualización de pipeline",
+      "added": [
+        "Sidebar derecho de alertas (220px) en el chat: muestra items CRÍTICO/URGENTE del agente vencimientos-7d filtrados de la alerta más reciente, con tarjetas por vencimiento.",
+        "Botones de WhatsApp por contacto (Ernesto, Franco, Carolina) en cada tarjeta: abren WA con el detalle del vencimiento y el link al OC con la consulta pre-cargada.",
+        "Auto-send: al abrir el link del OC desde WA (?q=), la pregunta se envía automáticamente al chat.",
+        "Endpoint DELETE /alerts en el Worker (restringido a socios) para limpiar alertas acumuladas.",
+        "Botón 'Limpiar alertas' en /feedback.html (solo socios, con confirmación).",
+        "Botón 'Alertas' en el topbar del chat para reabrir el sidebar si fue colapsado.",
+        "Nuevo proyecto en pipeline: Docuprint — Entrenamientos, USD 12.000, ingreso total en Julio 2026."
+      ],
+      "changed": [
+        "BROU — Extensión TI: monto ajustado 24K → 18K USD; cobro diferido: USD 0 en Julio, 9K en Agosto, 9K en Septiembre.",
+        "Docuprint — Rediseño Organizacional: inicio adelantado Oct 2026 → Sep 2026 (6 cuotas × USD 3.500, cierre Feb 2027).",
+        "Pipeline total: 9 → 10 proyectos, potencial 378K → 384K USD, total 408K USD.",
+        "CORS del Worker incluye GET y DELETE en Access-Control-Allow-Methods.",
+        "chat.js expone window.ocSend() para permitir el auto-send desde parámetros de URL."
+      ],
+      "fixed": [
+        "SyntaxError en feedback.html por const clearBtn declarado dos veces en el mismo bloque — bloqueaba todas las pestañas del panel de insights.",
+        "URL del mensaje WA acortada: el ?q= lleva solo obligacion + entidad + fecha en lugar de la pregunta completa; el link ya no se corta en WhatsApp."
+      ]
+    },
+    {
       "version": "0.7.0",
       "fecha": "2026-06-18",
       "titulo": "Perfil demo — datos reales sin información sensible",
