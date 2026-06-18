@@ -132,6 +132,7 @@ async function buildSystemPrompt(level, env) {
       "facturacion_emitida.json",
       "plan_agentizacion.json",
       "agentes_activos.json",
+      "changelog.json",
     ];
     datamartParts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {

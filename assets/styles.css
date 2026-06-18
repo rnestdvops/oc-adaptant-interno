@@ -717,6 +717,110 @@ code, .mono {
 .run-agent-btn:hover { background: var(--negro); }
 .run-agent-btn:disabled { background: var(--gris2); cursor: wait; }
 
+/* ─── Last updates / changelog ────────────────────────────────────────────── */
+
+.release-entry {
+  border: 1px solid var(--linea);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  background: white;
+}
+
+.release-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--linea);
+  flex-wrap: wrap;
+}
+
+.release-version {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 3px;
+  background: var(--tc);
+  color: white;
+}
+
+.release-titulo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: var(--negro);
+  flex: 1;
+  min-width: 200px;
+}
+
+.release-fecha {
+  font-size: 11px;
+  color: var(--gris2);
+}
+
+.release-section {
+  margin: 10px 0;
+}
+
+.release-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.release-section.added .release-section-label {
+  background: rgba(79,122,79,.1);
+  color: var(--ok);
+}
+
+.release-section.changed .release-section-label {
+  background: rgba(217,132,43,.1);
+  color: var(--urgente);
+}
+
+.release-section.fixed .release-section-label {
+  background: rgba(201,75,26,.08);
+  color: var(--tc);
+}
+
+.release-section.removed .release-section-label {
+  background: rgba(184,50,20,.1);
+  color: var(--critico);
+}
+
+.release-section ul {
+  margin: 4px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.release-section li {
+  font-size: 12.5px;
+  color: var(--negro);
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+.release-notas {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--crema2);
+  border-radius: var(--r-md);
+  font-size: 12px;
+  color: var(--gris);
+  font-style: italic;
+  line-height: 1.5;
+}
+
 .composer {
   border-top: 1px solid var(--linea);
   padding: 16px 32px 22px;

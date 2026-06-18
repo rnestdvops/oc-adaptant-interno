@@ -4,3 +4,8 @@ node_modules/
 version.json
 .DS_Store
 **/.DS_Store
+
+# Artefactos generados a partir de docs/*.md — no versionar
+docs/*.pdf
+docs/*.docx
+docs/*.html

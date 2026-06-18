@@ -24,12 +24,18 @@
 
     <div class="feedback-page">
       <div class="tabs">
-        <button class="tab-btn active" data-tab="alerts">Alertas de agentes</button>
+        <button class="tab-btn active" data-tab="updates">Last updates</button>
+        <button class="tab-btn" data-tab="alerts">Alertas de agentes</button>
         <button class="tab-btn" data-tab="feedback">Feedback</button>
         <button class="tab-btn" data-tab="queries">Historial de consultas</button>
       </div>
 
-      <div class="tab-panel active" id="tab-alerts">
+      <div class="tab-panel active" id="tab-updates">
+        <p id="updates-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+        <div id="updates-list"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-alerts">
         <p id="alerts-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
         <div id="alerts-list"></div>
       </div>
@@ -179,6 +185,59 @@
       });
     }
 
+    function renderReleaseEntry(r) {
+      const sectionHtml = (label, cls, items) => {
+        if (!items || items.length === 0) return "";
+        return `
+          <div class="release-section ${cls}">
+            <div class="release-section-label">${label}</div>
+            <ul>${items.map(it => `<li>${escapeHtmlFb(it)}</li>`).join("")}</ul>
+          </div>
+        `;
+      };
+      const notasHtml = r.notas
+        ? `<div class="release-notas">${escapeHtmlFb(r.notas)}</div>`
+        : "";
+      return `
+        <div class="release-entry">
+          <div class="release-header">
+            <span class="release-version">v${escapeHtmlFb(r.version)}</span>
+            <span class="release-titulo">${escapeHtmlFb(r.titulo || "")}</span>
+            <span class="release-fecha mono">${escapeHtmlFb(r.fecha || "")}</span>
+          </div>
+          ${sectionHtml("Added", "added", r.added)}
+          ${sectionHtml("Changed", "changed", r.changed)}
+          ${sectionHtml("Fixed", "fixed", r.fixed)}
+          ${sectionHtml("Removed", "removed", r.removed)}
+          ${notasHtml}
+        </div>
+      `;
+    }
+
+    async function loadUpdates() {
+      const statusEl = document.getElementById("updates-status");
+      const listEl = document.getElementById("updates-list");
+
+      try {
+        // El changelog es un archivo estático servido por Netlify — no necesita
+        // pasar por el Worker. Es público (no expone datos sensibles).
+        const resp = await fetch("/datamarts/changelog.json", { cache: "no-store" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        const releases = data.releases || [];
+
+        if (releases.length === 0) {
+          statusEl.textContent = "Todavía no hay releases registradas.";
+          return;
+        }
+
+        statusEl.innerHTML = `<strong>${releases.length}</strong> release(s) · última: <strong>v${escapeHtmlFb(releases[0].version)}</strong> (${escapeHtmlFb(releases[0].fecha)})`;
+        listEl.innerHTML = releases.map(renderReleaseEntry).join("");
+      } catch (err) {
+        statusEl.textContent = `Error cargando changelog: ${err.message}`;
+      }
+    }
+
     function renderAlertEntry(e) {
       const dateStr = fmtDate(e.ts);
       const itemsHtml = (e.items || []).map(it => {
@@ -275,9 +334,9 @@
         return;
       }
       setupTabs();
-      // Cargo los tres paneles en paralelo — el panel inactivo queda listo
+      // Cargo los cuatro paneles en paralelo — los inactivos quedan listos
       // para mostrar sin nuevo round-trip cuando el usuario haga click.
-      await Promise.all([loadAlerts(), loadFeedback(), loadQueries()]);
+      await Promise.all([loadUpdates(), loadAlerts(), loadFeedback(), loadQueries()]);
     }
 
     document.addEventListener("DOMContentLoaded", init);

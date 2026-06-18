@@ -1,0 +1,106 @@
+{
+  "last_updated": "2026-06-17",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Bitácora curada de actualizaciones del OC Adaptant Interno, versión a versión. Sigue la convención Keep a Changelog (keepachangelog.com). Cada release agrupa cambios por categoría: Added (nuevas features), Changed (cambios en comportamiento existente), Fixed (bugs corregidos), Removed (features quitadas). Las entradas son curadas — los commits individuales son ruido, las releases son la señal.",
+  "convencion_versionado": "Semver pre-1.0 (0.X.Y) — pre-producción. 0.X cuando hay cambios significativos visibles para el usuario; 0.X.Y para fixes menores y refinamientos.",
+  "releases": [
+    {
+      "version": "0.6.0",
+      "fecha": "2026-06-17",
+      "titulo": "Capa agentic activada — primer agente y pestaña de alertas",
+      "added": [
+        "Capa C4b (agentic) del OC operativa: Cloudflare Cron Triggers + función scheduled() en el Worker.",
+        "Agente #1 'Vencimientos próximos 7 días' — corre todos los días 8 AM AR, lee vencimientos.json, persiste alerta en KV si hay items en ventana.",
+        "Nueva pestaña 'Alertas de agentes' en /feedback.html (primera/default), con tags de nivel coloreados (crítico/urgente/alto).",
+        "Botón 'Disparar agente Vencimientos 7d ahora' visible solo para socios — testing sin esperar al cron.",
+        "Endpoint GET /alerts (autenticado) y POST /agents/run (solo socios).",
+        "Documentación del plan de agentización en docs/agentizacion_oc_interno.md + datamart consultable en plan_agentizacion.json.",
+        "Registry vivo de agentes en datamarts/agentes_activos.json con ficha completa (5 preguntas del paper + ciclo de vida)."
+      ],
+      "notas": "Implementación basada en el paper interno 'OC Agentizado'. Respeta línea roja: agentes solo leen el commons y persisten alertas — nunca tocan sistemas transaccionales (ARCA, bancos, MP)."
+    },
+    {
+      "version": "0.5.0",
+      "fecha": "2026-06-17",
+      "titulo": "Multinivel + auditoría completa + refinamientos UI",
+      "added": [
+        "Cuarto nivel de acceso: 'contador' con clave propia (PWD_CONTADOR), mismas vistas que asesores pero rol distinguible en log de queries.",
+        "9 preguntas sugeridas específicas del rol contador en el sidebar.",
+        "Datamart facturacion_emitida.json para tracking del flujo ANTE-cobro (qué se facturó, qué falta cobrar).",
+        "Primera factura cargada: Factura A Red Hat AR (BHP SA Pto. Vta. 00002 Nro. 00000995, USD 4.840)."
+      ],
+      "changed": [
+        "Briefing actualizado: cuentas MP1/MP2 ahora con titulares operativos correctos (MP1 = NerdCube/Fernando Galvez, MP2 = BHP/Ernesto Corona).",
+        "Sección 'Clientes activos BHP' reorganizada en 2 subsecciones (vía MP / vía facturación formal).",
+        "Sidebar del chat: copy 'Última actualización del contexto' (antes decía 'briefing'), fecha ahora dinámica vía version.json (antes hardcodeada al 16/06)."
+      ],
+      "fixed": [
+        "Chat: composer ya no se esconde al achicar la ventana — layout elástico con altura fija del viewport y flex-shrink:0 en topbar/composer.",
+        "Endpoints /feedback POST y GET restaurados — habían sido eliminados silenciosamente en un edit anterior; los votos del último período no se guardaban."
+      ]
+    },
+    {
+      "version": "0.4.0",
+      "fecha": "2026-06-17",
+      "titulo": "Documento Marco V1.0 integrado + proceso de ordenamiento estructurado",
+      "added": [
+        "Datamart proceso_ordenamiento.json: tracking operativo de las 6 líneas A-F del Documento Marco con tareas, responsables, deadlines, bloqueos transversales.",
+        "Identificación explícita de bloqueos transversales: BLK1 (contador deficiente, afecta 5 líneas), BLK2 (sin abogado), BLK3 (caja restringida, depende cobro GBM), BLK4 (firma digital Franco).",
+        "Definición del estado 'en revisión' en el briefing: no implica desvinculación, sino reestructuración contractual inclusiva.",
+        "Sección Criterios de decisión, Líneas rojas (8 reglas innegociables), Escenario oferta de compra (4 filtros + reglas de conducta), Gobernanza con revisión trimestral."
+      ],
+      "changed": [
+        "Briefing alineado con Documento Marco V1.0: orden corregido de líneas E/F (ahora E=Carolina, F=Cumplimiento fiscal personal).",
+        "Línea F (Carolina) reescrita con framing de continuidad/reestructuración — no de transición a salida."
+      ]
+    },
+    {
+      "version": "0.3.0",
+      "fecha": "2026-06-17",
+      "titulo": "Auditoría de uso — log automático de queries + feedback con cross-reference",
+      "added": [
+        "Log automático de cada query exitosa en KV (asíncrono via ctx.waitUntil) con question, answer_preview, nivel, usage de tokens (incluyendo cache_read para confirmar caching).",
+        "Endpoint GET /queries (autenticado) que lista el historial ordenado por fecha desc.",
+        "Pestaña 'Historial de consultas' en feedback.html con stats agregadas (tokens nuevos, % cache hit).",
+        "Cross-reference: feedback ahora acepta query_id opcional para enlazar voto con query original (análisis offline)."
+      ],
+      "changed": [
+        "Prompt caching de Anthropic activado con 2 breakpoints (capas .md + datamarts) — baja ~90% el costo de input en queries dentro de la ventana de 5 min."
+      ],
+      "fixed": [
+        "Wrapper de errores amigable: 'rate_limit_error' ahora se traduce a 'Llegamos al techo de uso del modelo, esperá Ns y volvé a preguntar' (antes mostraba el mensaje crudo de la API)."
+      ]
+    },
+    {
+      "version": "0.2.0",
+      "fecha": "2026-06-17",
+      "titulo": "Carga histórica de datamarts bancarios y entidades",
+      "added": [
+        "Datamart chase_dvops.json + chase_dvops_detalle.json: cuenta JPMorgan Chase de d-Vops LLC, 363 movimientos enero 2025 - mayo 2026 (USD 167.937 ingresos, USD 247.108 egresos).",
+        "Datamart mp_bhp.json: cuenta Mercado Pago BHP (titular operativo Ernesto Corona), 90 movimientos mayo-junio 2026.",
+        "Datamart mp_nerdcube.json + mp_nerdcube_detalle.json: cuenta MP histórica NerdCube (titular operativo Fernando Galvez), 958 movimientos en 31 meses consecutivos (dic 2023 - jun 2026, ARS 83M de flujo total).",
+        "Nueva entidad d-Vops SA de CV (México) en entidades.json, con cuenta bancaria MXN y transferencias intercompany desde Chase.",
+        "5 clientes confirmados de d-Vops LLC: GBM Costa Rica, Lat Capital Solutions, Intelicolab Panama, Stripe, Miami Direct Inc.",
+        "Documentación de pagos cruzados históricos NerdCube en nerdcube_legacy.json (contexto Fernando Galvez ex contador, fuentes de pago a personal NerdCube)."
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "fecha": "2026-06-16",
+      "titulo": "Despliegue inicial del OC reactivo (C4a) — funcional",
+      "added": [
+        "Cloudflare Worker como proxy de API Anthropic + sistema de auth multinivel (socios/asesores/inversores).",
+        "Sitio estático en Netlify con auto-deploy desde main.",
+        "Datamarts iniciales: entidades, deuda_arca, deuda_privada, vencimientos, adaptant_sas, dvops_llc, cash_flow, costos_operativos, personal, nerdcube_legacy, movimientos_bancarios.",
+        "System prompts en capas: 00_personalidad, 01_briefing_completo, 02_datamart_guide, 03_vista_inversor, 04_modelo_privacidad.",
+        "Chat reactivo (C4a del marco OC) con preguntas sugeridas por nivel, feedback 👍/👎 con KV.",
+        "Página /feedback.html para consultar feedback acumulado."
+      ],
+      "fixed": [
+        "Auth.js envuelto en IIFE para no leakear globals — bug que rompía login con SyntaxError 'Identifier already declared'.",
+        "Versión del sitio en header dinámica desde version.json (hash de commit en cada deploy de Netlify)."
+      ]
+    }
+  ]
+}
