@@ -11,10 +11,23 @@ SITE_BASE = "https://oc-adaptant.netlify.app"
 binding = "FEEDBACK_KV"
 id = "f3ffb30a15a640fc8ec4e38a740c9557"
 
+# Cron Triggers — capa C4b agentic.
+# Cada cron dispara un agente del registry (datamarts/agentes_activos.json).
+# Los crons están en UTC. Buenos Aires = UTC-3, San Juan = UTC-3.
+# Mapeo activo:
+#   "0 11 * * *"   → diario 8:00 AM AR  → agente vencimientos-7d
+#   "0 21 * * *"   → diario 18:00 AR    → agente ingreso-cuenta-bhp
+#   "0 12 * * 1"   → lunes 9:00 AR      → agente cobranzas-pendientes
+#   "0 14 * * 5"   → viernes 11:00 AR   → agente coherencia-datamarts
+# Para activar más agentes, agregar el cron acá y el branch en scheduled().
+[triggers]
+crons = ["0 11 * * *"]
+
 # Las siguientes variables sensibles se configuran con:
 #   wrangler secret put ANTHROPIC_API_KEY
 #   wrangler secret put PWD_SOCIOS
 #   wrangler secret put PWD_ASESORES
+#   wrangler secret put PWD_CONTADOR
 #   wrangler secret put PWD_INVERSORES
 #   wrangler secret put SESSION_SECRET
 #

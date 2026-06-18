@@ -601,6 +601,122 @@ code, .mono {
   color: var(--gris2);
 }
 
+/* ─── Alertas de agentes (C4b) ────────────────────────────────────────────── */
+
+.alert-entry {
+  border: 1px solid var(--linea);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: white;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--linea);
+  flex-wrap: wrap;
+}
+
+.alert-header .agent-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--tc-soft);
+  color: var(--tc);
+  border: 1px solid var(--tc-border);
+}
+
+.alert-header .alert-titulo {
+  font-size: 13.5px;
+  color: var(--negro);
+  font-weight: 500;
+  flex: 1;
+}
+
+.alert-header .alert-ts {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gris2);
+}
+
+.alert-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alert-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 6px 0;
+}
+
+.alert-item .alert-date {
+  font-size: 11.5px;
+  color: var(--gris);
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.alert-item .alert-item-body {
+  flex: 1;
+  font-size: 12.5px;
+}
+
+.alert-item .alert-entidad {
+  color: var(--gris);
+  font-size: 11px;
+}
+
+.alert-item .alert-obligacion {
+  color: var(--negro);
+  margin: 1px 0;
+}
+
+.alert-item .alert-monto {
+  font-size: 11px;
+  color: var(--gris);
+}
+
+.alert-level-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--crema2);
+  color: var(--gris);
+  align-self: flex-start;
+}
+
+.alert-level-tag.critico { background: rgba(184,50,20,.1); color: var(--critico); }
+.alert-level-tag.urgente { background: rgba(217,132,43,.1); color: var(--urgente); }
+.alert-level-tag.alto    { background: rgba(201,75,26,.08); color: var(--tc); }
+
+.run-agent-btn {
+  background: var(--tc);
+  color: white;
+  border: none;
+  border-radius: var(--r-md);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.run-agent-btn:hover { background: var(--negro); }
+.run-agent-btn:disabled { background: var(--gris2); cursor: wait; }
+
 .composer {
   border-top: 1px solid var(--linea);
   padding: 16px 32px 22px;

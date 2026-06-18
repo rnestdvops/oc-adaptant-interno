@@ -130,6 +130,8 @@ async function buildSystemPrompt(level, env) {
       "mp_nerdcube.json",
       "proceso_ordenamiento.json",
       "facturacion_emitida.json",
+      "plan_agentizacion.json",
+      "agentes_activos.json",
     ];
     datamartParts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {
@@ -474,6 +476,153 @@ async function handleQueriesList(request, env) {
 
 // ─── Router principal ─────────────────────────────────────────────────────────
 
+// ─── Cron / Scheduled — capa C4b agentic ──────────────────────────────────────
+//
+// Disparado por Cloudflare Cron Triggers según los crons en wrangler.toml.
+// Cada agente lee datamarts via fetch a SITE_BASE, razona (procedural o LLM),
+// y persiste alertas/resumenes en KV con prefix "alert:".
+//
+// LÍNEA ROJA (paper OC Agentizado): los agentes operan sobre el commons —
+// nunca sobre sistemas transaccionales. Solo detectan, alertan, preparan.
+// La decisión queda siempre en el humano.
+
+async function dispatchScheduled(event, env, ctx) {
+  const cron = event.cron;
+
+  // Mapeo cron → agente. Mantener en sync con wrangler.toml [triggers] crons.
+  if (cron === "0 11 * * *") {
+    // Diario 8:00 AR — vencimientos próximos 7 días
+    await runAgentVencimientos7d(env);
+  }
+  // Próximos agentes: agregar branches acá + el cron correspondiente en wrangler.toml.
+}
+
+// ─── Agente 1: vencimientos próximos 7 días ───────────────────────────────────
+
+async function runAgentVencimientos7d(env) {
+  const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
+
+  let venc;
+  try {
+    const r = await fetch(`${SITE_BASE}/datamarts/vencimientos.json`);
+    if (!r.ok) throw new Error(`fetch vencimientos: ${r.status}`);
+    venc = await r.json();
+  } catch (e) {
+    await logAgentError(env, "vencimientos-7d", e.message);
+    return;
+  }
+
+  const now = new Date();
+  const limit = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+  const todayStr = now.toISOString().slice(0, 10);
+  const limitStr = limit.toISOString().slice(0, 10);
+
+  const enVentana = (venc.vencimientos || []).filter(v => {
+    if (!v.fecha) return false;
+    return v.fecha >= todayStr && v.fecha <= limitStr;
+  });
+
+  enVentana.sort((a, b) => a.fecha.localeCompare(b.fecha));
+
+  // Si no hay nada en la ventana, no genera alerta (sin spam).
+  if (enVentana.length === 0) return;
+
+  const fmtMonto = v => {
+    if (v.monto_ars != null) return `$${v.monto_ars.toLocaleString("es-AR", { maximumFractionDigits: 0 })} ARS`;
+    if (v.monto_usd != null) return `USD ${v.monto_usd.toLocaleString("en-US", { minimumFractionDigits: 2 })}`;
+    if (v.monto_aprox_ars != null) return `~$${v.monto_aprox_ars.toLocaleString("es-AR", { maximumFractionDigits: 0 })} ARS`;
+    return null;
+  };
+
+  const fmtItem = v => {
+    const monto = fmtMonto(v);
+    const montoTxt = monto ? ` · ${monto}` : "";
+    const nivel = v.nivel ? ` · ${v.nivel}` : "";
+    return `- **${v.fecha}** · ${v.entidad} · ${v.obligacion}${montoTxt}${nivel}`;
+  };
+
+  const body = enVentana.map(fmtItem).join("\n");
+  const ts = Date.now();
+
+  const alert = {
+    agent_id: "vencimientos-7d",
+    ts,
+    titulo: `${enVentana.length} vencimiento(s) en los próximos 7 días`,
+    cuerpo_markdown: body,
+    items_count: enVentana.length,
+    items: enVentana,
+  };
+
+  const key = `alert:${ts}:vencimientos-7d:${crypto.randomUUID()}`;
+  await env.FEEDBACK_KV.put(key, JSON.stringify(alert));
+}
+
+async function logAgentError(env, agentId, message) {
+  const key = `agent_error:${Date.now()}:${agentId}`;
+  await env.FEEDBACK_KV.put(
+    key,
+    JSON.stringify({ agent_id: agentId, error: message, ts: Date.now() }),
+    { expirationTtl: 60 * 60 * 24 * 30 } // 30 días
+  );
+}
+
+// ─── Endpoint /alerts — lista alertas generadas por agentes ───────────────────
+
+async function handleAlertsList(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const list = await env.FEEDBACK_KV.list({ prefix: "alert:" });
+  const entries = await Promise.all(
+    list.keys.map(async (k) => {
+      const raw = await env.FEEDBACK_KV.get(k.name);
+      return raw ? { ...JSON.parse(raw), _key: k.name } : null;
+    })
+  );
+
+  const sorted = entries.filter(Boolean).sort((a, b) => b.ts - a.ts);
+
+  return new Response(JSON.stringify({
+    entries: sorted,
+    total: sorted.length,
+  }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
+// ─── Endpoint /agents/run — disparar un agente manualmente (testing) ──────────
+
+async function handleAgentRun(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload || payload.level !== "socios") {
+    // Solo socios pueden disparar agentes manualmente — operación admin.
+    return new Response(JSON.stringify({ error: "Solo socios pueden disparar agentes" }), {
+      status: 403,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const body = await request.json();
+  const { agent_id } = body || {};
+
+  if (agent_id === "vencimientos-7d") {
+    await runAgentVencimientos7d(env);
+    return new Response(JSON.stringify({ ok: true, agent_id, ran_at: Date.now() }), {
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  return new Response(JSON.stringify({ error: `Agente desconocido: ${agent_id}` }), {
+    status: 400,
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
 export default {
   async fetch(request, env, ctx) {
     if (request.method === "OPTIONS") {
@@ -502,6 +651,14 @@ export default {
       return handleQueriesList(request, env);
     }
 
+    if (url.pathname === "/alerts" && request.method === "GET") {
+      return handleAlertsList(request, env);
+    }
+
+    if (url.pathname === "/agents/run" && request.method === "POST") {
+      return handleAgentRun(request, env);
+    }
+
     if (url.pathname === "/health") {
       return new Response(JSON.stringify({ status: "ok" }), {
         headers: { "Content-Type": "application/json", ...CORS_HEADERS },
@@ -509,5 +666,9 @@ export default {
     }
 
     return new Response("Not found", { status: 404, headers: CORS_HEADERS });
+  },
+
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(dispatchScheduled(event, env, ctx));
   },
 };

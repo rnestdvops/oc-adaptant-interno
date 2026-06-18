@@ -1,0 +1,150 @@
+{
+  "last_updated": "2026-06-17",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Plan de transición del OC Adaptant Interno de Fase 1 (commons reactivo C4a) a Fase 2 (commons agentizado C4b), aplicando el protocolo del paper interno 'El OC Agentizado' (Adaptant Studio, mayo 2026). Versión legible humana en docs/agentizacion_oc_interno.md.",
+  "marco_referencia": {
+    "paper_principal": "Adaptant_OC_Paper_v4 — La información como bien común (junio 2026)",
+    "paper_agentizacion": "Adaptant_OC_Agentizado_v4 — Arquitectura Agentizada (mayo 2026)",
+    "principio_rector": "Los agentes operan sobre el commons — nunca sobre los sistemas transaccionales. Sincronizan, detectan, alertan, preparan. La decisión es siempre humana.",
+    "linea_roja": "Si los agentes empiezan a ejecutar acciones en sistemas fuente, el OC deja de ser infraestructura de autonomía y se convierte en infraestructura de control. Ese límite es innegociable."
+  },
+  "estado_actual_capas": {
+    "C1_sistemas_fuente": "Mínimo viable — entrada manual (extractos bancarios, ARCA, comprobantes)",
+    "C2_extraccion": "NO automatizado — Ernesto es curador manual de datamarts",
+    "C3_commons": "Operativo en datamarts/*.json, con modelo de privacidad por nivel",
+    "C4a_conversacional_reactivo": "OPERATIVO — el chat actual",
+    "C4b_agentic": "NO existe — foco de este plan",
+    "C4c_juicio_humano": "Ernesto + Franco, siempre",
+    "C5_periferia": "Web reactiva; canal proactivo pendiente"
+  },
+  "doble_proposito": {
+    "operativo": "Liberar a Ernesto y Franco del monitoreo manual de vencimientos, cobranzas, ingresos en cuentas e inconsistencias",
+    "producto": "El OC Interno es el primer proof-of-concept vivo del producto Adaptant. La agentización aplicada acá genera material de caso real (no demo) para conversaciones comerciales y descubre fricciones reales antes que un cliente"
+  },
+  "criterio_elegibilidad_paper": {
+    "frecuencia_minima": "≥3 veces por semana",
+    "persistencia_minima": "4 semanas consecutivas",
+    "estabilidad_forma": "Inputs y output equivalentes en ≥80% de las consultas",
+    "acuerdo_maestria": "Validación de al menos un referente periférico del dominio",
+    "nota": "Para agentes calendario-driven el patrón viene del evento del dominio, no del comportamiento del usuario. Por eso son legítimos día 1 sin esperar acumulación."
+  },
+  "catalogo_agentes_propuestos": [
+    {
+      "id": "vencimientos-7d",
+      "nombre": "Vencimientos próximos 7 días",
+      "categoria": "calendario_driven",
+      "trigger": "temporal · diario 8:00 AR",
+      "output": "alerta priorizada",
+      "canal": "UI (KV) — email en fase posterior",
+      "prioridad": "alta",
+      "estado_ciclo_vida": "propuesta",
+      "justificacion_dia_1": "El vencimiento ya existe en el datamart (vencimientos.json, deuda_privada.json, facturacion_emitida.json). El agente solo lo proyecta y avisa."
+    },
+    {
+      "id": "cobranzas-pendientes",
+      "nombre": "Cobranzas pendientes",
+      "categoria": "calendario_driven",
+      "trigger": "temporal · semanal lunes 9:00",
+      "output": "resumen ordenado por antigüedad",
+      "canal": "UI — email en fase posterior",
+      "prioridad": "media",
+      "estado_ciclo_vida": "propuesta",
+      "justificacion_dia_1": "Lee facturacion_emitida.json con estado_cobro=pendiente, ordena por días desde fecha_vto_pago"
+    },
+    {
+      "id": "ingreso-cuenta-bhp",
+      "nombre": "Ingreso en cuenta BHP",
+      "categoria": "calendario_driven",
+      "trigger": "temporal · diario 18:00 (polling sobre datamart bancario)",
+      "output": "alerta inmediata con regla A3",
+      "canal": "UI — email en fase posterior",
+      "prioridad": "alta",
+      "estado_ciclo_vida": "propuesta",
+      "justificacion_dia_1": "Cuando se cargue un movimiento nuevo en movimientos_bancarios.json hacia cuenta BHP, alerta aplicando regla 'retirar inmediatamente al ingreso (Línea A3 del proceso_ordenamiento)'"
+    },
+    {
+      "id": "coherencia-datamarts",
+      "nombre": "Coherencia de datamarts",
+      "categoria": "calendario_driven",
+      "trigger": "temporal · semanal viernes",
+      "output": "reporte de inconsistencias",
+      "canal": "UI — email en fase posterior",
+      "prioridad": "media",
+      "estado_ciclo_vida": "propuesta",
+      "justificacion_dia_1": "Cruza datamarts buscando contradicciones (¿pago en MP que no está reflejado en deuda_privada? ¿factura cobrada que sigue pendiente?)"
+    },
+    {
+      "id": "patrones-consulta",
+      "nombre": "Patrones de consulta",
+      "categoria": "uso_driven",
+      "trigger": "temporal · semanal",
+      "output": "análisis de qué se pregunta más, qué temas se repiten, qué falta en datamart",
+      "canal": "UI + entrada en datamart",
+      "prioridad": "media",
+      "estado_ciclo_vida": "propuesta — esperando datos",
+      "pre_requisito": "≥4 semanas de queries acumuladas en KV"
+    },
+    {
+      "id": "sugeridas-dinamicas",
+      "nombre": "Sugeridas dinámicas en sidebar del chat",
+      "categoria": "uso_driven",
+      "trigger": "demanda · al cargar chat.html",
+      "output": "top N preguntas reales del nivel, complementan hardcodeadas",
+      "canal": "Sidebar UI del chat",
+      "prioridad": "media",
+      "estado_ciclo_vida": "propuesta — esperando datos",
+      "pre_requisito": "≥4 semanas de queries acumuladas",
+      "relacion": "Es el chip parqueado 'Top queries como sugeridas dinámicas en sidebar' del histórico de sesiones"
+    }
+  ],
+  "stack_tecnico": {
+    "trigger_temporal": "Cloudflare Cron Triggers (sección [triggers] en wrangler.toml + función scheduled() en worker.js)",
+    "estado_entre_runs": "KV (binding FEEDBACK_KV existente) con prefix agent: y alert:",
+    "lectura_datamarts": "Fetch a Netlify (igual que buildSystemPrompt actual)",
+    "llm_razonamiento": "Misma API de Anthropic, cuando aplique (agentes simples son procedurales)",
+    "canal_salida_v1": "KV + UI nueva (pestaña Alertas en feedback.html)",
+    "canal_salida_v2": "Email via Resend o Cloudflare Email Workers — agregable después de validar utilidad",
+    "registry_agentes": "datamarts/agentes_activos.json"
+  },
+  "plan_ejecucion": {
+    "semana_1": "Infra: Cron + registry + esquema. Agente #1 (vencimientos-7d) en operación monitoreada",
+    "semana_2": "Evaluación con feedback explícito. Si #1 acciona, lanzar #3 (ingreso-cuenta-bhp)",
+    "semana_3": "Si los primeros muestran valor, lanzar #2 (cobranzas) y #4 (coherencia)",
+    "semana_4_a_8": "Acumulación de queries para evaluar #5 y #6",
+    "semana_12": "Primera revisión periódica del paper — cada agente: ¿sigue accionado? ¿sigue siendo útil?"
+  },
+  "exigencias_del_paper_y_cumplimiento": [
+    {
+      "exigencia": "Criterio de elegibilidad cuantitativo",
+      "como_se_cumple": "Aplicado estricto a uso-driven; calendario-driven justificado por evento del dominio"
+    },
+    {
+      "exigencia": "5 preguntas antes de implementar (inputs, proceso, output, frecuencia, escalación humana)",
+      "como_se_cumple": "Documentadas en cada ficha del registry agentes_activos.json"
+    },
+    {
+      "exigencia": "Taxonomía Trigger + Output + Canal",
+      "como_se_cumple": "Estructura formal del registry"
+    },
+    {
+      "exigencia": "Ciclo de vida explícito (propuesta → validación → despliegue → operación monitoreada → estable → revisión → retiro)",
+      "como_se_cumple": "Campo estado_ciclo_vida en cada ficha"
+    },
+    {
+      "exigencia": "Línea roja: no actuar sobre sistemas fuente",
+      "como_se_cumple": "Garantizado por arquitectura — el Worker no tiene credenciales para escribir en ARCA / banco / MP"
+    },
+    {
+      "exigencia": "Revisión periódica cada 6 meses",
+      "como_se_cumple": "Campo revision_periodica.proxima en cada ficha"
+    }
+  ],
+  "pendientes_antes_de_cada_despliegue": [
+    "Las 5 preguntas respondidas y documentadas",
+    "Referente periférico validó la ficha (Franco en este caso)",
+    "Output esperado calibrado con datos reales del datamart",
+    "Mecanismo de feedback de 4 semanas armado",
+    "Fecha de primera revisión agendada"
+  ]
+}

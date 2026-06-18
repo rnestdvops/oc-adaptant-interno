@@ -1,0 +1,59 @@
+{
+  "last_updated": "2026-06-17",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Registry vivo de agentes de la capa C4b del OC. Cada agente activo tiene su ficha siguiendo el protocolo del paper 'OC Agentizado' (5 preguntas + taxonomía Trigger+Output+Canal + ciclo de vida). Para el plan completo de agentización ver datamarts/plan_agentizacion.json y docs/agentizacion_oc_interno.md.",
+  "principio_rector": "Los agentes operan SOBRE el commons (los datamarts y el log de queries), nunca sobre los sistemas transaccionales (ARCA, bancos, MP). Solo detectan, alertan, preparan. La decisión es siempre humana.",
+  "agentes": [
+    {
+      "id": "vencimientos-7d",
+      "nombre": "Vencimientos próximos 7 días",
+      "categoria": "calendario_driven",
+      "estado_ciclo_vida": "operacion_monitoreada",
+      "primer_despliegue": "2026-06-17",
+      "trigger": {
+        "tipo": "temporal",
+        "cron": "0 11 * * *",
+        "descripcion": "Diario 8:00 AM AR (UTC-3)"
+      },
+      "output": {
+        "tipo": "alerta",
+        "formato": "Markdown con tabla agrupada · ordenada por fecha ascendente · incluye monto y nivel"
+      },
+      "canal": {
+        "tipo": "ui_kv",
+        "detalle": "Persiste en KV con clave alert:{ts}:vencimientos-7d:{uuid}. Visible en feedback.html pestaña Alertas (endpoint GET /alerts)",
+        "evolucion_futura": "Agregar canal email (Resend o Cloudflare Email Workers) cuando el output esté calibrado"
+      },
+      "preguntas_protocolo": {
+        "1_inputs": "datamarts/vencimientos.json. Si en el futuro se agregan deuda_privada.json y facturacion_emitida.json, este campo y el proceso se actualizan.",
+        "2_proceso": "Fetch JSON desde Netlify SITE_BASE. Filtrar items donde fecha está entre hoy y hoy+7 días. Ordenar por fecha ascendente. Formatear cada item como '- **YYYY-MM-DD** · entidad · obligacion · monto · nivel'. Sin LLM — procedural puro.",
+        "3_output_format": "Objeto JSON persistido en KV con campos {agent_id, ts, titulo, cuerpo_markdown, items_count, items}. Si items_count === 0, NO genera alerta (sin spam).",
+        "4_frecuencia": "Trigger temporal cron '0 11 * * *' configurado en wrangler.toml [triggers]. Se puede disparar manualmente con POST /agents/run body {agent_id:'vencimientos-7d'} (solo socios).",
+        "5_escalacion_humana": "SIEMPRE. El agente solo alerta — el humano (Ernesto o Franco) decide qué hacer con cada vencimiento. El agente no marca nada como 'pagado' ni modifica el datamart de origen."
+      },
+      "monitoreo": {
+        "feedback_4_semanas": [],
+        "criterio_exito": "≥80% de las alertas generadas accionadas por Ernesto o Franco (pagado/coordinado/justificadamente diferido)",
+        "criterio_retiro": "Si en revisión periódica el 50% de las alertas no se acciona, el agente vuelve a 'propuesta' para recalibración"
+      },
+      "revision_periodica": {
+        "cada_meses": 6,
+        "proxima": "2026-12-17",
+        "responsable": "Ernesto"
+      },
+      "implementacion": {
+        "archivo": "worker/worker.js",
+        "funcion": "runAgentVencimientos7d",
+        "dispatcher": "dispatchScheduled"
+      }
+    }
+  ],
+  "agentes_propuestos_pendientes": [
+    "cobranzas-pendientes",
+    "ingreso-cuenta-bhp",
+    "coherencia-datamarts",
+    "patrones-consulta (pre-requisito: ≥4 semanas de queries)",
+    "sugeridas-dinamicas (pre-requisito: ≥4 semanas de queries)"
+  ]
+}

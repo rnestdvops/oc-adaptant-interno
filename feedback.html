@@ -24,11 +24,17 @@
 
     <div class="feedback-page">
       <div class="tabs">
-        <button class="tab-btn active" data-tab="feedback">Feedback</button>
+        <button class="tab-btn active" data-tab="alerts">Alertas de agentes</button>
+        <button class="tab-btn" data-tab="feedback">Feedback</button>
         <button class="tab-btn" data-tab="queries">Historial de consultas</button>
       </div>
 
-      <div class="tab-panel active" id="tab-feedback">
+      <div class="tab-panel active" id="tab-alerts">
+        <p id="alerts-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+        <div id="alerts-list"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-feedback">
         <p id="feedback-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
         <div id="feedback-list"></div>
       </div>
@@ -173,6 +179,95 @@
       });
     }
 
+    function renderAlertEntry(e) {
+      const dateStr = fmtDate(e.ts);
+      const itemsHtml = (e.items || []).map(it => {
+        const monto = it.monto_ars != null
+          ? `$${Number(it.monto_ars).toLocaleString("es-AR", { maximumFractionDigits: 0 })} ARS`
+          : it.monto_usd != null
+            ? `USD ${Number(it.monto_usd).toLocaleString("en-US", { minimumFractionDigits: 2 })}`
+            : it.monto_aprox_ars != null
+              ? `~$${Number(it.monto_aprox_ars).toLocaleString("es-AR", { maximumFractionDigits: 0 })} ARS`
+              : "";
+        const nivelTag = it.nivel ? `<span class="alert-level-tag ${(it.nivel || '').toLowerCase()}">${escapeHtmlFb(it.nivel)}</span>` : "";
+        return `
+          <div class="alert-item">
+            <span class="alert-date mono">${escapeHtmlFb(it.fecha || "")}</span>
+            <div class="alert-item-body">
+              <div class="alert-entidad">${escapeHtmlFb(it.entidad || "")}</div>
+              <div class="alert-obligacion">${escapeHtmlFb(it.obligacion || "")}</div>
+              ${monto ? `<div class="alert-monto mono">${monto}</div>` : ""}
+            </div>
+            ${nivelTag}
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="alert-entry">
+          <div class="alert-header">
+            <span class="agent-tag">${escapeHtmlFb(e.agent_id)}</span>
+            <span class="alert-titulo">${escapeHtmlFb(e.titulo || "")}</span>
+            <span class="alert-ts">${dateStr}</span>
+          </div>
+          <div class="alert-items">${itemsHtml}</div>
+        </div>
+      `;
+    }
+
+    async function loadAlerts() {
+      const session = getSession();
+      const statusEl = document.getElementById("alerts-status");
+      const listEl = document.getElementById("alerts-list");
+
+      try {
+        const resp = await fetch(`${FB_WORKER_URL}/alerts`, {
+          headers: { Authorization: `Bearer ${session.token}` },
+        });
+        if (resp.status === 401) {
+          statusEl.textContent = "La sesión expiró. Volvé a entrar.";
+          return;
+        }
+        const data = await resp.json();
+        const entries = data.entries || [];
+
+        const runBtn = session.level === "socios"
+          ? `<button class="run-agent-btn" id="run-vencimientos-btn">Disparar agente Vencimientos 7d ahora</button>`
+          : "";
+
+        if (entries.length === 0) {
+          statusEl.innerHTML = `Todavía no hay alertas generadas por agentes. ${runBtn}`;
+        } else {
+          statusEl.innerHTML = `<strong>${entries.length}</strong> alerta(s) registradas. ${runBtn}`;
+          listEl.innerHTML = entries.map(renderAlertEntry).join("");
+        }
+
+        const btn = document.getElementById("run-vencimientos-btn");
+        if (btn) {
+          btn.onclick = async () => {
+            btn.disabled = true;
+            btn.textContent = "Ejecutando...";
+            try {
+              await fetch(`${FB_WORKER_URL}/agents/run`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${session.token}`,
+                },
+                body: JSON.stringify({ agent_id: "vencimientos-7d" }),
+              });
+              await loadAlerts();
+            } catch (err) {
+              btn.disabled = false;
+              btn.textContent = `Error: ${err.message}`;
+            }
+          };
+        }
+      } catch (err) {
+        statusEl.textContent = `Error cargando alertas: ${err.message}`;
+      }
+    }
+
     async function init() {
       const session = getSession();
       if (!session) {
@@ -180,9 +275,9 @@
         return;
       }
       setupTabs();
-      // Cargo ambos en paralelo — la pestaña inactiva queda lista para mostrar
-      // sin nuevo round-trip cuando el usuario haga click.
-      await Promise.all([loadFeedback(), loadQueries()]);
+      // Cargo los tres paneles en paralelo — el panel inactivo queda listo
+      // para mostrar sin nuevo round-trip cuando el usuario haga click.
+      await Promise.all([loadAlerts(), loadFeedback(), loadQueries()]);
     }
 
     document.addEventListener("DOMContentLoaded", init);
