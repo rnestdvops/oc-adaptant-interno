@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-17",
+  "last_updated": "2026-06-18",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "marco_referencia": "Documento Marco V1.0 — Plan de ordenamiento, transición y crecimiento (BHP → Adaptant con d-Vops LLC, junio 2026). Ver system_prompts/01_briefing_completo.md para principios, líneas rojas, criterios de decisión y gobernanza. ESTE datamart es el TRACKING OPERATIVO (planilla 3 del marco — cronograma de transición y apagado), no el marco rector.",
@@ -75,25 +75,26 @@
     {
       "id": "B",
       "nombre": "Constitución Adaptant SAS",
-      "estado_general": "BLOQUEADA en la habilitación de firma digital de Franco",
+      "estado_general": "EN CURSO — firma digital de Franco resuelta (18/06/2026), listo para avanzar con constitución",
       "tareas": [
         {
           "id": "B1",
           "tarea": "Franco Buglioni habilita su firma digital",
           "responsable": "Franco",
           "deadline_objetivo": null,
-          "estado": "pendiente",
+          "estado": "completada",
+          "fecha_completada": "2026-06-18",
           "bloqueada_por": null,
-          "notas": "Franco reside en Córdoba. La firma digital es requisito para hacer la constitución de Adaptant SAS de manera remota (sin viajar a CABA, jurisdicción de constitución)."
+          "notas": "Franco reside en Córdoba. La firma digital es requisito para hacer la constitución de Adaptant SAS de manera remota (sin viajar a CABA, jurisdicción de constitución). COMPLETADA: Franco generó su firma digital el 18/06/2026."
         },
         {
           "id": "B2",
           "tarea": "Ejecutar checklist de constitución (estatuto, Registro Público CABA, Boletín Oficial, CUIT, IIBB, cuenta bancaria, libros, IP)",
           "responsable": "Ernesto + Franco + escribano/abogado",
           "deadline_objetivo": null,
-          "estado": "bloqueada",
-          "bloqueada_por": "B1 (firma digital Franco) + BLK2 (abogado)",
-          "notas": "Estatuto y checklist YA están preparados. Una vez habilitada la firma digital, el proceso se ejecuta en remoto."
+          "estado": "pendiente",
+          "bloqueada_por": "BLK2 (abogado)",
+          "notas": "Estatuto y checklist YA están preparados. Firma digital de Franco resuelta (18/06/2026). Único bloqueo restante: contar con abogado para acompañar el trámite. Una vez resuelto BLK2, el proceso se ejecuta en remoto."
         }
       ]
     },
@@ -335,11 +336,13 @@
     },
     {
       "id": "BLK4",
-      "titulo": "Firma digital de Franco no habilitada",
+      "titulo": "Firma digital de Franco — RESUELTO",
       "afecta_lineas": ["B"],
-      "descripcion": "Sin firma digital habilitada de Franco no se puede ejecutar la constitución remota de Adaptant SAS desde CABA.",
-      "accion_en_curso": "Franco debe iniciar el proceso de habilitación",
-      "prioridad": "MEDIA"
+      "descripcion": "Sin firma digital habilitada de Franco no se podía ejecutar la constitución remota de Adaptant SAS desde CABA.",
+      "accion_en_curso": null,
+      "resuelto": true,
+      "fecha_resolucion": "2026-06-18",
+      "prioridad": "RESUELTO"
     }
   ],
   "huecos_de_informacion_a_completar": [
