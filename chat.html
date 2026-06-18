@@ -94,8 +94,9 @@
       // Formato Argentina: 549 + código de área (sin 0) + número (sin 15)
       // Ejemplo Córdoba: 549351XXXXXXX · Ejemplo CABA: 5491XXXXXXXXX
       const CONTACTOS_WA = {
-        ernesto: "5491140001111",  // ← reemplazar con número real de Ernesto
-        franco:  "5491140002222",  // ← reemplazar con número real de Franco
+        ernesto:  "5492645105069",
+        franco:   "5493513733048",
+        carolina: "5493513339354",
       };
 
       const WORKER_URL = window.OC_WORKER_URL;
@@ -176,6 +177,7 @@
 
         btnWrap.appendChild(mkWaBtn("Ernesto", CONTACTOS_WA.ernesto));
         btnWrap.appendChild(mkWaBtn("Franco", CONTACTOS_WA.franco));
+        btnWrap.appendChild(mkWaBtn("Carolina", CONTACTOS_WA.carolina));
         card.appendChild(btnWrap);
 
         return card;
