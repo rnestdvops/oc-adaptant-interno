@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline cargado al 18/06/2026 — 9 proyectos (2 confirmados, 7 potenciales)",
-    "total_pipeline_usd": 402250,
+    "estado_actual": "Pipeline cargado al 18/06/2026 — 10 proyectos (2 confirmados, 8 potenciales)",
+    "total_pipeline_usd": 408250,
     "confirmado_usd": 24250,
-    "potencial_usd": 378000,
+    "potencial_usd": 384000,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -69,12 +69,17 @@
         "id": "brou-ti-2026",
         "cliente": "BROU",
         "proyecto": "Extensión para equipos actuales de TI",
-        "monto_total_usd": 24000,
-        "duracion_meses": 3,
-        "monto_mes_usd": 8000,
+        "monto_total_usd": 18000,
+        "duracion_meses": 2,
+        "montos_mes_explicitos": {
+          "2026-07": 0,
+          "2026-08": 9000,
+          "2026-09": 9000
+        },
         "estado": "potencial",
         "mes_inicio": "2026-07",
-        "entidad": "Adaptant"
+        "entidad": "Adaptant",
+        "nota_comercial": "Venta cierra Julio 2026; cobro 50% Agosto, 50% Septiembre"
       },
       {
         "id": "antel-vs-2026",
@@ -130,6 +135,18 @@
         "estado": "potencial",
         "mes_inicio": "2026-09",
         "entidad": "Adaptant"
+      },
+      {
+        "id": "dos-santos-entreno",
+        "cliente": "Dos Santos",
+        "proyecto": "Entrenamientos",
+        "monto_total_usd": 12000,
+        "duracion_meses": 1,
+        "monto_mes_usd": 12000,
+        "estado": "potencial",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant",
+        "nota_comercial": "Primer avance — cierre esperado Junio/Julio 2026, ingreso total en Julio"
       },
       {
         "id": "docuprint",

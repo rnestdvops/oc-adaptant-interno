@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-18",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "tc_referencia_ars_usd": 1430,
@@ -14,24 +14,41 @@
     "pregunta_pendiente": "Adaptant SAS aún 'en constitución'. Si los primeros ingresos arrancan en julio 2026, conviene confirmar fecha real de operatividad o definir d-Vops LLC como facturador transitorio."
   },
   "pipeline_resumen": {
-    "proyectos_totales": 9,
+    "proyectos_totales": 10,
     "confirmados": 2,
-    "potenciales": 7,
+    "potenciales": 8,
     "monto_total_confirmado_usd": 24250,
-    "monto_total_potencial_usd": 378000,
-    "monto_total_pipeline_usd": 402250
+    "monto_total_potencial_usd": 384000,
+    "monto_total_pipeline_usd": 408250
   },
   "pipeline": [
     {
       "id": "brou-ti-2026",
       "cliente": "BROU",
       "proyecto": "Extensión para equipos actuales de TI",
-      "monto_total_usd": 24000,
-      "duracion_meses": 3,
-      "monto_mes_usd": 8000,
+      "monto_total_usd": 18000,
+      "duracion_meses": 2,
+      "montos_mes_explicitos": {
+        "2026-07": 0,
+        "2026-08": 9000,
+        "2026-09": 9000
+      },
       "estado": "potencial",
       "mes_inicio": "2026-07",
-      "entidad": "Adaptant"
+      "entidad": "Adaptant",
+      "nota_comercial": "Venta cierra Julio 2026; cobro 50% Agosto, 50% Septiembre"
+    },
+    {
+      "id": "dos-santos-entreno",
+      "cliente": "Dos Santos",
+      "proyecto": "Entrenamientos",
+      "monto_total_usd": 12000,
+      "duracion_meses": 1,
+      "monto_mes_usd": 12000,
+      "estado": "potencial",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant",
+      "nota_comercial": "Primer avance — cierre esperado Junio/Julio 2026, ingreso total en Julio"
     },
     {
       "id": "antel-vs-2026",
@@ -131,9 +148,9 @@
     "2026-09": 10125.0
   },
   "ingresos_potenciales_por_mes": {
-    "2026-07": 30000.0,
-    "2026-08": 40000.0,
-    "2026-09": 41500.0,
+    "2026-07": 34000.0,
+    "2026-08": 41000.0,
+    "2026-09": 42500.0,
     "2026-10": 31000.0,
     "2026-11": 21000.0,
     "2026-12": 21000.0,
@@ -244,8 +261,8 @@
     {
       "mes": "2026-07",
       "ingresos_confirmados_usd": 14125.0,
-      "ingresos_potenciales_usd": 30000.0,
-      "ingresos_totales_usd": 44125.0,
+      "ingresos_potenciales_usd": 34000.0,
+      "ingresos_totales_usd": 48125.0,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -268,12 +285,6 @@
       "saldo_acumulado_conservador_ars": 11373754.12,
       "ingresos_detalle": [
         {
-          "cliente": "BROU",
-          "proyecto": "Extensión para equipos actuales de TI",
-          "monto_usd": 8000,
-          "estado": "potencial"
-        },
-        {
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
           "monto_usd": 16000,
@@ -283,6 +294,12 @@
           "cliente": "GBM",
           "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
           "monto_usd": 6000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Dos Santos",
+          "proyecto": "Entrenamientos",
+          "monto_usd": 12000,
           "estado": "potencial"
         },
         {
@@ -369,8 +386,8 @@
     {
       "mes": "2026-08",
       "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 40000.0,
-      "ingresos_totales_usd": 40000.0,
+      "ingresos_potenciales_usd": 41000.0,
+      "ingresos_totales_usd": 41000.0,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -395,7 +412,7 @@
         {
           "cliente": "BROU",
           "proyecto": "Extensión para equipos actuales de TI",
-          "monto_usd": 8000,
+          "monto_usd": 9000,
           "estado": "potencial"
         },
         {
@@ -488,8 +505,8 @@
     {
       "mes": "2026-09",
       "ingresos_confirmados_usd": 10125.0,
-      "ingresos_potenciales_usd": 41500.0,
-      "ingresos_totales_usd": 51625.0,
+      "ingresos_potenciales_usd": 42500.0,
+      "ingresos_totales_usd": 52625.0,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -514,7 +531,7 @@
         {
           "cliente": "BROU",
           "proyecto": "Extensión para equipos actuales de TI",
-          "monto_usd": 8000,
+          "monto_usd": 9000,
           "estado": "potencial"
         },
         {
