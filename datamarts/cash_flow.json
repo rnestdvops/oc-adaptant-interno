@@ -128,7 +128,7 @@
       "duracion_meses": 6,
       "monto_mes_usd": 3500,
       "estado": "potencial",
-      "mes_inicio": "2026-10",
+      "mes_inicio": "2026-09",
       "entidad": "Adaptant"
     },
     {
@@ -150,11 +150,11 @@
   "ingresos_potenciales_por_mes": {
     "2026-07": 34000.0,
     "2026-08": 41000.0,
-    "2026-09": 42500.0,
+    "2026-09": 46000.0,
     "2026-10": 31000.0,
     "2026-11": 21000.0,
     "2026-12": 21000.0,
-    "2027-03": 33500.0,
+    "2027-03": 30000.0,
     "2027-04": 30000.0,
     "2027-05": 30000.0,
     "2027-06": 30000.0,
@@ -505,8 +505,8 @@
     {
       "mes": "2026-09",
       "ingresos_confirmados_usd": 10125.0,
-      "ingresos_potenciales_usd": 42500.0,
-      "ingresos_totales_usd": 52625.0,
+      "ingresos_potenciales_usd": 46000.0,
+      "ingresos_totales_usd": 56125.0,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -556,6 +556,12 @@
           "cliente": "ISPE - ANR CECI",
           "proyecto": "OC Adopción",
           "monto_usd": 1500,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500,
           "estado": "potencial"
         },
         {
@@ -1195,8 +1201,8 @@
     {
       "mes": "2027-03",
       "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 33500.0,
-      "ingresos_totales_usd": 33500.0,
+      "ingresos_potenciales_usd": 30000.0,
+      "ingresos_totales_usd": 30000.0,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -1222,12 +1228,6 @@
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
           "monto_usd": 30000,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500,
           "estado": "potencial"
         }
       ],
