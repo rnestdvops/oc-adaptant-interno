@@ -24,18 +24,13 @@
 
     <div class="feedback-page">
       <div class="tabs">
-        <button class="tab-btn active" data-tab="updates">Last updates</button>
-        <button class="tab-btn" data-tab="alerts">Alertas de agentes</button>
+        <button class="tab-btn active" data-tab="alerts">Alertas de agentes</button>
         <button class="tab-btn" data-tab="feedback">Feedback</button>
         <button class="tab-btn" data-tab="queries">Historial de consultas</button>
+        <button class="tab-btn" data-tab="updates">Historia de Actualizaciones</button>
       </div>
 
-      <div class="tab-panel active" id="tab-updates">
-        <p id="updates-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
-        <div id="updates-list"></div>
-      </div>
-
-      <div class="tab-panel" id="tab-alerts">
+      <div class="tab-panel active" id="tab-alerts">
         <p id="alerts-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
         <div id="alerts-list"></div>
       </div>
@@ -48,6 +43,11 @@
       <div class="tab-panel" id="tab-queries">
         <p id="queries-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
         <div id="queries-list"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-updates">
+        <p id="updates-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+        <div id="updates-list"></div>
       </div>
     </div>
   </div>
