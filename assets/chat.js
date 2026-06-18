@@ -332,3 +332,5 @@ function setupChat() {
 }
 
 document.addEventListener("DOMContentLoaded", setupChat);
+
+window.ocSend = send;

@@ -100,6 +100,16 @@
       };
 
       const WORKER_URL = window.OC_WORKER_URL;
+      const COMMONS_URL = "https://oc-adaptant.netlify.app/chat.html";
+
+      function buildQuery(item) {
+        const monto = fmtMonto(item);
+        return [
+          "¿Cuál es el estado y qué pasos hay que tomar respecto al vencimiento de",
+          `"${item.obligacion}" (${item.entidad}) con fecha ${item.fecha}?`,
+          monto ? `Monto aproximado: ${monto}.` : null,
+        ].filter(Boolean).join(" ");
+      }
 
       function fmtMonto(item) {
         if (item.monto_ars != null)
@@ -113,13 +123,18 @@
 
       function waLink(contact, item) {
         const monto = fmtMonto(item);
+        const query = buildQuery(item);
+        const commonsUrl = COMMONS_URL + "?q=" + encodeURIComponent(query);
         const msg = [
           "⚠️ Alerta " + (item.nivel || "") + " — OC Adaptant",
           "Fecha: " + (item.fecha || ""),
           "Obligación: " + (item.obligacion || ""),
           "Entidad: " + (item.entidad || ""),
           monto ? "Monto: " + monto : null,
-        ].filter(Boolean).join("\n");
+          "",
+          "Consultá el OC:",
+          commonsUrl,
+        ].filter(s => s !== null).join("\n");
         return "https://wa.me/" + contact + "?text=" + encodeURIComponent(msg);
       }
 
@@ -264,6 +279,17 @@
       document.addEventListener("DOMContentLoaded", () => {
         setupAlertToggle();
         loadAlertSidebar();
+
+        // Auto-send si la URL trae ?q= (ej: link desde WA)
+        const qParam = new URLSearchParams(window.location.search).get("q");
+        if (qParam && qParam.trim()) {
+          // Espera un tick para que setupChat (chat.js) termine primero
+          setTimeout(() => {
+            if (typeof window.ocSend === "function") {
+              window.ocSend(qParam.trim());
+            }
+          }, 100);
+        }
       });
     })();
   </script>
