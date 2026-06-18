@@ -103,12 +103,9 @@
       const COMMONS_URL = "https://oc-adaptant.netlify.app/chat.html";
 
       function buildQuery(item) {
-        const monto = fmtMonto(item);
-        return [
-          "¿Cuál es el estado y qué pasos hay que tomar respecto al vencimiento de",
-          `"${item.obligacion}" (${item.entidad}) con fecha ${item.fecha}?`,
-          monto ? `Monto aproximado: ${monto}.` : null,
-        ].filter(Boolean).join(" ");
+        // Corto adrede: el OC tiene el contexto completo, no necesitamos
+        // repetir todo en el ?q=. URL largo se corta en WhatsApp.
+        return `${item.obligacion} — ${item.entidad} (${item.fecha})`;
       }
 
       function fmtMonto(item) {
