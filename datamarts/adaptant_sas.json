@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline cargado al 18/06/2026 — 10 proyectos (2 confirmados, 8 potenciales)",
+    "estado_actual": "Pipeline cargado al 18/06/2026 — 10 proyectos (5 confirmados, 5 potenciales)",
     "total_pipeline_usd": 408250,
-    "confirmado_usd": 24250,
-    "potencial_usd": 384000,
+    "confirmado_usd": 75250,
+    "potencial_usd": 333000,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -62,9 +62,7 @@
         "estado": "confirmado",
         "mes_inicio": "2026-07",
         "entidad": "Adaptant"
-      }
-    ],
-    "proyectos_potenciales": [
+      },
       {
         "id": "brou-ti-2026",
         "cliente": "BROU",
@@ -76,11 +74,37 @@
           "2026-08": 9000,
           "2026-09": 9000
         },
-        "estado": "potencial",
+        "estado": "confirmado",
         "mes_inicio": "2026-07",
         "entidad": "Adaptant",
-        "nota_comercial": "Venta cierra Julio 2026; cobro 50% Agosto, 50% Septiembre"
+        "nota_comercial": "Venta cerrada. Cobro 50% Agosto, 50% Septiembre."
       },
+      {
+        "id": "dos-santos-entreno",
+        "cliente": "Docuprint",
+        "proyecto": "Entrenamientos",
+        "monto_total_usd": 12000,
+        "duracion_meses": 1,
+        "monto_mes_usd": 12000,
+        "estado": "confirmado",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant",
+        "nota_comercial": "Confirmado. Ingreso total en Julio 2026."
+      },
+      {
+        "id": "docuprint",
+        "cliente": "Docuprint",
+        "proyecto": "Rediseño Organizacional",
+        "monto_total_usd": 21000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 3500,
+        "estado": "confirmado",
+        "mes_inicio": "2026-09",
+        "entidad": "Adaptant",
+        "nota_comercial": "6 cuotas de USD 3.500 desde Septiembre 2026 hasta Febrero 2027."
+      }
+    ],
+    "proyectos_potenciales": [
       {
         "id": "antel-vs-2026",
         "cliente": "ANTEL",
@@ -88,6 +112,17 @@
         "monto_total_usd": 96000,
         "duracion_meses": 6,
         "monto_mes_usd": 16000,
+        "estado": "potencial",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant"
+      },
+      {
+        "id": "gbm-hyperauto",
+        "cliente": "GBM",
+        "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+        "monto_total_usd": 18000,
+        "duracion_meses": 3,
+        "monto_mes_usd": 6000,
         "estado": "potencial",
         "mes_inicio": "2026-07",
         "entidad": "Adaptant"
@@ -104,28 +139,6 @@
         "entidad": "Adaptant"
       },
       {
-        "id": "gbm-hyperauto",
-        "cliente": "GBM",
-        "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
-        "monto_total_usd": 18000,
-        "duracion_meses": 3,
-        "monto_mes_usd": 6000,
-        "estado": "potencial",
-        "mes_inicio": "2026-07",
-        "entidad": "Adaptant"
-      },
-      {
-        "id": "antel-vs-fase2-2027",
-        "cliente": "ANTEL",
-        "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
-        "monto_total_usd": 180000,
-        "duracion_meses": 6,
-        "monto_mes_usd": 30000,
-        "estado": "potencial",
-        "mes_inicio": "2027-03",
-        "entidad": "Adaptant"
-      },
-      {
         "id": "ispe-anr-ceci",
         "cliente": "ISPE - ANR CECI",
         "proyecto": "OC Adopción",
@@ -137,26 +150,14 @@
         "entidad": "Adaptant"
       },
       {
-        "id": "dos-santos-entreno",
-        "cliente": "Docuprint",
-        "proyecto": "Entrenamientos",
-        "monto_total_usd": 12000,
-        "duracion_meses": 1,
-        "monto_mes_usd": 12000,
-        "estado": "potencial",
-        "mes_inicio": "2026-07",
-        "entidad": "Adaptant",
-        "nota_comercial": "Primer avance — cierre esperado Junio/Julio 2026, ingreso total en Julio"
-      },
-      {
-        "id": "docuprint",
-        "cliente": "Docuprint",
-        "proyecto": "Rediseño Organizacional",
-        "monto_total_usd": 21000,
+        "id": "antel-vs-fase2-2027",
+        "cliente": "ANTEL",
+        "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+        "monto_total_usd": 180000,
         "duracion_meses": 6,
-        "monto_mes_usd": 3500,
+        "monto_mes_usd": 30000,
         "estado": "potencial",
-        "mes_inicio": "2026-09",
+        "mes_inicio": "2027-03",
         "entidad": "Adaptant"
       }
     ],

@@ -15,10 +15,10 @@
   },
   "pipeline_resumen": {
     "proyectos_totales": 10,
-    "confirmados": 2,
-    "potenciales": 8,
-    "monto_total_confirmado_usd": 24250,
-    "monto_total_potencial_usd": 384000,
+    "confirmados": 5,
+    "potenciales": 5,
+    "monto_total_confirmado_usd": 75250,
+    "monto_total_potencial_usd": 333000,
     "monto_total_pipeline_usd": 408250
   },
   "pipeline": [
@@ -33,10 +33,10 @@
         "2026-08": 9000,
         "2026-09": 9000
       },
-      "estado": "potencial",
+      "estado": "confirmado",
       "mes_inicio": "2026-07",
       "entidad": "Adaptant",
-      "nota_comercial": "Venta cierra Julio 2026; cobro 50% Agosto, 50% Septiembre"
+      "nota_comercial": "Venta cerrada. Cobro 50% Agosto, 50% Septiembre."
     },
     {
       "id": "dos-santos-entreno",
@@ -45,10 +45,10 @@
       "monto_total_usd": 12000,
       "duracion_meses": 1,
       "monto_mes_usd": 12000,
-      "estado": "potencial",
+      "estado": "confirmado",
       "mes_inicio": "2026-07",
       "entidad": "Adaptant",
-      "nota_comercial": "Primer avance — cierre esperado Junio/Julio 2026, ingreso total en Julio"
+      "nota_comercial": "Confirmado. Ingreso total en Julio 2026."
     },
     {
       "id": "antel-vs-2026",
@@ -127,9 +127,10 @@
       "monto_total_usd": 21000,
       "duracion_meses": 6,
       "monto_mes_usd": 3500,
-      "estado": "potencial",
+      "estado": "confirmado",
       "mes_inicio": "2026-09",
-      "entidad": "Adaptant"
+      "entidad": "Adaptant",
+      "nota_comercial": "6 cuotas de USD 3.500 desde Septiembre 2026 hasta Febrero 2027."
     },
     {
       "id": "brou-vs-cuota-final",
@@ -144,24 +145,30 @@
     }
   ],
   "ingresos_confirmados_por_mes": {
-    "2026-07": 14125.0,
-    "2026-09": 10125.0
+    "2026-07": 26125,
+    "2026-08": 9000,
+    "2026-09": 19125,
+    "2026-10": 3500,
+    "2026-11": 3500,
+    "2026-12": 3500,
+    "2027-01": 3500,
+    "2027-02": 3500
   },
   "ingresos_potenciales_por_mes": {
-    "2026-07": 34000.0,
-    "2026-08": 41000.0,
-    "2026-09": 46000.0,
-    "2026-10": 31000.0,
-    "2026-11": 21000.0,
-    "2026-12": 21000.0,
-    "2027-03": 30000.0,
-    "2027-04": 30000.0,
-    "2027-05": 30000.0,
-    "2027-06": 30000.0,
-    "2027-07": 30000.0,
-    "2027-08": 30000.0,
-    "2027-01": 5000.0,
-    "2027-02": 5000.0
+    "2026-07": 22000,
+    "2026-08": 32000,
+    "2026-09": 27500,
+    "2026-10": 27500,
+    "2026-11": 17500,
+    "2026-12": 17500,
+    "2027-01": 1500,
+    "2027-02": 1500,
+    "2027-03": 30000,
+    "2027-04": 30000,
+    "2027-05": 30000,
+    "2027-06": 30000,
+    "2027-07": 30000,
+    "2027-08": 30000
   },
   "proyeccion_mensual": [
     {
@@ -260,9 +267,9 @@
     },
     {
       "mes": "2026-07",
-      "ingresos_confirmados_usd": 14125.0,
-      "ingresos_potenciales_usd": 34000.0,
-      "ingresos_totales_usd": 48125.0,
+      "ingresos_confirmados_usd": 26125,
+      "ingresos_potenciales_usd": 22000,
+      "ingresos_totales_usd": 48125,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -285,24 +292,6 @@
       "saldo_acumulado_conservador_ars": 11373754.12,
       "ingresos_detalle": [
         {
-          "cliente": "ANTEL",
-          "proyecto": "Value Stream y Rediseño de Equipos",
-          "monto_usd": 16000,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "GBM",
-          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
-          "monto_usd": 6000,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "Docuprint",
-          "proyecto": "Entrenamientos",
-          "monto_usd": 12000,
-          "estado": "potencial"
-        },
-        {
           "cliente": "GBM - BCCR",
           "proyecto": "Value Stream y Rediseño de Equipos",
           "monto_usd": 10125,
@@ -313,6 +302,24 @@
           "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
           "monto_usd": 4000,
           "estado": "confirmado"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Entrenamientos",
+          "monto_usd": 12000,
+          "estado": "confirmado"
+        },
+        {
+          "cliente": "ANTEL",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 16000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "GBM",
+          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+          "monto_usd": 6000,
+          "estado": "potencial"
         }
       ],
       "egresos_con_sueldos_escenario_a": 17606121.96,
@@ -376,8 +383,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 30249404.3,
       "egresos_v8_total_b": 20234060.14,
-      "ingresos_v8_conf_ars": 24198750.0,
-      "ingresos_v8_total_ars": 67098750.0,
+      "ingresos_v8_conf_ars": 37358750,
+      "ingresos_v8_total_ars": 68858750,
       "saldo_v8_a_conf": -12934745.92,
       "saldo_v8_a_pot": 29965254.08,
       "saldo_v8_b_conf": 7095942.4,
@@ -385,9 +392,9 @@
     },
     {
       "mes": "2026-08",
-      "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 41000.0,
-      "ingresos_totales_usd": 41000.0,
+      "ingresos_confirmados_usd": 9000,
+      "ingresos_potenciales_usd": 32000,
+      "ingresos_totales_usd": 41000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -413,7 +420,7 @@
           "cliente": "BROU",
           "proyecto": "Extensión para equipos actuales de TI",
           "monto_usd": 9000,
-          "estado": "potencial"
+          "estado": "confirmado"
         },
         {
           "cliente": "ANTEL",
@@ -495,8 +502,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 0,
-      "ingresos_v8_total_ars": 57200000.0,
+      "ingresos_v8_conf_ars": 12870000,
+      "ingresos_v8_total_ars": 58630000,
       "saldo_v8_a_conf": -31012767.88,
       "saldo_v8_a_pot": 69087232.12,
       "saldo_v8_b_conf": -966735.4,
@@ -504,9 +511,9 @@
     },
     {
       "mes": "2026-09",
-      "ingresos_confirmados_usd": 10125.0,
-      "ingresos_potenciales_usd": 46000.0,
-      "ingresos_totales_usd": 56125.0,
+      "ingresos_confirmados_usd": 19125,
+      "ingresos_potenciales_usd": 27500,
+      "ingresos_totales_usd": 46625,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -529,10 +536,22 @@
       "saldo_acumulado_conservador_ars": 14327508.24,
       "ingresos_detalle": [
         {
+          "cliente": "GBM - BCCR",
+          "proyecto": "Value Stream y Rediseño de Equipos",
+          "monto_usd": 10125,
+          "estado": "confirmado"
+        },
+        {
           "cliente": "BROU",
           "proyecto": "Extensión para equipos actuales de TI",
           "monto_usd": 9000,
-          "estado": "potencial"
+          "estado": "confirmado"
+        },
+        {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500,
+          "estado": "confirmado"
         },
         {
           "cliente": "ANTEL",
@@ -547,28 +566,10 @@
           "estado": "potencial"
         },
         {
-          "cliente": "GBM",
-          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
-          "monto_usd": 6000,
-          "estado": "potencial"
-        },
-        {
           "cliente": "ISPE - ANR CECI",
           "proyecto": "OC Adopción",
           "monto_usd": 1500,
           "estado": "potencial"
-        },
-        {
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "GBM - BCCR",
-          "proyecto": "Value Stream y Rediseño de Equipos",
-          "monto_usd": 10125,
-          "estado": "confirmado"
         }
       ],
       "egresos_con_sueldos_escenario_a": 17606121.96,
@@ -632,8 +633,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 14478750.0,
-      "ingresos_v8_total_ars": 73823750.0,
+      "ingresos_v8_conf_ars": 27348750,
+      "ingresos_v8_total_ars": 66673750,
       "saldo_v8_a_conf": -34612039.84,
       "saldo_v8_a_pot": 124832960.16,
       "saldo_v8_b_conf": 5449336.8,
@@ -641,9 +642,9 @@
     },
     {
       "mes": "2026-10",
-      "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 31000.0,
-      "ingresos_totales_usd": 31000.0,
+      "ingresos_confirmados_usd": 3500,
+      "ingresos_potenciales_usd": 27500,
+      "ingresos_totales_usd": 31000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -666,6 +667,12 @@
       "saldo_acumulado_conservador_ars": 8565010.3,
       "ingresos_detalle": [
         {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500,
+          "estado": "confirmado"
+        },
+        {
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
           "monto_usd": 16000,
@@ -681,12 +688,6 @@
           "cliente": "ISPE - ANR CECI",
           "proyecto": "OC Adopción",
           "monto_usd": 1500,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500,
           "estado": "potencial"
         }
       ],
@@ -751,8 +752,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 0,
-      "ingresos_v8_total_ars": 44330000.0,
+      "ingresos_v8_conf_ars": 5005000,
+      "ingresos_v8_total_ars": 44330000,
       "saldo_v8_a_conf": -52690061.8,
       "saldo_v8_a_pot": 151084938.2,
       "saldo_v8_b_conf": -2613341.0,
@@ -760,9 +761,9 @@
     },
     {
       "mes": "2026-11",
-      "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 21000.0,
-      "ingresos_totales_usd": 21000.0,
+      "ingresos_confirmados_usd": 3500,
+      "ingresos_potenciales_usd": 17500,
+      "ingresos_totales_usd": 21000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -785,6 +786,12 @@
       "saldo_acumulado_conservador_ars": 2802512.36,
       "ingresos_detalle": [
         {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500,
+          "estado": "confirmado"
+        },
+        {
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
           "monto_usd": 16000,
@@ -794,12 +801,6 @@
           "cliente": "ISPE - ANR CECI",
           "proyecto": "OC Adopción",
           "monto_usd": 1500,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500,
           "estado": "potencial"
         }
       ],
@@ -864,8 +865,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 0,
-      "ingresos_v8_total_ars": 30030000.0,
+      "ingresos_v8_conf_ars": 5005000,
+      "ingresos_v8_total_ars": 30030000,
       "saldo_v8_a_conf": -70768083.76,
       "saldo_v8_a_pot": 163036916.24,
       "saldo_v8_b_conf": -10676018.8,
@@ -873,9 +874,9 @@
     },
     {
       "mes": "2026-12",
-      "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 21000.0,
-      "ingresos_totales_usd": 21000.0,
+      "ingresos_confirmados_usd": 3500,
+      "ingresos_potenciales_usd": 17500,
+      "ingresos_totales_usd": 21000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -898,6 +899,12 @@
       "saldo_acumulado_conservador_ars": -2959985.58,
       "ingresos_detalle": [
         {
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500,
+          "estado": "confirmado"
+        },
+        {
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
           "monto_usd": 16000,
@@ -907,12 +914,6 @@
           "cliente": "ISPE - ANR CECI",
           "proyecto": "OC Adopción",
           "monto_usd": 1500,
-          "estado": "potencial"
-        },
-        {
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500,
           "estado": "potencial"
         }
       ],
@@ -977,8 +978,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 0,
-      "ingresos_v8_total_ars": 30030000.0,
+      "ingresos_v8_conf_ars": 5005000,
+      "ingresos_v8_total_ars": 30030000,
       "saldo_v8_a_conf": -88846105.72,
       "saldo_v8_a_pot": 174988894.28,
       "saldo_v8_b_conf": -18738696.6,
@@ -986,9 +987,9 @@
     },
     {
       "mes": "2027-01",
-      "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 5000.0,
-      "ingresos_totales_usd": 5000.0,
+      "ingresos_confirmados_usd": 3500,
+      "ingresos_potenciales_usd": 1500,
+      "ingresos_totales_usd": 5000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -1011,15 +1012,15 @@
       "saldo_acumulado_conservador_ars": -8722483.52,
       "ingresos_detalle": [
         {
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500,
-          "estado": "potencial"
-        },
-        {
           "cliente": "Docuprint",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
+          "estado": "confirmado"
+        },
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
           "estado": "potencial"
         }
       ],
@@ -1084,8 +1085,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 0,
-      "ingresos_v8_total_ars": 7150000.0,
+      "ingresos_v8_conf_ars": 5005000,
+      "ingresos_v8_total_ars": 7150000,
       "saldo_v8_a_conf": -106924127.68,
       "saldo_v8_a_pot": 164060872.32,
       "saldo_v8_b_conf": -26801374.4,
@@ -1093,9 +1094,9 @@
     },
     {
       "mes": "2027-02",
-      "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 5000.0,
-      "ingresos_totales_usd": 5000.0,
+      "ingresos_confirmados_usd": 3500,
+      "ingresos_potenciales_usd": 1500,
+      "ingresos_totales_usd": 5000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -1118,15 +1119,15 @@
       "saldo_acumulado_conservador_ars": -14484981.46,
       "ingresos_detalle": [
         {
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500,
-          "estado": "potencial"
-        },
-        {
           "cliente": "Docuprint",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
+          "estado": "confirmado"
+        },
+        {
+          "cliente": "ISPE - ANR CECI",
+          "proyecto": "OC Adopción",
+          "monto_usd": 1500,
           "estado": "potencial"
         }
       ],
@@ -1191,8 +1192,8 @@
       "iva_dj_03_2026_ars": 0,
       "egresos_v8_total_a": 18078021.96,
       "egresos_v8_total_b": 8062677.8,
-      "ingresos_v8_conf_ars": 0,
-      "ingresos_v8_total_ars": 7150000.0,
+      "ingresos_v8_conf_ars": 5005000,
+      "ingresos_v8_total_ars": 7150000,
       "saldo_v8_a_conf": -125002149.64,
       "saldo_v8_a_pot": 153132850.36,
       "saldo_v8_b_conf": -34864052.2,
