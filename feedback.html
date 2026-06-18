@@ -291,17 +291,17 @@
         const entries = data.entries || [];
 
         const isSocios = session.level === "socios";
-        const runBtn = isSocios
+        const runBtnHtml = isSocios
           ? `<button class="run-agent-btn" id="run-vencimientos-btn">Disparar agente Vencimientos 7d ahora</button>`
           : "";
-        const clearBtn = isSocios
+        const clearBtnHtml = isSocios
           ? `<button class="run-agent-btn" id="clear-alerts-btn" style="background:var(--gris);margin-left:6px;">Limpiar alertas</button>`
           : "";
 
         if (entries.length === 0) {
-          statusEl.innerHTML = `Todavía no hay alertas generadas por agentes. ${runBtn}`;
+          statusEl.innerHTML = `Todavía no hay alertas generadas por agentes. ${runBtnHtml}`;
         } else {
-          statusEl.innerHTML = `<strong>${entries.length}</strong> alerta(s) registradas. ${runBtn}${clearBtn}`;
+          statusEl.innerHTML = `<strong>${entries.length}</strong> alerta(s) registradas. ${runBtnHtml}${clearBtnHtml}`;
           listEl.innerHTML = entries.map(renderAlertEntry).join("");
         }
 
