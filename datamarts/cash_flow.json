@@ -105,7 +105,7 @@
     },
     {
       "id": "docuprint",
-      "cliente": "Docuprint",
+      "cliente": "Dos Santos",
       "proyecto": "Rediseño Organizacional",
       "monto_total_usd": 21000,
       "duracion_meses": 6,
@@ -661,7 +661,7 @@
           "estado": "potencial"
         },
         {
-          "cliente": "Docuprint",
+          "cliente": "Dos Santos",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
           "estado": "potencial"
@@ -774,7 +774,7 @@
           "estado": "potencial"
         },
         {
-          "cliente": "Docuprint",
+          "cliente": "Dos Santos",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
           "estado": "potencial"
@@ -887,7 +887,7 @@
           "estado": "potencial"
         },
         {
-          "cliente": "Docuprint",
+          "cliente": "Dos Santos",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
           "estado": "potencial"
@@ -994,7 +994,7 @@
           "estado": "potencial"
         },
         {
-          "cliente": "Docuprint",
+          "cliente": "Dos Santos",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
           "estado": "potencial"
@@ -1101,7 +1101,7 @@
           "estado": "potencial"
         },
         {
-          "cliente": "Docuprint",
+          "cliente": "Dos Santos",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
           "estado": "potencial"
@@ -1208,7 +1208,7 @@
           "estado": "potencial"
         },
         {
-          "cliente": "Docuprint",
+          "cliente": "Dos Santos",
           "proyecto": "Rediseño Organizacional",
           "monto_usd": 3500,
           "estado": "potencial"
