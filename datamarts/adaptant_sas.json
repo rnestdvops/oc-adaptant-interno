@@ -138,7 +138,7 @@
       },
       {
         "id": "dos-santos-entreno",
-        "cliente": "Dos Santos",
+        "cliente": "Docuprint",
         "proyecto": "Entrenamientos",
         "monto_total_usd": 12000,
         "duracion_meses": 1,
@@ -150,7 +150,7 @@
       },
       {
         "id": "docuprint",
-        "cliente": "Dos Santos",
+        "cliente": "Docuprint",
         "proyecto": "Rediseño Organizacional",
         "monto_total_usd": 21000,
         "duracion_meses": 6,
