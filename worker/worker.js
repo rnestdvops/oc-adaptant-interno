@@ -468,6 +468,42 @@ async function handleFeedbackList(request, env) {
   });
 }
 
+async function handleTopQueries(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const list = await env.FEEDBACK_KV.list({ prefix: "query:" });
+  const entries = await Promise.all(
+    list.keys.map(async (k) => {
+      const raw = await env.FEEDBACK_KV.get(k.name);
+      return raw ? JSON.parse(raw) : null;
+    })
+  );
+
+  const levelEntries = entries.filter(e => e && e.level === payload.level && e.question && e.question.trim());
+
+  const counts = {};
+  for (const e of levelEntries) {
+    const normalized = e.question.trim().toLowerCase();
+    if (!counts[normalized]) counts[normalized] = { question: e.question.trim(), count: 0 };
+    counts[normalized].count++;
+  }
+
+  const top = Object.values(counts)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 8)
+    .map(c => c.question);
+
+  return new Response(JSON.stringify({ questions: top, total_queries: levelEntries.length }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
 async function handleQueriesList(request, env) {
   const payload = await requireAuth(request, env);
   if (!payload) {
@@ -689,6 +725,10 @@ export default {
 
     if (url.pathname === "/feedback" && request.method === "GET") {
       return handleFeedbackList(request, env);
+    }
+
+    if (url.pathname === "/top-queries" && request.method === "GET") {
+      return handleTopQueries(request, env);
     }
 
     if (url.pathname === "/queries" && request.method === "GET") {

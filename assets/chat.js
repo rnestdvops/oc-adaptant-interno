@@ -1,6 +1,6 @@
 // chat.js — lógica del chat
 
-const { WORKER_URL: CHAT_WORKER_URL, getSession, clearSession, getSugeridas } = window.OCAuth;
+const { WORKER_URL: CHAT_WORKER_URL, getSession, clearSession } = window.OCAuth;
 
 const history = []; // messages para la API
 
@@ -288,6 +288,33 @@ async function send(userText) {
   }
 }
 
+async function loadSugeridas(session, sidebar) {
+  try {
+    const resp = await fetch(`${CHAT_WORKER_URL}/top-queries`, {
+      headers: { Authorization: `Bearer ${session.token}` },
+    });
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.questions && data.questions.length > 0) {
+        data.questions.forEach(q => {
+          const btn = document.createElement("button");
+          btn.className = "suggested-q";
+          btn.textContent = q;
+          btn.onclick = () => send(q);
+          sidebar.appendChild(btn);
+        });
+        return;
+      }
+    }
+  } catch (e) {
+    // silencioso
+  }
+  const p = document.createElement("p");
+  p.style.cssText = "font-size:11.5px;color:var(--gris);line-height:1.5;";
+  p.textContent = "Las preguntas más frecuentes aparecerán acá.";
+  sidebar.appendChild(p);
+}
+
 function setupChat() {
   const session = getSession();
   if (!session) {
@@ -298,15 +325,8 @@ function setupChat() {
   document.getElementById("session-level").textContent = session.level;
   loadVersionInfo();
 
-  // Sugeridas
-  const sidebar = document.getElementById("suggested-questions");
-  getSugeridas(session.level).forEach(q => {
-    const btn = document.createElement("button");
-    btn.className = "suggested-q";
-    btn.textContent = q;
-    btn.onclick = () => send(q);
-    sidebar.appendChild(btn);
-  });
+  // Sugeridas dinámicas desde KV
+  loadSugeridas(session, document.getElementById("suggested-questions"));
 
   // Logout
   document.getElementById("logout-btn").onclick = () => {

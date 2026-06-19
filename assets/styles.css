@@ -123,6 +123,29 @@ code, .mono {
   border: 1px solid var(--tc-border);
 }
 
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.feedback-topbar-btn {
+  background: none;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  color: var(--gris);
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.feedback-topbar-btn:hover { color: var(--negro); border-color: var(--negro); }
+
 .logout-btn {
   background: none;
   border: 1px solid var(--linea);
