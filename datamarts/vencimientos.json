@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-19",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "vencimientos": [
@@ -56,7 +56,20 @@
       "monto_ars": 3958749,
       "tipo": "pago",
       "nivel": "ALTO",
-      "estado": "proximo"
+      "estado": "pagado",
+      "nota_pago": "$4.000.000 pagados ($2M el 17/06 + $2M el 19/06 vía Lemon / Equinus Srl). Excedente $41.251."
+    },
+    {
+      "fecha": "2026-06-11",
+      "entidad": "BHP SA",
+      "obligacion": "Intimación ARCA SUSS 05/2026 — Contribuciones + Aportes",
+      "planilla": "50002445173",
+      "item": "386",
+      "monto_ars": 1310029.5,
+      "tipo": "intimacion_arca",
+      "nivel": "CRITICO",
+      "estado": "vencida_sin_pago",
+      "nota": "Plazo 2 días hábiles vencido (~13/06/2026). Contribuciones $739.996,94 + Aportes $570.032,56. Riesgo escalamiento art. 92 Ley 11.683. Ref: SCT-Intimación-500024451730000386."
     },
     {
       "fecha": "2026-06-30",

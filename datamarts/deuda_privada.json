@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-17",
+  "last_updated": "2026-06-19",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -127,8 +127,8 @@
     },
     "estado_general": "AL DÍA",
     "proximo_vencimiento": {
-      "cuota": 2,
-      "fecha": "2026-06-19",
+      "cuota": 3,
+      "fecha": "2026-07-19",
       "monto_neto": 3958749
     },
     "cronograma": [
@@ -149,10 +149,13 @@
         "capital": 2937364,
         "interes": 1021386,
         "neto_a_pagar": 3958749,
-        "monto_pagado_parcial": 2000000,
-        "fecha_pago_parcial": "2026-06-17",
-        "monto_pendiente": 1958749,
-        "estado": "PARCIAL — $2.000.000 pagados el 17/06/2026, resto $1.958.749 al vencimiento 19/06/2026"
+        "monto_pagado_total": 4000000,
+        "pagos": [
+          { "fecha": "2026-06-17", "monto": 2000000 },
+          { "fecha": "2026-06-19", "monto": 2000000, "canal": "Lemon / Equinus Srl", "coelsa_id": "Z4K6DVNOWY644J1K25J8LQ" }
+        ],
+        "excedente_ars": 41251,
+        "estado": "PAGADA — $4.000.000 pagados ($2M el 17/06 + $2M el 19/06 vía Lemon). Excedente $41.251 a imputar en cuota 3."
       },
       {
         "n": 3,
@@ -262,10 +265,25 @@
         "tipo": "anticipo_cuota",
         "cuota_aplicada": 2,
         "contexto": "Pago anticipado parcial de cuota 2 (vence 19/06/2026, $3.958.749).",
-        "notas": "Resto $1.958.749 a pagar el 19/06/2026. Cronograma 3-12 sin cambios."
+        "notas": "Resto $1.958.749 a pagar el 19/06/2026."
+      },
+      {
+        "fecha": "2026-06-19",
+        "monto": 2000000,
+        "moneda": "ARS",
+        "tipo": "pago_saldo_cuota",
+        "cuota_aplicada": 2,
+        "canal": "Lemon",
+        "destinatario": "Equinus Srl",
+        "cuit_destinatario": "30-70885325-5",
+        "cbu_destinatario": "2850322430094215460691",
+        "banco_destino": "Banco Macro",
+        "coelsa_id": "Z4K6DVNOWY644J1K25J8LQ",
+        "contexto": "Saldo cuota 2 ($1.958.749). Se pagaron $2.000.000 — excedente $41.251.",
+        "notas": "Comprobante Lemon 19/06/2026 13:04hs. Cuota 2 queda saldada."
       }
     ],
-    "ultima_actualizacion": "2026-06-17"
+    "ultima_actualizacion": "2026-06-19"
   },
   "plan_iibb_san_juan": {
     "organismo": "Rentas — Provincia de San Juan (IIBB)",
