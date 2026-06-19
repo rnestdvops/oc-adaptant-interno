@@ -21,7 +21,8 @@
       "tc_referencia": 1430,
       "tipo": "pago",
       "nivel": "CRITICO",
-      "estado": "vencido_o_dia"
+      "estado": "pagado",
+      "nota_pago": "$299.645 ARS pagados el 19/06/2026 vía MP (TC real 1470). Op. 164902858460."
     },
     {
       "fecha": "2026-06-16",
@@ -99,8 +100,10 @@
     {
       "fecha": "2026-07-15",
       "entidad": "BHP SA",
-      "obligacion": "Mutuo Moroni período 9 — intereses estimados",
-      "monto_usd_estimado": 200,
+      "obligacion": "Mutuo Moroni período 9 — intereses",
+      "monto_usd": 197.26,
+      "monto_aprox_ars": 282081,
+      "tc_referencia": 1430,
       "tipo": "pago",
       "nivel": "ALTO",
       "estado": "futuro"

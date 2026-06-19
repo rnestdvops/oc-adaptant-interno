@@ -20,17 +20,17 @@
     "tasa_compensatoria_tna": 12,
     "tasa_moratoria_mensual_sobre_impago": 1,
     "modalidad_vigente": "Intereses el 15 de cada mes en pesos al TC del día. Capital intacto (Opción B).",
-    "ultimo_pagado": "2026-05-15",
+    "ultimo_pagado": "2026-06-19",
     "pendiente_actual": {
-      "periodo": 8,
-      "desde": "2026-05-15",
-      "hasta": "2026-06-15",
-      "dias": 31,
-      "interes_usd": 203.84,
-      "fecha_vencimiento": "2026-06-15",
+      "periodo": 9,
+      "desde": "2026-06-15",
+      "hasta": "2026-07-15",
+      "dias": 30,
+      "interes_usd": 197.26,
+      "fecha_vencimiento": "2026-07-15",
       "tc_referencia": 1430,
-      "monto_aprox_pesos": 291491,
-      "estado": "PENDIENTE — sin mora formal aún"
+      "monto_aprox_pesos": 282081,
+      "estado": "pendiente"
     },
     "cronograma_pagado": [
       {
@@ -90,6 +90,22 @@
         "tc_ref": 1430,
         "monto_pesos": 282081.8,
         "estado": "pagado"
+      },
+      {
+        "n": 8,
+        "desde": "2026-05-15",
+        "hasta": "2026-06-15",
+        "dias": 31,
+        "interes_usd": 203.84,
+        "tc_real": 1470,
+        "monto_pesos": 299645,
+        "canal": "Mercado Pago",
+        "mp_operacion": "164902858460",
+        "cvu_origen": "0000003100066060174437",
+        "cvu_destino": "0000003100000760068821",
+        "fecha_pago": "2026-06-19",
+        "estado": "pagado",
+        "nota": "Pagado 19/06/2026 16:52hs desde cuenta MP personal Ernesto. Fondos: primer cuota NerdCube transición."
       }
     ]
   },
