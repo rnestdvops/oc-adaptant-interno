@@ -17,6 +17,8 @@ Esta capa indica cómo conversar sobre los datos estructurados que viven en `/da
 | `personal.json` | Sueldos de empleados BHP con detalle | Socios + Asesores |
 | `nerdcube_legacy.json` | Cesión a NODOS, contrato y movimientos | Socios + Asesores |
 | `movimientos_bancarios.json` | Resumen mensual + movimientos normales Supervielle | Socios + Asesores |
+| `arca_bhp.json` | DFE BHP SA — sumarios, notificaciones, nivel de alerta (automático diario) | Socios + Asesores |
+| `arca_ernesto.json` | DFE Ernesto Corona — sumarios, notificaciones, nivel de alerta (automático diario) | Socios + Asesores |
 
 ## Cómo responder preguntas cuantitativas
 
@@ -95,6 +97,37 @@ Decilo explícito. No inventes. Ofrecé estructurar la carga.
 - `cuenta_id` = `supervielle_ars` o `supervielle_usd` (de momento solo Supervielle cargado).
 
 **Bancos no cargados aún:** Chase d-Vops, Mercado Pago MP1, Mercado Pago MP2, Relay d-Vops, Supervielle USD. Si la pregunta requiere datos de esos bancos, decirlo explícito.
+
+## Datamarts fiscales — ARCA Monitor
+
+Los archivos `arca_bhp.json` y `arca_ernesto.json` contienen el estado
+actual del Domicilio Fiscal Electrónico (DFE) de ARCA para cada entidad.
+Se actualizan automáticamente cada día hábil a las 08:00 AM.
+
+Cómo interpretar los campos:
+
+- `last_updated`: fecha de la última corrida. Si tiene más de 3 días,
+  advertir que los datos pueden estar desactualizados.
+
+- `nivel_alerta`:
+  - OK → sin novedades fiscales
+  - MEDIO → notificaciones nuevas, sin Sumarios
+  - ALTO → Sumarios activos (procedimiento formal de ARCA en curso)
+  - CRITICO → Sumarios nuevos detectados en la última corrida
+
+- `sumarios`: procedimientos administrativos formales de ARCA.
+  Cada Sumario requiere respuesta legal. Los marcados con "Acuse de
+  Recibimiento" aún no fueron abiertos — requiere gestión manual en el DFE.
+
+- `novedades_ultima_corrida`: null significa sin cambios. Si tiene
+  contenido, hay notificaciones nuevas desde la corrida anterior.
+
+- `resumen`: texto en lenguaje natural listo para citar en respuestas.
+
+Cuando el usuario pregunte por la situación fiscal de BHP SA o de Ernesto,
+usar el campo `resumen` como base y destacar `nivel_alerta` si es ALTO
+o CRITICO. No especular sobre el contenido de los Sumarios — solo está
+disponible la metadata, no el documento.
 
 ## Cuando hay tensión entre datamarts
 
