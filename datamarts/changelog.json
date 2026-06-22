@@ -1,10 +1,32 @@
 {
-  "last_updated": "2026-06-18",
+  "last_updated": "2026-06-22",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "proposito": "Bitácora curada de actualizaciones del OC Adaptant Interno, versión a versión. Sigue la convención Keep a Changelog (keepachangelog.com). Cada release agrupa cambios por categoría: Added (nuevas features), Changed (cambios en comportamiento existente), Fixed (bugs corregidos), Removed (features quitadas). Las entradas son curadas — los commits individuales son ruido, las releases son la señal.",
   "convencion_versionado": "Semver pre-1.0 (0.X.Y) — pre-producción. 0.X cuando hay cambios significativos visibles para el usuario; 0.X.Y para fixes menores y refinamientos.",
   "releases": [
+    {
+      "version": "0.9.0",
+      "fecha": "2026-06-22",
+      "titulo": "ARCA Monitor integrado + UI sidebar renovada + pipeline actualizado",
+      "added": [
+        "ARCA Monitor: datamarts arca_bhp.json + arca_ernesto.json operativos — estado del DFE de BHP SA y Ernesto Corona, actualizados automáticamente cada día hábil 8:00 AM vía push del arca-monitor al repo. Primera corrida 22/06/2026: nivel_alerta ALTO en ambas entidades (4 Sumarios activos, pendientes de Acuse de Recibimiento).",
+        "Worker: endpoint /top-queries — lee historial de queries en KV por nivel y devuelve top 8 preguntas más frecuentes del usuario autenticado.",
+        "Preguntas sugeridas dinámicas en sidebar: carga las consultas más frecuentes del nivel en lugar de lista estática. Muestra placeholder hasta acumular historial.",
+        "system_prompts/02_datamart_guide.md: guía de interpretación de los datamarts ARCA (nivel_alerta, sumarios, novedades_ultima_corrida, resumen) para uso del modelo."
+      ],
+      "changed": [
+        "Logo 'Adaptant · OC' en topbar ahora es link a / (antes div estático).",
+        "Botón Feedback movido del fondo del sidebar al topbar — visible en todo momento junto a Alertas y Cerrar sesión.",
+        "Sidebar: eliminada sección estática de Feedback; panel izquierdo queda solo con preguntas sugeridas y notas.",
+        "Pipeline: 3 proyectos potencial → confirmado — BROU-TI (18K USD, cobro 50/50 ago/sep), Docuprint Entrenamientos (12K USD, julio 2026), Docuprint Rediseño Organizacional (21K USD, 6 cuotas sep 2026–feb 2027). Confirmados: 2→5; monto confirmado 24.250→75.250 USD."
+      ],
+      "data": [
+        "Macro cuota 2 PAGADA: $2M el 17/06 + $2M el 19/06 vía Lemon / Equinus Srl (COELSA Z4K6DVNOWY644J1K25J8LQ). Excedente $41.251 a imputar en cuota 3.",
+        "Moroni período 8 PAGADO: $299.645 ARS el 19/06 vía Mercado Pago (TC real 1.470 vs referencia 1.430). Fondos: primera cuota NerdCube transición.",
+        "Intimación SUSS 05/2026 registrada en vencimientos: $1.310.029,50 ARS, planilla 50002445173, plazo vencido ~13/06/2026, riesgo escalamiento art. 92 Ley 11.683."
+      ]
+    },
     {
       "version": "0.8.0",
       "fecha": "2026-06-18",
