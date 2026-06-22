@@ -6,10 +6,10 @@
   "cuit": "20-22159405-4",
   "razon_social": "Ernesto Corona",
   "dfe": {
-    "ultimo_chequeo": "2026-06-22T02:31:02Z",
+    "ultimo_chequeo": "2026-06-22T15:47:19Z",
     "total_notificaciones": 14,
-    "nivel_alerta": "ALTO",
-    "nivel_alerta_criterio": "Sumarios activos en el DFE",
+    "nivel_alerta": "CRITICO",
+    "nivel_alerta_criterio": "Nuevos Sumarios detectados",
     "sumarios": [
       {
         "tipo": "Sumarios - Resoluciones",
