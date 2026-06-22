@@ -98,36 +98,43 @@ Decilo explícito. No inventes. Ofrecé estructurar la carga.
 
 **Bancos no cargados aún:** Chase d-Vops, Mercado Pago MP1, Mercado Pago MP2, Relay d-Vops, Supervielle USD. Si la pregunta requiere datos de esos bancos, decirlo explícito.
 
-## Datamarts fiscales — ARCA Monitor
+## ARCA Monitor — Estado fiscal automatizado
 
-Los archivos `arca_bhp.json` y `arca_ernesto.json` contienen el estado
-actual del Domicilio Fiscal Electrónico (DFE) de ARCA para cada entidad.
-Se actualizan automáticamente cada día hábil a las 08:00 AM.
+Los datamarts `arca_ernesto.json` y `arca_bhp.json` contienen el estado actualizado
+del Domicilio Fiscal Electrónico (DFE) de AFIP/ARCA para Ernesto Corona (CUIT 20-22159405-4)
+y BHP SA (CUIT 30-70955349-2). Se actualizan automáticamente cada día hábil a las 08:00 AM.
 
-Cómo interpretar los campos:
+### Cuándo mencionarlo proactivamente
+Mencioná el estado fiscal SI:
+- `nivel_alerta` es `CRITICO` o `ALTO` en cualquiera de los dos JSONs
+- `novedades_ultima_corrida` tiene valor (no null) → hay novedades de hoy
 
-- `last_updated`: fecha de la última corrida. Si tiene más de 3 días,
-  advertir que los datos pueden estar desactualizados.
+No lo menciones si `nivel_alerta` es `OK` y no hay novedades — ruido innecesario.
 
-- `nivel_alerta`:
-  - OK → sin novedades fiscales
-  - MEDIO → notificaciones nuevas, sin Sumarios
-  - ALTO → Sumarios activos (procedimiento formal de ARCA en curso)
-  - CRITICO → Sumarios nuevos detectados en la última corrida
+### Niveles de alerta
+| Nivel | Significado | Acción sugerida |
+|-------|-------------|-----------------|
+| `CRITICO` | Nuevos Sumarios detectados en esta corrida | Escalar inmediatamente a Ernesto |
+| `ALTO` | Sumarios activos existentes en el DFE | Recordar en contexto fiscal |
+| `MEDIO` | Nuevas notificaciones sin Sumarios | Mencionar si pregunta sobre ARCA |
+| `OK` | Sin novedades relevantes | Silencio |
 
-- `sumarios`: procedimientos administrativos formales de ARCA.
-  Cada Sumario requiere respuesta legal. Los marcados con "Acuse de
-  Recibimiento" aún no fueron abiertos — requiere gestión manual en el DFE.
+### Sumarios (campo `dfe.sumarios`)
+Los Sumarios son procedimientos sumariales de AFIP que pueden resultar en multas
+o clausuras. Para acceder al documento el contribuyente debe realizar el "Acuse de
+Recibimiento" manualmente en el DFE — esto activa plazos legales. Este sistema
+SOLO observa, NO actúa. Nunca sugerir hacer el acuse sin consultar al estudio
+contable o abogado impositivo.
 
-- `novedades_ultima_corrida`: null significa sin cambios. Si tiene
-  contenido, hay notificaciones nuevas desde la corrida anterior.
+### Campo `resumen`
+El campo `dfe.resumen` contiene un texto narrativo listo para usar. Preferirlo
+sobre elaborar texto propio cuando respondás preguntas sobre el estado del DFE.
 
-- `resumen`: texto en lenguaje natural listo para citar en respuestas.
-
-Cuando el usuario pregunte por la situación fiscal de BHP SA o de Ernesto,
-usar el campo `resumen` como base y destacar `nivel_alerta` si es ALTO
-o CRITICO. No especular sobre el contenido de los Sumarios — solo está
-disponible la metadata, no el documento.
+### Limitaciones
+- `pdf_path` en el JSON local no es accesible aquí — sirve como evidencia de que
+  el documento existe, no como link
+- Los datos tienen latencia de hasta 24h (corrida diaria)
+- Si `ultimo_chequeo` tiene más de 48h, advertir que el dato puede estar desactualizado
 
 ## Cuando hay tensión entre datamarts
 
