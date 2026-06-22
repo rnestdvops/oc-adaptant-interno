@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OC Adaptant Interno · ARCA News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="brand">
+        <a href="/" class="brand-link">
+          <div class="brand-mark">Adaptant · OC</div>
+          <div class="brand-title">ARCA News</div>
+        </a>
+      </div>
+      <div class="session-info">
+        <button class="logout-btn" id="run-agent-btn" title="Forzar corrida del agente arca-dfe ahora" style="display:none">Actualizar ahora</button>
+        <a class="logout-btn" href="/chat.html">Volver al chat</a>
+      </div>
+    </div>
+
+    <div class="arca-page">
+      <div class="arca-header">
+        <div class="arca-header-meta" id="arca-meta">Cargando…</div>
+      </div>
+
+      <div class="arca-grid" id="arca-grid">
+        <div class="arca-card skeleton">Cargando datos del DFE…</div>
+        <div class="arca-card skeleton">Cargando datos del DFE…</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.OC_WORKER_URL = "https://oc-adaptant-interno.ernesto-b02.workers.dev";
+  </script>
+  <script src="/assets/auth.js"></script>
+  <script>
+  (function () {
+    const { getSession, WORKER_URL } = window.OCAuth;
+
+    const session = getSession();
+    if (!session) { window.location.href = "/"; return; }
+
+    // Botón "Actualizar ahora" solo para socios
+    if (session.level === "socios") {
+      const runBtn = document.getElementById("run-agent-btn");
+      runBtn.style.display = "";
+      runBtn.onclick = async () => {
+        runBtn.disabled = true;
+        runBtn.textContent = "Corriendo…";
+        try {
+          await fetch(WORKER_URL + "/agents/run", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: "Bearer " + session.token },
+            body: JSON.stringify({ agent_id: "arca-dfe" }),
+          });
+          runBtn.textContent = "Listo — recargá en unos segundos";
+        } catch (e) {
+          runBtn.textContent = "Error — reintentá";
+          runBtn.disabled = false;
+        }
+      };
+    }
+
+    const NIVEL_LABELS = {
+      OK:        { label: "OK",        cls: "nivel-ok" },
+      MEDIO:     { label: "MEDIO",     cls: "nivel-medio" },
+      ALTO:      { label: "ALTO",      cls: "nivel-alto" },
+      CRITICO:   { label: "CRÍTICO",   cls: "nivel-critico" },
+      PENDIENTE: { label: "PENDIENTE", cls: "nivel-pendiente" },
+    };
+
+    function fmtFecha(iso) {
+      if (!iso) return "—";
+      if (iso.includes("T")) {
+        const d = new Date(iso);
+        return d.toLocaleDateString("es-AR") + " " + d.toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" });
+      }
+      const [y, m, d] = iso.split("-");
+      return `${d}/${m}/${y}`;
+    }
+
+    function buildCard(data) {
+      const dfe = data.dfe || data;
+      const nivelRaw = ((dfe.nivel_alerta || data.nivel_alerta || "PENDIENTE")).toUpperCase();
+      const nivel = NIVEL_LABELS[nivelRaw] || NIVEL_LABELS.PENDIENTE;
+      const entidad = data.razon_social || data.entidad || "—";
+      const cuit = data.cuit || "—";
+      const ultimoChequeo = fmtFecha(dfe.ultimo_chequeo || data.last_updated);
+      const totalNotif = dfe.total_notificaciones ?? "—";
+      const sumarios = dfe.sumarios || [];
+      const comunicaciones = dfe.comunicaciones_con_pdf || [];
+      const resumen = dfe.resumen || data.resumen || "—";
+      const novedades = dfe.novedades_ultima_corrida || null;
+
+      const card = document.createElement("div");
+      card.className = "arca-card";
+
+      card.innerHTML = `
+        <div class="arca-card-head">
+          <div>
+            <div class="arca-card-entidad">${entidad}</div>
+            <div class="arca-card-cuit">CUIT ${cuit}</div>
+          </div>
+          <span class="arca-nivel-badge ${nivel.cls}">${nivel.label}</span>
+        </div>
+
+        <div class="arca-card-meta">
+          Último chequeo: <strong>${ultimoChequeo}</strong> ·
+          Total notificaciones en DFE: <strong>${totalNotif}</strong>
+        </div>
+
+        ${novedades ? `
+        <div class="arca-novedad">
+          <span class="arca-novedad-tag">Novedad</span> ${novedades}
+        </div>` : ""}
+
+        <div class="arca-resumen">${resumen}</div>
+
+        ${sumarios.length > 0 ? `
+        <div class="arca-section-title">Sumarios activos</div>
+        <div class="arca-sumarios">
+          ${sumarios.map(s => `
+            <div class="arca-sumario-item">
+              <div class="arca-sumario-tipo">${s.tipo}</div>
+              <div class="arca-sumario-meta">
+                ${s.cantidad ? `<span>${s.cantidad} documento(s)</span>` : ""}
+                ${s.fecha_disponible ? `<span>Disponible desde ${fmtFecha(s.fecha_disponible)}</span>` : ""}
+              </div>
+              ${s.nota ? `<div class="arca-sumario-nota">${s.nota}</div>` : ""}
+            </div>
+          `).join("")}
+        </div>` : ""}
+
+        ${comunicaciones.length > 0 ? `
+        <div class="arca-section-title">Comunicaciones con PDF</div>
+        <div class="arca-comunicaciones">
+          ${comunicaciones.map(c => `
+            <div class="arca-comunicacion-item">
+              <span class="arca-comunicacion-fecha">${fmtFecha(c.fecha)}</span>
+              <span class="arca-comunicacion-subject">${c.subject || "—"}</span>
+            </div>
+          `).join("")}
+        </div>` : ""}
+      `;
+
+      return card;
+    }
+
+    async function loadArcaData() {
+      const grid = document.getElementById("arca-grid");
+      const meta = document.getElementById("arca-meta");
+
+      try {
+        const [bhp, ernesto] = await Promise.all([
+          fetch("/datamarts/arca_bhp.json", { cache: "no-store" }).then(r => r.json()),
+          fetch("/datamarts/arca_ernesto.json", { cache: "no-store" }).then(r => r.json()),
+        ]);
+
+        grid.innerHTML = "";
+        grid.appendChild(buildCard(bhp));
+        grid.appendChild(buildCard(ernesto));
+
+        const lastBhp = bhp.last_updated || "—";
+        const lastErnesto = ernesto.last_updated || "—";
+        const fechaMostrar = lastBhp !== "—" ? fmtFecha(lastBhp) : fmtFecha(lastErnesto);
+        meta.textContent = `Datos al ${fechaMostrar} — actualizados automáticamente cada día hábil 08:30 AM`;
+
+      } catch (e) {
+        grid.innerHTML = `<div class="arca-card" style="color:var(--gris)">Error cargando datos del DFE. Recargá la página.</div>`;
+        meta.textContent = "Error al cargar";
+      }
+    }
+
+    loadArcaData();
+  })();
+  </script>
+</body>
+</html>

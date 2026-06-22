@@ -554,8 +554,10 @@ async function dispatchScheduled(event, env, ctx) {
 
   // Mapeo cron → agente. Mantener en sync con wrangler.toml [triggers] crons.
   if (cron === "0 11 * * *") {
-    // Diario 8:00 AR — vencimientos próximos 7 días
     await runAgentVencimientos7d(env);
+  }
+  if (cron === "30 11 * * *") {
+    await runAgentArcaDfe(env);
   }
   // Próximos agentes: agregar branches acá + el cron correspondiente en wrangler.toml.
 }
@@ -617,6 +619,75 @@ async function runAgentVencimientos7d(env) {
   };
 
   const key = `alert:${ts}:vencimientos-7d:${crypto.randomUUID()}`;
+  await env.FEEDBACK_KV.put(key, JSON.stringify(alert));
+}
+
+// ─── Agente 2: DFE ARCA — BHP SA + Ernesto Corona ───────────────────────────
+
+async function runAgentArcaDfe(env) {
+  const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
+
+  let bhp, ernesto;
+  try {
+    [bhp, ernesto] = await Promise.all([
+      fetch(`${SITE_BASE}/datamarts/arca_bhp.json`).then(r => { if (!r.ok) throw new Error(`arca_bhp: ${r.status}`); return r.json(); }),
+      fetch(`${SITE_BASE}/datamarts/arca_ernesto.json`).then(r => { if (!r.ok) throw new Error(`arca_ernesto: ${r.status}`); return r.json(); }),
+    ]);
+  } catch (e) {
+    await logAgentError(env, "arca-dfe", e.message);
+    return;
+  }
+
+  const NIVELES_ACTIVOS = ["MEDIO", "ALTO", "CRITICO"];
+  const items = [];
+
+  for (const data of [bhp, ernesto]) {
+    const dfe = data.dfe || data; // soporta ambas estructuras
+    const nivelRaw = (dfe.nivel_alerta || data.nivel_alerta || "").toUpperCase();
+    if (!NIVELES_ACTIVOS.includes(nivelRaw)) continue;
+
+    const entidad = data.razon_social || data.entidad || "";
+    const fechaBase = data.last_updated || new Date().toISOString().slice(0, 10);
+
+    for (const s of (dfe.sumarios || [])) {
+      items.push({
+        fecha: s.fecha_disponible || fechaBase,
+        entidad,
+        obligacion: `DFE — ${s.tipo} (×${s.cantidad}) · Acuse de Recibimiento pendiente`,
+        nivel: nivelRaw === "CRITICO" ? "CRITICO" : "ALTO",
+        estado: "pendiente_acuse",
+        tipo: "dfe_sumario",
+        nota: s.nota || null,
+      });
+    }
+
+    if (dfe.novedades_ultima_corrida) {
+      items.push({
+        fecha: fechaBase,
+        entidad,
+        obligacion: `DFE — Nueva notificación detectada: ${dfe.novedades_ultima_corrida}`,
+        nivel: "CRITICO",
+        estado: "nuevo",
+        tipo: "dfe_novedad",
+      });
+    }
+  }
+
+  if (items.length === 0) return;
+
+  items.sort((a, b) => (b.nivel === "CRITICO" ? 1 : 0) - (a.nivel === "CRITICO" ? 1 : 0));
+
+  const ts = Date.now();
+  const alert = {
+    agent_id: "arca-dfe",
+    ts,
+    titulo: `DFE ARCA — ${items.length} alerta(s) activa(s)`,
+    cuerpo_markdown: items.map(i => `- **${i.entidad}** · ${i.obligacion} · ${i.nivel}`).join("\n"),
+    items_count: items.length,
+    items,
+  };
+
+  const key = `alert:${ts}:arca-dfe:${crypto.randomUUID()}`;
   await env.FEEDBACK_KV.put(key, JSON.stringify(alert));
 }
 
@@ -694,6 +765,13 @@ async function handleAgentRun(request, env) {
 
   if (agent_id === "vencimientos-7d") {
     await runAgentVencimientos7d(env);
+    return new Response(JSON.stringify({ ok: true, agent_id, ran_at: Date.now() }), {
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  if (agent_id === "arca-dfe") {
+    await runAgentArcaDfe(env);
     return new Response(JSON.stringify({ ok: true, agent_id, ran_at: Date.now() }), {
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });

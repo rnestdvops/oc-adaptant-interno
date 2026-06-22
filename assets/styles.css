@@ -1104,6 +1104,194 @@ code, .mono {
   font-weight: 600;
 }
 
+/* ─── ARCA News ───────────────────────────────────────────────────────────── */
+
+.arca-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.arca-header {
+  margin-bottom: 24px;
+}
+
+.arca-header-meta {
+  font-size: 12px;
+  color: var(--gris2);
+  font-family: 'DM Mono', monospace;
+}
+
+.arca-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.arca-card {
+  background: white;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-lg);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.arca-card.skeleton {
+  color: var(--gris2);
+  font-size: 13px;
+}
+
+.arca-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.arca-card-entidad {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--negro);
+}
+
+.arca-card-cuit {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gris2);
+  margin-top: 3px;
+}
+
+.arca-nivel-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nivel-ok        { background: rgba(79,122,79,.1);     color: var(--ok); }
+.nivel-medio     { background: rgba(217,132,43,.1);    color: var(--urgente); }
+.nivel-alto      { background: rgba(217,132,43,.15);   color: var(--urgente); border: 1px solid rgba(217,132,43,.3); }
+.nivel-critico   { background: rgba(184,50,20,.1);     color: var(--critico); border: 1px solid rgba(184,50,20,.3); }
+.nivel-pendiente { background: var(--crema2);          color: var(--gris2); }
+
+.arca-card-meta {
+  font-size: 12px;
+  color: var(--gris);
+  line-height: 1.5;
+}
+
+.arca-novedad {
+  background: rgba(184,50,20,.06);
+  border: 1px solid rgba(184,50,20,.2);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--critico);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.arca-novedad-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--critico);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.arca-resumen {
+  font-size: 13px;
+  color: var(--negro);
+  line-height: 1.6;
+  padding: 12px 14px;
+  background: var(--crema);
+  border-radius: var(--r-md);
+  border-left: 3px solid var(--tc-border);
+}
+
+.arca-section-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gris2);
+  margin-top: 4px;
+}
+
+.arca-sumarios {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.arca-sumario-item {
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  background: var(--crema);
+}
+
+.arca-sumario-tipo {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--negro);
+  margin-bottom: 4px;
+}
+
+.arca-sumario-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 11.5px;
+  color: var(--gris);
+  font-family: 'DM Mono', monospace;
+}
+
+.arca-sumario-nota {
+  font-size: 11.5px;
+  color: var(--urgente);
+  margin-top: 5px;
+}
+
+.arca-comunicaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arca-comunicacion-item {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 12.5px;
+  color: var(--negro);
+}
+
+.arca-comunicacion-fecha {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gris2);
+  white-space: nowrap;
+}
+
+.arca-comunicacion-subject {
+  color: var(--gris);
+}
+
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
