@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-23",
   "data_owner": "ARCA Monitor — automatizado",
   "visibility": "socios_asesores",
   "descripcion": "Estado del DFE (Domicilio Fiscal Electrónico) de BHP SA. Actualizado automáticamente cada día hábil a las 08:00 AM. Usar junto con deuda_arca.json para contexto fiscal completo.",
   "cuit": "30-70955349-2",
   "razon_social": "BHP SA",
   "dfe": {
-    "ultimo_chequeo": "2026-06-22T16:49:14Z",
+    "ultimo_chequeo": "2026-06-23T21:12:57Z",
     "total_notificaciones": 50,
-    "nivel_alerta": "MEDIO",
-    "nivel_alerta_criterio": "Nuevas notificaciones sin Sumarios",
+    "nivel_alerta": "OK",
+    "nivel_alerta_criterio": "Sin novedades",
     "sumarios": [],
     "comunicaciones_con_pdf": [],
     "novedades_ultima_corrida": null,
-    "resumen": "Primera corrida registrada el 22/06/2026."
+    "resumen": "Sin novedades en la corrida del 23/06/2026."
   }
 }
