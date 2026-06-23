@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-23",
   "data_owner": "ARCA Monitor — automatizado",
   "visibility": "socios_asesores",
   "descripcion": "Estado del DFE (Domicilio Fiscal Electrónico) de Ernesto Corona. Actualizado automáticamente cada día hábil a las 08:00 AM. Usar junto con deuda_arca.json para contexto fiscal completo.",
   "cuit": "20-22159405-4",
   "razon_social": "Ernesto Corona",
   "dfe": {
-    "ultimo_chequeo": "2026-06-22T15:59:16Z",
+    "ultimo_chequeo": "2026-06-23T21:17:25Z",
     "total_notificaciones": 14,
     "nivel_alerta": "ALTO",
     "nivel_alerta_criterio": "Sumarios activos en el DFE",
@@ -39,6 +39,6 @@
       }
     ],
     "novedades_ultima_corrida": null,
-    "resumen": "4 Sumarios activos en el DFE: 2 Sumarios - Resoluciones (2026-03-10); 2 Instrucción de Sumario (2026-02-06). Requieren Acuse de Recibimiento para acceder al documento — requiere gestión manual. 3 comunicaciones de ARCA descargadas como PDF. Sin novedades en la corrida del 22/06/2026."
+    "resumen": "4 Sumarios activos en el DFE: 2 Sumarios - Resoluciones (2026-03-10); 2 Instrucción de Sumario (2026-02-06). Requieren Acuse de Recibimiento para acceder al documento — requiere gestión manual. 3 comunicaciones de ARCA descargadas como PDF. Sin novedades en la corrida del 23/06/2026."
   }
 }
