@@ -61,6 +61,47 @@ function renderMarkdown(text) {
   return html;
 }
 
+function addErrorMessage(msg, requestId, retryAfterS, lastUserText) {
+  const messagesEl = document.getElementById("messages");
+  const welcome = document.getElementById("welcome");
+  if (welcome) welcome.remove();
+
+  const wrap = document.createElement("div");
+  wrap.className = "message assistant";
+
+  const ref = requestId ? requestId.slice(0, 8) : null;
+  const refHtml = ref ? `<div class="error-ref">ref: ${ref}</div>` : "";
+
+  wrap.innerHTML = `
+    <div class="message-role">OC Adaptant</div>
+    <div class="message-body">${escapeHtml(msg)}</div>
+    ${retryAfterS > 0 ? `<button class="retry-btn" disabled>Reintentar en ${retryAfterS}s</button>` : ""}
+    ${refHtml}
+  `;
+
+  if (retryAfterS > 0 && lastUserText) {
+    const btn = wrap.querySelector(".retry-btn");
+    let remaining = retryAfterS;
+    const interval = setInterval(() => {
+      remaining--;
+      if (remaining <= 0) {
+        clearInterval(interval);
+        btn.disabled = false;
+        btn.textContent = "Reintentar ahora";
+        btn.onclick = () => {
+          wrap.remove();
+          send(lastUserText);
+        };
+      } else {
+        btn.textContent = `Reintentar en ${remaining}s`;
+      }
+    }, 1000);
+  }
+
+  messagesEl.appendChild(wrap);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
 function addMessage(role, text, queryId) {
   const messagesEl = document.getElementById("messages");
   const welcome = document.getElementById("welcome");
@@ -213,7 +254,8 @@ function clearThinking() {
 }
 
 async function send(userText) {
-  if (!userText.trim()) return;
+  userText = (userText || "").trim();
+  if (!userText) return;
 
   const session = getSession();
   if (!session) {
@@ -250,19 +292,17 @@ async function send(userText) {
 
     const data = await resp.json();
 
-    // Error mapeado por el Worker → mensaje amigable en el tono del OC
+    // Error mapeado por el Worker → mensaje amigable con ref y retry opcional
     if (data.ok === false && data.friendly_message) {
-      addMessage("assistant", data.friendly_message);
-      // Removemos el último mensaje del usuario del history para que un
-      // reintento no duplique el contexto ni rompa la alternancia user/assistant.
       history.pop();
+      addErrorMessage(data.friendly_message, data.request_id, data.retry_after_s || 0, userText);
       return;
     }
 
     // Fallback defensivo: errores no mapeados que vengan con formato Anthropic.
     if (data.error) {
-      addMessage("assistant", "Algo salió mal procesando la consulta. Reintentá en unos segundos.");
       history.pop();
+      addErrorMessage("Algo salió mal procesando la consulta. Reintentá en unos segundos.", data.request_id, 0, null);
       return;
     }
 
@@ -280,8 +320,8 @@ async function send(userText) {
     }
   } catch (e) {
     clearThinking();
-    addMessage("assistant", "No pude conectarme con el servidor. Revisá tu conexión y reintentá.");
     history.pop();
+    addErrorMessage("No pude conectarme con el servidor. Revisá tu conexión y reintentá.", null, 0, null);
   } finally {
     sendBtn.disabled = false;
     ta.focus();
@@ -327,6 +367,23 @@ function setupChat() {
 
   // Sugeridas dinámicas desde KV
   loadSugeridas(session, document.getElementById("suggested-questions"));
+
+  // Nueva conversación — limpia historial y UI sin cerrar sesión
+  document.getElementById("new-chat-btn").onclick = () => {
+    history.length = 0;
+    const messagesEl = document.getElementById("messages");
+    messagesEl.innerHTML = `
+      <div class="welcome" id="welcome">
+        <h1>Hola.</h1>
+        <p>
+          Preguntá lo que necesites sobre el estado del grupo.
+          Vencimientos, deuda, cash flow, gobierno societario, estrategia.
+          Si una pregunta requiere asesoramiento legal o contable, te lo voy a marcar.
+        </p>
+      </div>
+    `;
+    document.getElementById("composer-input").focus();
+  };
 
   // Logout
   document.getElementById("logout-btn").onclick = () => {

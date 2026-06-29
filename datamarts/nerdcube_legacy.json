@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-29",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
-  "estado_del_proyecto": "EN CIERRE — Contrato de cesión firmado el 30/06/2026. Toma de posesión efectiva 01/07/2026. Período de transición durante julio 2026. Autonomía plena del cesionario desde 01/08/2026.",
+  "estado_del_proyecto": "CERRADO — Pago de cesión recibido el 29/06/2026 ($9.000.000 ARS cash). Toma de posesión efectiva 01/07/2026. Período de transición durante julio 2026 (personal a cargo de BHP). Autonomía plena del cesionario desde 01/08/2026.",
   "proyecto": {
     "nombre": "NERDCUBE",
     "sitio_web": "https://www.nerdcube.club",
@@ -212,10 +212,12 @@
     "afecta": true,
     "movimientos_confirmados": [
       {
-        "fecha": "2026-06-30",
+        "fecha": "2026-06-29",
         "concepto": "Ingreso por cesión NERDCUBE a NODOS",
         "tipo": "ingreso",
-        "monto_ars": 9000000
+        "monto_ars": 9000000,
+        "estado": "COBRADO",
+        "nota": "Pago recibido el 29/06/2026 en efectivo (cash). Un día antes de la fecha contractual (30/06/2026)."
       },
       {
         "fecha": "2026-07",

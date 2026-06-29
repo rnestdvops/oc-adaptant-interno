@@ -6,6 +6,24 @@
   "convencion_versionado": "Semver pre-1.0 (0.X.Y) — pre-producción. 0.X cuando hay cambios significativos visibles para el usuario; 0.X.Y para fixes menores y refinamientos.",
   "releases": [
     {
+      "version": "0.10.0",
+      "fecha": "2026-06-23",
+      "titulo": "Sistema de logging + display de errores + Nueva conversación",
+      "added": [
+        "Worker: logger estructurado (JSON) — cada request emite nivel, evento, request_id y timestamp a Cloudflare Logs. Filtrable por level/event en dashboard o con `wrangler tail` en tiempo real.",
+        "Worker: persistencia de errores en KV (prefix error:, TTL 30 días) — los errores que impactan al usuario (anthropic_error, prompt_build_error) quedan registrados con request_id, tipo, nivel del usuario y mensaje.",
+        "Worker: endpoint GET /errors (socios only) — devuelve historial de errores de los últimos 30 días.",
+        "feedback.html: tab 'Errores' visible solo para socios — muestra el log de errores con tipo, nivel, timestamp y ref short.",
+        "chat.js: función addErrorMessage() — separa errores del flujo normal, muestra ref: XXXXXXXX (8 chars del request_id) para correlacionar con logs, y botón 'Reintentar en Ns' con countdown automático para errores rate_limit.",
+        "chat.html: botón 'Nueva conversación' en topbar — limpia el historial y resetea la UI sin cerrar sesión ni recargar la página."
+      ],
+      "changed": [
+        "Worker: todos los handlers generan request_id al inicio del request — incluido en respuestas de error y éxito para trazabilidad end-to-end.",
+        "Worker: agentes cron logean agent.start, agent.success, agent.no_items y agent.fetch_error para diagnóstico de corridas fallidas.",
+        "Worker: buildSystemPrompt recibe logger como parámetro — los errores de fetch de .md o datamarts quedan logueados con path y HTTP status."
+      ]
+    },
+    {
       "version": "0.9.0",
       "fecha": "2026-06-22",
       "titulo": "ARCA Monitor integrado + UI sidebar renovada + pipeline actualizado",

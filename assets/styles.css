@@ -1292,6 +1292,32 @@ code, .mono {
   color: var(--gris);
 }
 
+/* ─── Error display en chat ───────────────────────────────────────────────── */
+
+.error-ref {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gris2);
+  margin-top: 6px;
+  letter-spacing: 0.03em;
+}
+
+.retry-btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  border: 1px solid var(--linea);
+  border-radius: var(--r-md);
+  background: var(--crema);
+  color: var(--gris);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.retry-btn:not(:disabled):hover { border-color: var(--tc); color: var(--tc); }
+.retry-btn:disabled { opacity: 0.5; cursor: default; }
+
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {

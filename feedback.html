@@ -23,11 +23,12 @@
     </div>
 
     <div class="feedback-page">
-      <div class="tabs">
+      <div class="tabs" id="tabs-bar">
         <button class="tab-btn active" data-tab="alerts">Alertas de agentes</button>
         <button class="tab-btn" data-tab="feedback">Feedback</button>
         <button class="tab-btn" data-tab="queries">Historial de consultas</button>
         <button class="tab-btn" data-tab="updates">Historia de Actualizaciones</button>
+        <!-- Tab Errores: se agrega por JS solo si session.level === "socios" -->
       </div>
 
       <div class="tab-panel active" id="tab-alerts">
@@ -48,6 +49,11 @@
       <div class="tab-panel" id="tab-updates">
         <p id="updates-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
         <div id="updates-list"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-errors">
+        <p id="errors-status" style="font-size:13px;color:var(--gris);">Cargando...</p>
+        <div id="errors-list"></div>
       </div>
     </div>
   </div>
@@ -352,16 +358,74 @@
       }
     }
 
+    function renderErrorEntry(e) {
+      const dt = new Date(e.ts).toLocaleString("es-AR");
+      const typeTag = e.error_type
+        ? `<span class="mono" style="font-size:11px;background:rgba(184,50,20,.1);color:var(--critico);padding:2px 6px;border-radius:3px;">${escapeHtmlFb(e.error_type)}</span>`
+        : "";
+      const levelTag = e.user_level
+        ? `<span class="level-tag ${escapeHtmlFb(e.user_level)}">${escapeHtmlFb(e.user_level)}</span>`
+        : "";
+      const refTag = e.request_id
+        ? `<span class="mono" style="font-size:10.5px;color:var(--gris2);">ref: ${escapeHtmlFb(e.request_id.slice(0, 8))}</span>`
+        : "";
+      return `
+        <div class="query-entry" style="border-left:3px solid var(--critico);padding-left:10px;margin-bottom:8px;">
+          <div class="query-summary-row" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px;">
+            ${levelTag}
+            ${typeTag}
+            <span class="query-date">${dt}</span>
+            ${refTag}
+          </div>
+          <div class="query-question" style="color:var(--gris);font-size:12.5px;">${escapeHtmlFb(e.message || e.event || "—")}</div>
+        </div>
+      `;
+    }
+
+    async function loadErrors() {
+      const session = getSession();
+      const statusEl = document.getElementById("errors-status");
+      const listEl = document.getElementById("errors-list");
+      try {
+        const resp = await fetch(`${FB_WORKER_URL}/errors`, {
+          headers: { Authorization: `Bearer ${session.token}` },
+        });
+        if (resp.status === 401) { statusEl.textContent = "La sesión expiró. Volvé a entrar."; return; }
+        if (resp.status === 403) { statusEl.textContent = "Solo socios pueden ver el log de errores."; return; }
+        const data = await resp.json();
+        const entries = data.entries || [];
+        if (entries.length === 0) {
+          statusEl.textContent = "Sin errores registrados. Todo bien.";
+          return;
+        }
+        statusEl.innerHTML = `<strong>${entries.length}</strong> error(es) registrado(s) en los últimos 30 días.`;
+        listEl.innerHTML = entries.map(renderErrorEntry).join("");
+      } catch (err) {
+        statusEl.textContent = `Error cargando log: ${err.message}`;
+      }
+    }
+
     async function init() {
       const session = getSession();
       if (!session) {
         window.location.href = "/";
         return;
       }
+
+      // Tab Errores solo visible para socios
+      if (session.level === "socios") {
+        const tabsBar = document.getElementById("tabs-bar");
+        const errBtn = document.createElement("button");
+        errBtn.className = "tab-btn";
+        errBtn.dataset.tab = "errors";
+        errBtn.textContent = "Errores";
+        tabsBar.appendChild(errBtn);
+      }
+
       setupTabs();
-      // Cargo los cuatro paneles en paralelo — los inactivos quedan listos
-      // para mostrar sin nuevo round-trip cuando el usuario haga click.
-      await Promise.all([loadUpdates(), loadAlerts(), loadFeedback(), loadQueries()]);
+      const loads = [loadUpdates(), loadAlerts(), loadFeedback(), loadQueries()];
+      if (session.level === "socios") loads.push(loadErrors());
+      await Promise.all(loads);
     }
 
     document.addEventListener("DOMContentLoaded", init);

@@ -28,6 +28,46 @@ const CORS_HEADERS = {
   "Access-Control-Max-Age": "86400",
 };
 
+// ─── Logger estructurado ──────────────────────────────────────────────────────
+//
+// Salida: console.log(JSON) → capturado por Cloudflare Worker Logs.
+// Filtrar en dashboard con: level=error  /  event=chat.anthropic_error  etc.
+// Para errores relevantes se persiste también en KV (prefix "error:") con TTL
+// de 30 días, accesible desde /errors (socios only).
+
+function createLogger(requestId) {
+  const write = (level, event, ctx = {}) => {
+    console.log(JSON.stringify({
+      level,
+      event,
+      request_id: requestId,
+      ts: new Date().toISOString(),
+      ...ctx,
+    }));
+  };
+  return {
+    info:  (event, ctx) => write("info",  event, ctx),
+    warn:  (event, ctx) => write("warn",  event, ctx),
+    error: (event, ctx) => write("error", event, ctx),
+  };
+}
+
+async function persistError(env, { request_id, event, user_level, error_type, message }) {
+  try {
+    const key = `error:${Date.now()}:${request_id}`;
+    await env.FEEDBACK_KV.put(key, JSON.stringify({
+      request_id,
+      event,
+      user_level: user_level || null,
+      error_type,
+      message,
+      ts: Date.now(),
+    }), { expirationTtl: 60 * 60 * 24 * 30 });
+  } catch (_) {
+    // Silencioso: el log de errores nunca debe romper la respuesta al usuario.
+  }
+}
+
 // ─── Helpers de token ─────────────────────────────────────────────────────────
 
 async function signToken(payload, secret) {
@@ -74,23 +114,25 @@ async function verifyToken(token, secret) {
 
 // ─── Selección de SYSTEM_PROMPT por nivel ─────────────────────────────────────
 
-async function buildSystemPrompt(level, env) {
-  // En producción los .md y .json se cargarán desde KV o R2.
-  // Para el primer deploy, los .md viven inline acá o se sirven desde el sitio
-  // y el Worker hace fetch a esos archivos.
-  // Esta versión usa fetch al sitio Netlify (same domain config en CORS).
-
+async function buildSystemPrompt(level, env, log) {
+  const logger = log || { info: () => {}, warn: () => {}, error: () => {} };
   const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
 
   const fetchText = async (path) => {
     const r = await fetch(`${SITE_BASE}${path}`);
-    if (!r.ok) throw new Error(`No se pudo cargar ${path}`);
+    if (!r.ok) {
+      logger.error("prompt.fetch_error", { path, status: r.status });
+      throw new Error(`No se pudo cargar ${path}`);
+    }
     return await r.text();
   };
 
   const fetchJson = async (path) => {
     const r = await fetch(`${SITE_BASE}${path}`);
-    if (!r.ok) throw new Error(`No se pudo cargar ${path}`);
+    if (!r.ok) {
+      logger.error("prompt.fetch_error", { path, status: r.status });
+      throw new Error(`No se pudo cargar ${path}`);
+    }
     return await r.json();
   };
 
@@ -107,14 +149,10 @@ async function buildSystemPrompt(level, env) {
   promptParts.push(await fetchText("/system_prompts/00_personalidad.md"));
 
   if (level === "socios" || level === "asesores" || level === "contador") {
-    // Capa 01 — briefing completo
     promptParts.push(await fetchText("/system_prompts/01_briefing_completo.md"));
-    // Capa 02 — datamart guide
     promptParts.push(await fetchText("/system_prompts/02_datamart_guide.md"));
-    // Capa 04 — modelo privacidad
     promptParts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
 
-    // Datamarts inyectados
     const datamarts = [
       "entidades.json",
       "deuda_arca.json",
@@ -144,7 +182,6 @@ async function buildSystemPrompt(level, env) {
       datamartParts.push(`\n### ${dm}\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\`\n`);
     }
   } else if (level === "inversores") {
-    // Solo capa 03 + 04 + datamart Adaptant
     promptParts.push(await fetchText("/system_prompts/03_vista_inversor.md"));
     promptParts.push(await fetchText("/system_prompts/04_modelo_privacidad.md"));
 
@@ -152,7 +189,6 @@ async function buildSystemPrompt(level, env) {
     datamartParts.push("\n\n## Información disponible\n");
     for (const dm of datamarts) {
       const data = await fetchJson(`/datamarts/${dm}`);
-      // Para entidades, filtrar solo Adaptant SAS
       if (dm === "entidades.json") {
         const filtered = {
           ...data,
@@ -164,9 +200,6 @@ async function buildSystemPrompt(level, env) {
       }
     }
   } else if (level === "demo") {
-    // Capa 05 — vista demo: estructura, pipeline, OC como producto
-    // La información sensible (deuda, embargos, fiscal personal) no entra al
-    // contexto en absoluto — privacidad por naturaleza, no por instrucción.
     promptParts.push(await fetchText("/system_prompts/05_vista_demo.md"));
 
     const datamarts = [
@@ -186,11 +219,6 @@ async function buildSystemPrompt(level, env) {
     }
   }
 
-  // Devolvemos como array de content blocks con cache_control. Anthropic
-  // intenta cachear todo el prefix hasta cada cache_control. Si el contenido
-  // del bloque es idéntico a una request anterior dentro de los últimos
-  // 5 min, se cobra como cache_read (~10% del costo input). Si no, es
-  // cache_write (~125%) y queda cacheado para las siguientes.
   return [
     {
       type: "text",
@@ -208,6 +236,9 @@ async function buildSystemPrompt(level, env) {
 // ─── Endpoints ────────────────────────────────────────────────────────────────
 
 async function handleAuth(request, env) {
+  const requestId = crypto.randomUUID();
+  const log = createLogger(requestId);
+
   const body = await request.json();
   const { password } = body;
 
@@ -219,12 +250,14 @@ async function handleAuth(request, env) {
   else if (password === env.PWD_DEMO) level = "demo";
 
   if (!level) {
+    log.warn("auth.fail");
     return new Response(JSON.stringify({ error: "Credenciales inválidas" }), {
       status: 401,
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 
+  log.info("auth.success", { user_level: level });
   const token = await signToken({ level, iat: Date.now() }, env.SESSION_SECRET);
   return new Response(JSON.stringify({ token, level }), {
     headers: { "Content-Type": "application/json", ...CORS_HEADERS },
@@ -232,9 +265,13 @@ async function handleAuth(request, env) {
 }
 
 async function handleChat(request, env, ctx) {
+  const requestId = crypto.randomUUID();
+  const log = createLogger(requestId);
+
   const authHeader = request.headers.get("Authorization");
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return new Response(JSON.stringify({ error: "Sin token" }), {
+    log.warn("chat.no_token");
+    return new Response(JSON.stringify({ error: "Sin token", request_id: requestId }), {
       status: 401,
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
@@ -243,7 +280,8 @@ async function handleChat(request, env, ctx) {
   const token = authHeader.replace("Bearer ", "");
   const payload = await verifyToken(token, env.SESSION_SECRET);
   if (!payload) {
-    return new Response(JSON.stringify({ error: "Token inválido o expirado" }), {
+    log.warn("chat.invalid_token");
+    return new Response(JSON.stringify({ error: "Token inválido o expirado", request_id: requestId }), {
       status: 401,
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
@@ -252,11 +290,26 @@ async function handleChat(request, env, ctx) {
   const body = await request.json();
   const { messages } = body;
 
+  log.info("chat.start", { user_level: payload.level, message_count: messages.length });
+
   let systemPrompt;
   try {
-    systemPrompt = await buildSystemPrompt(payload.level, env);
+    systemPrompt = await buildSystemPrompt(payload.level, env, log);
   } catch (e) {
-    return new Response(JSON.stringify({ error: `Build prompt: ${e.message}` }), {
+    log.error("chat.prompt_build_error", { user_level: payload.level, error: e.message });
+    ctx.waitUntil(persistError(env, {
+      request_id: requestId,
+      event: "chat.prompt_build_error",
+      user_level: payload.level,
+      error_type: "prompt_build_error",
+      message: e.message,
+    }));
+    return new Response(JSON.stringify({
+      ok: false,
+      friendly_message: "No pude cargar el contexto desde el servidor. Probá recargar la página.",
+      error_type: "prompt_build_error",
+      request_id: requestId,
+    }), {
       status: 500,
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
@@ -288,25 +341,41 @@ async function handleChat(request, env, ctx) {
 
   const data = await anthropicResp.json();
 
-  // Si la API de Anthropic devolvió un error, traducir a mensaje amigable
-  // en lugar de propagar el JSON crudo al frontend.
   if (!anthropicResp.ok || data?.type === "error") {
     const friendly = mapAnthropicError(data, anthropicResp);
+    log.error("chat.anthropic_error", {
+      user_level: payload.level,
+      error_type: friendly.type,
+      http_status: anthropicResp.status,
+      retry_after_s: friendly.retry_after_s,
+    });
+    ctx.waitUntil(persistError(env, {
+      request_id: requestId,
+      event: "chat.anthropic_error",
+      user_level: payload.level,
+      error_type: friendly.type,
+      message: friendly.message,
+    }));
     return new Response(JSON.stringify({
       ok: false,
       friendly_message: friendly.message,
       retry_after_s: friendly.retry_after_s,
       error_type: friendly.type,
+      request_id: requestId,
     }), {
       status: anthropicResp.status,
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 
-  // Log automático en KV de cada query exitosa para auditoría y mejora de
-  // datamarts. Asíncrono via ctx.waitUntil — no bloquea la respuesta.
-  // Solo se loguean queries que llegaron a Anthropic con éxito; errores
-  // no se persisten (ya hay rate limit / error_type en el response del worker).
+  log.info("chat.success", {
+    user_level: payload.level,
+    input_tokens: data.usage?.input_tokens,
+    output_tokens: data.usage?.output_tokens,
+    cache_read: data.usage?.cache_read_input_tokens,
+    cache_write: data.usage?.cache_creation_input_tokens,
+  });
+
   const queryId = crypto.randomUUID();
   ctx.waitUntil(logQuery(env, {
     query_id: queryId,
@@ -316,10 +385,7 @@ async function handleChat(request, env, ctx) {
     response: data,
   }));
 
-  // Inyectamos query_id en el body de respuesta para que el frontend pueda
-  // adjuntarlo cuando el usuario vote feedback. Es metadata del wrapper,
-  // no toca los content blocks de Anthropic.
-  const enrichedResponse = { ...data, query_id: queryId };
+  const enrichedResponse = { ...data, query_id: queryId, request_id: requestId };
 
   return new Response(JSON.stringify(enrichedResponse), {
     status: anthropicResp.status,
@@ -515,9 +581,6 @@ async function handleQueriesList(request, env) {
     });
   }
 
-  // KV list devuelve hasta 1000 keys por llamada sin cursor. Para uso interno
-  // del OC esto es suficiente por mucho tiempo; cuando se acerque al límite
-  // habrá que paginar con cursor o migrar a D1 con índices.
   const list = await env.FEEDBACK_KV.list({ prefix: "query:" });
   const entries = await Promise.all(
     list.keys.map(async (k) => {
@@ -537,34 +600,51 @@ async function handleQueriesList(request, env) {
   });
 }
 
-// ─── Router principal ─────────────────────────────────────────────────────────
+// ─── Endpoint /errors — log de errores persistidos (socios only) ──────────────
+
+async function handleErrorsList(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload || payload.level !== "socios") {
+    return new Response(JSON.stringify({ error: "Solo socios pueden ver el log de errores" }), {
+      status: 403,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const list = await env.FEEDBACK_KV.list({ prefix: "error:" });
+  const entries = await Promise.all(
+    list.keys.map(async (k) => {
+      const raw = await env.FEEDBACK_KV.get(k.name);
+      return raw ? JSON.parse(raw) : null;
+    })
+  );
+
+  const sorted = entries.filter(Boolean).sort((a, b) => b.ts - a.ts);
+
+  return new Response(JSON.stringify({ entries: sorted, total: sorted.length }), {
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
 
 // ─── Cron / Scheduled — capa C4b agentic ──────────────────────────────────────
-//
-// Disparado por Cloudflare Cron Triggers según los crons en wrangler.toml.
-// Cada agente lee datamarts via fetch a SITE_BASE, razona (procedural o LLM),
-// y persiste alertas/resumenes en KV con prefix "alert:".
-//
-// LÍNEA ROJA (paper OC Agentizado): los agentes operan sobre el commons —
-// nunca sobre sistemas transaccionales. Solo detectan, alertan, preparan.
-// La decisión queda siempre en el humano.
 
 async function dispatchScheduled(event, env, ctx) {
   const cron = event.cron;
 
-  // Mapeo cron → agente. Mantener en sync con wrangler.toml [triggers] crons.
   if (cron === "0 11 * * *") {
     await runAgentVencimientos7d(env);
   }
   if (cron === "30 11 * * *") {
     await runAgentArcaDfe(env);
   }
-  // Próximos agentes: agregar branches acá + el cron correspondiente en wrangler.toml.
 }
 
 // ─── Agente 1: vencimientos próximos 7 días ───────────────────────────────────
 
 async function runAgentVencimientos7d(env) {
+  const log = createLogger(`cron-venc-${Date.now()}`);
+  log.info("agent.start", { agent_id: "vencimientos-7d" });
+
   const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
 
   let venc;
@@ -573,6 +653,7 @@ async function runAgentVencimientos7d(env) {
     if (!r.ok) throw new Error(`fetch vencimientos: ${r.status}`);
     venc = await r.json();
   } catch (e) {
+    log.error("agent.fetch_error", { agent_id: "vencimientos-7d", error: e.message });
     await logAgentError(env, "vencimientos-7d", e.message);
     return;
   }
@@ -589,8 +670,10 @@ async function runAgentVencimientos7d(env) {
 
   enVentana.sort((a, b) => a.fecha.localeCompare(b.fecha));
 
-  // Si no hay nada en la ventana, no genera alerta (sin spam).
-  if (enVentana.length === 0) return;
+  if (enVentana.length === 0) {
+    log.info("agent.no_items", { agent_id: "vencimientos-7d" });
+    return;
+  }
 
   const fmtMonto = v => {
     if (v.monto_ars != null) return `$${v.monto_ars.toLocaleString("es-AR", { maximumFractionDigits: 0 })} ARS`;
@@ -620,11 +703,16 @@ async function runAgentVencimientos7d(env) {
 
   const key = `alert:${ts}:vencimientos-7d:${crypto.randomUUID()}`;
   await env.FEEDBACK_KV.put(key, JSON.stringify(alert));
+
+  log.info("agent.success", { agent_id: "vencimientos-7d", items_count: enVentana.length });
 }
 
-// ─── Agente 2: DFE ARCA — BHP SA + Ernesto Corona ───────────────────────────
+// ─── Agente 2: DFE ARCA — BHP SA + Ernesto Corona ────────────────────────────
 
 async function runAgentArcaDfe(env) {
+  const log = createLogger(`cron-arca-${Date.now()}`);
+  log.info("agent.start", { agent_id: "arca-dfe" });
+
   const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
 
   let bhp, ernesto;
@@ -634,6 +722,7 @@ async function runAgentArcaDfe(env) {
       fetch(`${SITE_BASE}/datamarts/arca_ernesto.json`).then(r => { if (!r.ok) throw new Error(`arca_ernesto: ${r.status}`); return r.json(); }),
     ]);
   } catch (e) {
+    log.error("agent.fetch_error", { agent_id: "arca-dfe", error: e.message });
     await logAgentError(env, "arca-dfe", e.message);
     return;
   }
@@ -642,7 +731,7 @@ async function runAgentArcaDfe(env) {
   const items = [];
 
   for (const data of [bhp, ernesto]) {
-    const dfe = data.dfe || data; // soporta ambas estructuras
+    const dfe = data.dfe || data;
     const nivelRaw = (dfe.nivel_alerta || data.nivel_alerta || "").toUpperCase();
     if (!NIVELES_ACTIVOS.includes(nivelRaw)) continue;
 
@@ -673,7 +762,10 @@ async function runAgentArcaDfe(env) {
     }
   }
 
-  if (items.length === 0) return;
+  if (items.length === 0) {
+    log.info("agent.no_items", { agent_id: "arca-dfe" });
+    return;
+  }
 
   items.sort((a, b) => (b.nivel === "CRITICO" ? 1 : 0) - (a.nivel === "CRITICO" ? 1 : 0));
 
@@ -689,6 +781,8 @@ async function runAgentArcaDfe(env) {
 
   const key = `alert:${ts}:arca-dfe:${crypto.randomUUID()}`;
   await env.FEEDBACK_KV.put(key, JSON.stringify(alert));
+
+  log.info("agent.success", { agent_id: "arca-dfe", items_count: items.length });
 }
 
 async function logAgentError(env, agentId, message) {
@@ -696,7 +790,7 @@ async function logAgentError(env, agentId, message) {
   await env.FEEDBACK_KV.put(
     key,
     JSON.stringify({ agent_id: agentId, error: message, ts: Date.now() }),
-    { expirationTtl: 60 * 60 * 24 * 30 } // 30 días
+    { expirationTtl: 60 * 60 * 24 * 30 }
   );
 }
 
@@ -729,7 +823,7 @@ async function handleAlertsList(request, env) {
   });
 }
 
-// ─── Endpoint DELETE /alerts — limpiar alertas (socios only) ─────────────────
+// ─── Endpoint DELETE /alerts — limpiar alertas (socios only) ──────────────────
 
 async function handleAlertsDelete(request, env) {
   const payload = await requireAuth(request, env);
@@ -753,7 +847,6 @@ async function handleAlertsDelete(request, env) {
 async function handleAgentRun(request, env) {
   const payload = await requireAuth(request, env);
   if (!payload || payload.level !== "socios") {
-    // Solo socios pueden disparar agentes manualmente — operación admin.
     return new Response(JSON.stringify({ error: "Solo socios pueden disparar agentes" }), {
       status: 403,
       headers: { "Content-Type": "application/json", ...CORS_HEADERS },
@@ -782,6 +875,8 @@ async function handleAgentRun(request, env) {
     headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
 }
+
+// ─── Router principal ─────────────────────────────────────────────────────────
 
 export default {
   async fetch(request, env, ctx) {
@@ -825,6 +920,10 @@ export default {
 
     if (url.pathname === "/agents/run" && request.method === "POST") {
       return handleAgentRun(request, env);
+    }
+
+    if (url.pathname === "/errors" && request.method === "GET") {
+      return handleErrorsList(request, env);
     }
 
     if (url.pathname === "/health") {

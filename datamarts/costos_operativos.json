@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-29",
   "data_owner": "Franco Buglioni",
   "visibility": "socios_asesores",
   "estado_general": "ESTIMACIÓN INICIAL — Pendiente de relevamiento real. Los rangos están del lado conservador (estimación alta).",
@@ -112,6 +112,33 @@
       "subtotal_estimado_usd_mes": 15
     },
     {
+      "categoria": "Cumplimiento societario d-Vops LLC (EEUU)",
+      "frecuencia": "anual",
+      "proveedor": "Sociedades Americanas LLC — 1057 NW 136th Ave, Miami FL 33182, USA",
+      "items": [
+        {
+          "item": "Company Renewal (renovación anual Wyoming LLC)",
+          "factura": "INV-0001169",
+          "fecha_factura": "2026-01-02",
+          "monto_usd_anual": 350,
+          "estimado_usd_mes": 29.17,
+          "estado": "PAGADA",
+          "nota": "Renovación anual de la LLC en Wyoming. Pagada en enero 2026."
+        },
+        {
+          "item": "Company Tax Return - Partnership (declaración impositiva anual EEUU)",
+          "factura": "INV-0001170",
+          "fecha_factura": "2026-01-02",
+          "monto_usd_anual": 900,
+          "estimado_usd_mes": 75,
+          "estado": "PAGADA",
+          "nota": "Preparación y presentación del tax return anual de d-Vops LLC como Partnership (Form 1065). Pagada en enero 2026."
+        }
+      ],
+      "subtotal_estimado_usd_mes": 104.17,
+      "total_usd_anual": 1250
+    },
+    {
       "categoria": "Otras herramientas varias",
       "items": [
         {
@@ -128,10 +155,11 @@
     }
   ],
   "totales": {
-    "estimado_usd_mes": 330,
-    "estimado_ars_mes_tc_ref_1430": 471900,
-    "rango_minimo_usd_mes": 147,
-    "rango_maximo_usd_mes": 437
+    "estimado_usd_mes": 434,
+    "estimado_ars_mes_tc_ref_1430": 620620,
+    "rango_minimo_usd_mes": 251,
+    "rango_maximo_usd_mes": 541,
+    "nota": "Incluye cumplimiento societario d-Vops LLC (USD 104/mes promedio anualizado: Company Renewal USD 350 + Tax Return USD 900)."
   },
   "estimado_uso_api_anthropic_oc_interno": {
     "rango_usd_mes": [
@@ -143,7 +171,6 @@
   "no_incluido_aun": [
     "Servicios contables (CNT mensual)",
     "Servicios legales (ABG honorarios)",
-    "CPA EEUU (cumplimiento d-Vops LLC) — costo trimestral o anual",
     "Eventual oficina física si la hay",
     "Viajes y representación",
     "Marketing / publicidad pagada",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-29",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "vencimientos": [
@@ -78,6 +78,76 @@
         "subtotal_periodos": 142287.41
       },
       "nota": "Carta Documento sellada 12/06/2026. Plazo 48hs ya vencido. Reclamo Ley 23.660 por aportes OS no registrados de empleados BHP declarados en F931. Monto total reclamado $266.803,27 (incluye capital $142.287,41 + intereses moratorios + costos carta + honorarios). Contacto: fiscalizaciones@jerarquicos.com / 0342-4504828. Pendiente revisión con contador."
+    },
+    {
+      "fecha": "2026-06-29",
+      "entidad": "BHP SA",
+      "obligacion": "Honorarios abogados del concurso preventivo — saldo pendiente",
+      "monto_usd": 12400,
+      "tipo": "honorarios_legales",
+      "nivel": "PENDIENTE",
+      "estado": "pendiente_verificacion",
+      "nota": "Monto informado verbalmente por los abogados del concurso: USD 12.400. Sin documento probatorio identificado a la fecha. Origen a corroborar antes de reconocer formalmente la deuda. No pagar ni comprometer sin verificar respaldo documental."
+    },
+    {
+      "fecha": "2026-06-29",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota de liquidación finiquito — Weidmann Luciana",
+      "monto_ars": 23430005.54,
+      "tipo": "liquidacion_laboral",
+      "nivel": "PENDIENTE",
+      "estado": "pausada_sin_riesgo",
+      "nota": "Liquidación de finiquito pausada. Sin riesgo de reclamo laboral confirmado a la fecha."
+    },
+    {
+      "fecha": "2026-06-29",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota de liquidación finiquito — Faguaga Alejandro",
+      "monto_ars": 14144561.14,
+      "tipo": "liquidacion_laboral",
+      "nivel": "PENDIENTE",
+      "estado": "pausada_sin_riesgo",
+      "nota": "Liquidación de finiquito pausada. Sin riesgo de reclamo laboral confirmado a la fecha."
+    },
+    {
+      "fecha": "2026-06-29",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota de liquidación finiquito — Ibañez Claudio",
+      "monto_ars": 12541620.04,
+      "tipo": "liquidacion_laboral",
+      "nivel": "PENDIENTE",
+      "estado": "pausada_sin_riesgo",
+      "nota": "Liquidación de finiquito pausada. Sin riesgo de reclamo laboral confirmado a la fecha."
+    },
+    {
+      "fecha": "2026-06-29",
+      "entidad": "BHP SA",
+      "obligacion": "Cuota de liquidación finiquito — Galvez Fernando",
+      "monto_ars": 22779313.54,
+      "tipo": "liquidacion_laboral",
+      "nivel": "PENDIENTE",
+      "estado": "pausada_sin_riesgo",
+      "nota": "Liquidación de finiquito pausada. Sin riesgo de reclamo laboral confirmado a la fecha. Fernando Galvez es el ex contador/gerente de administración de BHP — mismo titular de la cuenta MP NerdCube original."
+    },
+    {
+      "fecha": "2026-05-01",
+      "entidad": "BHP SA",
+      "obligacion": "Liquidación final — Castro Enzo (proyecto Claro Argentina)",
+      "monto_ars": 1440000,
+      "tipo": "liquidacion_laboral",
+      "nivel": "URGENTE",
+      "estado": "vencida_sin_pago",
+      "nota": "Liquidación final de empleado del proyecto BHP SA / Claro Argentina. Debía pagarse a principios de mayo 2026. Lleva ~2 meses de demora. Pendiente pago. Sin riesgo de reclamo laboral confirmado. Pago a realizar desde cuenta BHP SA (Supervielle)."
+    },
+    {
+      "fecha": "2026-05-01",
+      "entidad": "BHP SA",
+      "obligacion": "Liquidación final — Casarino Walter (proyecto Claro Argentina)",
+      "monto_ars": 636854.40,
+      "tipo": "liquidacion_laboral",
+      "nivel": "URGENTE",
+      "estado": "vencida_sin_pago",
+      "nota": "Liquidación final de empleado del proyecto BHP SA / Claro Argentina. Debía pagarse a principios de mayo 2026. Lleva ~2 meses de demora. Pendiente pago. Sin riesgo de reclamo laboral confirmado. Pago a realizar desde cuenta BHP SA (Supervielle)."
     },
     {
       "fecha": "2026-06-11",
