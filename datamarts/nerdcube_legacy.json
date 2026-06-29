@@ -87,7 +87,7 @@
         "cuit_cuil": "27-40592349-7",
         "banco": "BBVA Argentina",
         "cbu": "0170072540000052244315",
-        "monto_transferencia_mensual_ars": 520000,
+        "monto_transferencia_mensual_ars": 523120,
         "rol": "Persona operativa NerdCube"
       },
       {
@@ -95,7 +95,7 @@
         "cuit_cuil": "27-32724137-6",
         "banco_cuenta": "Mercado Pago",
         "cvu": "0000003100028289647473",
-        "monto_transferencia_mensual_ars": 257124.72,
+        "monto_transferencia_mensual_ars": 258667.47,
         "rol": "Persona operativa NerdCube"
       },
       {
@@ -103,12 +103,12 @@
         "cuit_cuil": "27-38591793-2",
         "banco": "BBVA Argentina",
         "cbu": "0170072540000055445333",
-        "monto_transferencia_mensual_ars": 520000,
+        "monto_transferencia_mensual_ars": 523120,
         "rol": "Persona operativa NerdCube"
       }
     ],
     "totales_mensuales_ars": {
-      "transferencias_personal": 1297124.72,
+      "transferencias_personal": 1304907.47,
       "servicio_limpieza_estimado": "Incluido en la dotación según contrato — costo a confirmar si es facturador separado",
       "nota": "Estos montos son las transferencias netas. La carga social (si es relación de dependencia) o el régimen impositivo (si son monotributistas) está pendiente de confirmar con CNT — impacta el costo total real y las eventuales obligaciones residuales."
     },
@@ -161,7 +161,8 @@
     "concepto": "Contraprestación por operación de transición y sostenimiento del personal durante el mes de transferencia",
     "modalidad_a_elegir": "B (CONFIRMADA) — BHP cobra a clientes durante julio según vencimientos habituales. NODOS apoya administrativamente.",
     "monto_estimado_ars": 4000000,
-    "nota": "Estimación ~$4M ARS. Modalidad de cobro A o B aún por definir — si A, el ingreso entra el 30/06 junto con la cesión; si B, el ingreso entra a lo largo de julio según vencimientos."
+    "fecha_cobro_esperada": "2026-07-10",
+    "nota": "Estimación ~$4M ARS. Ingreso esperado el 10 de julio 2026."
   },
   "pasivos_preexistentes_a_cargo_de_bhp": {
     "principio": "Los pasivos previos al 30/06/2026 quedan íntegramente en BHP — NO se transfieren a NODOS (Cláusula Séptima)",
@@ -217,6 +218,7 @@
         "tipo": "ingreso",
         "monto_ars": 9000000,
         "estado": "COBRADO",
+        "receptor": "Ernesto Corona (personal) — factura emitida a su nombre por razones impositivas",
         "nota": "Pago recibido el 29/06/2026 en efectivo (cash). Un día antes de la fecha contractual (30/06/2026)."
       },
       {
@@ -232,10 +234,19 @@
         "monto_ars": 5000000
       },
       {
-        "fecha": "2026-07",
-        "concepto": "Sueldos personal NerdCube (3 personas, último mes)",
+        "fecha": "2026-06-29",
+        "concepto": "Sueldos junio — Sara Pérez + Rocío Pérez Orti (NerdCube)",
         "tipo": "egreso",
-        "monto_ars": 1297124.72
+        "monto_ars": 1304907.47,
+        "estado": "PAGADO",
+        "nota": "Sara $523.120 + Rocío $523.120 + Melisa Castillo $258.667,47"
+      },
+      {
+        "fecha": "2026-07",
+        "concepto": "Sueldos personal NerdCube (3 personas, último mes de transición)",
+        "tipo": "egreso",
+        "monto_ars": 1304907.47,
+        "nota": "Sara $523.120 + Rocío $523.120 + Melisa $258.667,47"
       },
       {
         "fecha": "2026-07-31",
@@ -252,11 +263,18 @@
     ],
     "totales": {
       "ingresos_ars": 13000000,
-      "egresos_ars": 12171382.34,
-      "neto_ars": 828617.66
+      "egresos_ars": 13476289.81,
+      "neto_ars": -476289.81
     },
-    "calculo_neto": "+$9M cesión + $4M facturación - $5M alquiler - $1,3M sueldos - $5,37M liquidaciones - $0,5M rezagos = +$828.617,66 ARS",
-    "lectura": "La operación NerdCube cierra prácticamente neutra en términos de cash. No genera colchón material — apenas permite cerrar el proyecto sin pérdida."
+    "calculo_neto": "+$9M cesión + $4M facturación - $5M alquiler - $1,305M sueldos jun (3 personas) - $1,305M sueldos jul (3 personas) - $5,374M liquidaciones - $0,5M rezagos = -$476.289,81 ARS",
+    "saldo_caja_cesion": {
+      "fecha": "2026-06-29",
+      "saldo_disponible_ars": 3000000,
+      "titular_cuenta": "Ernesto Corona (personal)",
+      "motivo_titularidad": "La factura de cesión fue emitida por Ernesto Corona a título personal por razones impositivas — el pago de NODOS lo recibe él directamente, no BHP SA.",
+      "nota": "Del total cobrado de $9.000.000, el saldo disponible al 29/06/2026 es de $3.000.000 en cuenta de Ernesto Corona. Los $6.000.000 restantes se destinaron a pagos ya realizados."
+    },
+    "lectura": "Con los tres sueldos de junio pagados ($1.304.907,47), el neto del proyecto queda en -$476.290 ARS. Saldo de caja disponible al 29/06/2026: $3.000.000 ARS (de los $9M cobrados por cesión). La operación cierra con un déficit leve — prácticamente cubierto por la facturación de coworkers de julio si se cobra en término."
   },
   "pendiente_confirmar": [
     "Confirmar CUIT, representante legal y datos completos de BHP en el contrato",
