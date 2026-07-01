@@ -14,12 +14,12 @@
     "pregunta_pendiente": "Adaptant SAS aún 'en constitución'. Si los primeros ingresos arrancan en julio 2026, conviene confirmar fecha real de operatividad o definir d-Vops LLC como facturador transitorio."
   },
   "pipeline_resumen": {
-    "proyectos_totales": 10,
+    "proyectos_totales": 11,
     "confirmados": 5,
-    "potenciales": 5,
+    "potenciales": 6,
     "monto_total_confirmado_usd": 75250,
-    "monto_total_potencial_usd": 333000,
-    "monto_total_pipeline_usd": 408250
+    "monto_total_potencial_usd": 355000,
+    "monto_total_pipeline_usd": 430250
   },
   "pipeline": [
     {
@@ -148,6 +148,17 @@
       "mes_inicio": "2026-07",
       "fecha_cobro_esperada": "2026-07-13",
       "entidad": "Adaptant"
+    },
+    {
+      "id": "brou-apps-internas-2026",
+      "cliente": "BROU",
+      "proyecto": "Implementación Diseño de Equipo — Aplicaciones Internas",
+      "monto_total_usd": 22000,
+      "duracion_meses": 1,
+      "monto_mes_usd": 22000,
+      "estado": "potencial",
+      "mes_inicio": "2026-08",
+      "entidad": "Adaptant"
     }
   ],
   "ingresos_confirmados_por_mes": {
@@ -162,7 +173,7 @@
   },
   "ingresos_potenciales_por_mes": {
     "2026-07": 22000,
-    "2026-08": 32000,
+    "2026-08": 54000,
     "2026-09": 27500,
     "2026-10": 27500,
     "2026-11": 17500,
@@ -405,8 +416,8 @@
     {
       "mes": "2026-08",
       "ingresos_confirmados_usd": 9000,
-      "ingresos_potenciales_usd": 32000,
-      "ingresos_totales_usd": 41000,
+      "ingresos_potenciales_usd": 54000,
+      "ingresos_totales_usd": 63000,
       "egresos_ars": 5762497.94,
       "egresos_detalle": [
         {
@@ -450,6 +461,12 @@
           "cliente": "GBM",
           "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
           "monto_usd": 6000,
+          "estado": "potencial"
+        },
+        {
+          "cliente": "BROU",
+          "proyecto": "Implementación Diseño de Equipo — Aplicaciones Internas",
+          "monto_usd": 22000,
           "estado": "potencial"
         }
       ],
