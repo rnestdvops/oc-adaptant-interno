@@ -175,6 +175,9 @@ async function buildSystemPrompt(level, env, log) {
       "changelog.json",
       "arca_bhp.json",
       "arca_ernesto.json",
+      "novedades.json",
+      "alianzas_estrategicas.json",
+      "asesoria_legal.json",
     ];
     datamartParts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {
@@ -572,6 +575,45 @@ async function handleTopQueries(request, env) {
   });
 }
 
+// ─── Endpoint /novedades — últimas actualizaciones de datamarts, por nivel ────
+//
+// Filtra datamarts/novedades.json por el nivel de la sesión: socios/asesores/
+// contador ven todos los items, inversores/demo solo los marcados "publico".
+// Se muestra como bienvenida en el chat (ver chat.js → loadNovedades) para
+// invitar a preguntar sobre lo último cargado sin exponer el detalle completo.
+
+async function handleNovedades(request, env) {
+  const payload = await requireAuth(request, env);
+  if (!payload) {
+    return new Response(JSON.stringify({ error: "Sin token o token inválido" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  const SITE_BASE = env.SITE_BASE || "https://oc-adaptant.netlify.app";
+  const fullAccess = payload.level === "socios" || payload.level === "asesores" || payload.level === "contador";
+
+  try {
+    const r = await fetch(`${SITE_BASE}/datamarts/novedades.json`);
+    if (!r.ok) throw new Error(`novedades.json: ${r.status}`);
+    const data = await r.json();
+
+    const items = (data.items || [])
+      .filter(item => fullAccess || item.visibility === "publico")
+      .slice(0, data.max_items_mostrados || 6)
+      .map(item => ({ fecha: item.fecha, resumen: item.resumen }));
+
+    return new Response(JSON.stringify({ items }), {
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  } catch (e) {
+    return new Response(JSON.stringify({ items: [] }), {
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+}
+
 async function handleQueriesList(request, env) {
   const payload = await requireAuth(request, env);
   if (!payload) {
@@ -904,6 +946,10 @@ export default {
 
     if (url.pathname === "/top-queries" && request.method === "GET") {
       return handleTopQueries(request, env);
+    }
+
+    if (url.pathname === "/novedades" && request.method === "GET") {
+      return handleNovedades(request, env);
     }
 
     if (url.pathname === "/queries" && request.method === "GET") {

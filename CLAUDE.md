@@ -109,6 +109,8 @@ Cuando se actualiza un datamart, el commit message tiene formato: `data(<datamar
 
 Ejemplo: `data(deuda_arca): IVA 03/2026 pagado, capital baja a $28.596.241 [22/06/2026]`.
 
+**Novedades del Commons:** cada vez que un commit `data(...)` incorpora un cambio relevante, agregar también un item en `datamarts/novedades.json` (fecha + resumen breve + `visibility` del item). Esa lista se muestra como bienvenida al entrar al chat (ver `assets/chat.js` → `loadNovedades()` y el endpoint `GET /novedades` del Worker, que filtra por nivel de sesión) para invitar a preguntar sobre lo último cargado. Mantener máximo 6-8 items, el más nuevo primero.
+
 ## 7 · Honestidad temporal
 
 El modelo debe:

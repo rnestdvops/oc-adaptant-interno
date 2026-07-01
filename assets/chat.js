@@ -328,6 +328,44 @@ async function send(userText) {
   }
 }
 
+function welcomeHtml() {
+  return `
+    <div class="welcome" id="welcome">
+      <h1>Hola.</h1>
+      <p>
+        Preguntá lo que necesites sobre el estado del grupo.
+        Vencimientos, deuda, cash flow, gobierno societario, estrategia.
+        Si una pregunta requiere asesoramiento legal o contable, te lo voy a marcar.
+      </p>
+      <div class="novedades-box" id="novedades-box" style="display:none">
+        <h3>Novedades recientes</h3>
+        <ul id="novedades-list"></ul>
+        <p class="novedades-hint">Preguntame sobre cualquiera de estas novedades.</p>
+      </div>
+    </div>
+  `;
+}
+
+async function loadNovedades(session) {
+  const box = document.getElementById("novedades-box");
+  const list = document.getElementById("novedades-list");
+  if (!box || !list) return;
+  try {
+    const resp = await fetch(`${CHAT_WORKER_URL}/novedades`, {
+      headers: { Authorization: `Bearer ${session.token}` },
+    });
+    if (!resp.ok) return;
+    const data = await resp.json();
+    if (!data.items || data.items.length === 0) return;
+    list.innerHTML = data.items
+      .map(it => `<li><span class="novedad-fecha">${escapeHtml(it.fecha)}</span> — ${escapeHtml(it.resumen)}</li>`)
+      .join("");
+    box.style.display = "";
+  } catch (e) {
+    // silencioso: la bienvenida funciona igual sin novedades
+  }
+}
+
 async function loadSugeridas(session, sidebar) {
   try {
     const resp = await fetch(`${CHAT_WORKER_URL}/top-queries`, {
@@ -368,20 +406,15 @@ function setupChat() {
   // Sugeridas dinámicas desde KV
   loadSugeridas(session, document.getElementById("suggested-questions"));
 
+  // Novedades de datamarts en la bienvenida inicial
+  loadNovedades(session);
+
   // Nueva conversación — limpia historial y UI sin cerrar sesión
   document.getElementById("new-chat-btn").onclick = () => {
     history.length = 0;
     const messagesEl = document.getElementById("messages");
-    messagesEl.innerHTML = `
-      <div class="welcome" id="welcome">
-        <h1>Hola.</h1>
-        <p>
-          Preguntá lo que necesites sobre el estado del grupo.
-          Vencimientos, deuda, cash flow, gobierno societario, estrategia.
-          Si una pregunta requiere asesoramiento legal o contable, te lo voy a marcar.
-        </p>
-      </div>
-    `;
+    messagesEl.innerHTML = welcomeHtml();
+    loadNovedades(session);
     document.getElementById("composer-input").focus();
   };
 

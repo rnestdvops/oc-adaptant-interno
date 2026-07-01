@@ -1,10 +1,24 @@
 {
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-07-01",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "proposito": "Bitácora curada de actualizaciones del OC Adaptant Interno, versión a versión. Sigue la convención Keep a Changelog (keepachangelog.com). Cada release agrupa cambios por categoría: Added (nuevas features), Changed (cambios en comportamiento existente), Fixed (bugs corregidos), Removed (features quitadas). Las entradas son curadas — los commits individuales son ruido, las releases son la señal.",
   "convencion_versionado": "Semver pre-1.0 (0.X.Y) — pre-producción. 0.X cuando hay cambios significativos visibles para el usuario; 0.X.Y para fixes menores y refinamientos.",
   "releases": [
+    {
+      "version": "0.11.0",
+      "fecha": "2026-07-01",
+      "titulo": "Bienvenida con novedades de datamarts",
+      "added": [
+        "Datamart novedades.json: lista rotativa (máx. 6-8 items) de las últimas actualizaciones de datos incorporadas al Commons, con visibilidad por item (socios_asesores / publico).",
+        "Worker: endpoint GET /novedades (autenticado) — filtra los items del datamart según el nivel de sesión, igual que el resto de los datamarts.",
+        "chat.js: bloque 'Novedades recientes' en la pantalla de bienvenida — se carga al entrar y también al iniciar 'Nueva conversación', invitando a preguntar sobre lo último cargado.",
+        "CLAUDE.md: nueva convención — cada commit data(...) relevante suma también un item en novedades.json."
+      ],
+      "changed": [
+        "Worker: alianzas_estrategicas.json y asesoria_legal.json (creados en la sesión anterior) quedan efectivamente cargados en el contexto de socios/asesores/contador — antes existían como archivo pero no estaban wireados en buildSystemPrompt."
+      ]
+    },
     {
       "version": "0.10.0",
       "fecha": "2026-06-23",

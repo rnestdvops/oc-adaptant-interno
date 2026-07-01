@@ -939,6 +939,55 @@ code, .mono {
   font-size: 14px;
 }
 
+.novedades-box {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: var(--crema2);
+  border: 1px solid var(--tc-border);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.novedades-box h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tc);
+  margin: 0 0 10px;
+}
+
+.novedades-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.novedades-box li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--negro);
+  padding: 6px 0;
+  border-top: 1px solid var(--tc-border);
+}
+
+.novedades-box li:first-child {
+  border-top: none;
+}
+
+.novedad-fecha {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--gris);
+}
+
+.novedades-hint {
+  margin: 12px 0 0 !important;
+  font-size: 12px !important;
+  color: var(--gris2) !important;
+  font-style: italic;
+}
+
 /* ─── Alert sidebar derecho (C4b) ─────────────────────────────────────────── */
 
 .alert-sidebar {
