@@ -1,0 +1,78 @@
+{
+  "last_updated": "2026-07-01",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Registro de alianzas estratégicas y partnerships en evaluación o activos para expansión de mercado de Adaptant.",
+  "alianzas": [
+    {
+      "id": "ignite-leadership-mx",
+      "nombre": "Ignite Leadership",
+      "tipo": "partner_territorial_potencial",
+      "pais": "México",
+      "estado": "en_evaluacion",
+      "fecha_primer_contacto": "2026-06",
+      "sitio_web": "https://www.igniteleadership.mx",
+      "contacto": {
+        "email": "contacto.igt@igniteleadership.mx",
+        "whatsapp": "+52 33 1520 7170",
+        "domicilio": "Moctezuma 4546, Jardines del Sol, Zapopan, Jalisco, México"
+      },
+      "descripcion": "Firma de consultoría y capacitación especializada en liderazgo, agilidad y ejecución estratégica. Trabajan con empresas en la conversión de estrategia en práctica diaria mediante liderazgo, procesos, IA aplicada y acompañamiento operativo.",
+      "servicios_ignite": [
+        "Programas y talleres de liderazgo",
+        "Team buildings corporativos",
+        "Consultoría empresarial",
+        "Modelos de Liderazgo (competencias, evaluación 180°/360°, planes de desarrollo individual)",
+        "Implementación de marcos ágiles y tableros de métricas",
+        "IA aplicada a la operación"
+      ],
+      "analisis_complementariedad": {
+        "fuente": "Documento 'Análisis Adaptant_Ignite Leadership' — preparado por Ignite Leadership, junio 2026",
+        "conclusion_ignite": "Coincidencia de fondo: ambas organizaciones buscan ayudar a las empresas a trabajar mejor. Las capas son complementarias sin solapamiento directo.",
+        "aporte_adaptant": "Capa de diseño organizacional profundo: estructura, descentralización, autonomía, inteligencia distribuida, OC Framework, diseño de flujo de información y toma de decisiones.",
+        "aporte_ignite": "Capa de adopción y ejecución: liderazgo, operación diaria, rutinas ágiles, tableros, métricas, facilitación y acompañamiento.",
+        "formula": "Adaptant rediseña el sistema organizacional. Ignite convierte ese rediseño en práctica diaria."
+      },
+      "opciones_colaboracion_identificadas": [
+        {
+          "opcion": 1,
+          "nombre": "Diagnóstico organizacional conjunto",
+          "descripcion": "Combinar sensores Myself at Work (Adaptant) con diagnósticos Ignite para evaluar centralización, flujo de información, autonomía, velocidad de decisión, madurez ágil y procesos críticos. Posible puerta de entrada comercial al mercado mexicano."
+        },
+        {
+          "opcion": 2,
+          "nombre": "Rediseño de formas de trabajo",
+          "descripcion": "Adaptant aporta marcos de descentralización, metas relativas e inteligencia distribuida. Ignite aporta implementación práctica: marcos ágiles, liderazgo, rutinas, tableros, métricas y acompañamiento."
+        },
+        {
+          "opcion": 3,
+          "nombre": "Organizational Commons como habilitador de autonomía",
+          "descripcion": "Pilotos donde OC mejora el flujo de información para permitir decisiones más rápidas. Ignite apoya adopción cultural, liderazgo, diseño de rutinas y medición de impacto operativo."
+        },
+        {
+          "opcion": 4,
+          "nombre": "Myself at Work + Modelos de Liderazgo Ignite",
+          "descripcion": "Integración señalada como especialmente interesante por Ignite. Modelo de Liderazgo Ignite define conductas organizacionales esperadas; Myself at Work traduce esas conductas al nivel individual. Proyectos de liderazgo más profundos con medición individual de cómo opera cada persona dentro del sistema.",
+          "nota": "Línea prioritaria a explorar en próxima reunión"
+        },
+        {
+          "opcion": 5,
+          "nombre": "Programa ejecutivo para líderes",
+          "descripcion": "Programa conjunto para líderes que deben pasar de controlar la operación a diseñar condiciones de autonomía. Temas: liderazgo distribuido, toma de decisiones por evidencia, claridad de roles, información como habilitador, menos control operativo y más dirección estratégica."
+        }
+      ],
+      "temas_pendientes_proxima_reunion": [
+        "Qué tipo de colaboración busca Adaptant en México (alcance y expectativas)",
+        "Rol de Ignite: socio comercial, implementador, aliado local o partner por proyecto",
+        "Qué servicios de Adaptant están listos para vender en México",
+        "Qué transferencia metodológica sería necesaria para que Ignite opere con marcos Adaptant",
+        "Cómo cuidar la esencia de Adaptant al adaptar lenguaje al mercado mexicano",
+        "Cómo integrar Myself at Work con los Modelos de Liderazgo Ignite",
+        "Qué cliente o caso piloto tiene más sentido como prueba",
+        "Qué modelo comercial y operativo (revenue share, co-delivery, licencia) sería viable"
+      ],
+      "alerta_traduccion": "Para abrir mercado en México habrá que traducir conceptos (descentralización, OC, inteligencia distribuida) a dolores reconocibles: decisiones lentas, líderes cuello de botella, equipos que piden autorización para todo, silos, iniciativas que no se sostienen. Sin simplificar ni perder la intención original de Adaptant.",
+      "contexto_estrategia_latam": "México es parte de la Fase 2 de la estrategia LATAM de Adaptant (horizonte 12-24 meses desde 2026). Una alianza con Ignite aceleraría ese acceso sin inversión de estructura propia en el país."
+    }
+  ]
+}

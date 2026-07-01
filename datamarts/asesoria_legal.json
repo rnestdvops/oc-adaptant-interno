@@ -1,0 +1,138 @@
+{
+  "last_updated": "2026-07-01",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Registro de asesorías legales externas en evaluación o activas, vinculadas al ordenamiento societario del grupo BHP SA · Adaptant SAS · d-Vops LLC.",
+  "asesorias": [
+    {
+      "id": "osella-riveros-2026",
+      "estudio": "Osella Riveros & Asociados",
+      "profesionales": [
+        {
+          "nombre": "Franco Osella",
+          "dni": "33.098.323",
+          "email": "fosella@gmail.com",
+          "rol": "Abogado titular"
+        },
+        {
+          "nombre": "Héctor Osvaldo Riveros",
+          "dni": "30.543.918",
+          "email": "hectorosvaldoriveros@gmail.com",
+          "rol": "Abogado titular"
+        }
+      ],
+      "objeto": "Constitución e inscripción de Adaptant SAS + ordenamiento legal del grupo (BHP SA · Adaptant SAS · d-Vops LLC) durante proceso de extinción de BHP y lanzamiento de Adaptant",
+      "estado": "en_evaluacion",
+      "documentos": {
+        "nda_precontractual": {
+          "tipo": "Acuerdo de Confidencialidad Precontractual",
+          "fecha_firma": "2026-06-29",
+          "firmantes_adaptant": [
+            {"nombre": "Ernesto Raúl Corona", "dni": "22.159.405", "email": "ernesto@d-vops.com"},
+            {"nombre": "Franco Buglioni", "dni": "24.226.762", "email": "franco@d-vops.com"}
+          ],
+          "firmantes_estudio": [
+            {"nombre": "Franco Osella", "dni": "33.098.323"},
+            {"nombre": "Héctor Osvaldo Riveros", "dni": "30.543.918"}
+          ],
+          "vigencia": "Permanente, sin límite temporal",
+          "jurisdiccion": "CABA",
+          "estado": "firmado"
+        },
+        "cotizacion": {
+          "fecha": "2026-06",
+          "estado": "recibida_en_evaluacion",
+          "modulo_1": {
+            "nombre": "Apertura y constitución Adaptant SAS",
+            "honorarios_usd": 1800,
+            "gastos_usd": 1400,
+            "total_usd": 3200,
+            "forma_pago": "50% al inicio, 50% al obtener CUIT"
+          },
+          "modulo_2": {
+            "nombre": "Acompañamiento legal mensual — ordenamiento grupo",
+            "valor_mes_usd": 2000,
+            "duracion_minima_meses": 4,
+            "total_minimo_usd": 8000,
+            "opcional_representacion_procesal_mes_usd": 800,
+            "nota": "La representación procesal se cotiza aparte si se requiere"
+          },
+          "total_recomendado_primeros_4_meses_usd": 9400,
+          "escenario_recomendado": "Módulos 1 + 2 (sin representación procesal)",
+          "nota_estrategica": "El Módulo 2 mensual cubre el período crítico de paralelo BHP/Adaptant — necesario mientras BHP no esté cerrada y los riesgos de extensión de concurso estén activos"
+        },
+        "dictamen_tecnico_juridico": {
+          "titulo": "Dictamen Técnico Jurídico — Grupo Corona",
+          "fecha": "2026-06",
+          "estado": "recibido",
+          "entidades_analizadas": ["BHP SA (concurso activo)", "Adaptant SAS (en constitución)", "d-Vops LLC (Wyoming, operativa)"],
+          "vectores_riesgo_para_adaptant": [
+            {
+              "vector": "Extensión de quiebra o concurso",
+              "nivel": "CRÍTICO/ALTO",
+              "descripcion": "BHP SA en concurso preventivo activo. Si Adaptant SAS comparte socios, clientes o activos con BHP sin separación clara, puede ser arrastrada al concurso por confusión patrimonial o extensión."
+            },
+            {
+              "vector": "Inoponibilidad de la separación societaria",
+              "nivel": "MODERADO → CRÍTICO si BHP incumple acuerdo concursal",
+              "descripcion": "Acreedores de BHP pueden desconocer la separación entre BHP y Adaptant si hay indicios de continuidad económica (mismos clientes, mismas actividades, mismo personal transferido sin documentación)."
+            },
+            {
+              "vector": "Ineficacia concursal de actos",
+              "nivel": "ALTO",
+              "descripcion": "Actos realizados dentro del período de sospecha (2 años previos al concurso) pueden ser declarados ineficaces si benefician a partes relacionadas. Aplica a contratos, transferencias, cesiones."
+            },
+            {
+              "vector": "Responsabilidad personal de directores",
+              "nivel": "ALTO",
+              "descripcion": "Los socios-administradores (Corona y Buglioni) pueden ser responsabilizados personalmente si Adaptant opera como continuación encubierta de BHP sin separación real."
+            }
+          ],
+          "deficiencias_estatuto_sas_identificadas": [
+            {
+              "deficiencia": "Ausencia de mecanismo de desempate",
+              "detalle": "Estructura 50/50 sin cláusula de resolución de conflicto genera riesgo de parálisis decisoria ante desacuerdos entre socios",
+              "accion_requerida": "Incorporar cláusula de desempate (árbitro externo, voto casting, protocolo escalonado)"
+            },
+            {
+              "deficiencia": "Cierre de ejercicio el 31 de julio",
+              "detalle": "Fecha inconveniente fiscal y operativa para empresa de servicios que factura en períodos no coincidentes",
+              "accion_requerida": "Modificar fecha de cierre a 31 de diciembre (ejercicio calendario)"
+            },
+            {
+              "deficiencia": "Capital social mínimo $100.000 ARS",
+              "detalle": "Insuficiente para credibilidad comercial frente a clientes corporativos y organismos",
+              "accion_requerida": "Aumentar capital social a un monto representativo"
+            },
+            {
+              "deficiencia": "Ausencia de cláusula de no competencia entre socios",
+              "detalle": "Sin cláusula, cada socio puede desarrollar actividades competitivas con Adaptant sin limitación legal",
+              "accion_requerida": "Incluir cláusula de no competencia durante vigencia societaria y post-salida"
+            },
+            {
+              "deficiencia": "Administrador suplente domiciliado en Córdoba",
+              "detalle": "Conflicto con sede social en CABA — puede generar problemas de representación y notificaciones",
+              "accion_requerida": "Regularizar domicilio del administrador suplente a CABA o designar alternativa"
+            }
+          ],
+          "barreras_separacion_requeridas": [
+            "Separación patrimonial estricta: cuentas bancarias, activos y contratos completamente separados entre BHP y Adaptant",
+            "No transferir clientes, contratos ni activos de BHP a Adaptant sin contraprestación documentada a valor de mercado",
+            "Contabilidades independientes y auditadas para cada entidad",
+            "No usar nombre comercial, marca ni reputación de BHP para conseguir clientes Adaptant",
+            "Documentar que d-Vops LLC opera con contraprestación real hacia Adaptant (no transferencias gratuitas)",
+            "BHP debe continuar cumpliendo el acuerdo concursal — condición crítica que protege a todas las demás entidades del grupo"
+          ],
+          "condicion_critica": "BHP debe cumplir el acuerdo concursal sin excepción. Si BHP incumple, todos los vectores de riesgo para Adaptant y sus socios se activan simultáneamente.",
+          "conclusion_general": "La estructura SAS es correcta para el proyecto. Requiere 5 correcciones al estatuto antes de la inscripción y un programa activo de separación patrimonial documentada desde el primer día de operación."
+        }
+      },
+      "proximos_pasos": [
+        "Decidir si se contrata el servicio de Osella Riveros (requiere acuerdo de ambos socios)",
+        "Si se contrata: pagar 50% Módulo 1 para iniciar tramitación del estatuto corregido",
+        "Corregir las 5 deficiencias del estatuto SAS antes de presentar a inscripción",
+        "Implementar protocolo de separación patrimonial BHP/Adaptant desde el día 1"
+      ]
+    }
+  ]
+}

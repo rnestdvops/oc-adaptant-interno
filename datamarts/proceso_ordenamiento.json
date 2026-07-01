@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18",
+  "last_updated": "2026-07-01",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "marco_referencia": "Documento Marco V1.0 — Plan de ordenamiento, transición y crecimiento (BHP → Adaptant con d-Vops LLC, junio 2026). Ver system_prompts/01_briefing_completo.md para principios, líneas rojas, criterios de decisión y gobernanza. ESTE datamart es el TRACKING OPERATIVO (planilla 3 del marco — cronograma de transición y apagado), no el marco rector.",
@@ -16,8 +16,11 @@
         "criticidad": "ALTA — desbloquea simultáneamente 4 de las 6 líneas"
       },
       "abogado": {
-        "estado": "PENDIENTE de identificar y contratar",
-        "criticidad": "ALTA — necesario para concurso, expedientes ARCA, transición Carolina, eventual cierre BHP"
+        "estado": "EN TRATATIVAS — Osella Riveros & Asociados. NDA firmado 29/06/2026. Cotización y dictamen técnico jurídico recibidos. Decisión de contratación pendiente (requiere acuerdo de ambos socios).",
+        "criticidad": "ALTA — necesario para constitución Adaptant SAS, concurso, expedientes ARCA, transición Carolina, eventual cierre BHP",
+        "estudio": "Osella Riveros & Asociados",
+        "contacto": "Franco Osella (fosella@gmail.com) + Héctor Osvaldo Riveros (hectorosvaldoriveros@gmail.com)",
+        "ver_datamart": "asesoria_legal.json — cotización, dictamen y vectores de riesgo completos"
       },
       "cpa_eeuu": {
         "nombre": "Sociedades Americanas",
@@ -93,8 +96,8 @@
           "responsable": "Ernesto + Franco + escribano/abogado",
           "deadline_objetivo": null,
           "estado": "pendiente",
-          "bloqueada_por": "BLK2 (abogado)",
-          "notas": "Estatuto y checklist YA están preparados. Firma digital de Franco resuelta (18/06/2026). Único bloqueo restante: contar con abogado para acompañar el trámite. Una vez resuelto BLK2, el proceso se ejecuta en remoto."
+          "bloqueada_por": "BLK2 (abogado — EN TRATATIVAS con Osella Riveros & Asociados desde 29/06/2026)",
+          "notas": "Estatuto y checklist YA están preparados. Firma digital de Franco resuelta (18/06/2026). Abogado identificado: Osella Riveros & Asociados — NDA firmado 29/06/2026, cotización recibida (Módulo 1: USD 3.200 + Módulo 2: USD 2.000/mes). Dictamen técnico jurídico recibido: estatuto SAS tiene 5 deficiencias a corregir antes de inscribir. Una vez decidida la contratación y corregido el estatuto, el proceso se ejecuta en remoto. Ver asesoria_legal.json para detalle completo."
         }
       ]
     },
