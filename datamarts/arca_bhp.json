@@ -1,18 +1,244 @@
 {
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-07-02",
   "data_owner": "ARCA Monitor — automatizado",
   "visibility": "socios_asesores",
   "descripcion": "Estado del DFE (Domicilio Fiscal Electrónico) de BHP SA. Actualizado automáticamente cada día hábil a las 08:00 AM. Usar junto con deuda_arca.json para contexto fiscal completo.",
   "cuit": "30-70955349-2",
   "razon_social": "BHP SA",
   "dfe": {
-    "ultimo_chequeo": "2026-06-24T19:34:59Z",
+    "ultimo_chequeo": "2026-07-02T15:30:25Z",
     "total_notificaciones": 50,
-    "nivel_alerta": "OK",
-    "nivel_alerta_criterio": "Sin novedades",
-    "sumarios": [],
+    "nivel_alerta": "CRITICO",
+    "nivel_alerta_criterio": "Nuevo Sumario detectado",
+    "sumarios": [
+      {
+        "tipo": "Instrucción de Sumario",
+        "fecha_disponible": "2026-06-29",
+        "cantidad": 1,
+        "nota": "Requiere Acuse de Recibimiento en el DFE para acceder al documento"
+      }
+    ],
     "comunicaciones_con_pdf": [],
-    "novedades_ultima_corrida": null,
-    "resumen": "Sin novedades en la corrida del 24/06/2026."
+    "novedades_ultima_corrida": {
+      "detectadas_en": "2026-07-02T15:30:25Z",
+      "nuevas": [
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "22/01/2026"
+        },
+        {
+          "subject": "Otras comunicaciones",
+          "classification": "Notificaciones",
+          "fecha": "06/02/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "13/02/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "20/02/2026"
+        },
+        {
+          "subject": "Otras comunicaciones",
+          "classification": "Notificaciones",
+          "fecha": "20/02/2026"
+        },
+        {
+          "subject": "Ejecución Fiscal - Sentencia",
+          "classification": "Notificaciones",
+          "fecha": "23/02/2026"
+        },
+        {
+          "subject": "Comunicación sobre tu presentación digital",
+          "classification": "Notificaciones",
+          "fecha": "27/02/2026"
+        },
+        {
+          "subject": "Finalización de fiscalización",
+          "classification": "Fiscalizaciones",
+          "fecha": "28/02/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "02/03/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "12/03/2026"
+        },
+        {
+          "subject": "Comunicación sobre tu presentación digital",
+          "classification": "Notificaciones",
+          "fecha": "12/03/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "18/03/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "18/03/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "20/03/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias - Recordatorio por falta de presentación",
+          "classification": "Avisos",
+          "fecha": "20/03/2026"
+        },
+        {
+          "subject": "Comunicación sobre tu presentación digital",
+          "classification": "Notificaciones",
+          "fecha": "25/03/2026"
+        },
+        {
+          "subject": "Comunicación sobre tu presentación digital",
+          "classification": "Notificaciones",
+          "fecha": "26/03/2026"
+        },
+        {
+          "subject": "Intimación o liquidación",
+          "classification": "Notificaciones",
+          "fecha": "27/03/2026"
+        },
+        {
+          "subject": "Mi PyME - Categorización y/o Beneficios Fiscales",
+          "classification": "Otros mensajes",
+          "fecha": "02/04/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "09/04/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "13/04/2026"
+        },
+        {
+          "subject": "Ejecución Fiscal - Sentencia",
+          "classification": "Notificaciones",
+          "fecha": "15/04/2026"
+        },
+        {
+          "subject": "Inicio de fiscalización",
+          "classification": "Fiscalizaciones",
+          "fecha": "15/04/2026"
+        },
+        {
+          "subject": "Requerimiento de fiscalización",
+          "classification": "Fiscalizaciones",
+          "fecha": "15/04/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias - Recordatorio por falta de presentación",
+          "classification": "Avisos",
+          "fecha": "22/04/2026"
+        },
+        {
+          "subject": "Mi PyME - Categorización y/o Beneficios Fiscales",
+          "classification": "Otros mensajes",
+          "fecha": "22/04/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "23/04/2026"
+        },
+        {
+          "subject": "Mi PyME - Categorización y/o Beneficios Fiscales",
+          "classification": "Otros mensajes",
+          "fecha": "24/04/2026"
+        },
+        {
+          "subject": "Mi PyME - Categorización y/o Beneficios Fiscales",
+          "classification": "Otros mensajes",
+          "fecha": "24/04/2026"
+        },
+        {
+          "subject": "Requerimiento de fiscalización",
+          "classification": "Fiscalizaciones",
+          "fecha": "08/05/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "13/05/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias - Recordatorio por falta de presentación",
+          "classification": "Avisos",
+          "fecha": "14/05/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "20/05/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "20/05/2026"
+        },
+        {
+          "subject": "Ejecución Fiscal - Sentencia",
+          "classification": "Notificaciones",
+          "fecha": "21/05/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "11/06/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias - Recordatorio por falta de presentación",
+          "classification": "Avisos",
+          "fecha": "12/06/2026"
+        },
+        {
+          "subject": "Mis Facilidades",
+          "classification": "Notificaciones",
+          "fecha": "18/06/2026"
+        },
+        {
+          "subject": "Inducción - Promoción de Cumplimiento Voluntario",
+          "classification": "Fiscalización Virtual",
+          "fecha": "19/06/2026"
+        },
+        {
+          "subject": "Otras comunicaciones",
+          "classification": "Notificaciones",
+          "fecha": "19/06/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "22/06/2026"
+        },
+        {
+          "subject": "Sistema de Cuentas Tributarias",
+          "classification": "Notificaciones",
+          "fecha": "26/06/2026"
+        },
+        {
+          "subject": "Instrucción de Sumario",
+          "classification": "Sumarios",
+          "fecha": "29/06/2026"
+        }
+      ]
+    },
+    "resumen": "1 Sumario activo en el DFE: 1 Instrucción de Sumario (2026-06-29). Requieren Acuse de Recibimiento para acceder al documento — requiere gestión manual. NOVEDAD en corrida del 02/07/2026: 43 nuevas, 43 eliminadas."
   }
 }
