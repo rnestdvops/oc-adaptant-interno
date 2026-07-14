@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18",
+  "last_updated": "2026-07-14",
   "data_owner": "Franco Buglioni",
   "visibility": "publico",
   "razon_social": "Adaptant SAS",
@@ -50,7 +50,8 @@
         },
         "estado": "confirmado",
         "mes_inicio": "2026-07",
-        "entidad": "Adaptant"
+        "entidad": "d-Vops LLC",
+        "nota_comercial": "PO 1000325601 recibida el 14/07/2026 (GBM, Compras de Fields) — habilita el inicio formal del proyecto. Facturación vía D-VOPS LLC, no Adaptant SAS. Detalle completo de la PO en cash_flow.json."
       },
       {
         "id": "brou-vs-cuota-final",
@@ -262,6 +263,6 @@
   },
   "supuesto_facturacion": {
     "principio": "Todo el pipeline factura a Adaptant SAS. Adaptant alimenta a BHP SA con transferencias necesarias para cubrir obligaciones BHP.",
-    "pregunta_pendiente": "Adaptant SAS aún figura como 'en constitución' en el briefing. Si los primeros ingresos arrancan en julio 2026, conviene confirmar la fecha real de operatividad o usar d-Vops LLC como facturador transitorio."
+    "pregunta_pendiente": "Adaptant SAS aún figura como 'en constitución' en el briefing. Primer caso real confirmado: GBM-BCCR (PO 1000325601, 14/07/2026) factura vía d-Vops LLC como facturador transitorio, no Adaptant SAS. Falta confirmar si este será el criterio para el resto del pipeline mientras Adaptant SAS no esté operativa, o si se evalúa caso por caso."
   }
 }

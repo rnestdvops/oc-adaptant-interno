@@ -1,11 +1,16 @@
 {
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-14",
   "data_owner": "Ernesto Corona",
   "visibility": "mixta_por_item",
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
   "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
   "max_items_mostrados": 6,
   "items": [
+    {
+      "fecha": "14/07/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Llegó la PO de GBM-BCCR (1000325601, USD 20.250) — habilita el inicio formal del proyecto. Factura vía d-Vops LLC, no Adaptant SAS."
+    },
     {
       "fecha": "01/07/2026",
       "visibility": "socios_asesores",
@@ -30,11 +35,6 @@
       "fecha": "19/06/2026",
       "visibility": "socios_asesores",
       "resumen": "Pago período 8 de Moroni ($299.645 ARS vía Mercado Pago) y cuota 2 de Macro confirmada, más intimación SUSS 05/2026 registrada."
-    },
-    {
-      "fecha": "18/06/2026",
-      "visibility": "socios_asesores",
-      "resumen": "3 proyectos de pipeline pasaron de potencial a confirmado: BROU-TI (18K USD), Docuprint Entrenamientos (12K USD) y Docuprint Rediseño Organizacional (21K USD)."
     }
   ]
 }
