@@ -9,6 +9,11 @@
     {
       "fecha": "14/07/2026",
       "visibility": "socios_asesores",
+      "resumen": "Estrategia de adhesión a RG 5875/2026 (plan de facilidades ARCA) cargada como pendiente — en tratamiento con el contador, 3 tramos propuestos, límite de adhesión 30/10/2026."
+    },
+    {
+      "fecha": "14/07/2026",
+      "visibility": "socios_asesores",
       "resumen": "Llegó la PO de GBM-BCCR (1000325601, USD 20.250) — habilita el inicio formal del proyecto. Factura vía d-Vops LLC, no Adaptant SAS."
     },
     {
@@ -30,11 +35,6 @@
       "fecha": "22/06/2026",
       "visibility": "socios_asesores",
       "resumen": "Nueva Carta Documento registrada en vencimientos: OSTSAMPJBON, aportes OS F931 agosto-noviembre 2025."
-    },
-    {
-      "fecha": "19/06/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Pago período 8 de Moroni ($299.645 ARS vía Mercado Pago) y cuota 2 de Macro confirmada, más intimación SUSS 05/2026 registrada."
     }
   ]
 }

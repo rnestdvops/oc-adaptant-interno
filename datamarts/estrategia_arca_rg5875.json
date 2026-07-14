@@ -1,0 +1,132 @@
+{
+  "last_updated": "2026-07-14",
+  "data_owner": "Ernesto Corona",
+  "visibility": "socios_asesores",
+  "proposito": "Estrategia de regularización de deuda ARCA de BHP SA bajo RG 5875/2026. Documento de trabajo preparado para evaluación con contador y abogado — NO es dictamen jurídico ni contable. Estado actual: en tratamiento con el contador, sin adhesión ejecutada.",
+  "estado": "pendiente — en tratamiento con el contador, sin decisión ni adhesión ejecutada",
+  "cuit_bhp": "30-70955349-2",
+  "norma": {
+    "nombre": "RG 5875/2026",
+    "boletin_oficial": "2026-07-14",
+    "vigencia_inicio": "2026-07-15",
+    "limite_adhesion": "2026-10-30",
+    "via": "Mis Facilidades"
+  },
+  "encuadre": {
+    "alcance": "MiPyMEs (Tramos 1 y 2 con Certificado MiPyME vigente), pequeños contribuyentes (código 547) y entidades sin fines de lucro, sobre obligaciones impositivas, aduaneras y de seguridad social vencidas al 30/06/2026 inclusive.",
+    "que_no_es": "No es moratoria. Sin quitas ni condonación de intereses resarcitorios, punitorios ni multas. Tasa de financiación 2,75% mensual fija (equivale a la tasa resarcitoria vigente).",
+    "que_si_aporta": [
+      "Frena el pase a intereses punitorios (deuda en juicio, tasa mayor)",
+      "Frena nuevas boletas de deuda y ejecuciones fiscales",
+      "Habilita pedir levantamiento o sustitución de embargos ya trabados",
+      "Evita nuevas costas y honorarios judiciales",
+      "Fija la tasa al 2,75% mensual (cobertura si sube la tasa resarcitoria)"
+    ],
+    "condiciones_clave": {
+      "micro_pequena": { "max_cuotas": 18, "pago_a_cuenta_pct": 5 },
+      "mediana_t1_t2": { "max_cuotas": 15, "pago_a_cuenta_pct": 10 },
+      "cuota_y_pago_a_cuenta_minimos_ars": 50000,
+      "limite_cantidad_planes": "sin límite",
+      "siper_condiciona": false,
+      "caducidad": "2 cuotas impagas (consecutivas o alternadas) a los 60 días corridos del vencimiento de la segunda, o última cuota impaga a los 60 días",
+      "renuncia_repeticion": "la adhesión implica renuncia a la acción de repetición por lo incluido",
+      "deuda_en_ejecucion_fiscal": "se incluye bajo Capítulo J de la RG 5321 (allanamiento F.408/PD + costas y honorarios)"
+    },
+    "consecuencia_tactica": "Como la tasa dentro y fuera del plan es la misma (2,75%), postergar la consolidación de la deuda que no está en juicio no tiene costo financiero relevante — permite adherir por tramos.",
+    "asimetria_ante_caducidad": "Al no haber quitas, caducar no hace perder ningún beneficio de condonación (a diferencia del plan Ley 27.743). Si un plan cae, se vuelve al punto de partida (boleta de deuda + ejecución + costas nuevas), pero todo lo pagado hasta ahí redujo deuda real."
+  },
+  "prerrequisito_gate": {
+    "titulo": "Certificado MiPyME — GATE DE ELEGIBILIDAD, verificar esta semana (15-18/07/2026)",
+    "regla": "Sin Certificado MiPyME vigente y caracterización activa en el Sistema Registral al momento del acogimiento, BHP SA no puede adherir a ningún tramo.",
+    "cadena_critica": "Presentar DDJJ pendientes → renovar certificado MiPyME → adherir. Todo antes del 30/10/2026.",
+    "verificaciones_inmediatas_contador": [
+      "Estado del Certificado MiPyME de BHP SA (vigencia y tramo: Micro / Pequeña / Mediana T1-T2) — el tramo define 18 vs 15 cuotas y 5% vs 10% de pago a cuenta",
+      "DDJJ pendientes de presentación que bloqueen la renovación (cruzar con reporte ARCA Monitor)",
+      "Caracterización código 547 'Pequeño Contribuyente' en el CUIT personal de Ernesto — sin ella, la deuda personal (~$18,7M) NO entra en este régimen y requiere estrategia separada"
+    ],
+    "estado_verificacion": "pendiente"
+  },
+  "tramos": [
+    {
+      "tramo": 1,
+      "nombre": "INMEDIATO — destrabar los embargos",
+      "objeto": "Deuda en ejecución fiscal (Expte. 13716/2026, Juzgado Federal N°2 San Juan — planes caducos U695788 y V108464, SUSS; capital reclamado ~$8,8M + 15% presupuestado) vía Capítulo J de la RG 5321.",
+      "por_que_primero": "Tramo más chico y de mayor retorno inmediato. Con plan consolidado, allanamiento presentado y costas canceladas, se habilita pedir levantamiento o sustitución de los embargos sobre cuentas Supervielle ($9,86M ejecutados en mayo), devolviendo cuenta bancaria operativa a la empresa. Además detiene los punitorios de este expediente.",
+      "pasos_operativos": [
+        "Adherir por Mis Facilidades identificando la deuda en gestión judicial (el sistema la marca por expediente)",
+        "Presentar F.408/PD (allanamiento) por Presentaciones Digitales",
+        "Cancelar pago a cuenta (consolida el plan) y costas/honorarios según liquidación (10 días hábiles si hay liquidación firme; 10 días desde que quede firme si no)",
+        "Con plan consolidado: solicitar al juzgado (vía abogado, con conformidad del agente fiscal) el levantamiento o sustitución de las medidas cautelares"
+      ],
+      "numero_estimado": {
+        "consolidado_ars_aprox": 10500000,
+        "nota": "con accesorios a fecha de adhesión, sujeto a liquidación",
+        "pago_a_cuenta_5pct_ars_aprox": 525000,
+        "cuota_18x_ars_aprox": 710000,
+        "nota_costas": "Costas y honorarios se pagan aparte, fuera del plan"
+      }
+    },
+    {
+      "tramo": 2,
+      "nombre": "CORTO PLAZO — aportes personales retenidos (exposición penal)",
+      "objeto": "Aportes personales de empleados (retenidos por nómina y no depositados) no comprendidos ya en el Tramo 1. Único componente previsional expresamente incluible como 'retención' (la RG excluye retenciones previsionales excepto aportes personales de trabajadores en relación de dependencia).",
+      "por_que_segundo": "El aporte personal retenido y no depositado no es deuda comercial: configura apropiación indebida de recursos de la seguridad social (Régimen Penal Tributario) si supera los umbrales por período. Componente con exposición penal personal directa del presidente. Regularizarlo temprano reduce ese frente con inversión relativamente baja.",
+      "dato_pendiente_cuantificar_contador": "Desagregar F.931 impagos entre (a) aportes personales SIPA retenidos, (b) contribuciones patronales, (c) componentes con destino Obra Social y ART (excluidos del régimen, tratamiento separado). Referencia extracto 14/06: Aportes Seg. Social Empleador $3,94M (con intereses); Sistema Único registra $8,78M de capital en aportes — parte ya está en el Expte. del Tramo 1.",
+      "numero_estimado": {
+        "consolidado_ars_rango": [4000000, 9000000],
+        "cuota_18x_ars_rango": [290000, 650000]
+      }
+    },
+    {
+      "tramo": 3,
+      "nombre": "DECISIÓN AL TOPE (segunda quincena de octubre) — stock IVA + Ganancias",
+      "objeto": "IVA 2018-2026 (~$55,6M con intereses al 14/06) y Ganancias Sociedades (~$13,1M, mayormente intereses de anticipos, incluibilidad a validar). Total del tramo ~$65M+, creciendo al 2,75% mensual dentro o fuera del plan.",
+      "por_que_esperar": "No hay costo financiero por postergar (misma tasa) y sí hay riesgo cierto por consolidar una cuota que el flujo no sostiene — la caducidad a las 2 cuotas devuelve todo a ejecución con costas nuevas. Ventana jul-oct coincide con búsqueda de proyectos Adaptant y maduración de ingresos MP (Mercados Energéticos, Infocontrol) y Red Hat.",
+      "regla_de_decision_propuesta": [
+        "Calcular flujo mensual libre demostrado (promedio jul-sep de ingresos cobrados menos costos operativos, nómina, Macro, Moroni, IIBB y cuotas de Tramos 1 y 2)",
+        "Consolidar en el Tramo 3 solo el monto cuya cuota quepa en ese flujo con margen de seguridad (sugerido: cuota ≤ 70% del flujo libre)",
+        "Si el flujo no alcanza para todo el stock: priorizar dentro del tramo los períodos con mayor riesgo de emisión de boleta de deuda (más recientes, capital alto — ej. IVA 2024) y dejar el resto fuera, igual que hoy",
+        "Sin límite de planes: el Tramo 3 puede subdividirse en 2-3 planes para modular riesgo de caducidad cruzada (la caída de un plan no arrastra a los otros)"
+      ],
+      "fecha_decision": "2026-10-15 a 2026-10-20",
+      "numero_estimado": {
+        "consolidado_total_ars_aprox": 65000000,
+        "pago_a_cuenta_5pct_ars_aprox": 3250000,
+        "cuota_18x_ars_aprox": 4400000
+      }
+    }
+  ],
+  "carga_total_estimada_3_tramos_ars_mes_aprox": 5500000,
+  "nota_carga_total": "Contrastar contra flujo real antes de decidir el alcance final, especialmente del Tramo 3.",
+  "fuera_del_regimen": [
+    "IVA 04/2026 y posteriores (vencimiento posterior al 30/06/2026) y deuda que siga generando la nómina activa — pagar en término o acumular para régimen futuro. Refuerza urgencia de resolver situación de Carolina Hernández.",
+    "Componentes Obra Social y ART de los F.931 — excluidos, canal de regularización propio",
+    "Anticipos y pagos a cuenta como concepto autónomo — excluidos. Validar tratamiento de los $13,1M de intereses resarcitorios de anticipos de Ganancias (capital $0)",
+    "Deuda personal de Ernesto ($18,7M) si no existe caracterización 547",
+    "Plan provincial Rentas IIBB San Juan — régimen ajeno a ARCA, continúa según su propio cronograma"
+  ],
+  "cronograma": [
+    { "fecha": "2026-07-15 a 2026-07-18", "hito": "Verificar Certificado MiPyME + caracterizaciones (BHP y personal). Relevar DDJJ bloqueantes.", "responsable": "Contador" },
+    { "fecha": "2026-07-15 a 2026-07-18", "hito": "Confirmar con abogado mecánica Cap. J RG 5321 para Expte. 13716/2026: F.408, costas, vía de levantamiento de embargos.", "responsable": "Abogado" },
+    { "fecha": "semana del 2026-07-21", "hito": "Si certificado OK: cargar Tramo 1 en Mis Facilidades, F.408, pago a cuenta. Definir CBU de débito (cuenta Supervielle embargada — resolver cuenta operativa antes de consolidar).", "responsable": "Ernesto + Contador" },
+    { "fecha": "2026-08", "hito": "Cuantificación fina Tramo 2 (desagregación F.931) y adhesión.", "responsable": "Contador" },
+    { "fecha": "2026-07 a 2026-09", "hito": "Búsqueda de proyectos / maduración de ingresos. El ARCA Monitor reporta deuda incluible, cuotas simuladas y días restantes.", "responsable": "Ernesto" },
+    { "fecha": "2026-10-15 a 2026-10-20", "hito": "Decisión Tramo 3 con flujo demostrado. Carga de plan(es) con margen ante imprevistos operativos.", "responsable": "Todos" },
+    { "fecha": "2026-10-30", "hito": "LÍMITE DE ADHESIÓN (viernes). No llegar a esta fecha sin decisión tomada.", "responsable": null }
+  ],
+  "puntos_a_validar_en_reunion": [
+    "Levantamiento de embargos: confirmación del abogado de que, consolidado el plan del Tramo 1 y pagadas las costas, el agente fiscal presta conformidad al levantamiento/sustitución, y plazos reales en el Juzgado Federal N°2.",
+    "Desagregación F.931: cuánto del stock previsional es aporte personal retenido (define urgencia y monto del Tramo 2) y cuánto es OS/ART excluido.",
+    "Intereses de anticipos de Ganancias ($13,1M): ¿incluibles como accesorios pese a la exclusión de anticipos?",
+    "Prescripción: antes de incluir períodos 2018-2019, evaluar si existe defensa de prescripción viable (incluirlos implica renunciar a repetición). Si la hay, dejarlos fuera del plan.",
+    "Interacción con el concurso: toda esta deuda es post-concursal; confirmar que la adhesión no interfiere con los escritos finales en trámite. Nota: la RG 5873/2026 (planes para concursados) no aplica acá — la 5875 es la herramienta preferible.",
+    "Responsabilidad solidaria del presidente: opinión del abogado sobre cómo la secuencia de regularización (Tramos 1 y 2 primero) morigera la exposición personal por arts. 6 y 8 Ley 11.683, en el contexto de la transición a Adaptant.",
+    "CBU de débito de cuotas: qué cuenta se declara para el débito mensual, dada la situación de Supervielle. Riesgo operativo: cuota rechazada por embargo = camino a caducidad."
+  ],
+  "fuente": {
+    "documento": "Estrategia_RG5875_BHP_SA.docx",
+    "preparado": "2026-07-14",
+    "caracter": "Documento operativo interno preparado para evaluación con asesores. No constituye dictamen jurídico ni contable.",
+    "base_cifras": "Extracto ARCA al 14/06/2026 y simulación al 2,75% mensual (sistema francés, a validar contra el aplicativo de Mis Facilidades)."
+  }
+}

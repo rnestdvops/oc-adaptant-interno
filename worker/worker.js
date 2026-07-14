@@ -178,6 +178,7 @@ async function buildSystemPrompt(level, env, log) {
       "novedades.json",
       "alianzas_estrategicas.json",
       "asesoria_legal.json",
+      "estrategia_arca_rg5875.json",
     ];
     datamartParts.push("\n\n## Datamarts cargados\n");
     for (const dm of datamarts) {
