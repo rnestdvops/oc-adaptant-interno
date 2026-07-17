@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-19",
+  "last_updated": "2026-07-17",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -143,8 +143,8 @@
     },
     "estado_general": "AL DÍA",
     "proximo_vencimiento": {
-      "cuota": 3,
-      "fecha": "2026-07-19",
+      "cuota": 4,
+      "fecha": "2026-08-18",
       "monto_neto": 3958749
     },
     "cronograma": [
@@ -180,7 +180,12 @@
         "capital": 3018141,
         "interes": 940608,
         "neto_a_pagar": 3958749,
-        "estado": "pendiente"
+        "monto_pagado_total": 4000000,
+        "pagos": [
+          { "fecha": "2026-07-17", "monto": 4000000, "canal": "Lemon / Equinus Srl", "coelsa_id": "RD06ZO9W41YXVEWK25GP7X" }
+        ],
+        "excedente_ars": 82502,
+        "estado": "PAGADA — $4.000.000 pagados el 17/07/2026 vía Lemon (2 días antes del vencimiento). Incluye el excedente $41.251 de cuota 2 imputado acá; excedente resultante $82.502 a imputar en cuota 4."
       },
       {
         "n": 4,
@@ -297,9 +302,25 @@
         "coelsa_id": "Z4K6DVNOWY644J1K25J8LQ",
         "contexto": "Saldo cuota 2 ($1.958.749). Se pagaron $2.000.000 — excedente $41.251.",
         "notas": "Comprobante Lemon 19/06/2026 13:04hs. Cuota 2 queda saldada."
+      },
+      {
+        "fecha": "2026-07-17",
+        "monto": 4000000,
+        "moneda": "ARS",
+        "tipo": "pago_cuota",
+        "cuota_aplicada": 3,
+        "canal": "Lemon",
+        "destinatario": "Equinus Srl",
+        "cuit_destinatario": "30-70885325-5",
+        "cbu_destinatario": "2850322430094215460691",
+        "banco_destino": "Banco Macro",
+        "coelsa_id": "RD06ZO9W41YXVEWK25GP7X",
+        "id_transaccion": "756fd592-7171-45b5-86d8-5edd7a33d184",
+        "contexto": "Cuota 3 ($3.958.749, vence 19/07/2026). Se pagaron $4.000.000 — excedente $82.502 (incluye el excedente $41.251 arrastrado de cuota 2).",
+        "notas": "Comprobante Lemon 17/07/2026 11:06hs. Cuota 3 queda saldada, pagada 2 días antes del vencimiento."
       }
     ],
-    "ultima_actualizacion": "2026-06-19"
+    "ultima_actualizacion": "2026-07-17"
   },
   "plan_iibb_san_juan": {
     "organismo": "Rentas — Provincia de San Juan (IIBB)",

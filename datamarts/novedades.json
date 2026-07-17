@@ -1,11 +1,16 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-17",
   "data_owner": "Ernesto Corona",
   "visibility": "mixta_por_item",
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
   "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
   "max_items_mostrados": 6,
   "items": [
+    {
+      "fecha": "17/07/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Cuota 3 del crédito Banco Macro (BHP SA) pagada — $4.000.000 vía Lemon, 2 días antes del vencimiento. Excedente $82.502 a imputar en cuota 4 (18/08/2026)."
+    },
     {
       "fecha": "14/07/2026",
       "visibility": "socios_asesores",
