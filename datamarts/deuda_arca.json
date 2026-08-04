@@ -107,6 +107,27 @@
       "agencia": "771",
       "domicilio_agencia": "Ignacio de la Roza 20 — Oeste, San Juan",
       "estado": "notificado — pendiente de retención efectiva"
+    },
+    {
+      "fecha_notificacion": "no disponible — pendiente de carga (anterior al 17/07/2026, fecha exacta no provista)",
+      "tipo_oficio": "Embargo General de Fondos y Valores",
+      "caracter": "permanente hasta cubrir la suma total requerida",
+      "alcance": "Todo tipo de activo financiero de titularidad del cliente embargado: Caja de Ahorros, Cuenta Corriente, Plazo Fijo, Cuenta Títulos y otro activo financiero. Cuenta con autorización de giro en descubierto queda suspendida hasta el levantamiento o cumplimiento de la medida.",
+      "organismos_notificantes": ["AFIP", "ARBA", "MTESS", "AGIP"],
+      "organismo_de_este_oficio": "AFIP",
+      "soj_numero": "11588282",
+      "cliente": "BHP SA",
+      "codigo_cliente": "0800130709553492",
+      "id_tributaria": "30709553492",
+      "total_embargo": 7262453.42,
+      "saldo_maximo_a_retener": 7255931.59,
+      "transferencia": false,
+      "expediente": "21184/2026",
+      "juzgado": "Juzgado Federal 2 — Secretaría de Ejecuciones Fiscales, San Juan",
+      "agencia": "771",
+      "domicilio_agencia": "Ignacio de la Roza 20 — Oeste, San Juan",
+      "estado": "aplicado — se retuvo el pago de Red Hat (último cobro del proyecto BROU) y se imputó al embargo",
+      "nota": "Embargo anterior al SOJ 11633525 (arriba). A diferencia de aquel, este ya tuvo ejecución efectiva: el cobro de Red Hat (proyecto BROU) fue retenido y aplicado."
     }
   ],
   "ddjj_pendientes_bhp": {
