@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14",
+  "last_updated": "2026-07-17",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "fecha_intereses": "2026-06-14",
@@ -87,6 +87,28 @@
     "total_pesos_embargado": 9863939.26,
     "nota": "El 18/05/2026 ingresó $6.388.162 (pago proveedores Movistar/AMX) y fue inmediatamente embargado. Tras el embargo del 21/05/2026 la cuenta en pesos quedó en $0."
   },
+  "embargos_notificados": [
+    {
+      "fecha_notificacion": "2026-07-17",
+      "tipo_oficio": "Embargo General de Fondos y Valores",
+      "caracter": "permanente hasta cubrir la suma total requerida",
+      "alcance": "Todo tipo de activo financiero de titularidad del cliente embargado: Caja de Ahorros, Cuenta Corriente, Plazo Fijo, Cuenta Títulos y otro activo financiero. Cuenta con autorización de giro en descubierto queda suspendida hasta el levantamiento o cumplimiento de la medida.",
+      "organismos_notificantes": ["AFIP", "ARBA", "MTESS", "AGIP"],
+      "organismo_de_este_oficio": "AFIP",
+      "soj_numero": "11633525",
+      "cliente": "BHP SA",
+      "codigo_cliente": "0800130709553492",
+      "id_tributaria": "30709553492",
+      "total_embargo": 28180656.9,
+      "saldo_maximo_a_retener": 28180656.9,
+      "transferencia": false,
+      "expediente": "12095/2026",
+      "juzgado": "Juzgado Federal 2 — Secretaría de Ejecuciones Fiscales, San Juan",
+      "agencia": "771",
+      "domicilio_agencia": "Ignacio de la Roza 20 — Oeste, San Juan",
+      "estado": "notificado — pendiente de retención efectiva"
+    }
+  ],
   "ddjj_pendientes_bhp": {
     "total_pendientes": 76,
     "alerta": "Implican multas formales automáticas, base para determinación de oficio, posibles cargos adicionales de intereses, imposibilidad de acceder a planes de facilidades",

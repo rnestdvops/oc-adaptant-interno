@@ -9,6 +9,11 @@
     {
       "fecha": "17/07/2026",
       "visibility": "socios_asesores",
+      "resumen": "Nuevo embargo AFIP notificado sobre BHP SA (SOJ N° 11633525) — Embargo General de Fondos y Valores, $28.180.656,9, Expte. 12095/2026, Juzgado Federal 2 San Juan. Distinto de los embargos ya ejecutados en mayo/2026."
+    },
+    {
+      "fecha": "17/07/2026",
+      "visibility": "socios_asesores",
       "resumen": "Cuota 3 del crédito Banco Macro (BHP SA) pagada — $4.000.000 vía Lemon, 2 días antes del vencimiento. Excedente $82.502 a imputar en cuota 4 (18/08/2026)."
     },
     {
