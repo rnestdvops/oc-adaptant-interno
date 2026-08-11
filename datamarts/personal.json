@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-08-11",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad_empleadora": "BHP SA",
@@ -35,31 +35,82 @@
         "total": 903976.96
       },
       "sueldo_neto_ars": 4413534.55
-    },
-    {
-      "nombre_completo": "Carolina Hernández",
-      "cuil": "27-32689167-9",
-      "categoria": "Administrativo",
-      "fecha_ingreso": "2014-12-01",
-      "rol_societario": "Empleada — situación en revisión (línea F del marco estratégico)",
-      "sueldo_bruto_ars": 2202746.82,
-      "retenciones": {
-        "jubilacion_11_pct": 242302.15,
-        "ley_19032_3_pct": 66082.4,
-        "obra_social_3_pct": 66082.4,
-        "total": 374466.96
-      },
-      "sueldo_neto_ars": 1828279.86
     }
   ],
   "totales_mensuales_ars": {
-    "bruto_total": 14269426.52,
-    "retenciones_total": 2425802.51,
-    "neto_total_egreso_caja": 11843624.02,
+    "bruto_total": 12066679.7,
+    "retenciones_total": 2051335.55,
+    "neto_total_egreso_caja": 10015344.16,
     "contribuciones_patronales_estimadas_pct": 26.4,
-    "contribuciones_patronales_estimadas_ars": 3767128.6,
-    "costo_laboral_total_si_se_paga_arca_al_dia": 18036555.12,
-    "nota_aportes_y_contribuciones": "Los aportes (descontados del bruto) + contribuciones patronales NO se están pagando actualmente — se acumulan como deuda con ARCA. Ver datamart deuda_arca.json: el bloque Aportes Empleador + Contribuciones SS suman $10M en deuda histórica + capital creciente cada mes."
+    "contribuciones_patronales_estimadas_ars": 3185603.6,
+    "costo_laboral_total_si_se_paga_arca_al_dia": 15252283.3,
+    "nota_aportes_y_contribuciones": "Los aportes (descontados del bruto) + contribuciones patronales NO se están pagando actualmente — se acumulan como deuda con ARCA. Ver datamart deuda_arca.json: el bloque Aportes Empleador + Contribuciones SS suman $10M en deuda histórica + capital creciente cada mes.",
+    "nota_recalculo": "Totales recalculados sobre Ernesto + Franco solamente — Carolina Hernández egresó por mutuo acuerdo (ver bajas_administrativas abajo). Cifras previas (con Carolina) quedan documentadas en las cifras de su registro histórico dentro de bajas_administrativas."
+  },
+  "bajas_administrativas": {
+    "empleados": [
+      {
+        "nombre_completo": "Carolina Hernández",
+        "cuil": "27-32689167-9",
+        "categoria": "Administrativo",
+        "fecha_ingreso": "2014-12-01",
+        "causa_desvinculacion": "Extinción por mutuo acuerdo (art. 241 LCT) — propuesta de pago aceptada",
+        "ultimo_sueldo_activo_ars": {
+          "bruto": 2202746.82,
+          "retenciones_total": 374466.96,
+          "neto": 1828279.86
+        },
+        "acuerdo_de_pago": "Ver datamart deuda_privada.json → mutuo_carolina_hernandez para el detalle completo de la liquidación acordada y el cronograma de pago dolarizado.",
+        "nota": "Estaba marcada como 'situación en revisión (línea F del marco estratégico)' en escenarios de abajo — esa evaluación ya se resolvió con la aceptación de esta propuesta."
+      }
+    ]
+  },
+  "bajas_nerdcube": {
+    "nota": "Certificado de trabajo y certificación de servicios y remuneraciones (art. 80 LCT) de personal que se desempeñaba en la operación de coworking NerdCube. Empleadora formal en ambos casos: BHP SA (CUIT 30-70955349-2) — distinto del personal directivo/administrativo de arriba, que no incluye a este personal.",
+    "empleados": [
+      {
+        "nombre_completo": "Sara Micaela Pérez Herrera",
+        "cuil": "27-38591793-2",
+        "puesto": "Secretaria (Categoría 4115) — Excluido de Convenio",
+        "modalidad": "Tiempo parcial, indeterminado (Período de Prueba — art. 92 bis LCT)",
+        "fecha_ingreso": "2026-04-01",
+        "fecha_egreso": "2026-07-31",
+        "causa_desvinculacion": "Rescisión durante el período de prueba",
+        "remuneracion_bruta_mensual_ars": 500000,
+        "remuneracion_neta_mensual_ars": 415000,
+        "retenciones_mensuales_ars": {
+          "jubilacion_11_pct": 55000,
+          "ley_19032_3_pct": 15000,
+          "obra_social_3_pct": 15000
+        },
+        "totales_periodo_abr_jul_2026_ars": {
+          "bruto": 2000000,
+          "retenciones": 340000,
+          "neto": 1660000
+        },
+        "certificados_emitidos": "Certificado de trabajo + Certificación de servicios y remuneraciones, San Juan, 15/08/2026",
+        "nota": "Los certificados no consignan monto de liquidación final/indemnización — solo remuneraciones y retenciones del período trabajado."
+      },
+      {
+        "nombre_completo": "Rocío Belén Pérez Ortiz",
+        "cuil": "27-40592349-7",
+        "legajo": "101",
+        "puesto": "Asistente Administrativo — Excluido de Convenio",
+        "modalidad": "Tiempo parcial, indeterminado/permanente",
+        "fecha_ingreso": "2022-03-21",
+        "fecha_egreso": "2026-07-01",
+        "antiguedad": "4 años, 3 meses y 11 días",
+        "causa_desvinculacion": "Extinción por mutuo acuerdo (art. 241 LCT)",
+        "ultima_remuneracion_bruta_mensual_ars": 626506.02,
+        "retenciones_ultima_remuneracion_ars": {
+          "jubilacion_11_pct": 68915.66,
+          "ley_19032_3_pct": 18795.18,
+          "obra_social_3_pct": 18795.18
+        },
+        "certificados_emitidos": "Certificado de trabajo + Certificación de servicios y remuneraciones, San Juan, agosto 2026",
+        "nota": "Detalle mensual completo de todo el período (21/03/2022 al 01/07/2026) declarado ante ARCA vía F.931 de cada período — no incluido en el certificado, consultable en 'Mis Aportes' o a solicitud. Certificados no consignan monto de liquidación final/indemnización."
+      }
+    ]
   },
   "escenarios": {
     "escenario_a_status_quo": {
@@ -79,7 +130,8 @@
       "descripcion": "Dar de baja también a Carolina (línea F del briefing — transición a definir, art. 223 bis LCT u otra figura)",
       "egreso_caja_mensual_ars": 0,
       "ahorro_mensual_caja_vs_a_ars": 11843624.02,
-      "consideracion": "Requiere indemnización si es despido + tratamiento digno. Decisión sensible que se posterga en el briefing hasta tener mejor definición. NO se modela como activa por ahora."
+      "consideracion": "Requiere indemnización si es despido + tratamiento digno. Decisión sensible que se posterga en el briefing hasta tener mejor definición. NO se modela como activa por ahora.",
+      "estado_actualizado_agosto_2026": "La baja de Carolina SE REALIZÓ (mutuo acuerdo art. 241 LCT, propuesta de pago aceptada — ver bajas_administrativas). Los directores (Ernesto y Franco) NO se dieron de baja, así que el egreso de caja mensual real quedó en $10.015.344,16 (Ernesto+Franco), no en $0 como planteaba este escenario hipotético."
     }
   }
 }
