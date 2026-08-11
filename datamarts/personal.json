@@ -89,7 +89,15 @@
           "neto": 1660000
         },
         "certificados_emitidos": "Certificado de trabajo + Certificación de servicios y remuneraciones, San Juan, 15/08/2026",
-        "nota": "Los certificados no consignan monto de liquidación final/indemnización — solo remuneraciones y retenciones del período trabajado."
+        "nota": "Los certificados art. 80 LCT no consignan monto de liquidación final — ver liquidacion_a_pagar_ars.",
+        "encuadre_legal": "Rescisión dentro del período de prueba (art. 92 bis LCT, extendido a 6 meses por la reforma Ley Bases 2024) — no corresponde indemnización por antigüedad (art. 245), que solo aplica superado el período de prueba.",
+        "liquidacion_a_pagar_ars": {
+          "sac_proporcional_4_meses_art_121_lct": 166666.67,
+          "vacaciones_proporcionales_no_gozadas_art_153_lct": 100000,
+          "preaviso": "No corresponde — prestó servicios hasta el último día",
+          "total": 266666.67,
+          "estado": "Pendiente de pago — a abonar en agosto 2026, condicionado a la liberación de las cuentas bancarias de BHP (embargos AFIP, ver deuda_arca.json)."
+        }
       },
       {
         "nombre_completo": "Rocío Belén Pérez Ortiz",
@@ -108,7 +116,15 @@
           "obra_social_3_pct": 18795.18
         },
         "certificados_emitidos": "Certificado de trabajo + Certificación de servicios y remuneraciones, San Juan, agosto 2026",
-        "nota": "Detalle mensual completo de todo el período (21/03/2022 al 01/07/2026) declarado ante ARCA vía F.931 de cada período — no incluido en el certificado, consultable en 'Mis Aportes' o a solicitud. Certificados no consignan monto de liquidación final/indemnización."
+        "nota": "Detalle mensual completo de todo el período (21/03/2022 al 01/07/2026) declarado ante ARCA vía F.931 de cada período — no incluido en el certificado, consultable en 'Mis Aportes' o a solicitud.",
+        "estado_acuerdo": "Propuesta de cierre enviada a Rocío — pendiente de su conformidad. Cierre por mutuo acuerdo (art. 241 LCT), a homologar ante SECLO / Ministerio de Trabajo.",
+        "liquidacion_propuesta_ars": {
+          "gratificacion_por_cese": 3132530.1,
+          "sac_proporcional": "Ya cobrado en el cierre de junio — no queda pendiente",
+          "vacaciones": "Ya tomadas — no se adeudan",
+          "preaviso": "Correspondió 1 mes, ya trabajado — no se indemniza aparte"
+        },
+        "acuerdo_de_pago": "Ver datamart deuda_privada.json → mutuo_rocio_perez_ortiz para el cronograma de pago."
       }
     ]
   },
