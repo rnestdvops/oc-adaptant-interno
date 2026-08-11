@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-17",
+  "last_updated": "2026-08-11",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -108,6 +108,50 @@
         "nota": "Pagado 19/06/2026 16:52hs desde cuenta MP personal Ernesto. Fondos: primer cuota NerdCube transición."
       }
     ]
+  },
+  "mutuo_carolina_hernandez": {
+    "concepto": "Gratificación por cese — Acuerdo de extinción de la relación laboral por mutuo acuerdo (art. 241 LCT)",
+    "acreedora": {
+      "nombre": "Carolina Hernández",
+      "cuil": "27-32689167-9"
+    },
+    "deudora": "BHP SA",
+    "estado_acuerdo": "Propuesta de pago aceptada por Carolina. Pendiente de instrumentar como Anexo del acuerdo de extinción por mutuo acuerdo, homologado ante SECLO / Ministerio de Trabajo.",
+    "referencia_full_si_se_pagara_completo_art245_ars": {
+      "indemnizacion_antiguedad_preaviso_sac_preaviso_100pct": 31205579.95,
+      "sac_proporcional_jul_2026": 183562.24,
+      "total_referencia": 31389142.19,
+      "nota": "Esto es lo que correspondería sin reducción (art. 245 LCT), solo a fines comparativos — no es lo acordado."
+    },
+    "liquidacion_acordada_ars": {
+      "porcentaje_acordado_sobre_rubros_negociables": 0.8,
+      "gratificacion_por_cese_capital_a_diferir": 24964463.96,
+      "sac_proporcional_jul_2026_contado_sin_descuento": 183562.24,
+      "total_liquidacion_acordada": 25148026.2,
+      "nota": "El 80% se aplica solo sobre indemnización por antigüedad + preaviso + SAC s/preaviso (rubros sin piso legal, libremente negociables en un mutuo acuerdo art. 241 LCT). El SAC proporcional se mantiene al 100% (salario ya devengado, no negociable a la baja — art. 12 LCT)."
+    },
+    "moneda": "USD",
+    "capital": 16478.19,
+    "capital_intacto": true,
+    "fecha_origen": "2026-08-04",
+    "tc_referencia_inicial": {
+      "fecha": "2026-08-04",
+      "valor": 1515,
+      "fuente": "BNA venta",
+      "nota": "Solo para dimensionar el capital inicial en USD. Los pagos mensuales se convierten al TC del día de cada pago."
+    },
+    "tasa_compensatoria_tna": 7,
+    "tasa_mensual_pct": 0.5833,
+    "plazo_maximo_meses": 24,
+    "amortizacion_capital_fija_mensual_usd": 686.59,
+    "modalidad_vigente": "Interés simple mensual sobre saldo pendiente + amortización de capital fija mensual (cuota decreciente). Capital pactado en USD (art. 765 CCyC), cancelable en pesos al TC BNA vendedor del día de cada pago — misma mecánica que el mutuo Moroni. Aportes extraordinarios de capital permitidos en cualquier momento y por cualquier monto, sin necesidad de acuerdo adicional de Carolina (solo benefician al deudor).",
+    "ultimo_pagado": null,
+    "pendiente_actual": {
+      "capital_usd": 16478.19,
+      "estado": "Ningún pago registrado todavía — cronograma recién generado, sin fechas de pago cargadas."
+    },
+    "cronograma_pagado": [],
+    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. Cronograma completo de 24 meses vive en la planilla fuente (Propuesta_Pago_Carolina_Hernandez.xlsx, hoja Seguimiento_Pagos); acá solo se registran los parámetros del acuerdo."
   },
   "prestamo_banco_macro": {
     "banco": "Banco Macro",
