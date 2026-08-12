@@ -32,9 +32,9 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 12/08/2026 — 13 proyectos (5 confirmados, 8 potenciales, de los cuales 2 en suspenso). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta, no el monto real de facturación.",
-    "total_pipeline_usd": 527190.59,
-    "confirmado_usd": 67250,
+    "estado_actual": "Pipeline actualizado al 12/08/2026 — 12 proyectos (4 confirmados, de los cuales 2 ya cobrados; 8 potenciales, de los cuales 2 en suspenso). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
+    "total_pipeline_usd": 509190.59,
+    "confirmado_usd": 49250,
     "potencial_usd": 459940.59,
     "proyectos_confirmados": [
       {
@@ -48,10 +48,10 @@
           "2026-08": 0,
           "2026-09": 10125
         },
-        "estado": "confirmado",
+        "estado": "cobrado",
         "mes_inicio": "2026-07",
         "entidad": "d-Vops LLC",
-        "nota_comercial": "PO 1000325601 recibida el 14/07/2026 (GBM, Compras de Fields) — habilita el inicio formal del proyecto. Facturación vía D-VOPS LLC, no Adaptant SAS. Detalle completo de la PO en cash_flow.json."
+        "nota_comercial": "Ya se cobró todo (12/08/2026), incluida la cuota de septiembre que estaba pendiente — se adelantó."
       },
       {
         "id": "brou-vs-cuota-final",
@@ -60,25 +60,25 @@
         "monto_total_usd": 4000,
         "duracion_meses": 1,
         "monto_mes_usd": 4000,
-        "estado": "confirmado",
+        "estado": "cobrado",
         "mes_inicio": "2026-07",
-        "entidad": "Adaptant"
+        "entidad": "Adaptant",
+        "nota_comercial": "Ya se cobró (confirmado 12/08/2026)."
       },
       {
         "id": "brou-ti-2026",
         "cliente": "BROU",
-        "proyecto": "Extensión para equipos actuales de TI",
-        "monto_total_usd": 18000,
+        "proyecto": "Extensión TI (Track Gerencial)",
+        "monto_total_usd": 13000,
         "duracion_meses": 2,
         "montos_mes_explicitos": {
-          "2026-07": 0,
-          "2026-08": 9000,
-          "2026-09": 9000
+          "2026-08": 6500,
+          "2026-09": 6500
         },
         "estado": "confirmado",
-        "mes_inicio": "2026-07",
+        "mes_inicio": "2026-08",
         "entidad": "Adaptant",
-        "nota_comercial": "Venta cerrada. Cobro 50% Agosto, 50% Septiembre."
+        "nota_comercial": "Corregido el 12/08/2026: el alcance final es 'Track Gerencial', USD 13.000 (no USD 18.000 como se había registrado antes). Empieza la semana del 17/08/2026. 50% se factura en agosto, 50% en septiembre. Se consolidó acá el ítem duplicado 'brou-track-gerencial' que se había cargado por error como proyecto aparte."
       },
       {
         "id": "dos-santos-entreno",
@@ -91,21 +91,6 @@
         "mes_inicio": "2026-07",
         "entidad": "Adaptant",
         "nota_comercial": "Confirmado. Ingreso total en Julio 2026."
-      },
-      {
-        "id": "brou-track-gerencial",
-        "cliente": "BROU",
-        "proyecto": "Track Gerencial",
-        "monto_total_usd": 13000,
-        "duracion_meses": 2,
-        "montos_mes_explicitos": {
-          "2026-08": 6500,
-          "2026-09": 6500
-        },
-        "estado": "confirmado",
-        "mes_inicio": "2026-08",
-        "entidad": "Adaptant",
-        "nota_comercial": "50% se factura la semana del 17/08/2026 (\"la semana próxima\" desde el 12/08/2026), 50% restante en un mes (~12/09/2026). Mensaje de origen ambiguo (posible artefacto de dictado por voz) — confirmar con Ernesto si la interpretación de fechas es correcta."
       }
     ],
     "proyectos_potenciales": [
