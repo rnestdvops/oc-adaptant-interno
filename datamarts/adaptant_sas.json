@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-08-12",
   "data_owner": "Franco Buglioni",
   "visibility": "publico",
   "razon_social": "Adaptant SAS",
@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline cargado al 18/06/2026 — 10 proyectos (5 confirmados, 5 potenciales)",
-    "total_pipeline_usd": 408250,
+    "estado_actual": "Pipeline actualizado al 12/08/2026 — 11 proyectos (5 confirmados, 6 potenciales)",
+    "total_pipeline_usd": 465250,
     "confirmado_usd": 75250,
-    "potencial_usd": 333000,
+    "potencial_usd": 390000,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -160,6 +160,18 @@
         "estado": "potencial",
         "mes_inicio": "2027-03",
         "entidad": "Adaptant"
+      },
+      {
+        "id": "gbm-bccr-telecom",
+        "cliente": "GBM - BCCR",
+        "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+        "monto_total_usd": 57000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 9500,
+        "estado": "potencial",
+        "mes_inicio": "2026-09",
+        "entidad": "Adaptant",
+        "nota_comercial": "Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS."
       }
     ],
     "nota": "Detalle mensual completo en cash_flow.json"
