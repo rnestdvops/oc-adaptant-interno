@@ -32,7 +32,7 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 12/08/2026 — 11 proyectos (4 confirmados: 2 ya cobrados, 1 confirmados sin cobrar; 7 potenciales, de los cuales 2 con confirmación esperada este mes). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
+    "estado_actual": "Pipeline actualizado al 12/08/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 confirmados sin cobrar; 7 potenciales, de los cuales 2 con confirmación esperada este mes) + 1 cancelado (Alfil Digital Agency, USD 8.000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
     "total_pipeline_usd": 497190.59,
     "confirmado_usd": 50057.59,
     "potencial_usd": 447133,
@@ -246,7 +246,21 @@
         "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Extensión del programa de Value Stream / Escritorio Digital ya en curso con BCCR (mismo cliente que gbm-bccr-telecom, área distinta). Deck 'Versión ampliada · Propuesta para integración al catálogo GBM · Agosto 2026': track de certificación de 5 talleres mensuales (Onboarding & Access / Device & Application / Digital Workplace / IT Support & Information / Consolidación DEX), anclados en los 3 flujos y 8 equipos ya mapeados en el programa VSM. Precio tope USD 800/usuario/mes, impuestos incluidos (IVA Costa Rica 13%), reparto neto 85% Adaptant / 15% GBM. Monto acá es el escenario base (15 usuarios/mes) = USD 9.026,55/mes × 5 = USD 45.133 para Adaptant. Escenario de ajuste a 17 usuarios/mes (sumando otras áreas de infraestructura interesadas) llevaría el total a USD 51.150 para Adaptant, cubriendo el objetivo de USD 10.000/mes — no confirmado. NOTA: el calendario propio del deck arranca en agosto 2026 (5 meses, ago-dic), pero Ernesto indicó que el arranque real sería en octubre 2026 — discrepancia sin resolver, registrada con la fecha que dio Ernesto."
       }
     ],
-    "nota": "Detalle mensual completo en cash_flow.json"
+    "nota": "Detalle mensual completo en cash_flow.json",
+    "proyectos_perdidos": [
+      {
+        "id": "alfil-organizacion-descentralizada",
+        "cliente": "Alfil Digital Agency",
+        "proyecto": "Diseño de una Organización Descentralizada (3 ciclos)",
+        "monto_total_usd": 8000,
+        "entidad": "Adaptant",
+        "estado": "cancelado",
+        "fecha_propuesta": "2026-07-16",
+        "fecha_cancelacion": "2026-08-12",
+        "motivo_cancelacion": "El cliente decidió no avanzar.",
+        "nota_comercial": "Propuesta enviada 16/07/2026 a Tobías y equipo de Alfil Digital Agency (~18 personas, San Juan) — programa de 3 ciclos: Self Selection (1 mes, USD 5.000), Commitment (15 días, USD 2.000), Transform (1,5 meses opcional, USD 1.000). Vigencia de la propuesta vencía ~15/08/2026. Había entrado al Commons solo como señal validada (Fase 10 — email consolidado el 17/07/2026), nunca como ítem estructurado del pipeline; por eso el chat lo sintetizaba desde la señal en vez de leerlo de acá. Cancelado el 12/08/2026."
+      }
+    ]
   },
   "costos_operativos_mensuales": {
     "estado": "Estimación inicial cargada — ver costos_operativos.json para detalle",
