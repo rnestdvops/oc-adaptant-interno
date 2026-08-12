@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 12/08/2026 — 11 proyectos (5 confirmados, 6 potenciales)",
-    "total_pipeline_usd": 465250,
-    "confirmado_usd": 75250,
-    "potencial_usd": 390000,
+    "estado_actual": "Pipeline actualizado al 12/08/2026 — 13 proyectos (5 confirmados, 8 potenciales, de los cuales 2 en suspenso)",
+    "total_pipeline_usd": 523383,
+    "confirmado_usd": 67250,
+    "potencial_usd": 456133,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -93,16 +93,19 @@
         "nota_comercial": "Confirmado. Ingreso total en Julio 2026."
       },
       {
-        "id": "docuprint",
-        "cliente": "Docuprint",
-        "proyecto": "Rediseño Organizacional",
-        "monto_total_usd": 21000,
-        "duracion_meses": 6,
-        "monto_mes_usd": 3500,
+        "id": "brou-track-gerencial",
+        "cliente": "BROU",
+        "proyecto": "Track Gerencial",
+        "monto_total_usd": 13000,
+        "duracion_meses": 2,
+        "montos_mes_explicitos": {
+          "2026-08": 6500,
+          "2026-09": 6500
+        },
         "estado": "confirmado",
-        "mes_inicio": "2026-09",
+        "mes_inicio": "2026-08",
         "entidad": "Adaptant",
-        "nota_comercial": "6 cuotas de USD 3.500 desde Septiembre 2026 hasta Febrero 2027."
+        "nota_comercial": "50% se factura la semana del 17/08/2026 (\"la semana próxima\" desde el 12/08/2026), 50% restante en un mes (~12/09/2026). Mensaje de origen ambiguo (posible artefacto de dictado por voz) — confirmar con Ernesto si la interpretación de fechas es correcta."
       }
     ],
     "proyectos_potenciales": [
@@ -113,9 +116,10 @@
         "monto_total_usd": 96000,
         "duracion_meses": 6,
         "monto_mes_usd": 16000,
-        "estado": "potencial",
+        "estado": "en_suspenso",
         "mes_inicio": "2026-07",
-        "entidad": "Adaptant"
+        "entidad": "Adaptant",
+        "nota_comercial": "Puesto en suspenso el 12/08/2026 — sin confirmación del cliente. La Fase 2 (antel-vs-fase2-2027) queda contingente a que este avance."
       },
       {
         "id": "gbm-hyperauto",
@@ -172,6 +176,30 @@
         "mes_inicio": "2026-09",
         "entidad": "Adaptant",
         "nota_comercial": "Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS."
+      },
+      {
+        "id": "docuprint",
+        "cliente": "Docuprint",
+        "proyecto": "Rediseño Organizacional",
+        "monto_total_usd": 21000,
+        "duracion_meses": 6,
+        "monto_mes_usd": 3500,
+        "estado": "en_suspenso",
+        "mes_inicio": "2026-09",
+        "entidad": "Adaptant",
+        "nota_comercial": "Confirmado originalmente (6 cuotas de USD 3.500 desde 09/2026), puesto en suspenso el 12/08/2026 — sin confirmación del cliente. No confundir con 'dos-santos-entreno' (Entrenamientos), que sí se cobró en julio 2026."
+      },
+      {
+        "id": "gbm-bccr-dex-practitioner",
+        "cliente": "GBM - BCCR",
+        "proyecto": "Digital Employee Experience (DEX) Practitioner Track — Escritorio Digital",
+        "monto_total_usd": 45133,
+        "duracion_meses": 5,
+        "monto_mes_usd": 9026.55,
+        "estado": "potencial",
+        "mes_inicio": "2026-10",
+        "entidad": "Adaptant",
+        "nota_comercial": "Extensión del programa de Value Stream / Escritorio Digital ya en curso con BCCR (mismo cliente que gbm-bccr-telecom, área distinta). Deck 'Versión ampliada · Propuesta para integración al catálogo GBM · Agosto 2026': track de certificación de 5 talleres mensuales (Onboarding & Access / Device & Application / Digital Workplace / IT Support & Information / Consolidación DEX), anclados en los 3 flujos y 8 equipos ya mapeados en el programa VSM. Precio tope USD 800/usuario/mes, impuestos incluidos (IVA Costa Rica 13%), reparto neto 85% Adaptant / 15% GBM. Monto acá es el escenario base (15 usuarios/mes) = USD 9.026,55/mes × 5 = USD 45.133 para Adaptant. Escenario de ajuste a 17 usuarios/mes (sumando otras áreas de infraestructura interesadas) llevaría el total a USD 51.150 para Adaptant, cubriendo el objetivo de USD 10.000/mes — no confirmado. NOTA: el calendario propio del deck arranca en agosto 2026 (5 meses, ago-dic), pero Ernesto indicó que el arranque real sería en octubre 2026 — discrepancia sin resolver, registrada con la fecha que dio Ernesto."
       }
     ],
     "nota": "Detalle mensual completo en cash_flow.json"
