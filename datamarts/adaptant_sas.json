@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 12/08/2026 — 13 proyectos (5 confirmados, 8 potenciales, de los cuales 2 en suspenso)",
-    "total_pipeline_usd": 523383,
+    "estado_actual": "Pipeline actualizado al 12/08/2026 — 13 proyectos (5 confirmados, 8 potenciales, de los cuales 2 en suspenso). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta, no el monto real de facturación.",
+    "total_pipeline_usd": 527190.59,
     "confirmado_usd": 67250,
-    "potencial_usd": 456133,
+    "potencial_usd": 459940.59,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -144,17 +144,6 @@
         "entidad": "Adaptant"
       },
       {
-        "id": "ispe-anr-ceci",
-        "cliente": "ISPE - ANR CECI",
-        "proyecto": "OC Adopción",
-        "monto_total_usd": 9000,
-        "duracion_meses": 6,
-        "monto_mes_usd": 1500,
-        "estado": "potencial",
-        "mes_inicio": "2026-09",
-        "entidad": "Adaptant"
-      },
-      {
         "id": "antel-vs-fase2-2027",
         "cliente": "ANTEL",
         "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
@@ -200,6 +189,88 @@
         "mes_inicio": "2026-10",
         "entidad": "Adaptant",
         "nota_comercial": "Extensión del programa de Value Stream / Escritorio Digital ya en curso con BCCR (mismo cliente que gbm-bccr-telecom, área distinta). Deck 'Versión ampliada · Propuesta para integración al catálogo GBM · Agosto 2026': track de certificación de 5 talleres mensuales (Onboarding & Access / Device & Application / Digital Workplace / IT Support & Information / Consolidación DEX), anclados en los 3 flujos y 8 equipos ya mapeados en el programa VSM. Precio tope USD 800/usuario/mes, impuestos incluidos (IVA Costa Rica 13%), reparto neto 85% Adaptant / 15% GBM. Monto acá es el escenario base (15 usuarios/mes) = USD 9.026,55/mes × 5 = USD 45.133 para Adaptant. Escenario de ajuste a 17 usuarios/mes (sumando otras áreas de infraestructura interesadas) llevaría el total a USD 51.150 para Adaptant, cubriendo el objetivo de USD 10.000/mes — no confirmado. NOTA: el calendario propio del deck arranca en agosto 2026 (5 meses, ago-dic), pero Ernesto indicó que el arranque real sería en octubre 2026 — discrepancia sin resolver, registrada con la fecha que dio Ernesto."
+      },
+      {
+        "id": "ispe-instituto-inteligente",
+        "cliente": "ISPE - Generación Siglo XXI SRL",
+        "proyecto": "Instituto Inteligente — Rediseño Organizacional y Adopción de IA (OC Framework, ANR CECI 2026)",
+        "moneda_original": "ARS",
+        "monto_total_ars": 18571000,
+        "tc_referencia": 1450,
+        "tc_referencia_fecha": "2026-06",
+        "monto_total_usd": 12807.59,
+        "duracion_meses": 7,
+        "estado": "potencial",
+        "mes_inicio": "2026-08",
+        "entidad": "Adaptant",
+        "montos_mes_ars": {
+          "2026-08": 7428400,
+          "2026-09": 928550,
+          "2026-10": 5571300,
+          "2026-12": 2785650,
+          "2027-01": 928550,
+          "2027-02": 928550
+        },
+        "montos_mes_usd_aprox": {
+          "2026-08": 5123.03,
+          "2026-09": 640.38,
+          "2026-10": 3842.28,
+          "2026-12": 1921.14,
+          "2027-01": 640.38,
+          "2027-02": 640.38
+        },
+        "cronograma_facturacion_ars": [
+          {
+            "fase": "Fase 0 — Habilitación administrativa del ANR",
+            "mes_calculo": 0,
+            "pct": 0.0,
+            "monto_ars": 0,
+            "mes_facturacion": "2026-08"
+          },
+          {
+            "fase": "Fase 1 — Autodiagnóstico online",
+            "mes_calculo": 0,
+            "pct": 40.0,
+            "monto_ars": 7428400,
+            "mes_facturacion": "2026-08"
+          },
+          {
+            "fase": "Fase 2 — Diagnósticos profundos",
+            "mes_calculo": 1,
+            "pct": 5.0,
+            "monto_ars": 928550,
+            "mes_facturacion": "2026-09"
+          },
+          {
+            "fase": "Fase 3 — Diseño del Commons institucional",
+            "mes_calculo": 2,
+            "pct": 30.0,
+            "monto_ars": 5571300,
+            "mes_facturacion": "2026-10"
+          },
+          {
+            "fase": "Fase 4 — Adopción, Mejora Operativa y Arquitecto OC",
+            "mes_calculo": 4,
+            "pct": 15.0,
+            "monto_ars": 2785650,
+            "mes_facturacion": "2026-12"
+          },
+          {
+            "fase": "Fase 5 — Agentización",
+            "mes_calculo": 5,
+            "pct": 5.0,
+            "monto_ars": 928550,
+            "mes_facturacion": "2027-01"
+          },
+          {
+            "fase": "Fase 6 — Consolidación y cierre",
+            "mes_calculo": 6,
+            "pct": 5.0,
+            "monto_ars": 928550,
+            "mes_facturacion": "2027-02"
+          }
+        ],
+        "nota_comercial": "Reemplaza al placeholder anterior 'ispe-anr-ceci' (USD 9.000 estimado) — esta es la propuesta técnica + económica real, presentada al Programa de Fortalecimiento de la Economía del Conocimiento, convocatoria 2026 del CECI San Juan (Centro de Economía del Conocimiento e Innovación). Cliente: ISPE (Instituto Superior de Formación Docente / Instituto Superior de Perfeccionamiento Educativo), razón social Generación Siglo XXI SRL — 70 colaboradores, 750 alumnos. Proyecto de rediseño organizacional y adopción de IA bajo el modelo Organizational Commons. Costo total del proyecto: $24.000.000 ARS (ANR solicitado al CECI $15.000.000 = 62,5%, contraparte ISPE $9.000.000 = 37,5%). Lo que se registra acá es SOLO la porción de honorarios de Adaptant Studio ($18.571.000 ARS = $13.000.000 vía ANR + $5.571.000 aprox. vía contraparte ISPE) — no incluye el rubro de stack tecnológico (~$2.857.000, licencias Anthropic API/Claude Pro/Lovable/GitHub) ni el tiempo del equipo institucional del ISPE (~$2.572.000, sin cargo). El cronograma de facturación (campo cronograma_facturacion_ars) sigue el track de fases/hitos, NO el cronograma de desembolso del ANR del CECI al ISPE (que es distinto: 50%/50% contra firma de convenio y avance del 30%, ver deuda_privada.json si se carga en el futuro). Mes 0 = agosto 2026, según indicación de Ernesto (el track de la propuesta original no fecha el mes 0 en términos absolutos). IMPORTANTE — ajuste por inflación: si la ejecución se extiende más de 3 meses desde la firma del convenio, los honorarios de Adaptant Studio se actualizan por IPC (INDEC) desde el mes 4 — los montos ARS de Fase 4 en adelante son por lo tanto un piso, no un techo. El equivalente en USD usa el TC de referencia de la propuesta ($1.450, junio 2026) solo para comparabilidad con el resto del pipeline (denominado en USD) — la moneda real de facturación y cobro es ARS."
       }
     ],
     "nota": "Detalle mensual completo en cash_flow.json"

@@ -9,6 +9,11 @@
     {
       "fecha": "12/08/2026",
       "visibility": "socios_asesores",
+      "resumen": "Pipeline: propuesta real de ISPE 'Instituto Inteligente' cargada (ANR CECI San Juan) — reemplaza al placeholder anterior. $18.571.000 ARS de honorarios Adaptant, financiados 62,5% ANR + 37,5% contraparte ISPE, facturación en 7 tramos desde agosto 2026."
+    },
+    {
+      "fecha": "12/08/2026",
+      "visibility": "socios_asesores",
       "resumen": "Movimientos de pipeline: se sumaron GBM-BCCR Telecomunicaciones (USD 57.000 potencial) y GBM-BCCR DEX Practitioner (USD 45.133 potencial, extensión de Escritorio Digital) y BROU Track Gerencial (USD 13.000, confirmado). Se pusieron en suspenso ANTEL Value Stream y Docuprint Rediseño Organizacional, sin confirmación del cliente."
     },
     {
@@ -40,11 +45,6 @@
       "fecha": "14/07/2026",
       "visibility": "socios_asesores",
       "resumen": "Estrategia de adhesión a RG 5875/2026 (plan de facilidades ARCA) cargada como pendiente — en tratamiento con el contador, 3 tramos propuestos, límite de adhesión 30/10/2026."
-    },
-    {
-      "fecha": "14/07/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Llegó la PO de GBM-BCCR (1000325601, USD 20.250) — habilita el inicio formal del proyecto. Factura vía d-Vops LLC, no Adaptant SAS."
     }
   ]
 }
