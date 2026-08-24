@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-11",
+  "last_updated": "2026-08-24",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad_empleadora": "BHP SA",
@@ -92,11 +92,31 @@
         "nota": "Los certificados art. 80 LCT no consignan monto de liquidación final — ver liquidacion_a_pagar_ars.",
         "encuadre_legal": "Rescisión dentro del período de prueba (art. 92 bis LCT, extendido a 6 meses por la reforma Ley Bases 2024) — no corresponde indemnización por antigüedad (art. 245), que solo aplica superado el período de prueba.",
         "liquidacion_a_pagar_ars": {
-          "sac_proporcional_4_meses_art_121_lct": 166666.67,
-          "vacaciones_proporcionales_no_gozadas_art_153_lct": 100000,
+          "sueldo_base": 602409.64,
+          "conceptos_indemnizatorios_periodo_prueba": {
+            "primer_sac_proporcional_3_meses": 150602.41,
+            "segundo_sac_proporcional_1_mes": 50200.8,
+            "vacaciones_proporcionales_14_dias_12x4": 112449.8,
+            "subtotal": 313253.01
+          },
+          "liquidacion_final": {
+            "sueldo_julio": 602409.64,
+            "primer_sac": 150602.41,
+            "segundo_sac": 50200.8,
+            "subtotal": 803212.85,
+            "descuentos": {
+              "jubilacion": -88353.41,
+              "ley_19032": -24096.39,
+              "obra_social": -24096.39,
+              "subtotal_descuentos": -136546.19
+            },
+            "vacaciones_proporcionales": 112449.8,
+            "total": 779116.47
+          },
           "preaviso": "No corresponde — prestó servicios hasta el último día",
-          "total": 266666.67,
-          "estado": "Pendiente de pago — a abonar en agosto 2026, condicionado a la liberación de las cuentas bancarias de BHP (embargos AFIP, ver deuda_arca.json)."
+          "total": 779116.47,
+          "estado": "Pendiente de pago — a abonar en agosto 2026, condicionado a la liberación de las cuentas bancarias de BHP (embargos AFIP, ver deuda_arca.json).",
+          "nota": "Actualizado 24/08/2026 con la planilla de liquidación final real — reemplaza el cálculo informal anterior ($266.666,67, SAC+vacaciones sobre un sueldo base de $500.000 mencionado en el WhatsApp a Sara). El sueldo base real usado en esta liquidación es $602.409,64, distinto del certificado art. 80 LCT (que consigna $500.000/mes) — no se concilió el origen de la diferencia."
         }
       },
       {
