@@ -192,7 +192,7 @@
       "cuil": "27-40592349-7"
     },
     "deudora": "BHP SA",
-    "estado_acuerdo": "Propuesta enviada — pendiente de conformidad de Rocío. A homologar ante SECLO / Ministerio de Trabajo (art. 241 LCT).",
+    "estado_acuerdo": "En pago — cuota 1 abonada 19/08/2026. A homologar ante SECLO / Ministerio de Trabajo (art. 241 LCT).",
     "contexto_propuesta": "Cierre planteado en el marco del concurso preventivo de BHP, más de un año y medio sin ventas nuevas, planta reducida a dos personas y embargos de ARCA sobre las cuentas — planteado como alternativa con más previsibilidad jurídica frente a una discusión posterior sobre causa de despido.",
     "rubros": {
       "gratificacion_por_cese_ars": 3132530.1,
@@ -206,15 +206,25 @@
     "cuota_mensual_ars": 522088.35,
     "cantidad_cuotas": 6,
     "cronograma": [
-      { "n": 1, "vencimiento": "2026-08-19", "monto": 522088.35, "estado": "pendiente" },
+      { "n": 1, "vencimiento": "2026-08-19", "monto": 522088.35, "estado": "pagado", "fecha_pago": "2026-08-19", "mp_operacion": "174659906826" },
       { "n": 2, "vencimiento": "2026-09-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 3, "vencimiento": "2026-10-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 4, "vencimiento": "2026-11-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 5, "vencimiento": "2026-12-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 6, "vencimiento": "2027-01-19", "monto": 522088.35, "estado": "pendiente" }
     ],
-    "ultimo_pagado": null,
-    "pagos_realizados": []
+    "ultimo_pagado": "2026-08-19",
+    "pagos_realizados": [
+      {
+        "n": 1,
+        "canal": "Mercado Pago",
+        "fecha_pago": "2026-08-19",
+        "monto_ars": 522088.35,
+        "estado": "pagado",
+        "cuenta_origen": "MP BHP SA",
+        "mp_operacion": "174659906826"
+      }
+    ]
   },
   "prestamo_banco_macro": {
     "banco": "Banco Macro",
