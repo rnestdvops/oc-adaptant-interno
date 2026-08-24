@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-11",
+  "last_updated": "2026-08-24",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -20,16 +20,16 @@
     "tasa_compensatoria_tna": 12,
     "tasa_moratoria_mensual_sobre_impago": 1,
     "modalidad_vigente": "Intereses el 15 de cada mes en pesos al TC del día. Capital intacto (Opción B).",
-    "ultimo_pagado": "2026-06-19",
+    "ultimo_pagado": "2026-08-24",
     "pendiente_actual": {
-      "periodo": 9,
-      "desde": "2026-06-15",
-      "hasta": "2026-07-15",
+      "periodo": 11,
+      "desde": "2026-08-15",
+      "hasta": "2026-09-15",
       "dias": 30,
       "interes_usd": 197.26,
-      "fecha_vencimiento": "2026-07-15",
-      "tc_referencia": 1430,
-      "monto_aprox_pesos": 282081,
+      "fecha_vencimiento": "2026-09-15",
+      "tc_referencia": 1520,
+      "monto_aprox_pesos": 299835,
       "estado": "pendiente"
     },
     "cronograma_pagado": [
@@ -106,6 +106,38 @@
         "fecha_pago": "2026-06-19",
         "estado": "pagado",
         "nota": "Pagado 19/06/2026 16:52hs desde cuenta MP personal Ernesto. Fondos: primer cuota NerdCube transición."
+      },
+      {
+        "n": 9,
+        "desde": "2026-06-15",
+        "hasta": "2026-07-15",
+        "dias": 30,
+        "interes_usd": 197.26,
+        "tc_real": 1524,
+        "monto_pesos": 300669.26,
+        "canal": "Mercado Pago",
+        "mp_operacion": "169317878767",
+        "cvu_origen": "MP BHP SA",
+        "destinatario": "administracion@bhp-global.com",
+        "fecha_pago": "2026-07-23",
+        "estado": "pagado",
+        "nota": "Pagado 23/07/2026 desde cuenta MP BHP SA. 8 días después del vencimiento (15/07)."
+      },
+      {
+        "n": 10,
+        "desde": "2026-07-15",
+        "hasta": "2026-08-15",
+        "dias": 31,
+        "interes_usd": 203.84,
+        "tc_real": 1520,
+        "monto_pesos": 309836.8,
+        "canal": "Mercado Pago",
+        "mp_operacion": "174452380779",
+        "cvu_origen": "MP BHP SA",
+        "destinatario": "administracion@bhp-global.com",
+        "fecha_pago": "2026-08-24",
+        "estado": "pagado",
+        "nota": "Pagado 24/08/2026. 9 días después del vencimiento (15/08). TC BNA vendedor del día."
       }
     ]
   },
