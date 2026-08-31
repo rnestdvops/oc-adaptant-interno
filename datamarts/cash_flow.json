@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-08-24",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "tc_referencia_ars_usd": 1430,
@@ -15,13 +15,46 @@
   },
   "pipeline_resumen": {
     "proyectos_totales": 11,
-    "confirmados": 5,
-    "potenciales": 6,
-    "monto_total_confirmado_usd": 75250,
-    "monto_total_potencial_usd": 355000,
-    "monto_total_pipeline_usd": 430250
+    "confirmados": 4,
+    "potenciales": 7,
+    "perdidos": 1,
+    "monto_total_confirmado_usd": 50157.59,
+    "monto_total_potencial_usd": 447133,
+    "monto_total_pipeline_usd": 497290.59,
+    "monto_total_perdido_usd": 8000,
+    "nota": "Resincronizado el 24/08/2026 contra adaptant_sas.json → pipeline (fuente canónica). Este resumen NO recalcula ingresos_confirmados_por_mes / ingresos_potenciales_por_mes / proyeccion_mensual — esos siguen con su propio armado manual, pendiente de revisión aparte si hace falta reflejar estos cambios en la proyección de caja."
   },
   "pipeline": [
+    {
+      "id": "gbm-bccr-vs",
+      "cliente": "GBM - BCCR",
+      "proyecto": "Value Stream y Rediseño de Equipos",
+      "monto_total_usd": 20250,
+      "duracion_meses": 3,
+      "montos_mes_explicitos": {
+        "2026-07": 10125,
+        "2026-08": 0,
+        "2026-09": 10125
+      },
+      "estado": "cobrado",
+      "mes_inicio": "2026-07",
+      "entidad": "d-Vops LLC",
+      "nota_comercial": "Ya se cobró todo (12/08/2026), incluida la cuota de septiembre que estaba pendiente — se adelantó.",
+      "categoria": "confirmado"
+    },
+    {
+      "id": "brou-vs-cuota-final",
+      "cliente": "BROU",
+      "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
+      "monto_total_usd": 4000,
+      "duracion_meses": 1,
+      "monto_mes_usd": 4000,
+      "estado": "cobrado",
+      "mes_inicio": "2026-07",
+      "entidad": "Adaptant",
+      "nota_comercial": "Ya se cobró (confirmado 12/08/2026).",
+      "categoria": "confirmado"
+    },
     {
       "id": "brou-ti-2026",
       "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
@@ -35,20 +68,91 @@
       "estado": "confirmado",
       "mes_inicio": "2026-08",
       "entidad": "BHP SA",
-      "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real. BHP S.A. factura a Red Hat de Argentina S.A. (no a BROU directo, no vía Adaptant). Facturación: Entregable 1 USD 6.550 el 30/09/2026, Entregable 2 USD 6.550 el 31/10/2026. Detalle completo en adaptant_sas.json → pipeline → brou-ti-2026."
+      "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real (DocuSign, firmada por Ernesto Corona — Presidente BHP SA — el 31/08/2026; Red Hat aparece sin firma visible en el documento recibido). Estructura contractual: BHP S.A. es el 'Contratista' bajo el Acuerdo Marco de Subcontratación con Red Hat de Argentina S.A. del 12/07/2018 — BHP le factura A RED HAT, no a BROU directamente (BROU es el 'Cliente Final', contacto Nelson Lema, nelson.lema@brou.com.uy). Plazo del proyecto: 23/08/2026 a 31/10/2026. Monto correcto USD 13.100 (no 13.000 ni 18.000 como se había cargado antes). Facturación en 2 entregables: Entregable 1 (Informe de actividades) USD 6.550 el 30/09/2026, Entregable 2 (Informe de actividades) USD 6.550 el 31/10/2026 — NO 50/50 agosto/septiembre como se había registrado por indicación verbal. Facturas a enviar a Red Hat de Argentina S.A. (Consulting Services, Ing. Buttty 240 piso 14 CABA), referenciando la PO y la oportunidad SFDC — el documento menciona dos números distintos de oportunidad (71812440 en el encabezado, 71265369 en la sección de facturación), sin conciliar. Gastos (viajes, alojamiento, etc.) no incluidos en el precio, a cargo de BHP como Contratista. RIESGO OPERATIVO: al facturarse a través de BHP SA, este cobro queda expuesto a los embargos AFIP ya notificados sobre las cuentas de BHP (ver deuda_arca.json → embargos_notificados) — no se sugiere ninguna acción al respecto, queda solo señalado.",
+      "categoria": "confirmado"
     },
     {
-      "id": "dos-santos-entreno",
-      "cliente": "Docuprint",
-      "proyecto": "Entrenamientos",
-      "monto_total_usd": 12000,
-      "duracion_meses": 1,
-      "monto_mes_usd": 12000,
-      "estado": "confirmado",
+      "id": "ispe-instituto-inteligente",
+      "cliente": "ISPE - Generación Siglo XXI SRL",
+      "proyecto": "Instituto Inteligente — Rediseño Organizacional y Adopción de IA (OC Framework, ANR CECI 2026)",
+      "moneda_original": "ARS",
+      "monto_total_ars": 18571000,
+      "tc_referencia": 1450,
+      "tc_referencia_fecha": "2026-06",
+      "monto_total_usd": 12807.59,
+      "duracion_meses": 7,
+      "estado": "confirmado_sin_cobrar",
       "mes_inicio": "2026-08",
-      "fecha_cobro_esperada": "2026-08-15",
       "entidad": "Adaptant",
-      "nota_comercial": "Confirmado. Cobro el 15 de agosto 2026 (antes estimado julio)."
+      "montos_mes_ars": {
+        "2026-08": 7428400,
+        "2026-09": 928550,
+        "2026-10": 5571300,
+        "2026-12": 2785650,
+        "2027-01": 928550,
+        "2027-02": 928550
+      },
+      "montos_mes_usd_aprox": {
+        "2026-08": 5123.03,
+        "2026-09": 640.38,
+        "2026-10": 3842.28,
+        "2026-12": 1921.14,
+        "2027-01": 640.38,
+        "2027-02": 640.38
+      },
+      "cronograma_facturacion_ars": [
+        {
+          "fase": "Fase 0 — Habilitación administrativa del ANR",
+          "mes_calculo": 0,
+          "pct": 0.0,
+          "monto_ars": 0,
+          "mes_facturacion": "2026-08"
+        },
+        {
+          "fase": "Fase 1 — Autodiagnóstico online",
+          "mes_calculo": 0,
+          "pct": 40.0,
+          "monto_ars": 7428400,
+          "mes_facturacion": "2026-08"
+        },
+        {
+          "fase": "Fase 2 — Diagnósticos profundos",
+          "mes_calculo": 1,
+          "pct": 5.0,
+          "monto_ars": 928550,
+          "mes_facturacion": "2026-09"
+        },
+        {
+          "fase": "Fase 3 — Diseño del Commons institucional",
+          "mes_calculo": 2,
+          "pct": 30.0,
+          "monto_ars": 5571300,
+          "mes_facturacion": "2026-10"
+        },
+        {
+          "fase": "Fase 4 — Adopción, Mejora Operativa y Arquitecto OC",
+          "mes_calculo": 4,
+          "pct": 15.0,
+          "monto_ars": 2785650,
+          "mes_facturacion": "2026-12"
+        },
+        {
+          "fase": "Fase 5 — Agentización",
+          "mes_calculo": 5,
+          "pct": 5.0,
+          "monto_ars": 928550,
+          "mes_facturacion": "2027-01"
+        },
+        {
+          "fase": "Fase 6 — Consolidación y cierre",
+          "mes_calculo": 6,
+          "pct": 5.0,
+          "monto_ars": 928550,
+          "mes_facturacion": "2027-02"
+        }
+      ],
+      "nota_comercial": "Corregido el 12/08/2026: pasó a confirmado (sin cobrar todavía). Reemplaza al placeholder anterior 'ispe-anr-ceci' (USD 9.000 estimado) — esta es la propuesta técnica + económica real, presentada al Programa de Fortalecimiento de la Economía del Conocimiento, convocatoria 2026 del CECI San Juan (Centro de Economía del Conocimiento e Innovación). Cliente: ISPE (Instituto Superior de Formación Docente / Instituto Superior de Perfeccionamiento Educativo), razón social Generación Siglo XXI SRL — 70 colaboradores, 750 alumnos. Proyecto de rediseño organizacional y adopción de IA bajo el modelo Organizational Commons. Costo total del proyecto: $24.000.000 ARS (ANR solicitado al CECI $15.000.000 = 62,5%, contraparte ISPE $9.000.000 = 37,5%). Lo que se registra acá es SOLO la porción de honorarios de Adaptant Studio ($18.571.000 ARS = $13.000.000 vía ANR + $5.571.000 aprox. vía contraparte ISPE) — no incluye el rubro de stack tecnológico (~$2.857.000, licencias Anthropic API/Claude Pro/Lovable/GitHub) ni el tiempo del equipo institucional del ISPE (~$2.572.000, sin cargo). El cronograma de facturación (campo cronograma_facturacion_ars) sigue el track de fases/hitos, NO el cronograma de desembolso del ANR del CECI al ISPE (que es distinto: 50%/50% contra firma de convenio y avance del 30%, ver deuda_privada.json si se carga en el futuro). Mes 0 = agosto 2026, según indicación de Ernesto (el track de la propuesta original no fecha el mes 0 en términos absolutos). IMPORTANTE — ajuste por inflación: si la ejecución se extiende más de 3 meses desde la firma del convenio, los honorarios de Adaptant Studio se actualizan por IPC (INDEC) desde el mes 4 — los montos ARS de Fase 4 en adelante son por lo tanto un piso, no un techo. El equivalente en USD usa el TC de referencia de la propuesta ($1.450, junio 2026) solo para comparabilidad con el resto del pipeline (denominado en USD) — la moneda real de facturación y cobro es ARS.",
+      "categoria": "confirmado"
     },
     {
       "id": "antel-vs-2026",
@@ -59,18 +163,9 @@
       "monto_mes_usd": 16000,
       "estado": "potencial",
       "mes_inicio": "2026-07",
-      "entidad": "Adaptant"
-    },
-    {
-      "id": "gbm-oc-piloto",
-      "cliente": "GBM",
-      "proyecto": "OC Piloto y Experimentación",
-      "monto_total_usd": 30000,
-      "duracion_meses": 3,
-      "monto_mes_usd": 10000,
-      "estado": "potencial",
-      "mes_inicio": "2026-08",
-      "entidad": "Adaptant"
+      "entidad": "Adaptant",
+      "nota_comercial": "Sin confirmación del cliente todavía (corregido 12/08/2026 — no hay categoría 'en suspenso', queda como potencial simple).",
+      "categoria": "potencial"
     },
     {
       "id": "gbm-hyperauto",
@@ -81,7 +176,20 @@
       "monto_mes_usd": 6000,
       "estado": "potencial",
       "mes_inicio": "2026-07",
-      "entidad": "Adaptant"
+      "entidad": "Adaptant",
+      "categoria": "potencial"
+    },
+    {
+      "id": "gbm-oc-piloto",
+      "cliente": "GBM",
+      "proyecto": "OC Piloto y Experimentación",
+      "monto_total_usd": 30000,
+      "duracion_meses": 3,
+      "monto_mes_usd": 10000,
+      "estado": "potencial",
+      "mes_inicio": "2026-08",
+      "entidad": "Adaptant",
+      "categoria": "potencial"
     },
     {
       "id": "antel-vs-fase2-2027",
@@ -92,51 +200,21 @@
       "monto_mes_usd": 30000,
       "estado": "potencial",
       "mes_inicio": "2027-03",
-      "entidad": "Adaptant"
+      "entidad": "Adaptant",
+      "categoria": "potencial"
     },
     {
-      "id": "ispe-anr-ceci",
-      "cliente": "ISPE - ANR CECI",
-      "proyecto": "OC Adopción",
-      "monto_total_usd": 9000,
-      "duracion_meses": 6,
-      "monto_mes_usd": 1500,
-      "estado": "potencial",
-      "mes_inicio": "2026-09",
-      "entidad": "Adaptant"
-    },
-    {
-      "id": "gbm-bccr-vs",
+      "id": "gbm-bccr-telecom",
       "cliente": "GBM - BCCR",
-      "proyecto": "Value Stream y Rediseño de Equipos",
-      "monto_total_usd": 20250,
-      "duracion_meses": 3,
-      "montos_mes_explicitos": {
-        "2026-07": 10125,
-        "2026-08": 0,
-        "2026-09": 10125
-      },
-      "fechas_cobro_esperadas": {
-        "2026-07": "2026-07-17",
-        "2026-09": "por confirmar"
-      },
-      "estado": "confirmado",
-      "mes_inicio": "2026-07",
-      "entidad": "d-Vops LLC",
-      "orden_compra": {
-        "numero_po": "1000325601",
-        "fecha_po": "2026-07-14",
-        "emisor": "GBM (Compras de Fields)",
-        "proveedor_codigo_gbm": "10171896",
-        "bill_to": "Miami Direct, Inc.",
-        "terminos_pago": "Vencimiento 30 días",
-        "items": [
-          { "descripcion": "WORKSHOP VALUE STREAM MAPPING", "cantidad": 1, "precio_usd": 10125 },
-          { "descripcion": "WORKSHOP VALUE STREAM MAPPING", "cantidad": 1, "precio_usd": 10125 }
-        ],
-        "total_usd": 20250
-      },
-      "nota_comercial": "PO 1000325601 recibida el 14/07/2026 — habilita el inicio formal del proyecto. La PO está emitida por GBM a nombre de D-VOPS LLC (no Adaptant SAS) — corrige el supuesto de facturación anterior para este proyecto."
+      "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+      "monto_total_usd": 57000,
+      "duracion_meses": 6,
+      "monto_mes_usd": 9500,
+      "estado": "confirma_este_mes",
+      "mes_inicio": "2026-09",
+      "entidad": "Adaptant",
+      "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS.",
+      "categoria": "potencial"
     },
     {
       "id": "docuprint",
@@ -145,33 +223,37 @@
       "monto_total_usd": 21000,
       "duracion_meses": 6,
       "monto_mes_usd": 3500,
-      "estado": "confirmado",
+      "estado": "potencial",
       "mes_inicio": "2026-09",
       "entidad": "Adaptant",
-      "nota_comercial": "6 cuotas de USD 3.500 desde Septiembre 2026 hasta Febrero 2027."
+      "nota_comercial": "Confirmado originalmente (6 cuotas de USD 3.500 desde 09/2026), sin confirmación del cliente todavía (corregido 12/08/2026 — no hay categoría 'en suspenso', queda como potencial simple).",
+      "categoria": "potencial"
     },
     {
-      "id": "brou-vs-cuota-final",
-      "cliente": "BROU",
-      "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
-      "monto_total_usd": 4000,
-      "duracion_meses": 1,
-      "monto_mes_usd": 4000,
-      "estado": "confirmado",
-      "mes_inicio": "2026-07",
-      "fecha_cobro_esperada": "2026-07-13",
-      "entidad": "Adaptant"
+      "id": "gbm-bccr-dex-practitioner",
+      "cliente": "GBM - BCCR",
+      "proyecto": "Digital Employee Experience (DEX) Practitioner Track — Escritorio Digital",
+      "monto_total_usd": 45133,
+      "duracion_meses": 5,
+      "monto_mes_usd": 9026.55,
+      "estado": "confirma_este_mes",
+      "mes_inicio": "2026-10",
+      "entidad": "Adaptant",
+      "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Extensión del programa de Value Stream / Escritorio Digital ya en curso con BCCR (mismo cliente que gbm-bccr-telecom, área distinta). Deck 'Versión ampliada · Propuesta para integración al catálogo GBM · Agosto 2026': track de certificación de 5 talleres mensuales (Onboarding & Access / Device & Application / Digital Workplace / IT Support & Information / Consolidación DEX), anclados en los 3 flujos y 8 equipos ya mapeados en el programa VSM. Precio tope USD 800/usuario/mes, impuestos incluidos (IVA Costa Rica 13%), reparto neto 85% Adaptant / 15% GBM. Monto acá es el escenario base (15 usuarios/mes) = USD 9.026,55/mes × 5 = USD 45.133 para Adaptant. Escenario de ajuste a 17 usuarios/mes (sumando otras áreas de infraestructura interesadas) llevaría el total a USD 51.150 para Adaptant, cubriendo el objetivo de USD 10.000/mes — no confirmado. NOTA: el calendario propio del deck arranca en agosto 2026 (5 meses, ago-dic), pero Ernesto indicó que el arranque real sería en octubre 2026 — discrepancia sin resolver, registrada con la fecha que dio Ernesto.",
+      "categoria": "potencial"
     },
     {
-      "id": "brou-apps-internas-2026",
-      "cliente": "BROU",
-      "proyecto": "Implementación Diseño de Equipo — Aplicaciones Internas",
-      "monto_total_usd": 22000,
-      "duracion_meses": 1,
-      "monto_mes_usd": 22000,
-      "estado": "potencial",
-      "mes_inicio": "2026-08",
-      "entidad": "Adaptant"
+      "id": "alfil-organizacion-descentralizada",
+      "cliente": "Alfil Digital Agency",
+      "proyecto": "Diseño de una Organización Descentralizada (3 ciclos)",
+      "monto_total_usd": 8000,
+      "entidad": "Adaptant",
+      "estado": "cancelado",
+      "fecha_propuesta": "2026-07-16",
+      "fecha_cancelacion": "2026-08-12",
+      "motivo_cancelacion": "El cliente decidió no avanzar.",
+      "nota_comercial": "Propuesta enviada 16/07/2026 a Tobías y equipo de Alfil Digital Agency (~18 personas, San Juan) — programa de 3 ciclos: Self Selection (1 mes, USD 5.000), Commitment (15 días, USD 2.000), Transform (1,5 meses opcional, USD 1.000). Vigencia de la propuesta vencía ~15/08/2026. Había entrado al Commons solo como señal validada (Fase 10 — email consolidado el 17/07/2026), nunca como ítem estructurado del pipeline; por eso el chat lo sintetizaba desde la señal en vez de leerlo de acá. Cancelado el 12/08/2026.",
+      "categoria": "perdido"
     }
   ],
   "ingresos_confirmados_por_mes": {
@@ -378,10 +460,30 @@
       "saldo_v3_b_pot": 49673394.4,
       "nerdcube_ingreso_ars": 3034219.36,
       "nerdcube_ingresos_detalle": [
-        {"cliente": "Mercados Energéticos Consultores S.A.", "concepto": "Alquiler de oficina NerdCube (mensual)", "monto_ars": 1524219.36, "fecha_cobro_esperada": "2026-07-10"},
-        {"cliente": "Port to Port S.A.S.", "concepto": "Alquiler espacio de trabajo NerdCube", "monto_ars": 710000, "fecha_cobro_esperada": "2026-07-10"},
-        {"cliente": "Infocontrol S.A.S.", "concepto": "Alquiler sala NerdCube (estimado julio)", "monto_ars": 500000, "fecha_cobro_esperada": "2026-07-10"},
-        {"cliente": "Otros coworkers", "concepto": "Estimado varios", "monto_ars": 300000, "fecha_cobro_esperada": "2026-07-10"}
+        {
+          "cliente": "Mercados Energéticos Consultores S.A.",
+          "concepto": "Alquiler de oficina NerdCube (mensual)",
+          "monto_ars": 1524219.36,
+          "fecha_cobro_esperada": "2026-07-10"
+        },
+        {
+          "cliente": "Port to Port S.A.S.",
+          "concepto": "Alquiler espacio de trabajo NerdCube",
+          "monto_ars": 710000,
+          "fecha_cobro_esperada": "2026-07-10"
+        },
+        {
+          "cliente": "Infocontrol S.A.S.",
+          "concepto": "Alquiler sala NerdCube (estimado julio)",
+          "monto_ars": 500000,
+          "fecha_cobro_esperada": "2026-07-10"
+        },
+        {
+          "cliente": "Otros coworkers",
+          "concepto": "Estimado varios",
+          "monto_ars": 300000,
+          "fecha_cobro_esperada": "2026-07-10"
+        }
       ],
       "nerdcube_egreso_ars": 12171382.34,
       "egresos_v4_total_a": 23375146.68,
