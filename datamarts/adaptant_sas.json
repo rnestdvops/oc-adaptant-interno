@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-24",
   "data_owner": "Franco Buglioni",
   "visibility": "publico",
   "razon_social": "Adaptant SAS",
@@ -32,9 +32,9 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 12/08/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 confirmados sin cobrar; 7 potenciales, de los cuales 2 con confirmación esperada este mes) + 1 cancelado (Alfil Digital Agency, USD 8.000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
-    "total_pipeline_usd": 497190.59,
-    "confirmado_usd": 50057.59,
+    "estado_actual": "Pipeline actualizado al 24/08/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 confirmados sin cobrar; 7 potenciales, de los cuales 2 con confirmación esperada este mes) + 1 cancelado (Alfil Digital Agency, USD 8000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($18.571.000) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
+    "total_pipeline_usd": 497290.59,
+    "confirmado_usd": 50157.59,
     "potencial_usd": 447133,
     "proyectos_confirmados": [
       {
@@ -67,18 +67,18 @@
       },
       {
         "id": "brou-ti-2026",
-        "cliente": "BROU",
-        "proyecto": "Extensión TI (Track Gerencial)",
-        "monto_total_usd": 13000,
-        "duracion_meses": 2,
+        "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
+        "proyecto": "Track Gerencial — Entrenamiento gerencial en lectura de VSM/MBPM (Entregable interno Red Hat: GPS-FP)",
+        "monto_total_usd": 13100,
+        "duracion_meses": 3,
         "montos_mes_explicitos": {
-          "2026-08": 6500,
-          "2026-09": 6500
+          "2026-09": 6550,
+          "2026-10": 6550
         },
         "estado": "confirmado",
         "mes_inicio": "2026-08",
-        "entidad": "Adaptant",
-        "nota_comercial": "Corregido el 12/08/2026: el alcance final es 'Track Gerencial', USD 13.000 (no USD 18.000 como se había registrado antes). Empieza la semana del 17/08/2026. 50% se factura en agosto, 50% en septiembre. Se consolidó acá el ítem duplicado 'brou-track-gerencial' que se había cargado por error como proyecto aparte."
+        "entidad": "BHP SA",
+        "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real (DocuSign, firmada por Ernesto Corona — Presidente BHP SA — el 31/08/2026; Red Hat aparece sin firma visible en el documento recibido). Estructura contractual: BHP S.A. es el 'Contratista' bajo el Acuerdo Marco de Subcontratación con Red Hat de Argentina S.A. del 12/07/2018 — BHP le factura A RED HAT, no a BROU directamente (BROU es el 'Cliente Final', contacto Nelson Lema, nelson.lema@brou.com.uy). Plazo del proyecto: 23/08/2026 a 31/10/2026. Monto correcto USD 13.100 (no 13.000 ni 18.000 como se había cargado antes). Facturación en 2 entregables: Entregable 1 (Informe de actividades) USD 6.550 el 30/09/2026, Entregable 2 (Informe de actividades) USD 6.550 el 31/10/2026 — NO 50/50 agosto/septiembre como se había registrado por indicación verbal. Facturas a enviar a Red Hat de Argentina S.A. (Consulting Services, Ing. Buttty 240 piso 14 CABA), referenciando la PO y la oportunidad SFDC — el documento menciona dos números distintos de oportunidad (71812440 en el encabezado, 71265369 en la sección de facturación), sin conciliar. Gastos (viajes, alojamiento, etc.) no incluidos en el precio, a cargo de BHP como Contratista. RIESGO OPERATIVO: al facturarse a través de BHP SA, este cobro queda expuesto a los embargos AFIP ya notificados sobre las cuentas de BHP (ver deuda_arca.json → embargos_notificados) — no se sugiere ninguna acción al respecto, queda solo señalado."
       },
       {
         "id": "ispe-instituto-inteligente",

@@ -24,19 +24,18 @@
   "pipeline": [
     {
       "id": "brou-ti-2026",
-      "cliente": "BROU",
-      "proyecto": "Extensión para equipos actuales de TI",
-      "monto_total_usd": 18000,
-      "duracion_meses": 2,
+      "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
+      "proyecto": "Track Gerencial — Entrenamiento gerencial en lectura de VSM/MBPM (Entregable interno Red Hat: GPS-FP)",
+      "monto_total_usd": 13100,
+      "duracion_meses": 3,
       "montos_mes_explicitos": {
-        "2026-07": 0,
-        "2026-08": 9000,
-        "2026-09": 9000
+        "2026-09": 6550,
+        "2026-10": 6550
       },
       "estado": "confirmado",
-      "mes_inicio": "2026-07",
-      "entidad": "Adaptant",
-      "nota_comercial": "Venta cerrada. Cobro 50% Agosto, 50% Septiembre."
+      "mes_inicio": "2026-08",
+      "entidad": "BHP SA",
+      "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real. BHP S.A. factura a Red Hat de Argentina S.A. (no a BROU directo, no vía Adaptant). Facturación: Entregable 1 USD 6.550 el 30/09/2026, Entregable 2 USD 6.550 el 31/10/2026. Detalle completo en adaptant_sas.json → pipeline → brou-ti-2026."
     },
     {
       "id": "dos-santos-entreno",
