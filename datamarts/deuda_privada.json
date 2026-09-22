@@ -164,7 +164,7 @@
       "cuil": "27-32689167-9"
     },
     "deudora": "BHP SA",
-    "estado_acuerdo": "Propuesta de pago aceptada por Carolina. Pendiente de instrumentar como Anexo del acuerdo de extinción por mutuo acuerdo, homologado ante SECLO / Ministerio de Trabajo.",
+    "estado_acuerdo": "Versión final del plan de pagos (incluye sueldos adeudados 2026, no solo gratificación) ofrecida a Carolina — cargada el 22/09/2026 desde Propuesta_Pago_Carolina_Hernandez.xlsx. No confirmado si esta versión ampliada ya fue aceptada por Carolina (la aceptación previa registrada era sobre la versión anterior, solo gratificación). Pendiente de instrumentar como Anexo del acuerdo de extinción por mutuo acuerdo, homologado ante SECLO / Ministerio de Trabajo.",
     "referencia_full_si_se_pagara_completo_art245_ars": {
       "indemnizacion_antiguedad_preaviso_sac_preaviso_100pct": 31205579.95,
       "sac_proporcional_jul_2026": 183562.24,
@@ -178,28 +178,42 @@
       "total_liquidacion_acordada": 25148026.2,
       "nota": "El 80% se aplica solo sobre indemnización por antigüedad + preaviso + SAC s/preaviso (rubros sin piso legal, libremente negociables en un mutuo acuerdo art. 241 LCT). El SAC proporcional se mantiene al 100% (salario ya devengado, no negociable a la baja — art. 12 LCT)."
     },
+    "sueldos_adeudados_2026_ars": {
+      "sueldo_neto_mensual_referencia": 1828279.86,
+      "fuente_sueldo_referencia": "Último recibo, abr-2026",
+      "cantidad_meses_adeudados": 4,
+      "total": 7313119.44,
+      "nota": "Crédito salarial (art. 12 LCT, irrenunciable), de naturaleza distinta a la gratificación — se incorpora al mismo capital del préstamo por decisión de las partes en esta versión final del plan."
+    },
     "moneda": "USD",
-    "capital": 16478.19,
+    "capital": 21096.46,
+    "capital_desglose_usd": {
+      "capital_gratificacion": 16316.64,
+      "capital_sueldos_adeudados": 4779.82,
+      "nota": "El SAC proporcional ($183.562,24) queda fuera del capital dolarizado — se paga de contado, no se difiere con interés."
+    },
     "capital_intacto": true,
     "fecha_origen": "2026-08-04",
+    "fecha_version_actualizada": "2026-09-22",
     "tc_referencia_inicial": {
-      "fecha": "2026-08-04",
-      "valor": 1515,
+      "fecha": "no especificada en la planilla — versión final recibida 22/09/2026",
+      "valor": 1530,
       "fuente": "BNA venta",
-      "nota": "Solo para dimensionar el capital inicial en USD. Los pagos mensuales se convierten al TC del día de cada pago."
+      "nota": "Solo para dimensionar el capital inicial en USD. Los pagos mensuales se convierten al TC del día de cada pago. Reemplaza el TC de referencia de la versión anterior (1515, 04/08/2026)."
     },
     "tasa_compensatoria_tna": 7,
     "tasa_mensual_pct": 0.5833,
     "plazo_maximo_meses": 24,
-    "amortizacion_capital_fija_mensual_usd": 686.59,
+    "amortizacion_capital_fija_mensual_usd": 879.02,
+    "fecha_primera_cuota": "2026-10-15",
     "modalidad_vigente": "Interés simple mensual sobre saldo pendiente + amortización de capital fija mensual (cuota decreciente). Capital pactado en USD (art. 765 CCyC), cancelable en pesos al TC BNA vendedor del día de cada pago — misma mecánica que el mutuo Moroni. Aportes extraordinarios de capital permitidos en cualquier momento y por cualquier monto, sin necesidad de acuerdo adicional de Carolina (solo benefician al deudor).",
     "ultimo_pagado": null,
     "pendiente_actual": {
-      "capital_usd": 16478.19,
-      "estado": "Ningún pago registrado todavía — cronograma recién generado, sin fechas de pago cargadas."
+      "capital_usd": 21096.46,
+      "estado": "Ningún pago registrado todavía — cronograma recién generado (versión final), primera cuota estimada 15/10/2026."
     },
     "cronograma_pagado": [],
-    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. Cronograma completo de 24 meses vive en la planilla fuente (Propuesta_Pago_Carolina_Hernandez.xlsx, hoja Seguimiento_Pagos); acá solo se registran los parámetros del acuerdo."
+    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. Cronograma completo de 24 meses (interés + amortización mes a mes) vive en la planilla fuente (Propuesta_Pago_Carolina_Hernandez.xlsx, hoja Liquidacion Final); acá solo se registran los parámetros del acuerdo. Total a pagar en 24 meses según planilla: USD 22.634,74 (USD 1.538,28 de interés total)."
   },
   "mutuo_rocio_perez_ortiz": {
     "concepto": "Gratificación por cese — Acuerdo de extinción de la relación laboral por mutuo acuerdo (art. 241 LCT)",
