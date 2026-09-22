@@ -20,16 +20,16 @@
     "tasa_compensatoria_tna": 12,
     "tasa_moratoria_mensual_sobre_impago": 1,
     "modalidad_vigente": "Intereses el 15 de cada mes en pesos al TC del día. Capital intacto (Opción B).",
-    "ultimo_pagado": "2026-08-24",
+    "ultimo_pagado": "2026-09-22",
     "pendiente_actual": {
-      "periodo": 11,
-      "desde": "2026-08-15",
-      "hasta": "2026-09-15",
+      "periodo": 12,
+      "desde": "2026-09-15",
+      "hasta": "2026-10-15",
       "dias": 30,
       "interes_usd": 197.26,
-      "fecha_vencimiento": "2026-09-15",
-      "tc_referencia": 1520,
-      "monto_aprox_pesos": 299835,
+      "fecha_vencimiento": "2026-10-15",
+      "tc_referencia": 1535,
+      "monto_aprox_pesos": 302858,
       "estado": "pendiente"
     },
     "cronograma_pagado": [
@@ -138,6 +138,22 @@
         "fecha_pago": "2026-08-24",
         "estado": "pagado",
         "nota": "Pagado 24/08/2026. 9 días después del vencimiento (15/08). TC BNA vendedor del día."
+      },
+      {
+        "n": 11,
+        "desde": "2026-08-15",
+        "hasta": "2026-09-15",
+        "dias": 30,
+        "interes_usd": 197.26,
+        "tc_real": 1535.39,
+        "monto_pesos": 302794,
+        "canal": "Mercado Pago",
+        "mp_operacion": "179393845955",
+        "cvu_origen": "0000003100066060174437",
+        "cvu_destino": "0000003100000760068821",
+        "fecha_pago": "2026-09-22",
+        "estado": "pagado",
+        "nota": "Pagado 22/09/2026 18:16hs desde cuenta MP personal Ernesto (CUIT 20-22159405-4) a MP Diego Héctor Moroni. 7 días después del vencimiento (15/09)."
       }
     ]
   },
@@ -192,7 +208,7 @@
       "cuil": "27-40592349-7"
     },
     "deudora": "BHP SA",
-    "estado_acuerdo": "En pago — cuota 1 abonada 19/08/2026. A homologar ante SECLO / Ministerio de Trabajo (art. 241 LCT).",
+    "estado_acuerdo": "En pago — cuotas 1 y 2 abonadas (19/08/2026 y 22/09/2026). A homologar ante SECLO / Ministerio de Trabajo (art. 241 LCT).",
     "contexto_propuesta": "Cierre planteado en el marco del concurso preventivo de BHP, más de un año y medio sin ventas nuevas, planta reducida a dos personas y embargos de ARCA sobre las cuentas — planteado como alternativa con más previsibilidad jurídica frente a una discusión posterior sobre causa de despido.",
     "rubros": {
       "gratificacion_por_cese_ars": 3132530.1,
@@ -207,13 +223,13 @@
     "cantidad_cuotas": 6,
     "cronograma": [
       { "n": 1, "vencimiento": "2026-08-19", "monto": 522088.35, "estado": "pagado", "fecha_pago": "2026-08-19", "mp_operacion": "174659906826" },
-      { "n": 2, "vencimiento": "2026-09-19", "monto": 522088.35, "estado": "pendiente" },
+      { "n": 2, "vencimiento": "2026-09-19", "monto": 522088.35, "estado": "pagado", "fecha_pago": "2026-09-22", "mp_operacion": "179393827609" },
       { "n": 3, "vencimiento": "2026-10-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 4, "vencimiento": "2026-11-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 5, "vencimiento": "2026-12-19", "monto": 522088.35, "estado": "pendiente" },
       { "n": 6, "vencimiento": "2027-01-19", "monto": 522088.35, "estado": "pendiente" }
     ],
-    "ultimo_pagado": "2026-08-19",
+    "ultimo_pagado": "2026-09-22",
     "pagos_realizados": [
       {
         "n": 1,
@@ -223,6 +239,17 @@
         "estado": "pagado",
         "cuenta_origen": "MP BHP SA",
         "mp_operacion": "174659906826"
+      },
+      {
+        "n": 2,
+        "canal": "Mercado Pago",
+        "fecha_pago": "2026-09-22",
+        "monto_ars": 522088.35,
+        "estado": "pagado",
+        "cuenta_origen": "MP BHP SA (CVU 0000003100056579174413)",
+        "cuenta_destino": "Perez Orti Rocio Bele — BBVA Argentina, CBU 0170072540000052244315",
+        "mp_operacion": "179393827609",
+        "codigo_identificacion": "76V4MR2Z8DQK4G309DEZOL"
       }
     ]
   },
