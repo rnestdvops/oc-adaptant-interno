@@ -2,7 +2,7 @@
   "last_updated": "2026-09-22",
   "data_owner": "Franco Buglioni",
   "visibility": "socios_asesores",
-  "estado_general": "MIXTO — varios ítems confirmados con factura real (22/09/2026): Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC. ChatGPT Plus y buffer de herramientas varias, dados de baja (redundantes). LinkedIn Premium y Amazon Prime siguen siendo estimación inicial sin relevar.",
+  "estado_general": "MIXTO — la mayoría de los ítems ya confirmados con factura/cuenta real (22/09/2026): Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business. ChatGPT Plus y buffer de herramientas varias, dados de baja (redundantes). Solo Amazon Prime sigue sin confirmar.",
   "entidad_que_paga": {
     "actual": "Pagos repartidos hoy entre cuentas personales de los socios y d-Vops LLC. Ninguna suscripción está aún a nombre de Adaptant SAS.",
     "objetivo": "Una vez constituida Adaptant SAS y abierta su cuenta operativa, migrar todas las suscripciones a Adaptant para que el costo viva en la entidad correcta."
@@ -47,16 +47,18 @@
       "categoria": "Networking y prospección",
       "items": [
         {
-          "item": "LinkedIn Premium",
-          "rango_usd_mes": [
-            30,
-            160
-          ],
-          "estimado_usd_mes": 100,
-          "nota": "Career ~$30/mes, Sales Navigator ~$80/mes. Estimación para 1-2 cuentas. Confirmar tier."
+          "item": "LinkedIn Premium Business",
+          "moneda_original": "ARS",
+          "monto_ars_anual": 28788.0,
+          "monto_ars_mes": 2399.0,
+          "tc_referencia": 1520,
+          "tc_referencia_nota": "Aproximado, sin fecha de referencia formal — TC usado en pagos recientes de la sesión (~21/09/2026).",
+          "estimado_usd_mes": 1.58,
+          "estado": "REAL — confirmado en cuenta de LinkedIn",
+          "nota": "Reemplaza la estimación anterior ($30-160, asumiendo Career o Sales Navigator). El plan real es 'Premium Business', facturado anualmente en ARS (no USD), suscripción activa Sep 17 2024 - May 17 2027, auto-renueva. ARS 28.788/año + impuestos aplicables ≈ ARS 2.399/mes ≈ USD 1,58/mes al TC de referencia — mucho más barato que la estimación previa porque LinkedIn factura en pesos localmente, no en dólares."
         }
       ],
-      "subtotal_estimado_usd_mes": 100
+      "subtotal_estimado_usd_mes": 1.58
     },
     {
       "categoria": "Infraestructura web y dominios",
@@ -155,8 +157,8 @@
     }
   ],
   "totales": {
-    "estimado_usd_mes": 470.06,
-    "nota": "Actualizado 22/09/2026. Datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus y el buffer de herramientas varias se dieron de baja de la estimación — su gasto real ya queda cubierto por los ítems detallados arriba. LinkedIn Premium y Amazon Prime siguen como estimaciones sin confirmar. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
+    "estimado_usd_mes": 371.64,
+    "nota": "Actualizado 22/09/2026. Datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus y el buffer de herramientas varias se dieron de baja — redundantes. Amazon Prime sigue como estimación sin confirmar. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
   },
   "estimado_uso_api_anthropic_oc_interno": {
     "rango_usd_mes": [
