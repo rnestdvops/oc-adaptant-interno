@@ -2,7 +2,7 @@
   "last_updated": "2026-09-22",
   "data_owner": "Franco Buglioni",
   "visibility": "socios_asesores",
-  "estado_general": "MIXTO — varios ítems ahora confirmados con factura real (22/09/2026): Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC. El resto (ChatGPT Plus, LinkedIn Premium, Amazon Prime, buffer de herramientas varias) sigue siendo estimación inicial sin relevar.",
+  "estado_general": "MIXTO — varios ítems confirmados con factura real (22/09/2026): Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC. ChatGPT Plus y buffer de herramientas varias, dados de baja (redundantes). LinkedIn Premium y Amazon Prime siguen siendo estimación inicial sin relevar.",
   "entidad_que_paga": {
     "actual": "Pagos repartidos hoy entre cuentas personales de los socios y d-Vops LLC. Ninguna suscripción está aún a nombre de Adaptant SAS.",
     "objetivo": "Una vez constituida Adaptant SAS y abierta su cuenta operativa, migrar todas las suscripciones a Adaptant para que el costo viva en la entidad correcta."
@@ -23,15 +23,11 @@
         },
         {
           "item": "ChatGPT Plus",
-          "rango_usd_mes": [
-            20,
-            40
-          ],
-          "estimado_usd_mes": 40,
-          "nota": "Asumiendo 2 cuentas."
+          "estimado_usd_mes": 0,
+          "estado": "DADO DE BAJA — 22/09/2026, indicado por Ernesto. Era una estimación genérica sin confirmar; el gasto real de IA ya queda detallado con Claude Max plan 5x arriba."
         }
       ],
-      "subtotal_estimado_usd_mes": 140
+      "subtotal_estimado_usd_mes": 100
     },
     {
       "categoria": "Productividad y colaboración",
@@ -151,20 +147,16 @@
       "items": [
         {
           "item": "Herramientas varias (buffer)",
-          "rango_usd_mes": [
-            50,
-            100
-          ],
-          "estimado_usd_mes": 100,
-          "nota": "Límite máximo declarado por Ernesto. Cubre herramientas eventuales sin item específico."
+          "estimado_usd_mes": 0,
+          "estado": "DADO DE BAJA — 22/09/2026, indicado por Ernesto. Era un buffer genérico para herramientas sin item específico; ya no hace falta, lo que cubría está detallado en las categorías de Infraestructura y Productividad."
         }
       ],
-      "subtotal_estimado_usd_mes": 100
+      "subtotal_estimado_usd_mes": 0
     }
   ],
   "totales": {
-    "estimado_usd_mes": 610.06,
-    "nota": "Actualizado 22/09/2026 con datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus, LinkedIn Premium, Amazon Prime y el buffer de herramientas varias siguen siendo estimaciones sin confirmar. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
+    "estimado_usd_mes": 470.06,
+    "nota": "Actualizado 22/09/2026. Datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus y el buffer de herramientas varias se dieron de baja de la estimación — su gasto real ya queda cubierto por los ítems detallados arriba. LinkedIn Premium y Amazon Prime siguen como estimaciones sin confirmar. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
   },
   "estimado_uso_api_anthropic_oc_interno": {
     "rango_usd_mes": [
