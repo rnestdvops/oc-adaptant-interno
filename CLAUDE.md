@@ -111,6 +111,8 @@ Ejemplo: `data(deuda_arca): IVA 03/2026 pagado, capital baja a $28.596.241 [22/0
 
 **Novedades del Commons:** cada vez que un commit `data(...)` incorpora un cambio relevante, agregar también un item en `datamarts/novedades.json` (fecha + resumen breve + `visibility` del item). Esa lista se muestra como bienvenida al entrar al chat (ver `assets/chat.js` → `loadNovedades()` y el endpoint `GET /novedades` del Worker, que filtra por nivel de sesión) para invitar a preguntar sobre lo último cargado. Mantener máximo 6-8 items, el más nuevo primero.
 
+**Escritura en vivo desde el chat (desde 22/09/2026):** además de este flujo manual, el chat de producción (`commons-adaptant`, no este repo) puede escribir directamente contra `commons_farm` en Supabase vía la tool `proponer_actualizacion_datamart` + confirmación humana en la tarjeta de la UI (ver `commons-adaptant/lib/datamartPropuestas.ts`). Cuando eso pasa, `commons_farm` queda temporalmente adelantado respecto de estos JSON versionados en git — `scripts/migrar-datamarts.ts` ahora detecta esa divergencia por key y **saltea** (no pisa) cualquier key tocada en vivo desde el último sync manual, avisando por consola cuáles. Si hace falta que el JSON de este repo sea la versión final, el paso de traer el contenido de vuelta de Supabase al archivo sigue siendo manual.
+
 ## 7 · Honestidad temporal
 
 El modelo debe:
