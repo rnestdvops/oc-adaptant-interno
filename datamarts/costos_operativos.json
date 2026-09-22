@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-06-29",
+  "last_updated": "2026-09-22",
   "data_owner": "Franco Buglioni",
   "visibility": "socios_asesores",
-  "estado_general": "ESTIMACIÓN INICIAL — Pendiente de relevamiento real. Los rangos están del lado conservador (estimación alta).",
+  "estado_general": "MIXTO — varios ítems ahora confirmados con factura real (22/09/2026): Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC. El resto (ChatGPT Plus, LinkedIn Premium, Amazon Prime, buffer de herramientas varias) sigue siendo estimación inicial sin relevar.",
   "entidad_que_paga": {
     "actual": "Pagos repartidos hoy entre cuentas personales de los socios y d-Vops LLC. Ninguna suscripción está aún a nombre de Adaptant SAS.",
     "objetivo": "Una vez constituida Adaptant SAS y abierta su cuenta operativa, migrar todas las suscripciones a Adaptant para que el costo viva en la entidad correcta."
@@ -13,13 +13,13 @@
       "categoria": "IA conversacional",
       "items": [
         {
-          "item": "Claude Pro",
-          "rango_usd_mes": [
-            20,
-            40
-          ],
-          "estimado_usd_mes": 40,
-          "nota": "Asumiendo 2 cuentas (Ernesto + Franco). Si pasan a Max o Team el costo sube."
+          "item": "Claude Max plan 5x",
+          "monto_usd_mes": 100,
+          "estimado_usd_mes": 100,
+          "factura": "GBLD2MS6-0036",
+          "fecha_factura": "2026-09-18",
+          "estado": "REAL — confirmado por factura",
+          "nota": "Reemplaza la estimación anterior de 'Claude Pro' (rango $20-40) — el plan real contratado es Max 5x, $100/mes, ciclo 18 a 18 de cada mes. Cuenta personal de Ernesto (corona.er@gmail.com)."
         },
         {
           "item": "ChatGPT Plus",
@@ -31,22 +31,21 @@
           "nota": "Asumiendo 2 cuentas."
         }
       ],
-      "subtotal_estimado_usd_mes": 80
+      "subtotal_estimado_usd_mes": 140
     },
     {
       "categoria": "Productividad y colaboración",
       "items": [
         {
-          "item": "Google Workspace Business Standard",
-          "rango_usd_mes": [
-            14,
-            42
-          ],
-          "estimado_usd_mes": 30,
-          "nota": "USD 14/usuario · estimado para 2 usuarios. Confirmar plan y cantidad."
+          "item": "Google Workspace (User + Business Starter) — d-vops.com",
+          "proveedor": "Network Solutions (reseller)",
+          "monto_usd_mes": 33.6,
+          "estimado_usd_mes": 33.6,
+          "estado": "REAL — confirmado por historial de facturación",
+          "nota": "Reemplaza la estimación anterior ($14-42, Business Standard). El monto real varió entre facturas: $50,40 (16/ago/2026) y $33,60 (16/sep/2026) para el mismo ítem 'Google Workspace User' — se usó la tarifa más reciente. Motivo del cambio no confirmado (¿menos usuarios, cambio de plan?). Business Starter factura $0,00 aparte."
         }
       ],
-      "subtotal_estimado_usd_mes": 30
+      "subtotal_estimado_usd_mes": 33.6
     },
     {
       "categoria": "Networking y prospección",
@@ -67,34 +66,43 @@
       "categoria": "Infraestructura web y dominios",
       "items": [
         {
-          "item": "Dominios (adaptant.co + variantes)",
-          "rango_usd_mes": [
-            3,
-            10
-          ],
-          "estimado_usd_mes": 5,
-          "nota": "Renovación anual prorrateada mensual. Confirmar cuántos dominios activos."
+          "item": "Vercel (Pro Plan)",
+          "monto_usd_mes": 20,
+          "estimado_usd_mes": 20,
+          "estado": "REAL — confirmado en billing de Vercel",
+          "nota": "Plan Pro, incluye $20/mes de uso. Consumo actual dentro del cupo incluido (sin cargo on-demand)."
+        },
+        {
+          "item": "Supabase (vía Vercel Marketplace)",
+          "monto_usd_mes": 83.34,
+          "estimado_usd_mes": 83.34,
+          "estado": "REAL — confirmado en billing de Vercel",
+          "nota": "Pro Plan $25/mes + cómputo de 7 proyectos a $0,01344/hora (services-db, open-coffee, gol-musica-pro, commons-adaptant, oc-global-stats, pulso-pyme-sanjuan, oc-ispe)."
+        },
+        {
+          "item": "Network Solutions — seguridad, privacidad de dominio y correo",
+          "proveedor": "Network Solutions",
+          "monto_usd_mes": 13.95,
+          "estimado_usd_mes": 13.95,
+          "estado": "REAL — confirmado por historial de facturación",
+          "nota": "Xcitium Basic (antivirus/seguridad, d-vops.com) $3,99 + Domain Privacy + Protection (golmusica.com) $3,99 + 3x Professional Email mailbox sin configurar $1,99 c/u = $5,97. No incluye Google Workspace, que se movió a 'Productividad y colaboración'. golmusica.com podría ser un proyecto aparte de Ernesto, no confirmado si corresponde agrupar acá — a revisar."
         },
         {
           "item": "Hosting (Netlify free tier)",
-          "rango_usd_mes": [
-            0,
-            20
-          ],
+          "estado": "MIGRADO — ver Vercel arriba",
+          "monto_usd_mes": 0,
           "estimado_usd_mes": 0,
-          "nota": "OC Framework site + OC Adaptant Interno operan en Netlify free. Sin costo hoy."
+          "nota": "El stack se migró de Netlify+Cloudflare Worker a Vercel+Supabase durante 2026 (ver docs/06_DESPLIEGUE.md y el plan de migración). Se deja el registro histórico, sin costo desde la migración."
         },
         {
           "item": "Cloudflare Workers (free tier)",
-          "rango_usd_mes": [
-            0,
-            5
-          ],
+          "estado": "MIGRADO — ver Vercel/Supabase arriba",
+          "monto_usd_mes": 0,
           "estimado_usd_mes": 0,
-          "nota": "100k requests/día gratis. Sin costo previsible."
+          "nota": "Cloudflare quedó como DNS-only tras la migración a Vercel+Supabase — sin costo de Workers."
         }
       ],
-      "subtotal_estimado_usd_mes": 5
+      "subtotal_estimado_usd_mes": 117.29
     },
     {
       "categoria": "Personal / perks de oficina virtual",
@@ -155,18 +163,17 @@
     }
   ],
   "totales": {
-    "estimado_usd_mes": 434,
-    "estimado_ars_mes_tc_ref_1430": 620620,
-    "rango_minimo_usd_mes": 251,
-    "rango_maximo_usd_mes": 541,
-    "nota": "Incluye cumplimiento societario d-Vops LLC (USD 104/mes promedio anualizado: Company Renewal USD 350 + Tax Return USD 900)."
+    "estimado_usd_mes": 610.06,
+    "nota": "Actualizado 22/09/2026 con datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus, LinkedIn Premium, Amazon Prime y el buffer de herramientas varias siguen siendo estimaciones sin confirmar. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
   },
   "estimado_uso_api_anthropic_oc_interno": {
     "rango_usd_mes": [
       10,
-      40
+      13
     ],
-    "nota": "Costo variable de la API de Anthropic por consultas al OC Adaptant Interno. Depende del volumen de uso de socios + asesores + inversores. No incluido en el total de arriba — es un costo de operación del propio commons."
+    "estimado_usd_mes": 12,
+    "estado": "REAL — estimado con base en Anthropic Console (spending limit + historial de recargas)",
+    "nota": "Ciclo actual: $9,43 gastados en ~22 días (resetea 1/oct) ≈ $12,86/mes extrapolado. Desde última recarga (5/ago, $20 → $2,90 restantes hoy): $17,10 en ~48 días ≈ $10,69/mes. El promedio histórico de recargas (28/may-5/ago, $150 en 69 días ≈ $66/mes) está inflado por un pico en junio y no se considera representativo del consumo actual. Sigue sin incluirse en el total de abajo — es costo variable de operación del propio commons, no una suscripción fija."
   },
   "no_incluido_aun": [
     "Servicios contables (CNT mensual)",

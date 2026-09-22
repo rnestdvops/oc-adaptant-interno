@@ -1,11 +1,21 @@
 {
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-09-22",
   "data_owner": "Ernesto Corona",
   "visibility": "mixta_por_item",
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
   "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
   "max_items_mostrados": 6,
   "items": [
+    {
+      "fecha": "22/09/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Nueva deuda registrada: $2.500.000 ARS acumulados con Héctor López por asesoramiento laboral en Argentina, sin fecha de pago definida todavía."
+    },
+    {
+      "fecha": "22/09/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Costos operativos actualizados con datos reales de facturación (Vercel $20, Supabase $83,34, Claude Max $100, Network Solutions $47,55, API Anthropic ~$12 variable) — total estimado sube de $434 a $610,06/mes. Reemplaza estimaciones de junio; el stack de hosting Netlify/Cloudflare Worker quedó marcado como migrado a Vercel/Supabase."
+    },
     {
       "fecha": "12/08/2026",
       "visibility": "socios_asesores",
@@ -35,16 +45,6 @@
       "fecha": "17/07/2026",
       "visibility": "socios_asesores",
       "resumen": "Nuevo embargo AFIP notificado sobre BHP SA (SOJ N° 11633525) — Embargo General de Fondos y Valores, $28.180.656,9, Expte. 12095/2026, Juzgado Federal 2 San Juan. Distinto de los embargos ya ejecutados en mayo/2026."
-    },
-    {
-      "fecha": "17/07/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Cuota 3 del crédito Banco Macro (BHP SA) pagada — $4.000.000 vía Lemon, 2 días antes del vencimiento. Excedente $82.502 a imputar en cuota 4 (18/08/2026)."
-    },
-    {
-      "fecha": "14/07/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Estrategia de adhesión a RG 5875/2026 (plan de facilidades ARCA) cargada como pendiente — en tratamiento con el contador, 3 tramos propuestos, límite de adhesión 30/10/2026."
     }
   ]
 }

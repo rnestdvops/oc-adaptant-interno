@@ -226,6 +226,17 @@
       }
     ]
   },
+  "deuda_hector_lopez": {
+    "concepto": "Deuda acumulada por asesoramiento laboral en Argentina",
+    "acreedor": {
+      "nombre": "Héctor López"
+    },
+    "deudora": "BHP SA",
+    "moneda": "ARS",
+    "capital": 2500000,
+    "estado": "Deuda acumulada — sin fecha de pago ni plan de pago definido todavía.",
+    "nota": "Cargado el 22/09/2026 según indicación de Ernesto. Sin confirmar si el monto es un total cerrado o sigue acumulando por asesoramiento continuo, ni si hay cronograma de pago en danza aunque no esté formalizado."
+  },
   "prestamo_banco_macro": {
     "banco": "Banco Macro",
     "titular_formal": {
