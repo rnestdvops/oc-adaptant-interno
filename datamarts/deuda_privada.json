@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-24",
+  "last_updated": "2026-09-22",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -260,8 +260,8 @@
     },
     "estado_general": "AL DÍA",
     "proximo_vencimiento": {
-      "cuota": 4,
-      "fecha": "2026-08-18",
+      "cuota": 5,
+      "fecha": "2026-09-17",
       "monto_neto": 3958749
     },
     "cronograma": [
@@ -311,7 +311,7 @@
         "capital": 3101140,
         "interes": 857609,
         "neto_a_pagar": 3958749,
-        "estado": "pendiente"
+        "estado": "PAGADA — en tiempo (declarado por Ernesto 22/09/2026; sin comprobante ni monto/fecha exacta provistos). Neto teórico a pagar considerando el excedente arrastrado de cuota 3 ($82.502): $3.876.247 — no confirmado, pendiente de comprobante."
       },
       {
         "n": 5,
