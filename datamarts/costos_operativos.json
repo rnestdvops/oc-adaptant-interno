@@ -2,7 +2,7 @@
   "last_updated": "2026-09-22",
   "data_owner": "Franco Buglioni",
   "visibility": "socios_asesores",
-  "estado_general": "MIXTO — la mayoría de los ítems ya confirmados con factura/cuenta real (22/09/2026): Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business. ChatGPT Plus y buffer de herramientas varias, dados de baja (redundantes). Solo Amazon Prime sigue sin confirmar.",
+  "estado_general": "REAL — todos los ítems de la lista confirmados con factura/cuenta real al 22/09/2026: Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business, Amazon Prime. ChatGPT Plus y buffer de herramientas varias, dados de baja (redundantes).",
   "entidad_que_paga": {
     "actual": "Pagos repartidos hoy entre cuentas personales de los socios y d-Vops LLC. Ninguna suscripción está aún a nombre de Adaptant SAS.",
     "objetivo": "Una vez constituida Adaptant SAS y abierta su cuenta operativa, migrar todas las suscripciones a Adaptant para que el costo viva en la entidad correcta."
@@ -107,15 +107,16 @@
       "items": [
         {
           "item": "Amazon Prime / suscripción",
-          "rango_usd_mes": [
-            10,
-            20
-          ],
-          "estimado_usd_mes": 15,
-          "nota": "Confirmar si es Prime estándar o un servicio adicional."
+          "moneda_original": "ARS",
+          "monto_ars_mes": 7954.0,
+          "tc_referencia": 1520,
+          "tc_referencia_nota": "Aproximado — TC usado en pagos recientes de la sesión (~21/09/2026).",
+          "estimado_usd_mes": 5.23,
+          "estado": "REAL — confirmado por Ernesto",
+          "nota": "Reemplaza la estimación anterior ($10-20 USD/mes). Valor real ARS 7.954/mes ≈ USD 5,23/mes al TC de referencia. Asumido mensual (no se especificó frecuencia) — a confirmar si es otra."
         }
       ],
-      "subtotal_estimado_usd_mes": 15
+      "subtotal_estimado_usd_mes": 5.23
     },
     {
       "categoria": "Cumplimiento societario d-Vops LLC (EEUU)",
@@ -157,8 +158,8 @@
     }
   ],
   "totales": {
-    "estimado_usd_mes": 371.64,
-    "nota": "Actualizado 22/09/2026. Datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus y el buffer de herramientas varias se dieron de baja — redundantes. Amazon Prime sigue como estimación sin confirmar. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
+    "estimado_usd_mes": 361.87,
+    "nota": "Actualizado 22/09/2026. Datos reales de facturación (Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business, Amazon Prime) reemplazando estimaciones previas donde había comprobante. ChatGPT Plus y el buffer de herramientas varias se dieron de baja — redundantes. Todos los ítems de la lista ya están confirmados con dato real, salvo lo que se agregue más adelante. Incluye cumplimiento societario d-Vops LLC (USD 104,17/mes promedio anualizado)."
   },
   "estimado_uso_api_anthropic_oc_interno": {
     "rango_usd_mes": [
