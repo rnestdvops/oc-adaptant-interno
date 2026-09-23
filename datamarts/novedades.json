@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "fecha": "23/09/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Deuda ARCA actualizada con exportación de hoy (BHP y Ernesto personal). Aparece una multa nueva de $42,8M sobre IVA 12/2024 de BHP (vencimiento ya pasado) y $24,5M de deuda de Seguridad Social Autónomo de Ernesto desde 2017 sin cargar hasta ahora — ninguno de los dos confirmado todavía con Ernesto/contador. Ojo: los intereses de esta exportación no están recalculados a hoy, tratar los totales como piso."
+    },
+    {
       "fecha": "22/09/2026",
       "visibility": "socios_asesores",
       "resumen": "Pipeline actualizado: ISPE Instituto Inteligente cerrado con 2 pagos de $7.500.000 ARS (el primero ya cobrado hoy vía MP BHP), BROU Track Gerencial ajustado a USD 11.590 en un solo pago estimado para noviembre, y GBM-BCCR Telecomunicaciones desplazado a noviembre — DEX Practitioner queda sin fecha por ahora."
@@ -34,17 +39,12 @@
       "fecha": "11/08/2026",
       "resumen": "Carolina Hernández acordó su egreso de BHP SA por mutuo acuerdo (art. 241 LCT) — liquidación acordada $25.148.026 (80% s/rubros negociables + SAC 100%), gratificación diferida en 24 cuotas dolarizadas (USD 16.478,19 al 7% TNA).",
       "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "11/08/2026",
-      "resumen": "Bajas de personal NerdCube cargadas con liquidación: Sara Pérez Herrera (rescisión período de prueba, $266.667 — SAC + vacaciones, a pagar en agosto cuando se liberen las cuentas) y Rocío Pérez Ortiz (mutuo acuerdo, propuesta $3.132.530 en 6 cuotas desde 19/08, pendiente de conformidad).",
-      "visibility": "socios_asesores"
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
   "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
   "data_owner": "Ernesto Corona",
   "visibility": "mixta_por_item",
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-23",
   "max_items_mostrados": 6
 }

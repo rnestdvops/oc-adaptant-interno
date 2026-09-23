@@ -1,88 +1,151 @@
 {
-  "last_updated": "2026-07-17",
+  "last_updated": "2026-09-23",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
-  "fecha_intereses": "2026-06-14",
+  "fecha_intereses": "2026-09-23",
   "consolidado_bhp_sa": {
     "moneda": "ARS",
-    "total_general": 78838122.47,
-    "capital_total": 36424543.30,
-    "intereses_resarcitorios_total": 42413579.17,
+    "total_general": 179638304.3,
+    "capital_total": 122084873.97,
+    "intereses_resarcitorios_total": 14731640.69,
+    "multas_total": 42821789.64,
+    "nota_actualizacion": "Actualizado 23/09/2026 desde exportación de detalle de cuenta ARCA (archivo 'BHP DEUDA ARCA.xls', CUIT 30-70955349-2, emitido 23/09/2026, 304 líneas de detalle). Reemplaza el corte anterior del 14/06/2026 ($78.838.122,47) — pero OJO, no es una comparación directa: este tipo de exportación ('detalle de cuenta corriente') NO recalcula intereses a hoy. Las 60 líneas de interés que trae tienen vencimientos fijos históricos (2019 a 12/2025, ninguna reciente) — son intereses ya facturados en su momento para períodos puntuales, no un cómputo vivo de lo que hoy se debe en intereses sobre TODA la deuda. Por eso intereses_resarcitorios_total acá ($14,7M) es mucho más bajo que el del corte anterior ($42,4M, que sí venía de un cálculo a la fecha) — es casi seguro un piso, no el interés real vigente. El capital ($122M, sube de $36,4M) y las multas ($42,8M, nueva) sí parecen confiables tal cual están en esta exportación. Para un total_general real y comparable, haría falta un 'simulador de deuda' o constancia que recalcule interés a hoy — no esta exportación.",
+    "hallazgo_multa_iva_2024": {
+      "alerta": "NUEVO — no estaba en el corte anterior",
+      "concepto": "Multa (no automática — código 108, distinta de las multas automáticas de $200-400 por DJ tardía)",
+      "impuesto": "IVA",
+      "periodo": "12/2024",
+      "monto": 42804540.67,
+      "vencimiento": "2026-09-09",
+      "estado": "VENCIDA — el vencimiento (09/09/2026) ya pasó a la fecha de este corte (23/09/2026)",
+      "nota": "Multa de magnitud muy distinta a las ~$400 automáticas por DJ presentada fuera de término que ya veníamos viendo — sugiere el resultado de un procedimiento (determinación de oficio o sumario) sobre el período fiscal IVA 12/2024, no una multa formal automática. Posible relación con el Sumario DFE que ARCA Monitor viene señalando desde 29/06/2026 (ver arca_bhp.json) — no confirmado, requiere verificar con el contador el origen exacto antes de asumir la conexión."
+    },
     "por_concepto": [
       {
         "concepto": "IVA (DJ 2018-2026)",
-        "capital": 29102310.34,
-        "intereses": 26493254.74,
-        "total": 55595565.08,
-        "pct_del_total": 70.5,
-        "nota": "Concentra el 70,5% del total reclamado. Intereses ya superan al capital en períodos 2018-2022. Mayor deuda individual: IVA 07/2024 = $6.884.409 capital + $6.278.015 intereses = $13.162.424 total."
+        "capital": 55804759.99,
+        "intereses": 638336.81,
+        "multas": 42816476.75,
+        "total": 99259573.55,
+        "pct_del_total": 55.3,
+        "nota": "Incluye la multa de $42.804.540,67 sobre período 12/2024 (ver hallazgo_multa_iva_2024) — sin ella, el total de IVA sería ~$56,4M, más en línea con el corte anterior."
       },
       {
-        "concepto": "Ganancias Sociedades (DJ + Anticipos 2021-2024)",
-        "capital": 0,
-        "intereses": 13108953.92,
-        "total": 13108953.92,
-        "detalle": [
-          {"periodo": "Anticipos 2022", "cuotas": 10, "intereses": 2020703},
-          {"periodo": "Anticipos 2023", "cuotas": 10, "intereses": 2291828},
-          {"periodo": "Anticipos 2024", "cuotas": 7, "intereses": 2705115},
-          {"periodo": "DJ Ganancias 2021", "intereses": 4747347, "nota": "deuda más antigua y costosa de este grupo"}
-        ],
-        "ddjj_pendientes": ["Ganancias 2024 (vencida 13/05/2025)", "Ganancias 2025 (vencida 13/05/2026)"]
+        "concepto": "Contribuciones Seg. Social Empleador (2018-2026)",
+        "capital": 34429803.79,
+        "intereses": 159809.27,
+        "multas": 0,
+        "total": 34589613.06,
+        "pct_del_total": 19.3
+      },
+      {
+        "concepto": "Ganancias Sociedades (DJ + Anticipos)",
+        "capital": 13365972.83,
+        "intereses": 13461993.66,
+        "multas": 1362.64,
+        "total": 26829329.13,
+        "pct_del_total": 14.9,
+        "nota": "A diferencia del corte anterior (capital=0, todo intereses sobre anticipos), esta exportación muestra capital propio de DJ ($13,4M) además de intereses — revisar con el contador si corresponde a DJ 2024 recién presentada u otra reclasificación."
       },
       {
         "concepto": "Aportes Seg. Social Empleador (2018-2026)",
-        "capital": 3192494.88,
-        "intereses": 744958.35,
-        "total": 3937453.23,
-        "detalle_reciente": {
-          "2026_mar_may": {"capital": 2280649, "intereses": 78171},
-          "08_2025": {"capital": 878964, "intereses": 221573, "vencido_desde": "2025-09-09"}
-        }
+        "capital": 18421998.12,
+        "intereses": 332802.65,
+        "multas": 2400,
+        "total": 18757200.77,
+        "pct_del_total": 10.4
       },
       {
-        "concepto": "Contribuciones Seg. Social (2018-2026)",
-        "capital": 4127663.00,
-        "intereses": 1988214.55,
-        "total": 6115877.55,
-        "detalle_reciente": {
-          "2026_mar_may": {"capital": 2964357, "intereses": 101642},
-          "08_2025": {"capital": 1141545, "intereses": 287765, "vencido_desde": "2025-09-09"}
-        }
+        "concepto": "Bienes Personales — Acciones",
+        "capital": 60264.16,
+        "intereses": 134419.84,
+        "multas": 962.64,
+        "total": 195646.64,
+        "pct_del_total": 0.1
       },
       {
-        "concepto": "Bienes Personales — Acciones (2017 y 2020)",
-        "capital": 0,
-        "intereses": 65017.94,
-        "total": 65017.94
-      },
-      {
-        "concepto": "Ret. Art. 79 Ley Ganancias Inc. A, B y C (2018-2019)",
+        "concepto": "Ret. Art. 79 Ley Ganancias Inc. A, B y C",
         "capital": 2075.08,
-        "intereses": 13179.67,
-        "total": 15254.75
+        "intereses": 4278.46,
+        "multas": 0,
+        "total": 6353.54,
+        "pct_del_total": 0.0
+      },
+      {
+        "concepto": "Ganancia Mínima Presunta (2018)",
+        "capital": 0,
+        "intereses": 0,
+        "multas": 362.44,
+        "total": 362.44,
+        "pct_del_total": 0.0
+      },
+      {
+        "concepto": "Presentación DJ Retenciones/Percepciones",
+        "capital": 0,
+        "intereses": 0,
+        "multas": 225.17,
+        "total": 225.17,
+        "pct_del_total": 0.0
       }
-    ]
+    ],
+    "total_general_nota": "Tratar como PISO, no como total real — ver nota_actualizacion sobre intereses no recalculados a hoy."
   },
   "sistema_unico_de_deuda": {
     "descripcion": "Vista operativa ARCA — base para ejecuciones y planes de pago",
     "total": 50339482.04,
     "por_concepto": [
-      {"concepto": "IVA", "saldo_capital": 32890804.14},
-      {"concepto": "Aportes Empleador Seg. Social", "saldo_capital": 8778686.64},
-      {"concepto": "Contribuciones Seg. Social", "saldo_capital": 8227905.38},
-      {"concepto": "Ganancias Sociedades", "saldo_capital": 440000.00},
-      {"concepto": "Ret. Art. 79 / Presentación DJ Ret.", "saldo_capital": 2085.88}
-    ]
+      {
+        "concepto": "IVA",
+        "saldo_capital": 32890804.14
+      },
+      {
+        "concepto": "Aportes Empleador Seg. Social",
+        "saldo_capital": 8778686.64
+      },
+      {
+        "concepto": "Contribuciones Seg. Social",
+        "saldo_capital": 8227905.38
+      },
+      {
+        "concepto": "Ganancias Sociedades",
+        "saldo_capital": 440000.0
+      },
+      {
+        "concepto": "Ret. Art. 79 / Presentación DJ Ret.",
+        "saldo_capital": 2085.88
+      }
+    ],
+    "nota_desactualizado": "Esta sección (vista 'Sistema Único de Deuda') no se actualizó el 23/09/2026 — el archivo recibido ese día fue un detalle de cuenta corriente, no un export de SUD. Su total ($50.339.482,04) ya no es comparable con consolidado_bhp_sa.total_general ($179.638.304,30, corte 23/09/2026) — son dos vistas distintas de ARCA que veníamos sin poder reconciliar del todo. Pendiente de refresco si se consigue un export de SUD actualizado."
   },
   "embargos_ejecutados_mayo_2026": {
     "alerta": "CRÍTICO — empresa quedó sin fondos disponibles",
     "moneda_principal": "ARS",
     "movimientos": [
-      {"fecha": "2026-05-15", "cuenta": "CC Pesos 02174486-001 Supervielle", "n_operacion": "1000612500010", "monto": 1787722.18},
-      {"fecha": "2026-05-19", "cuenta": "CC Pesos 02174486-001 Supervielle", "n_operacion": "0010613050012", "monto": 6287695.43},
-      {"fecha": "2026-05-21", "cuenta": "CC Pesos 02174486-001 Supervielle", "n_operacion": "0010613050010", "monto": 1788521.65},
-      {"fecha": "2026-05-15", "cuenta": "CC USD 02174486-002 Supervielle", "n_operacion": "1000612500012", "monto_usd": 192.00, "saldo_remanente_usd": 0.78}
+      {
+        "fecha": "2026-05-15",
+        "cuenta": "CC Pesos 02174486-001 Supervielle",
+        "n_operacion": "1000612500010",
+        "monto": 1787722.18
+      },
+      {
+        "fecha": "2026-05-19",
+        "cuenta": "CC Pesos 02174486-001 Supervielle",
+        "n_operacion": "0010613050012",
+        "monto": 6287695.43
+      },
+      {
+        "fecha": "2026-05-21",
+        "cuenta": "CC Pesos 02174486-001 Supervielle",
+        "n_operacion": "0010613050010",
+        "monto": 1788521.65
+      },
+      {
+        "fecha": "2026-05-15",
+        "cuenta": "CC USD 02174486-002 Supervielle",
+        "n_operacion": "1000612500012",
+        "monto_usd": 192.0,
+        "saldo_remanente_usd": 0.78
+      }
     ],
     "total_pesos_embargado": 9863939.26,
     "nota": "El 18/05/2026 ingresó $6.388.162 (pago proveedores Movistar/AMX) y fue inmediatamente embargado. Tras el embargo del 21/05/2026 la cuenta en pesos quedó en $0."
@@ -93,7 +156,12 @@
       "tipo_oficio": "Embargo General de Fondos y Valores",
       "caracter": "permanente hasta cubrir la suma total requerida",
       "alcance": "Todo tipo de activo financiero de titularidad del cliente embargado: Caja de Ahorros, Cuenta Corriente, Plazo Fijo, Cuenta Títulos y otro activo financiero. Cuenta con autorización de giro en descubierto queda suspendida hasta el levantamiento o cumplimiento de la medida.",
-      "organismos_notificantes": ["AFIP", "ARBA", "MTESS", "AGIP"],
+      "organismos_notificantes": [
+        "AFIP",
+        "ARBA",
+        "MTESS",
+        "AGIP"
+      ],
       "organismo_de_este_oficio": "AFIP",
       "soj_numero": "11633525",
       "cliente": "BHP SA",
@@ -113,7 +181,12 @@
       "tipo_oficio": "Embargo General de Fondos y Valores",
       "caracter": "permanente hasta cubrir la suma total requerida",
       "alcance": "Todo tipo de activo financiero de titularidad del cliente embargado: Caja de Ahorros, Cuenta Corriente, Plazo Fijo, Cuenta Títulos y otro activo financiero. Cuenta con autorización de giro en descubierto queda suspendida hasta el levantamiento o cumplimiento de la medida.",
-      "organismos_notificantes": ["AFIP", "ARBA", "MTESS", "AGIP"],
+      "organismos_notificantes": [
+        "AFIP",
+        "ARBA",
+        "MTESS",
+        "AGIP"
+      ],
       "organismo_de_este_oficio": "AFIP",
       "soj_numero": "11588282",
       "cliente": "BHP SA",
@@ -131,39 +204,172 @@
     }
   ],
   "ddjj_pendientes_bhp": {
-    "total_pendientes": 76,
+    "total_pendientes": 78,
+    "fecha_corte": "2026-09-23",
     "alerta": "Implican multas formales automáticas, base para determinación de oficio, posibles cargos adicionales de intereses, imposibilidad de acceder a planes de facilidades",
     "desglose": [
-      {"tipo": "Reg. Inf. Compras/Ventas (Form. 3685)", "cantidad": 66, "desde": "2015-01"},
-      {"tipo": "Participaciones Societarias (Form. 984)", "cantidad": 7, "desde": "2018"},
-      {"tipo": "Ganancias Sociedades — DJ anual", "cantidad": 2, "periodos": ["2024", "2025"]},
-      {"tipo": "Memoria + Est. Contables + Inf. Auditoría", "cantidad": 2, "periodos": ["2023", "2024"]},
-      {"tipo": "Bienes Personales — Acciones (Form. 211)", "cantidad": 2, "periodos": ["2024", "2025"]},
-      {"tipo": "Ganancia Mínima Presunta", "cantidad": 1, "periodo": "2018"}
+      {
+        "tipo": "Reg. Inf. Compras/Ventas (Form. 3685)",
+        "cantidad": 62,
+        "desde": "2015-01",
+        "nota": "Bajó de 66 a 62 desde el corte anterior — parece que se presentaron 4."
+      },
+      {
+        "tipo": "Participaciones Societarias (Form. 984)",
+        "cantidad": 8,
+        "desde": "2018",
+        "nota": "Subió de 7 a 8 — nuevo período pendiente (2024)."
+      },
+      {
+        "tipo": "Memoria + Est. Contables + Inf. Auditoría",
+        "cantidad": 3,
+        "periodos": [
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "nota": "Subió de 2 a 3 — se sumó 2025."
+      },
+      {
+        "tipo": "Ganancias Sociedades — DJ anual",
+        "cantidad": 1,
+        "periodos": [
+          "2025"
+        ],
+        "nota": "Bajó de 2 a 1 — Ganancias 2024 ya no aparece como pendiente (parece presentada; ahora tiene capital propio en por_concepto)."
+      },
+      {
+        "tipo": "Bienes Personales — Acciones (Form. 211)",
+        "cantidad": 2,
+        "periodos": [
+          "2024",
+          "2025"
+        ]
+      },
+      {
+        "tipo": "Ganancia Mínima Presunta",
+        "cantidad": 1,
+        "periodo": "2018"
+      },
+      {
+        "tipo": "IVA — DJ",
+        "cantidad": 1,
+        "periodos": [
+          "2026-08"
+        ],
+        "nota": "Nuevo en este corte — período más reciente, todavía dentro de plazo probablemente."
+      }
     ],
-    "prioridad": ["Ganancias 2024 (vencida 13/05/2025)", "Ganancias 2025 (vencida 13/05/2026)"]
+    "prioridad": [
+      "Ganancias 2025 (según este corte, ya no figura pendiente Ganancias 2024)"
+    ]
   },
   "analisis_de_riesgo": [
-    {"factor": "Embargo bancario continuado", "descripcion": "Cuenta principal embargada 3 veces en mayo 2026. Riesgo de embargos sobre ingresos futuros.", "nivel": "CRITICO"},
-    {"factor": "Deuda IVA en crecimiento", "descripcion": "Intereses resarcitorios ya superan el capital en períodos 2018-2022. Crecen mes a mes.", "nivel": "MUY ALTO"},
-    {"factor": "DDJJ sin presentar", "descripcion": "76 presentaciones en mora. Multas formales automáticas + habilitan determinación de oficio.", "nivel": "ALTO"},
-    {"factor": "Ganancias sin DJ 2024/2025", "descripcion": "Sin DJ, ARCA puede iniciar determinación de oficio con intereses máximos.", "nivel": "ALTO"},
-    {"factor": "Seg. Social corriente 2026", "descripcion": "Aportes y contribuciones Mar-May con capital + intereses creciendo mes a mes.", "nivel": "ALTO"},
-    {"factor": "Prescripción potencial pre-2018", "descripcion": "Algunas deudas 2017-2018 podrían estar alcanzadas por prescripción de 5 años. Verificar con abogado.", "nivel": "OPORTUNIDAD"}
+    {
+      "factor": "Embargo bancario continuado",
+      "descripcion": "Cuenta principal embargada 3 veces en mayo 2026. Riesgo de embargos sobre ingresos futuros.",
+      "nivel": "CRITICO"
+    },
+    {
+      "factor": "Deuda IVA en crecimiento",
+      "descripcion": "Intereses resarcitorios ya superan el capital en períodos 2018-2022. Crecen mes a mes.",
+      "nivel": "MUY ALTO"
+    },
+    {
+      "factor": "DDJJ sin presentar",
+      "descripcion": "76 presentaciones en mora. Multas formales automáticas + habilitan determinación de oficio.",
+      "nivel": "ALTO"
+    },
+    {
+      "factor": "Ganancias sin DJ 2024/2025",
+      "descripcion": "Sin DJ, ARCA puede iniciar determinación de oficio con intereses máximos.",
+      "nivel": "ALTO"
+    },
+    {
+      "factor": "Seg. Social corriente 2026",
+      "descripcion": "Aportes y contribuciones Mar-May con capital + intereses creciendo mes a mes.",
+      "nivel": "ALTO"
+    },
+    {
+      "factor": "Prescripción potencial pre-2018",
+      "descripcion": "Algunas deudas 2017-2018 podrían estar alcanzadas por prescripción de 5 años. Verificar con abogado.",
+      "nivel": "OPORTUNIDAD"
+    },
+    {
+      "factor": "Multa IVA 12/2024 (BHP) + deuda SS Autónomo sin cargar (Ernesto)",
+      "descripcion": "Corte 23/09/2026: aparece una multa nueva de $42,8M sobre IVA 12/2024 de BHP (vencimiento ya pasado) y $24,5M de deuda de Seguridad Social Autónomo de Ernesto acumulada desde 2017 que no estaba cargada en el Commons. Ambos hallazgos son nuevos para este corte y no fueron confirmados con Ernesto/contador antes de cargarse — ver hallazgo_multa_iva_2024 en consolidado_bhp_sa y hallazgo_ss_autonomos en deuda_personal_socios.ernesto_corona.",
+      "nivel": "CRITICO"
+    }
   ],
   "deuda_personal_socios": {
     "ernesto_corona": {
       "cuit": "20-22159405-4",
       "agencia": "ARCA San Juan",
-      "deuda_activa_total": 18684598.50,
-      "fecha_corte": "2026-06-16",
+      "deuda_activa_total": 32841112.62,
+      "fecha_corte": "2026-09-23",
       "desglose": [
-        {"concepto": "Ganancias PF 2022 — DJ Anual", "capital": 2935930, "intereses": 6967307, "total": 9903237},
-        {"concepto": "Ganancias PF 2022 — Multa", "capital": 1825452, "intereses": 0, "total": 1825452},
-        {"concepto": "Ganancias PF 2023 — Anticipos (5 cuotas)", "capital": 0, "intereses": 14127, "total": 14127},
-        {"concepto": "IVA 2022 — 12 períodos (ene-dic)", "capital": 1649240, "intereses": 4386703, "total": 6035943},
-        {"concepto": "IVA 2022 — Multa dic/2022", "capital": 876849, "intereses": 0, "total": 876849},
-        {"concepto": "Bienes Personales 2016 — DJ Anual", "capital": 2414, "intereses": 26577, "total": 28991}
+        {
+          "concepto": "Ganancias PF 2022 — DJ Anual",
+          "capital": 2935929.83,
+          "intereses": 933869.47,
+          "multas": 0,
+          "total": 3869799.3,
+          "intereses_nota": "OJO — bajó mucho respecto al corte anterior (16/06/2026 tenía $6.967.307,00 acá) pese a haber pasado más tiempo, no menos. El 'Vencimiento' de esta línea de interés en el export es 07/10/2024, fijo — probablemente un cálculo de interés congelado (ligado al plan caducado T732339), no recalculado a hoy. Falta confirmar con el contador."
+        },
+        {
+          "concepto": "Ganancias PF 2022 — Multa",
+          "capital": 1825452.49,
+          "intereses": 0,
+          "multas": 0,
+          "total": 1825452.49
+        },
+        {
+          "concepto": "IVA 2022 — 12 períodos (ene-dic)",
+          "capital": 1649240.44,
+          "intereses": 97089.64,
+          "multas": 4200.0,
+          "total": 1750530.08,
+          "intereses_nota": "OJO — bajó mucho respecto al corte anterior (16/06/2026 tenía $4.386.703,00 acá). Mismo caso que Ganancias PF 2022 (ver esa nota) — probablemente un cálculo de interés congelado, no recalculado a hoy.",
+          "nota": "Multas incluye $4.200 en multas automáticas menores (~$200/período) por DJ presentada fuera de término, además de la multa grande de abajo."
+        },
+        {
+          "concepto": "IVA 2022 — Multa dic/2022",
+          "capital": 876848.85,
+          "intereses": 0,
+          "multas": 0,
+          "total": 876848.85
+        },
+        {
+          "concepto": "Bienes Personales 2016 — DJ Anual",
+          "capital": 2413.7,
+          "intereses": 15103.29,
+          "multas": 1200.0,
+          "total": 18716.99
+        },
+        {
+          "concepto": "Aportes SS Autónomo (2017-2026, 101 meses)",
+          "capital": 8415908.26,
+          "intereses": 0,
+          "multas": 0,
+          "total": 8415908.26,
+          "ver": "hallazgo_ss_autonomos"
+        },
+        {
+          "concepto": "Contribuciones SS Autónomo (2017-2026, 101 meses)",
+          "capital": 16066733.55,
+          "intereses": 0,
+          "multas": 0,
+          "total": 16066733.55,
+          "ver": "hallazgo_ss_autonomos"
+        },
+        {
+          "concepto": "Monotributo / Monotributo Autónomo (residual)",
+          "capital": 17123.1,
+          "intereses": 0,
+          "multas": 0,
+          "total": 17123.1,
+          "nota": "Montos menores residuales, sin mayor relevancia."
+        }
       ],
       "plan_caducado_t732339": {
         "ley": "27743 (Ley Bases)",
@@ -174,7 +380,7 @@
         "total_pagado": 7542498.94,
         "estado": "CADUCADO — aprox. marzo 2025 (cuotas 4 y 5 consecutivas impagas)",
         "saldo_sin_pagar_del_plan": 19334544.01,
-        "deuda_revivida_en_arca": 18684598.50
+        "deuda_revivida_en_arca": 18684598.5
       },
       "historial_planes": {
         "total_planes_desde_2009": 15,
@@ -182,21 +388,42 @@
         "caducados": 11,
         "factor_riesgo": "Patrón recurrente de caducamiento — antecedente para ARCA"
       },
-      "ddjj_pendientes": ["Ganancias PF 2024 (vencida)", "Bienes Personales 2016"]
+      "ddjj_pendientes": [
+        "Ganancias PF 2024 (vencida)",
+        "Bienes Personales 2025 (vencida 27/07/2026)"
+      ],
+      "nota_actualizacion": "Actualizado 23/09/2026 desde exportación de detalle de cuenta ARCA (archivo 'ERNESTO DEUDA ARCA.xls', CUIT 20-22159405-4, emitido 23/09/2026, 255 líneas de detalle). Mismo caso que BHP (ver esa nota): esta exportación NO recalcula intereses a hoy — trae solo 3 líneas de interés, con vencimiento fijo 07/10/2024, muy por debajo del corte anterior (Ganancias PF 2022 pasó de $6.967.307 a $933.869 acá; IVA 2022 de $4.386.703 a $97.090) pese a haber pasado más tiempo, no menos. El salto del total de ~$18,7M a ~$32,8M es real y es por un rubro nuevo (SS Autónomo, ver hallazgo_ss_autonomos) — pero el número final sigue siendo un piso, no el interés real vigente sobre TODO lo adeudado.",
+      "hallazgo_ss_autonomos": {
+        "alerta": "NUEVO — rubro completo sin cargar hasta este corte",
+        "descripcion": "Aportes (código 308) y Contribuciones (código 358) de Seguridad Social como trabajador Autónomo, impagos de forma prácticamente continua desde diciembre 2017 hasta agosto 2026 (101 períodos mensuales distintos en la exportación) — cuota fija de $84.692,04 (aportes) + $161.684,80 (contribuciones) = $246.376,84/mes, sin intereses cargados en esta exportación (a diferencia de las otras deudas, que sí traen intereses resarcitorios calculados).",
+        "capital_aportes": 8415908.26,
+        "capital_contribuciones": 16066733.55,
+        "total": 24482641.81,
+        "rango_periodos": "2017-12 a 2026-08 (101 meses, con algunos huecos en 2019-2021)",
+        "nota": "No confirmado con Ernesto si esto era conocido o es un hallazgo nuevo al revisar la exportación — dado el monto y la antigüedad (casi 9 años de mora), vale la pena confirmarlo antes de asumir que es 'más de lo mismo'. También sin intereses calculados en este export — el monto real con intereses resarcitorios sería mayor."
+      }
     },
     "franco_buglioni": {
       "cuit": "20-24226762-2",
       "deuda_activa_total": 0,
       "planes_de_pago_historial": {
         "total": 1,
-        "detalle": [{"n_plan": "G421093", "anio": 2013, "estado": "CANCELADO correctamente"}]
+        "detalle": [
+          {
+            "n_plan": "G421093",
+            "anio": 2013,
+            "estado": "CANCELADO correctamente"
+          }
+        ]
       },
-      "ddjj_pendientes": ["Bienes Personales 2017-2021 (5 períodos)"],
+      "ddjj_pendientes": [
+        "Bienes Personales 2017-2021 (5 períodos)"
+      ],
       "perfil": "SÓLIDO — único plan, cumplido al 100%. Sin caducamientos.",
       "rol_estrategico": "Capacidad de crédito y reputación fiscal limpia ante ARCA. Activo clave para avales, planes y refinanciaciones que requieran responsable con buen historial.",
       "riesgo_resp_solidaria_bhp": "MEDIO — Socio 50% de BHP SA",
       "recibo_sueldo_bhp_mar_2026": {
-        "bruto": 5317511.50,
+        "bruto": 5317511.5,
         "neto": 4413534.55,
         "categoria": "Administrativa"
       }
