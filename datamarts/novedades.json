@@ -1,10 +1,4 @@
 {
-  "last_updated": "2026-09-22",
-  "data_owner": "Ernesto Corona",
-  "visibility": "mixta_por_item",
-  "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
-  "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
-  "max_items_mostrados": 6,
   "items": [
     {
       "fecha": "22/09/2026",
@@ -13,38 +7,44 @@
     },
     {
       "fecha": "22/09/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Nueva deuda registrada: $2.500.000 ARS acumulados con Héctor López por asesoramiento laboral en Argentina, sin fecha de pago definida todavía."
+      "resumen": "Factura Red Hat A 00002-00000995 (USD 4.840): cobrada y retenida en su totalidad por embargo AFIP (SOJ 11588282). El cobro del proyecto BROU quedó en manos de AFIP.",
+      "visibility": "socios_asesores"
     },
     {
       "fecha": "22/09/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Costos operativos actualizados con datos reales de facturación (Vercel $20, Supabase $83,34, Claude Max $100, Network Solutions $47,55, API Anthropic ~$12 variable) — total estimado sube de $434 a $610,06/mes. Reemplaza estimaciones de junio; el stack de hosting Netlify/Cloudflare Worker quedó marcado como migrado a Vercel/Supabase."
+      "resumen": "Nueva deuda registrada: $2.500.000 ARS acumulados con Héctor López por asesoramiento laboral en Argentina, sin fecha de pago definida todavía.",
+      "visibility": "socios_asesores"
+    },
+    {
+      "fecha": "22/09/2026",
+      "resumen": "Costos operativos actualizados con datos reales de facturación (Vercel $20, Supabase $83,34, Claude Max $100, Network Solutions $47,55, API Anthropic ~$12 variable) — total estimado sube de $434 a $610,06/mes. Reemplaza estimaciones de junio; el stack de hosting Netlify/Cloudflare Worker quedó marcado como migrado a Vercel/Supabase.",
+      "visibility": "socios_asesores"
     },
     {
       "fecha": "12/08/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Pipeline: propuesta real de ISPE 'Instituto Inteligente' cargada (ANR CECI San Juan) — reemplaza al placeholder anterior. $18.571.000 ARS de honorarios Adaptant, financiados 62,5% ANR + 37,5% contraparte ISPE, facturación en 7 tramos desde agosto 2026."
+      "resumen": "Pipeline: propuesta real de ISPE 'Instituto Inteligente' cargada (ANR CECI San Juan) — reemplaza al placeholder anterior. $18.571.000 ARS de honorarios Adaptant, financiados 62,5% ANR + 37,5% contraparte ISPE, facturación en 7 tramos desde agosto 2026.",
+      "visibility": "socios_asesores"
     },
     {
       "fecha": "12/08/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Movimientos de pipeline: se sumaron GBM-BCCR Telecomunicaciones (USD 57.000 potencial) y GBM-BCCR DEX Practitioner (USD 45.133 potencial, extensión de Escritorio Digital) y BROU Track Gerencial (USD 13.000, confirmado). Se pusieron en suspenso ANTEL Value Stream y Docuprint Rediseño Organizacional, sin confirmación del cliente."
+      "resumen": "Movimientos de pipeline: se sumaron GBM-BCCR Telecomunicaciones (USD 57.000 potencial) y GBM-BCCR DEX Practitioner (USD 45.133 potencial, extensión de Escritorio Digital) y BROU Track Gerencial (USD 13.000, confirmado). Se pusieron en suspenso ANTEL Value Stream y Docuprint Rediseño Organizacional, sin confirmación del cliente.",
+      "visibility": "socios_asesores"
     },
     {
       "fecha": "11/08/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Carolina Hernández acordó su egreso de BHP SA por mutuo acuerdo (art. 241 LCT) — liquidación acordada $25.148.026 (80% s/rubros negociables + SAC 100%), gratificación diferida en 24 cuotas dolarizadas (USD 16.478,19 al 7% TNA)."
+      "resumen": "Carolina Hernández acordó su egreso de BHP SA por mutuo acuerdo (art. 241 LCT) — liquidación acordada $25.148.026 (80% s/rubros negociables + SAC 100%), gratificación diferida en 24 cuotas dolarizadas (USD 16.478,19 al 7% TNA).",
+      "visibility": "socios_asesores"
     },
     {
       "fecha": "11/08/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Bajas de personal NerdCube cargadas con liquidación: Sara Pérez Herrera (rescisión período de prueba, $266.667 — SAC + vacaciones, a pagar en agosto cuando se liberen las cuentas) y Rocío Pérez Ortiz (mutuo acuerdo, propuesta $3.132.530 en 6 cuotas desde 19/08, pendiente de conformidad)."
-    },
-    {
-      "fecha": "17/07/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Segundo embargo AFIP sobre BHP SA (SOJ N° 11588282, Expte. 21184/2026, $7.262.453,42) — anterior al SOJ 11633525. Este ya tuvo ejecución efectiva: se retuvo y aplicó el cobro de Red Hat (último del proyecto BROU)."
+      "resumen": "Bajas de personal NerdCube cargadas con liquidación: Sara Pérez Herrera (rescisión período de prueba, $266.667 — SAC + vacaciones, a pagar en agosto cuando se liberen las cuentas) y Rocío Pérez Ortiz (mutuo acuerdo, propuesta $3.132.530 en 6 cuotas desde 19/08, pendiente de conformidad).",
+      "visibility": "socios_asesores"
     }
-  ]
+  ],
+  "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
+  "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
+  "data_owner": "Ernesto Corona",
+  "visibility": "mixta_por_item",
+  "last_updated": "2026-09-22",
+  "max_items_mostrados": 6
 }
