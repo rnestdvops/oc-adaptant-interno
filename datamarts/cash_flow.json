@@ -2,171 +2,171 @@
   "pipeline": [
     {
       "id": "gbm-bccr-vs",
+      "estado": "cobrado",
       "cliente": "GBM - BCCR",
+      "entidad": "d-Vops LLC",
       "proyecto": "Value Stream y Rediseño de Equipos",
-      "monto_total_usd": 20250,
+      "categoria": "confirmado",
+      "mes_inicio": "2026-07",
       "duracion_meses": 3,
+      "nota_comercial": "Ya se cobró todo (12/08/2026), incluida la cuota de septiembre que estaba pendiente — se adelantó.",
+      "monto_total_usd": 20250,
       "montos_mes_explicitos": {
         "2026-07": 10125,
         "2026-08": 0,
         "2026-09": 10125
-      },
-      "estado": "cobrado",
-      "mes_inicio": "2026-07",
-      "entidad": "d-Vops LLC",
-      "nota_comercial": "Ya se cobró todo (12/08/2026), incluida la cuota de septiembre que estaba pendiente — se adelantó.",
-      "categoria": "confirmado"
+      }
     },
     {
       "id": "brou-vs-cuota-final",
-      "cliente": "BROU",
-      "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
-      "monto_total_usd": 4000,
-      "duracion_meses": 1,
-      "monto_mes_usd": 4000,
       "estado": "cobrado",
-      "mes_inicio": "2026-07",
+      "cliente": "BROU",
       "entidad": "Adaptant",
+      "proyecto": "Value Stream y Rediseño de Equipos (última cuota)",
+      "categoria": "confirmado",
+      "mes_inicio": "2026-07",
+      "monto_mes_usd": 4000,
+      "duracion_meses": 1,
       "nota_comercial": "Ya se cobró (confirmado 12/08/2026).",
-      "categoria": "confirmado"
+      "monto_total_usd": 4000
     },
     {
       "id": "brou-ti-2026",
-      "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
-      "proyecto": "Track Gerencial — Entrenamiento gerencial en lectura de VSM/MBPM (Entregable interno Red Hat: GPS-FP)",
-      "monto_total_usd": 11590,
-      "duracion_meses": 1,
       "estado": "confirmado_sin_cobrar",
-      "mes_inicio": "2026-11",
+      "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
       "entidad": "BHP SA",
-      "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real (DocuSign, firmada por Ernesto Corona — Presidente BHP SA — el 31/08/2026; Red Hat aparece sin firma visible en el documento recibido). Estructura contractual: BHP S.A. es el 'Contratista' bajo el Acuerdo Marco de Subcontratación con Red Hat de Argentina S.A. del 12/07/2018 — BHP le factura A RED HAT, no a BROU directamente (BROU es el 'Cliente Final', contacto Nelson Lema, nelson.lema@brou.com.uy). Plazo del proyecto: 23/08/2026 a 31/10/2026. Monto correcto USD 13.100 (no 13.000 ni 18.000 como se había cargado antes). Facturación en 2 entregables: Entregable 1 (Informe de actividades) USD 6.550 el 30/09/2026, Entregable 2 (Informe de actividades) USD 6.550 el 31/10/2026 — NO 50/50 agosto/septiembre como se había registrado por indicación verbal. Facturas a enviar a Red Hat de Argentina S.A. (Consulting Services, Ing. Buttty 240 piso 14 CABA), referenciando la PO y la oportunidad SFDC — el documento menciona dos números distintos de oportunidad (71812440 en el encabezado, 71265369 en la sección de facturación), sin conciliar. Gastos (viajes, alojamiento, etc.) no incluidos en el precio, a cargo de BHP como Contratista. RIESGO OPERATIVO: al facturarse a través de BHP SA, este cobro queda expuesto a los embargos AFIP ya notificados sobre las cuentas de BHP (ver deuda_arca.json → embargos_notificados) — no se sugiere ninguna acción al respecto, queda solo señalado. Actualizado 22/09/2026: monto ajustado de USD 13.100 a USD 11.590, ahora un solo pago (no ya los 2 entregables de USD 6.550 previstos) estimado para principios de noviembre 2026 (antes septiembre/octubre).",
+      "proyecto": "Track Gerencial — Entrenamiento gerencial en lectura de VSM/MBPM (Entregable interno Red Hat: GPS-FP)",
       "categoria": "confirmado",
-      "monto_mes_usd": 11590
+      "mes_inicio": "2026-11",
+      "monto_mes_usd": 11590,
+      "duracion_meses": 1,
+      "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real (DocuSign, firmada por Ernesto Corona — Presidente BHP SA — el 31/08/2026; Red Hat aparece sin firma visible en el documento recibido). Estructura contractual: BHP S.A. es el 'Contratista' bajo el Acuerdo Marco de Subcontratación con Red Hat de Argentina S.A. del 12/07/2018 — BHP le factura A RED HAT, no a BROU directamente (BROU es el 'Cliente Final', contacto Nelson Lema, nelson.lema@brou.com.uy). Plazo del proyecto: 23/08/2026 a 31/10/2026. Monto correcto USD 13.100 (no 13.000 ni 18.000 como se había cargado antes). Facturación en 2 entregables: Entregable 1 (Informe de actividades) USD 6.550 el 30/09/2026, Entregable 2 (Informe de actividades) USD 6.550 el 31/10/2026 — NO 50/50 agosto/septiembre como se había registrado por indicación verbal. Facturas a enviar a Red Hat de Argentina S.A. (Consulting Services, Ing. Buttty 240 piso 14 CABA), referenciando la PO y la oportunidad SFDC — el documento menciona dos números distintos de oportunidad (71812440 en el encabezado, 71265369 en la sección de facturación), sin conciliar. Gastos (viajes, alojamiento, etc.) no incluidos en el precio, a cargo de BHP como Contratista. RIESGO OPERATIVO: al facturarse a través de BHP SA, este cobro queda expuesto a los embargos AFIP ya notificados sobre las cuentas de BHP (ver deuda_arca.json → embargos_notificados) — no se sugiere ninguna acción al respecto, queda solo señalado. Actualizado 22/09/2026: monto ajustado de USD 13.100 a USD 11.590, ahora un solo pago (no ya los 2 entregables de USD 6.550 previstos) estimado para principios de noviembre 2026 (antes septiembre/octubre).",
+      "monto_total_usd": 11590
     },
     {
       "id": "ispe-instituto-inteligente",
-      "cliente": "ISPE - Generación Siglo XXI SRL",
-      "proyecto": "Instituto Inteligente — Rediseño Organizacional y Adopción de IA (OC Framework, ANR CECI 2026)",
-      "moneda_original": "ARS",
-      "monto_total_ars": 15000000,
-      "tc_referencia": 1450,
-      "tc_referencia_fecha": "2026-06",
-      "monto_total_usd": 10344.83,
-      "duracion_meses": 2,
       "estado": "cobrado_parcialmente",
-      "mes_inicio": "2026-09",
+      "cliente": "ISPE - Generación Siglo XXI SRL",
       "entidad": "Adaptant",
+      "proyecto": "Instituto Inteligente — Rediseño Organizacional y Adopción de IA (OC Framework, ANR CECI 2026)",
+      "categoria": "confirmado",
+      "mes_inicio": "2026-09",
+      "tc_referencia": 1450,
+      "duracion_meses": 2,
       "montos_mes_ars": {
         "2026-09": 7500000,
         "2026-10": 7500000
       },
+      "nota_comercial": "Corregido el 12/08/2026: pasó a confirmado (sin cobrar todavía). Reemplaza al placeholder anterior 'ispe-anr-ceci' (USD 9.000 estimado) — esta es la propuesta técnica + económica real, presentada al Programa de Fortalecimiento de la Economía del Conocimiento, convocatoria 2026 del CECI San Juan (Centro de Economía del Conocimiento e Innovación). Cliente: ISPE (Instituto Superior de Formación Docente / Instituto Superior de Perfeccionamiento Educativo), razón social Generación Siglo XXI SRL — 70 colaboradores, 750 alumnos. Proyecto de rediseño organizacional y adopción de IA bajo el modelo Organizational Commons. Costo total del proyecto: $24.000.000 ARS (ANR solicitado al CECI $15.000.000 = 62,5%, contraparte ISPE $9.000.000 = 37,5%). Lo que se registra acá es SOLO la porción de honorarios de Adaptant Studio ($18.571.000 ARS = $13.000.000 vía ANR + $5.571.000 aprox. vía contraparte ISPE) — no incluye el rubro de stack tecnológico (~$2.857.000, licencias Anthropic API/Claude Pro/Lovable/GitHub) ni el tiempo del equipo institucional del ISPE (~$2.572.000, sin cargo). El cronograma de facturación (campo cronograma_facturacion_ars) sigue el track de fases/hitos, NO el cronograma de desembolso del ANR del CECI al ISPE (que es distinto: 50%/50% contra firma de convenio y avance del 30%, ver deuda_privada.json si se carga en el futuro). Mes 0 = agosto 2026, según indicación de Ernesto (el track de la propuesta original no fecha el mes 0 en términos absolutos). IMPORTANTE — ajuste por inflación: si la ejecución se extiende más de 3 meses desde la firma del convenio, los honorarios de Adaptant Studio se actualizan por IPC (INDEC) desde el mes 4 — los montos ARS de Fase 4 en adelante son por lo tanto un piso, no un techo. El equivalente en USD usa el TC de referencia de la propuesta ($1.450, junio 2026) solo para comparabilidad con el resto del pipeline (denominado en USD) — la moneda real de facturación y cobro es ARS. Actualizado 22/09/2026: proyecto cerrado en su totalidad. Reemplaza el cronograma de fases previo ($18.571.000 ARS en 7 tramos) por 2 pagos de $7.500.000 ARS cada uno (total $15.000.000 ARS). Primer pago acreditado hoy 22/09/2026 en MP BHP. Segundo pago estimado en ~2 semanas (principios de octubre 2026). Estado pasa a 'cobrado' cuando entre el segundo pago.",
+      "moneda_original": "ARS",
+      "monto_total_ars": 15000000,
+      "monto_total_usd": 10344.83,
+      "tc_referencia_fecha": "2026-06",
       "montos_mes_usd_aprox": {
         "2026-09": 5172.41,
         "2026-10": 5172.41
-      },
-      "nota_comercial": "Corregido el 12/08/2026: pasó a confirmado (sin cobrar todavía). Reemplaza al placeholder anterior 'ispe-anr-ceci' (USD 9.000 estimado) — esta es la propuesta técnica + económica real, presentada al Programa de Fortalecimiento de la Economía del Conocimiento, convocatoria 2026 del CECI San Juan (Centro de Economía del Conocimiento e Innovación). Cliente: ISPE (Instituto Superior de Formación Docente / Instituto Superior de Perfeccionamiento Educativo), razón social Generación Siglo XXI SRL — 70 colaboradores, 750 alumnos. Proyecto de rediseño organizacional y adopción de IA bajo el modelo Organizational Commons. Costo total del proyecto: $24.000.000 ARS (ANR solicitado al CECI $15.000.000 = 62,5%, contraparte ISPE $9.000.000 = 37,5%). Lo que se registra acá es SOLO la porción de honorarios de Adaptant Studio ($18.571.000 ARS = $13.000.000 vía ANR + $5.571.000 aprox. vía contraparte ISPE) — no incluye el rubro de stack tecnológico (~$2.857.000, licencias Anthropic API/Claude Pro/Lovable/GitHub) ni el tiempo del equipo institucional del ISPE (~$2.572.000, sin cargo). El cronograma de facturación (campo cronograma_facturacion_ars) sigue el track de fases/hitos, NO el cronograma de desembolso del ANR del CECI al ISPE (que es distinto: 50%/50% contra firma de convenio y avance del 30%, ver deuda_privada.json si se carga en el futuro). Mes 0 = agosto 2026, según indicación de Ernesto (el track de la propuesta original no fecha el mes 0 en términos absolutos). IMPORTANTE — ajuste por inflación: si la ejecución se extiende más de 3 meses desde la firma del convenio, los honorarios de Adaptant Studio se actualizan por IPC (INDEC) desde el mes 4 — los montos ARS de Fase 4 en adelante son por lo tanto un piso, no un techo. El equivalente en USD usa el TC de referencia de la propuesta ($1.450, junio 2026) solo para comparabilidad con el resto del pipeline (denominado en USD) — la moneda real de facturación y cobro es ARS. Actualizado 22/09/2026: proyecto cerrado en su totalidad. Reemplaza el cronograma de fases previo ($18.571.000 ARS en 7 tramos) por 2 pagos de $7.500.000 ARS cada uno (total $15.000.000 ARS). Primer pago acreditado hoy 22/09/2026 en MP BHP. Segundo pago estimado en ~2 semanas (principios de octubre 2026). Estado pasa a 'cobrado' cuando entre el segundo pago.",
-      "categoria": "confirmado"
+      }
     },
     {
       "id": "antel-vs-2026",
-      "cliente": "ANTEL",
-      "proyecto": "Value Stream y Rediseño de Equipos",
-      "monto_total_usd": 96000,
-      "duracion_meses": 6,
-      "monto_mes_usd": 16000,
       "estado": "potencial",
-      "mes_inicio": "2026-07",
+      "cliente": "ANTEL",
       "entidad": "Adaptant",
+      "proyecto": "Value Stream y Rediseño de Equipos",
+      "categoria": "potencial",
+      "mes_inicio": "2026-07",
+      "monto_mes_usd": 16000,
+      "duracion_meses": 6,
       "nota_comercial": "Sin confirmación del cliente todavía (corregido 12/08/2026 — no hay categoría 'en suspenso', queda como potencial simple).",
-      "categoria": "potencial"
+      "monto_total_usd": 96000
     },
     {
       "id": "gbm-hyperauto",
-      "cliente": "GBM",
-      "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
-      "monto_total_usd": 18000,
-      "duracion_meses": 3,
-      "monto_mes_usd": 6000,
       "estado": "potencial",
-      "mes_inicio": "2026-07",
+      "cliente": "GBM",
       "entidad": "Adaptant",
-      "categoria": "potencial"
+      "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+      "categoria": "potencial",
+      "mes_inicio": "2026-07",
+      "monto_mes_usd": 6000,
+      "duracion_meses": 3,
+      "monto_total_usd": 18000
     },
     {
       "id": "gbm-oc-piloto",
-      "cliente": "GBM",
-      "proyecto": "OC Piloto y Experimentación",
-      "monto_total_usd": 30000,
-      "duracion_meses": 3,
-      "monto_mes_usd": 10000,
       "estado": "potencial",
-      "mes_inicio": "2026-08",
+      "cliente": "GBM",
       "entidad": "Adaptant",
-      "categoria": "potencial"
+      "proyecto": "OC Piloto y Experimentación",
+      "categoria": "potencial",
+      "mes_inicio": "2026-08",
+      "monto_mes_usd": 10000,
+      "duracion_meses": 3,
+      "monto_total_usd": 30000
     },
     {
       "id": "antel-vs-fase2-2027",
-      "cliente": "ANTEL",
-      "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
-      "monto_total_usd": 180000,
-      "duracion_meses": 6,
-      "monto_mes_usd": 30000,
       "estado": "potencial",
-      "mes_inicio": "2027-03",
+      "cliente": "ANTEL",
       "entidad": "Adaptant",
-      "categoria": "potencial"
+      "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
+      "categoria": "potencial",
+      "mes_inicio": "2027-03",
+      "monto_mes_usd": 30000,
+      "duracion_meses": 6,
+      "monto_total_usd": 180000
     },
     {
       "id": "gbm-bccr-telecom",
-      "cliente": "GBM - BCCR",
-      "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
-      "monto_total_usd": 57000,
-      "duracion_meses": 6,
-      "monto_mes_usd": 9500,
       "estado": "potencial_confirmado_activo",
-      "mes_inicio": "2026-11",
+      "cliente": "GBM - BCCR",
       "entidad": "Adaptant",
+      "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+      "categoria": "potencial",
+      "mes_inicio": "2026-11",
+      "monto_mes_usd": 9500,
+      "duracion_meses": 6,
       "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS. Actualizado 22/09/2026: inicio desplazado a noviembre 2026 (antes septiembre). Monto y duración sin cambio (USD 57.000, 6 cuotas de USD 9.500).",
-      "categoria": "potencial"
+      "monto_total_usd": 57000
     },
     {
       "id": "docuprint",
-      "cliente": "Docuprint",
-      "proyecto": "Rediseño Organizacional",
-      "monto_total_usd": 21000,
-      "duracion_meses": 6,
-      "monto_mes_usd": 3500,
       "estado": "potencial",
-      "mes_inicio": "2026-09",
+      "cliente": "Docuprint",
       "entidad": "Adaptant",
+      "proyecto": "Rediseño Organizacional",
+      "categoria": "potencial",
+      "mes_inicio": "2026-09",
+      "monto_mes_usd": 3500,
+      "duracion_meses": 6,
       "nota_comercial": "Confirmado originalmente (6 cuotas de USD 3.500 desde 09/2026), sin confirmación del cliente todavía (corregido 12/08/2026 — no hay categoría 'en suspenso', queda como potencial simple).",
-      "categoria": "potencial"
+      "monto_total_usd": 21000
     },
     {
       "id": "gbm-bccr-dex-practitioner",
-      "cliente": "GBM - BCCR",
-      "proyecto": "Digital Employee Experience (DEX) Practitioner Track — Escritorio Digital",
-      "monto_total_usd": 45133,
-      "duracion_meses": 5,
-      "monto_mes_usd": 9026.55,
       "estado": "potencial_sin_fecha",
-      "mes_inicio": null,
+      "cliente": "GBM - BCCR",
       "entidad": "Adaptant",
+      "proyecto": "Digital Employee Experience (DEX) Practitioner Track — Escritorio Digital",
+      "categoria": "potencial",
+      "mes_inicio": null,
+      "monto_mes_usd": 9026.55,
+      "duracion_meses": 5,
       "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Extensión del programa de Value Stream / Escritorio Digital ya en curso con BCCR (mismo cliente que gbm-bccr-telecom, área distinta). Deck 'Versión ampliada · Propuesta para integración al catálogo GBM · Agosto 2026': track de certificación de 5 talleres mensuales (Onboarding & Access / Device & Application / Digital Workplace / IT Support & Information / Consolidación DEX), anclados en los 3 flujos y 8 equipos ya mapeados en el programa VSM. Precio tope USD 800/usuario/mes, impuestos incluidos (IVA Costa Rica 13%), reparto neto 85% Adaptant / 15% GBM. Monto acá es el escenario base (15 usuarios/mes) = USD 9.026,55/mes × 5 = USD 45.133 para Adaptant. Escenario de ajuste a 17 usuarios/mes (sumando otras áreas de infraestructura interesadas) llevaría el total a USD 51.150 para Adaptant, cubriendo el objetivo de USD 10.000/mes — no confirmado. NOTA: el calendario propio del deck arranca en agosto 2026 (5 meses, ago-dic), pero Ernesto indicó que el arranque real sería en octubre 2026 — discrepancia sin resolver, registrada con la fecha que dio Ernesto. Actualizado 22/09/2026: pasa a potencial sin fecha definida — reemplazado por gbm-bccr-telecom (Telecomunicaciones) para este año. Puede retomarse en el futuro.",
-      "categoria": "potencial"
+      "monto_total_usd": 45133
     },
     {
       "id": "alfil-organizacion-descentralizada",
-      "cliente": "Alfil Digital Agency",
-      "proyecto": "Diseño de una Organización Descentralizada (3 ciclos)",
-      "monto_total_usd": 8000,
-      "entidad": "Adaptant",
       "estado": "cancelado",
-      "fecha_propuesta": "2026-07-16",
-      "fecha_cancelacion": "2026-08-12",
-      "motivo_cancelacion": "El cliente decidió no avanzar.",
+      "cliente": "Alfil Digital Agency",
+      "entidad": "Adaptant",
+      "proyecto": "Diseño de una Organización Descentralizada (3 ciclos)",
+      "categoria": "perdido",
       "nota_comercial": "Propuesta enviada 16/07/2026 a Tobías y equipo de Alfil Digital Agency (~18 personas, San Juan) — programa de 3 ciclos: Self Selection (1 mes, USD 5.000), Commitment (15 días, USD 2.000), Transform (1,5 meses opcional, USD 1.000). Vigencia de la propuesta vencía ~15/08/2026. Había entrado al Commons solo como señal validada (Fase 10 — email consolidado el 17/07/2026), nunca como ítem estructurado del pipeline; por eso el chat lo sintetizaba desde la señal en vez de leerlo de acá. Cancelado el 12/08/2026.",
-      "categoria": "perdido"
+      "fecha_propuesta": "2026-07-16",
+      "monto_total_usd": 8000,
+      "fecha_cancelacion": "2026-08-12",
+      "motivo_cancelacion": "El cliente decidió no avanzar."
     }
   ],
   "data_owner": "Ernesto Corona",
@@ -194,15 +194,15 @@
     "neto_total_nerdcube_ars": 828617.66
   },
   "pipeline_resumen": {
-    "proyectos_totales": 11,
+    "nota": "Resincronizado el 22/09/2026 contra adaptant_sas.json → pipeline (fuente canónica). Este resumen NO recalcula ingresos_confirmados_por_mes / ingresos_potenciales_por_mes / proyeccion_mensual — esos siguen con su propio armado manual, pendiente de revisión aparte si hace falta reflejar estos cambios en la proyección de caja. Ingresos_detalle/ingresos_confirmados_por_mes/ingresos_potenciales_por_mes reconstruidos el 22/09/2026 a partir del pipeline real (antes tenían datos de julio/agosto sin sincronizar — ej. Docuprint marcado 'confirmado' sin serlo, un placeholder de ISPE que ya no existe). Los saldos por escenario (saldo_v3..v8, egresos_v4..v8, neto_*, saldo_acumulado_*) NO se tocaron — dependen de una metodología de proyección acumulada que no está documentada acá; quedan pendientes de una revisión aparte si hace falta que reflejen el pipeline actualizado.",
+    "perdidos": 1,
     "confirmados": 4,
     "potenciales": 7,
-    "perdidos": 1,
-    "monto_total_confirmado_usd": 46184.83,
-    "monto_total_potencial_usd": 447133,
-    "monto_total_pipeline_usd": 493317.83,
+    "proyectos_totales": 11,
     "monto_total_perdido_usd": 8000,
-    "nota": "Resincronizado el 22/09/2026 contra adaptant_sas.json → pipeline (fuente canónica). Este resumen NO recalcula ingresos_confirmados_por_mes / ingresos_potenciales_por_mes / proyeccion_mensual — esos siguen con su propio armado manual, pendiente de revisión aparte si hace falta reflejar estos cambios en la proyección de caja."
+    "monto_total_pipeline_usd": 493317.83,
+    "monto_total_potencial_usd": 447133,
+    "monto_total_confirmado_usd": 46184.83
   },
   "escenarios_sueldos": {
     "escenario_a": {
@@ -369,12 +369,6 @@
           "monto_usd": 4000
         },
         {
-          "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Entrenamientos",
-          "monto_usd": 12000
-        },
-        {
           "estado": "potencial",
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
@@ -401,7 +395,7 @@
       "nerdcube_egreso_ars": 12171382.34,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 48125,
+      "ingresos_totales_usd": 36125,
       "ingresos_v5_conf_ars": 23232969.36,
       "ingresos_v6_conf_ars": 23232969.36,
       "ingresos_v7_conf_ars": 23232969.36,
@@ -414,7 +408,7 @@
       "ingresos_v8_total_ars": 68858750,
       "saldo_acumulado_a_pot": 30586506.08,
       "saldo_acumulado_b_pot": 50617194.4,
-      "ingresos_confirmados_usd": 26125,
+      "ingresos_confirmados_usd": 14125,
       "ingresos_potenciales_usd": 22000,
       "neto_con_potenciales_ars": 57336252.06,
       "neto_escenario_a_con_pot": 45492628.04,
@@ -508,22 +502,10 @@
       "saldo_v8_b_conf": -966735.4,
       "ingresos_detalle": [
         {
-          "estado": "confirmado",
-          "cliente": "BROU",
-          "proyecto": "Extensión para equipos actuales de TI",
-          "monto_usd": 9000
-        },
-        {
           "estado": "potencial",
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
           "monto_usd": 16000
-        },
-        {
-          "estado": "potencial",
-          "cliente": "GBM",
-          "proyecto": "OC Piloto y Experimentación",
-          "monto_usd": 10000
         },
         {
           "estado": "potencial",
@@ -533,9 +515,9 @@
         },
         {
           "estado": "potencial",
-          "cliente": "BROU",
-          "proyecto": "Implementación Diseño de Equipo — Aplicaciones Internas",
-          "monto_usd": 22000
+          "cliente": "GBM",
+          "proyecto": "OC Piloto y Experimentación",
+          "monto_usd": 10000
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -552,7 +534,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 63000,
+      "ingresos_totales_usd": 32000,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -565,8 +547,8 @@
       "ingresos_v8_total_ars": 58630000,
       "saldo_acumulado_a_pot": 70180384.12,
       "saldo_acumulado_b_pot": 100226416.6,
-      "ingresos_confirmados_usd": 9000,
-      "ingresos_potenciales_usd": 54000,
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 32000,
       "neto_con_potenciales_ars": 51437502.06,
       "neto_escenario_a_con_pot": 39593878.04,
       "neto_escenario_b_con_pot": 49609222.2,
@@ -640,15 +622,9 @@
         },
         {
           "estado": "confirmado",
-          "cliente": "BROU",
-          "proyecto": "Extensión para equipos actuales de TI",
-          "monto_usd": 9000
-        },
-        {
-          "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500
+          "cliente": "ISPE - Generación Siglo XXI SRL",
+          "proyecto": "Instituto Inteligente — Rediseño Organizacional y Adopción de IA (OC Framework, ANR CECI 2026)",
+          "monto_usd": 5172.41
         },
         {
           "estado": "potencial",
@@ -659,14 +635,20 @@
         {
           "estado": "potencial",
           "cliente": "GBM",
+          "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+          "monto_usd": 6000
+        },
+        {
+          "estado": "potencial",
+          "cliente": "GBM",
           "proyecto": "OC Piloto y Experimentación",
           "monto_usd": 10000
         },
         {
           "estado": "potencial",
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -683,7 +665,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 46625,
+      "ingresos_totales_usd": 50797.41,
       "ingresos_v5_conf_ars": 14478750,
       "ingresos_v6_conf_ars": 14478750,
       "ingresos_v7_conf_ars": 14478750,
@@ -696,8 +678,8 @@
       "ingresos_v8_total_ars": 66673750,
       "saldo_acumulado_a_pot": 126398012.16,
       "saldo_acumulado_b_pot": 166459388.8,
-      "ingresos_confirmados_usd": 19125,
-      "ingresos_potenciales_usd": 27500,
+      "ingresos_confirmados_usd": 15297.41,
+      "ingresos_potenciales_usd": 35500,
       "neto_con_potenciales_ars": 68061252.06,
       "neto_escenario_a_con_pot": 56217628.04,
       "neto_escenario_b_con_pot": 66232972.2,
@@ -765,9 +747,9 @@
       "ingresos_detalle": [
         {
           "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500
+          "cliente": "ISPE - Generación Siglo XXI SRL",
+          "proyecto": "Instituto Inteligente — Rediseño Organizacional y Adopción de IA (OC Framework, ANR CECI 2026)",
+          "monto_usd": 5172.41
         },
         {
           "estado": "potencial",
@@ -783,9 +765,9 @@
         },
         {
           "estado": "potencial",
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -802,7 +784,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 31000,
+      "ingresos_totales_usd": 34672.41,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -815,8 +797,8 @@
       "ingresos_v8_total_ars": 44330000,
       "saldo_acumulado_a_pot": 153121890.2,
       "saldo_acumulado_b_pot": 203198611,
-      "ingresos_confirmados_usd": 3500,
-      "ingresos_potenciales_usd": 27500,
+      "ingresos_confirmados_usd": 5172.41,
+      "ingresos_potenciales_usd": 29500,
       "neto_con_potenciales_ars": 38567502.06,
       "neto_escenario_a_con_pot": 26723878.04,
       "neto_escenario_b_con_pot": 36739222.2,
@@ -884,9 +866,9 @@
       "ingresos_detalle": [
         {
           "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500
+          "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
+          "proyecto": "Track Gerencial — Entrenamiento gerencial en lectura de VSM/MBPM (Entregable interno Red Hat: GPS-FP)",
+          "monto_usd": 11590
         },
         {
           "estado": "potencial",
@@ -896,9 +878,15 @@
         },
         {
           "estado": "potencial",
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500
+          "cliente": "GBM - BCCR",
+          "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+          "monto_usd": 9500
+        },
+        {
+          "estado": "potencial",
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -915,7 +903,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 21000,
+      "ingresos_totales_usd": 40590,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -928,8 +916,8 @@
       "ingresos_v8_total_ars": 30030000,
       "saldo_acumulado_a_pot": 165545768.24,
       "saldo_acumulado_b_pot": 225637833.2,
-      "ingresos_confirmados_usd": 3500,
-      "ingresos_potenciales_usd": 17500,
+      "ingresos_confirmados_usd": 11590,
+      "ingresos_potenciales_usd": 29000,
       "neto_con_potenciales_ars": 24267502.06,
       "neto_escenario_a_con_pot": 12423878.04,
       "neto_escenario_b_con_pot": 22439222.2,
@@ -996,12 +984,6 @@
       "saldo_v8_b_conf": -18738696.6,
       "ingresos_detalle": [
         {
-          "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500
-        },
-        {
           "estado": "potencial",
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos",
@@ -1009,9 +991,15 @@
         },
         {
           "estado": "potencial",
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500
+          "cliente": "GBM - BCCR",
+          "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+          "monto_usd": 9500
+        },
+        {
+          "estado": "potencial",
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -1028,7 +1016,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 21000,
+      "ingresos_totales_usd": 29000,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -1041,8 +1029,8 @@
       "ingresos_v8_total_ars": 30030000,
       "saldo_acumulado_a_pot": 177969646.28,
       "saldo_acumulado_b_pot": 248077055.4,
-      "ingresos_confirmados_usd": 3500,
-      "ingresos_potenciales_usd": 17500,
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 29000,
       "neto_con_potenciales_ars": 24267502.06,
       "neto_escenario_a_con_pot": 12423878.04,
       "neto_escenario_b_con_pot": 22439222.2,
@@ -1109,16 +1097,16 @@
       "saldo_v8_b_conf": -26801374.4,
       "ingresos_detalle": [
         {
-          "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500
+          "estado": "potencial",
+          "cliente": "GBM - BCCR",
+          "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+          "monto_usd": 9500
         },
         {
           "estado": "potencial",
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -1135,7 +1123,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 5000,
+      "ingresos_totales_usd": 13000,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -1148,8 +1136,8 @@
       "ingresos_v8_total_ars": 7150000,
       "saldo_acumulado_a_pot": 167513524.32,
       "saldo_acumulado_b_pot": 247636277.6,
-      "ingresos_confirmados_usd": 3500,
-      "ingresos_potenciales_usd": 1500,
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 13000,
       "neto_con_potenciales_ars": 1387502.06,
       "neto_escenario_a_con_pot": -10456121.96,
       "neto_escenario_b_con_pot": -440777.8,
@@ -1216,16 +1204,16 @@
       "saldo_v8_b_conf": -34864052.2,
       "ingresos_detalle": [
         {
-          "estado": "confirmado",
-          "cliente": "Docuprint",
-          "proyecto": "Rediseño Organizacional",
-          "monto_usd": 3500
+          "estado": "potencial",
+          "cliente": "GBM - BCCR",
+          "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+          "monto_usd": 9500
         },
         {
           "estado": "potencial",
-          "cliente": "ISPE - ANR CECI",
-          "proyecto": "OC Adopción",
-          "monto_usd": 1500
+          "cliente": "Docuprint",
+          "proyecto": "Rediseño Organizacional",
+          "monto_usd": 3500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -1242,7 +1230,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 5000,
+      "ingresos_totales_usd": 13000,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -1255,8 +1243,8 @@
       "ingresos_v8_total_ars": 7150000,
       "saldo_acumulado_a_pot": 157057402.36,
       "saldo_acumulado_b_pot": 247195499.8,
-      "ingresos_confirmados_usd": 3500,
-      "ingresos_potenciales_usd": 1500,
+      "ingresos_confirmados_usd": 0,
+      "ingresos_potenciales_usd": 13000,
       "neto_con_potenciales_ars": 1387502.06,
       "neto_escenario_a_con_pot": -10456121.96,
       "neto_escenario_b_con_pot": -440777.8,
@@ -1327,6 +1315,12 @@
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
           "monto_usd": 30000
+        },
+        {
+          "estado": "potencial",
+          "cliente": "GBM - BCCR",
+          "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+          "monto_usd": 9500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -1343,7 +1337,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 30000,
+      "ingresos_totales_usd": 39500,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -1357,7 +1351,7 @@
       "saldo_acumulado_a_pot": 187356280.4,
       "saldo_acumulado_b_pot": 287509722,
       "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 30000,
+      "ingresos_potenciales_usd": 39500,
       "neto_con_potenciales_ars": 42142502.06,
       "neto_escenario_a_con_pot": 30298878.04,
       "neto_escenario_b_con_pot": 40314222.2,
@@ -1428,6 +1422,12 @@
           "cliente": "ANTEL",
           "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
           "monto_usd": 30000
+        },
+        {
+          "estado": "potencial",
+          "cliente": "GBM - BCCR",
+          "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+          "monto_usd": 9500
         }
       ],
       "egresos_v4_total_a": 18078021.96,
@@ -1444,7 +1444,7 @@
       "nerdcube_egreso_ars": 0,
       "sueldos_escenario_a": 11843624.02,
       "sueldos_escenario_b": 1828279.86,
-      "ingresos_totales_usd": 30000,
+      "ingresos_totales_usd": 39500,
       "ingresos_v5_conf_ars": 0,
       "ingresos_v6_conf_ars": 0,
       "ingresos_v7_conf_ars": 0,
@@ -1458,7 +1458,7 @@
       "saldo_acumulado_a_pot": 212650158.44,
       "saldo_acumulado_b_pot": 322818944.2,
       "ingresos_confirmados_usd": 0,
-      "ingresos_potenciales_usd": 30000,
+      "ingresos_potenciales_usd": 39500,
       "neto_con_potenciales_ars": 37137502.06,
       "neto_escenario_a_con_pot": 25293878.04,
       "neto_escenario_b_con_pot": 35309222.2,
@@ -2718,25 +2718,21 @@
   },
   "ingresos_confirmados_por_mes": {
     "2026-07": 14125,
-    "2026-08": 21000,
-    "2026-09": 19125,
-    "2026-10": 3500,
-    "2026-11": 3500,
-    "2026-12": 3500,
-    "2027-01": 3500,
-    "2027-02": 3500
+    "2026-09": 15297.41,
+    "2026-10": 5172.41,
+    "2026-11": 11590
   },
   "ingresos_potenciales_por_mes": {
     "2026-07": 22000,
-    "2026-08": 54000,
-    "2026-09": 27500,
-    "2026-10": 27500,
-    "2026-11": 17500,
-    "2026-12": 17500,
-    "2027-01": 1500,
-    "2027-02": 1500,
-    "2027-03": 30000,
-    "2027-04": 30000,
+    "2026-08": 32000,
+    "2026-09": 35500,
+    "2026-10": 29500,
+    "2026-11": 29000,
+    "2026-12": 29000,
+    "2027-01": 13000,
+    "2027-02": 13000,
+    "2027-03": 39500,
+    "2027-04": 39500,
     "2027-05": 30000,
     "2027-06": 30000,
     "2027-07": 30000,
