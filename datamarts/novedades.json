@@ -9,6 +9,11 @@
     {
       "fecha": "22/09/2026",
       "visibility": "socios_asesores",
+      "resumen": "Pipeline actualizado: ISPE Instituto Inteligente cerrado con 2 pagos de $7.500.000 ARS (el primero ya cobrado hoy vía MP BHP), BROU Track Gerencial ajustado a USD 11.590 en un solo pago estimado para noviembre, y GBM-BCCR Telecomunicaciones desplazado a noviembre — DEX Practitioner queda sin fecha por ahora."
+    },
+    {
+      "fecha": "22/09/2026",
+      "visibility": "socios_asesores",
       "resumen": "Nueva deuda registrada: $2.500.000 ARS acumulados con Héctor López por asesoramiento laboral en Argentina, sin fecha de pago definida todavía."
     },
     {
@@ -40,11 +45,6 @@
       "fecha": "17/07/2026",
       "visibility": "socios_asesores",
       "resumen": "Segundo embargo AFIP sobre BHP SA (SOJ N° 11588282, Expte. 21184/2026, $7.262.453,42) — anterior al SOJ 11633525. Este ya tuvo ejecución efectiva: se retuvo y aplicó el cobro de Red Hat (último del proyecto BROU)."
-    },
-    {
-      "fecha": "17/07/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Nuevo embargo AFIP notificado sobre BHP SA (SOJ N° 11633525) — Embargo General de Fondos y Valores, $28.180.656,9, Expte. 12095/2026, Juzgado Federal 2 San Juan. Distinto de los embargos ya ejecutados en mayo/2026."
     }
   ]
 }
