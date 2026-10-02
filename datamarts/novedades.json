@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "fecha": "01/10/2026",
+      "visibility": "socios_asesores",
+      "resumen": "BROU Track Gerencial: factura real emitida (USD 11.535, antes estimado USD 11.590) — la emitió Ernesto Corona a título personal (Monotributo) a Alquimia.IA S.A., no BHP SA a Red Hat de Argentina como documentaba la Orden de Trabajo. Diferencia no conciliada, aún sin confirmación de cobro."
+    },
+    {
+      "fecha": "22/09/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Carolina Hernández: versión final del plan de pagos ofrecido suma 4 sueldos adeudados de 2026 ($7.313.119 ARS) al capital de la gratificación — capital dolarizado sube de USD 16.478 a USD 21.096. No confirmado si Carolina ya aceptó esta versión ampliada."
+    },
+    {
+      "fecha": "22/09/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Pagos registrados vía Mercado Pago: cuota 11 del mutuo Moroni ($302.794) y cuota 2 del mutuo Rocío Pérez Ortiz ($522.088,35)."
+    },
+    {
       "fecha": "23/09/2026",
       "visibility": "socios_asesores",
       "resumen": "Deuda ARCA actualizada con exportación de hoy (BHP y Ernesto personal). Aparece una multa nueva de $42,8M sobre IVA 12/2024 de BHP (vencimiento ya pasado) y $24,5M de deuda de Seguridad Social Autónomo de Ernesto desde 2017 sin cargar hasta ahora — ninguno de los dos confirmado todavía con Ernesto/contador. Ojo: los intereses de esta exportación no están recalculados a hoy, tratar los totales como piso."
@@ -23,21 +38,6 @@
     {
       "fecha": "22/09/2026",
       "resumen": "Costos operativos actualizados con datos reales de facturación (Vercel $20, Supabase $83,34, Claude Max $100, Network Solutions $47,55, API Anthropic ~$12 variable) — total estimado sube de $434 a $610,06/mes. Reemplaza estimaciones de junio; el stack de hosting Netlify/Cloudflare Worker quedó marcado como migrado a Vercel/Supabase.",
-      "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "12/08/2026",
-      "resumen": "Pipeline: propuesta real de ISPE 'Instituto Inteligente' cargada (ANR CECI San Juan) — reemplaza al placeholder anterior. $18.571.000 ARS de honorarios Adaptant, financiados 62,5% ANR + 37,5% contraparte ISPE, facturación en 7 tramos desde agosto 2026.",
-      "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "12/08/2026",
-      "resumen": "Movimientos de pipeline: se sumaron GBM-BCCR Telecomunicaciones (USD 57.000 potencial) y GBM-BCCR DEX Practitioner (USD 45.133 potencial, extensión de Escritorio Digital) y BROU Track Gerencial (USD 13.000, confirmado). Se pusieron en suspenso ANTEL Value Stream y Docuprint Rediseño Organizacional, sin confirmación del cliente.",
-      "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "11/08/2026",
-      "resumen": "Carolina Hernández acordó su egreso de BHP SA por mutuo acuerdo (art. 241 LCT) — liquidación acordada $25.148.026 (80% s/rubros negociables + SAC 100%), gratificación diferida en 24 cuotas dolarizadas (USD 16.478,19 al 7% TNA).",
       "visibility": "socios_asesores"
     }
   ],

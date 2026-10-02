@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-10-01",
   "data_owner": "Franco Buglioni",
   "visibility": "publico",
   "razon_social": "Adaptant SAS",
@@ -32,9 +32,9 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 22/09/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 confirmado sin cobrar, 1 cobrado parcialmente; 7 potenciales) + 1 cancelado (Alfil Digital Agency, USD 8000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($15.000.000, cobrado parcialmente) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
-    "total_pipeline_usd": 493317.83,
-    "confirmado_usd": 46184.83,
+    "estado_actual": "Pipeline actualizado al 01/10/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 facturado sin cobrar, 1 cobrado parcialmente; 7 potenciales) + 1 cancelado (Alfil Digital Agency, USD 8000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($15.000.000, cobrado parcialmente) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
+    "total_pipeline_usd": 493262.83,
+    "confirmado_usd": 46129.83,
     "potencial_usd": 447133,
     "proyectos_confirmados": [
       {
@@ -67,15 +67,15 @@
       },
       {
         "id": "brou-ti-2026",
-        "cliente": "Red Hat de Argentina S.A. (Cliente Final: BROU — Banco de la República Oriental del Uruguay)",
+        "cliente": "Alquimia.IA S.A. (CUIT 30718422929) — Cliente Final: BROU (Banco de la República Oriental del Uruguay)",
         "proyecto": "Track Gerencial — Entrenamiento gerencial en lectura de VSM/MBPM (Entregable interno Red Hat: GPS-FP)",
-        "monto_total_usd": 11590,
+        "monto_total_usd": 11535,
         "duracion_meses": 1,
-        "estado": "confirmado_sin_cobrar",
-        "mes_inicio": "2026-11",
-        "entidad": "BHP SA",
-        "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real (DocuSign, firmada por Ernesto Corona — Presidente BHP SA — el 31/08/2026; Red Hat aparece sin firma visible en el documento recibido). Estructura contractual: BHP S.A. es el 'Contratista' bajo el Acuerdo Marco de Subcontratación con Red Hat de Argentina S.A. del 12/07/2018 — BHP le factura A RED HAT, no a BROU directamente (BROU es el 'Cliente Final', contacto Nelson Lema, nelson.lema@brou.com.uy). Plazo del proyecto: 23/08/2026 a 31/10/2026. Monto correcto USD 13.100 (no 13.000 ni 18.000 como se había cargado antes). Facturación en 2 entregables: Entregable 1 (Informe de actividades) USD 6.550 el 30/09/2026, Entregable 2 (Informe de actividades) USD 6.550 el 31/10/2026 — NO 50/50 agosto/septiembre como se había registrado por indicación verbal. Facturas a enviar a Red Hat de Argentina S.A. (Consulting Services, Ing. Buttty 240 piso 14 CABA), referenciando la PO y la oportunidad SFDC — el documento menciona dos números distintos de oportunidad (71812440 en el encabezado, 71265369 en la sección de facturación), sin conciliar. Gastos (viajes, alojamiento, etc.) no incluidos en el precio, a cargo de BHP como Contratista. RIESGO OPERATIVO: al facturarse a través de BHP SA, este cobro queda expuesto a los embargos AFIP ya notificados sobre las cuentas de BHP (ver deuda_arca.json → embargos_notificados) — no se sugiere ninguna acción al respecto, queda solo señalado. Actualizado 22/09/2026: monto ajustado de USD 13.100 a USD 11.590, ahora un solo pago (no ya los 2 entregables de USD 6.550 previstos) estimado para principios de noviembre 2026 (antes septiembre/octubre).",
-        "monto_mes_usd": 11590
+        "estado": "facturado_sin_cobrar",
+        "mes_inicio": "2026-10",
+        "entidad": "Ernesto Corona (Monotributo) — no BHP SA, ver nota_comercial",
+        "nota_comercial": "Corregido el 24/08/2026 con la Orden de Trabajo real (DocuSign, firmada por Ernesto Corona — Presidente BHP SA — el 31/08/2026; Red Hat aparece sin firma visible en el documento recibido). Estructura contractual documentada en la OT: BHP S.A. es el 'Contratista' bajo el Acuerdo Marco de Subcontratación con Red Hat de Argentina S.A. del 12/07/2018 — BHP le factura A RED HAT, no a BROU directamente (BROU es el 'Cliente Final', contacto Nelson Lema, nelson.lema@brou.com.uy). Plazo del proyecto: 23/08/2026 a 31/10/2026. Facturas a enviar a Red Hat de Argentina S.A. (Consulting Services, Ing. Buttty 240 piso 14 CABA), referenciando la PO y la oportunidad SFDC — el documento menciona dos números distintos de oportunidad (71812440 en el encabezado, 71265369 en la sección de facturación), sin conciliar. Gastos (viajes, alojamiento, etc.) no incluidos en el precio, a cargo de BHP como Contratista. RIESGO OPERATIVO (ya no aplica a esta factura puntual — ver actualización 01/10/2026): al facturarse a través de BHP SA, un cobro quedaría expuesto a los embargos AFIP ya notificados sobre las cuentas de BHP (ver deuda_arca.json → embargos_notificados). Actualizado 22/09/2026: monto estimado ajustado de USD 13.100 a USD 11.590, un solo pago estimado para principios de noviembre 2026. ACTUALIZADO 01/10/2026 con la factura C real emitida: Nro 00003-00000011, CAE 86405699264448 (vto CAE 11/10/2026), emitida por CORONA ERNESTO RAUL (CUIT 20221594054, Responsable Monotributo) a ALQUIMIA.IA S.A. (CUIT 30718422929, IVA Responsable Inscripto), por USD 11.535 (ajustado de la estimación de USD 11.590), concepto 'Capacitación programa-Track Gerencial UY-BROU-GPS FP', período facturado 01/08/2026 a 01/10/2026, vencimiento de pago 01/10/2026 (contado/transferencia bancaria; equivalente $17.498.595 ARS al TC 1517 consignado en la factura). IMPORTANTE — esto difiere de la estructura contractual documentada en la Orden de Trabajo (BHP S.A. facturando directamente a Red Hat de Argentina S.A.): la factura real fue emitida por Ernesto Corona a título personal (Monotributo), no por BHP SA, y el receptor es Alquimia.IA S.A., no Red Hat de Argentina S.A. directamente. Se registra tal cual surge del comprobante, sin conciliar ni interpretar la relación entre Alquimia.IA y Red Hat/BROU. Aún no hay confirmación de cobro.",
+        "monto_mes_usd": 11535
       },
       {
         "id": "ispe-instituto-inteligente",
