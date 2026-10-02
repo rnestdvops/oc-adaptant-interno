@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-10-02",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "proposito": "Registro de alianzas estratégicas y partnerships en evaluación o activos para expansión de mercado de Adaptant.",
@@ -73,6 +73,71 @@
       ],
       "alerta_traduccion": "Para abrir mercado en México habrá que traducir conceptos (descentralización, OC, inteligencia distribuida) a dolores reconocibles: decisiones lentas, líderes cuello de botella, equipos que piden autorización para todo, silos, iniciativas que no se sostienen. Sin simplificar ni perder la intención original de Adaptant.",
       "contexto_estrategia_latam": "México es parte de la Fase 2 de la estrategia LATAM de Adaptant (horizonte 12-24 meses desde 2026). Una alianza con Ignite aceleraría ese acceso sin inversión de estructura propia en el país."
+    },
+    {
+      "id": "ucc-empresas-inteligentes",
+      "nombre": "Universidad Católica de Cuyo (UCC) — Facultad de Ciencias Económicas y Empresariales",
+      "tipo": "alianza_academica",
+      "pais": "Argentina",
+      "provincia": "San Juan",
+      "estado": "convenio_redactado_sin_firmar",
+      "contraparte_convenio_marco": {
+        "entidad": "Universidad Católica de Cuyo",
+        "representante": "Lic. María Laura Simonassi (Rectora)",
+        "dni": "23085816",
+        "cuit": "30-51937681-0",
+        "domicilio": "Avda. José Ignacio de la Roza 1516 oeste, departamento Rivadavia, Ciudad de San Juan"
+      },
+      "contraparte_acta_complementaria": {
+        "entidad": "Facultad de Ciencias Económicas y Empresariales — Universidad Católica de Cuyo",
+        "representante": "Cra. María Alejandra Segovia (Decana)",
+        "dni": "23735073",
+        "domicilio": "Avda. José Ignacio de la Roza 1516 oeste, departamento Rivadavia, Ciudad de San Juan"
+      },
+      "parte_adaptant": {
+        "firmante": "Ernesto Corona (a título personal, DNI 22.159.405, CUIT 20-22159405-4), actuando bajo el nombre comercial 'ADAPTANT', por cuenta y cargo propio",
+        "domicilio": "Av. Santa Fe 3176, 4° B° Palermo, CABA (CP 1425)",
+        "nota": "El convenio NO está firmado por Adaptant SAS ni BHP SA — es Ernesto Corona a título personal."
+      },
+      "convenio_marco": {
+        "objeto": "Cooperación recíproca en diseño, organización y dictado de programas de formación ejecutiva, diplomaturas y actividades de extensión universitaria vinculadas a organizaciones adaptativas, diseño organizacional descentralizado y aplicación de nuevas tecnologías a la gestión.",
+        "plazo": "2 años desde la firma, con renovación automática por iguales períodos salvo notificación fehaciente con 30 días de antelación.",
+        "rescision": "Cualquiera de las partes puede rescindir con 30 días de anticipación; la rescisión no afecta Actas Complementarias ya en curso.",
+        "jurisdiccion": "Tribunales Ordinarios de la Provincia de San Juan.",
+        "estado_firma": "Sin firmar — fecha en blanco en el documento ([DÍA]/[MES]/[AÑO])."
+      },
+      "acta_complementaria_n1": {
+        "programa": "Programa Ejecutivo 'Diseño y Operación de Empresas Inteligentes con base en Inteligencia Artificial' — primera edición",
+        "modalidad": "Presencial, 4 ciclos de 2 jornadas cada uno (viernes tarde + sábado mañana), separados por 2 semanas entre ciclos.",
+        "fecha_inicio": "2026-10-30",
+        "facilitadores": "Ernesto Corona y Franco Buglioni",
+        "trabajo_final": "Incluido, modalidad y fecha de entrega a acordar durante el dictado (sin fijar de antemano).",
+        "obligaciones_facultad": "Sede e infraestructura (vía otras instituciones/organismos), plataforma académica, inscripción y certificación, comercialización y difusión — con cargo a su participación en los ingresos.",
+        "obligaciones_adaptant": "Diseño académico, dictado, tutoría del trabajo final, honorarios de facilitadores, viáticos (pasajes y alojamiento) y apoyo logístico local si es necesario — con cargo a su participación en los ingresos; Adaptant asume el riesgo si los costos no son cubiertos, sin obligación de aporte para la Facultad.",
+        "certificacion": "A cargo de la Facultad de Ciencias Económicas y Empresariales de la UCC.",
+        "regimen_economico": "Sobre ingresos brutos (arancel efectivamente abonado, sin deducción previa de gastos): 30% Facultad / 70% Adaptant.",
+        "piso_apertura": "Mínimo 15 participantes confirmados a la fecha de cierre de inscripciones; por debajo, Adaptant puede suspender o reprogramar.",
+        "exclusividad": "12 meses desde la firma del Acta — Adaptant no dicta en San Juan programas de formato/contenido sustancialmente similares con otra institución.",
+        "compromiso_ediciones": "Las partes acuerdan impulsar nuevas ediciones, en las condiciones de esta Acta o las que se acuerden para cada edición.",
+        "propiedad_intelectual": "Diseño académico, materiales, metodología y marca 'ADAPTANT' son propiedad exclusiva de Ernesto Corona. La Facultad recibe licencia de uso limitada a certificación, difusión y dictado de este Programa — sin reproducir, ceder ni usar fuera de ese marco sin autorización previa y escrita.",
+        "materiales_bibliograficos": "Si se usan materiales físicos, se facturan directo a cada participante, aparte del arancel.",
+        "facturacion_liquidacion": "La Facultad liquida a Adaptant el 70% sobre ingresos percibidos, con periodicidad mensual (octubre, noviembre, diciembre) contra comprobante de Adaptant según su condición impositiva.",
+        "jurisdiccion": "Tribunales Ordinarios de la Provincia de San Juan.",
+        "estado_firma": "Sin firmar — fecha en blanco en el documento ([DÍA]/[MES]/[AÑO])."
+      },
+      "pendientes_segun_nota_interna_del_documento": [
+        "Nombre y apellido del Decano/a vigente y CUIT de la Facultad/Universidad, a confirmar antes de enviar",
+        "Fecha de firma del Convenio Marco y del Acta, aún sin definir",
+        "Modalidad y fecha del trabajo final — queda abierta a acordar durante el dictado salvo que Ernesto defina lo contrario",
+        "Piso de apertura de 15 inscriptos — propuesto con margen por debajo de un punto de equilibrio calculado de ~17, pendiente de confirmación",
+        "Cláusula de exclusividad de 12 meses en San Juan — incluida por default desde una negociación previa (Modelo A/B), pendiente de confirmar si se mantiene",
+        "Cláusula de compromiso de ediciones — incluida por default; alternativa es firmar un Acta por edición (precedente: Conexxion, Actas separadas en 2021 y 2023)",
+        "Redacción y alcance exacto de la licencia de propiedad intelectual a la Facultad, a confirmar",
+        "Si los materiales bibliográficos van incluidos en el arancel o se facturan aparte, a confirmar para esta edición",
+        "Condición impositiva de facturación de Adaptant (monotributista o responsable inscripto) y si la liquidación es mensual o por ciclo, sin definir",
+        "No se incluyó garantía cruzada: si el 30% de la Facultad no cubre sus costos de plataforma/comercialización, no hay obligación de aporte adicional de ninguna parte — así quedó definido"
+      ],
+      "nota": "Cargado el 02/10/2026 a partir de los documentos Convenio_Marco_UCC_Adaptant.docx y Acta_Complementaria_N1_Empresas_Inteligentes.docx. Ambos documentos están en estado de borrador (sin firma, fecha en blanco) y el Acta trae una página de notas internas con puntos explícitamente pendientes de confirmación — no se trata todavía de un acuerdo cerrado. No hay monto fijo comprometido: el ingreso depende de la cantidad de inscriptos y del arancel que se fije, sobre el cual se reparte 70/30."
     }
   ]
 }
