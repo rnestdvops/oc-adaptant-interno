@@ -340,7 +340,7 @@
           { "fecha": "2026-06-19", "monto": 2000000, "canal": "Lemon / Equinus Srl", "coelsa_id": "Z4K6DVNOWY644J1K25J8LQ" }
         ],
         "excedente_ars": 41251,
-        "estado": "PAGADA — $4.000.000 pagados ($2M el 17/06 + $2M el 19/06 vía Lemon). Excedente $41.251 a imputar en cuota 3."
+        "estado": "PAGADA — $4.000.000 pagados ($2M el 17/06 + $2M el 19/06 vía Lemon). Excedente $41.251 que se acumula (no se imputa a cuotas siguientes)."
       },
       {
         "n": 3,
@@ -354,7 +354,7 @@
           { "fecha": "2026-07-17", "monto": 4000000, "canal": "Lemon / Equinus Srl", "coelsa_id": "RD06ZO9W41YXVEWK25GP7X" }
         ],
         "excedente_ars": 82502,
-        "estado": "PAGADA — $4.000.000 pagados el 17/07/2026 vía Lemon (2 días antes del vencimiento). Incluye el excedente $41.251 de cuota 2 imputado acá; excedente resultante $82.502 a imputar en cuota 4."
+        "estado": "PAGADA — $4.000.000 pagados el 17/07/2026 vía Lemon (2 días antes del vencimiento). Excedente acumulado resultante $82.502 ($41.251 de cuota 2 + $41.251 de este pago); se acumula, no se imputa a cuotas siguientes."
       },
       {
         "n": 4,
@@ -365,10 +365,10 @@
         "neto_a_pagar": 3958749,
         "monto_pagado_total": 4000000,
         "pagos": [
-          { "fecha": "2026-09-21", "monto": 4000000, "canal": "Personal Pay", "cuenta_origen": "Personal Pay — Ernesto Corona" }
+          { "fecha": "2026-09-21", "hora": "16:14", "monto": 4000000, "canal": "Personal Pay", "cuenta_origen": "Personal Pay — Ernesto Corona (CUIT 20-22159405-4)", "destinatario": "Equinus Srl", "cuit_destinatario": "30-70885325-5", "banco_destino": "Banco Macro S.A.", "cbu_destinatario": "2850322430094215460691", "nro_operacion": "3135510136", "coelsa_id": "PDX4OGNY4L0ODO8V20L6EY" }
         ],
         "excedente_ars": 123753,
-        "estado": "PAGADA — $4.000.000 pagados el 21/09/2026 vía transferencia Personal Pay (cuenta Ernesto Corona). Excedente $123.753 a imputar en cuota 5 ($82.502 arrastrados de cuota 3 + $41.251 adicionales de este pago)."
+        "estado": "PAGADA — $4.000.000 pagados el 21/09/2026 vía transferencia Personal Pay (cuenta Ernesto Corona). Excedente acumulado resultante $123.753 ($82.502 de cuotas anteriores + $41.251 de este pago); se acumula, no se imputa a cuotas siguientes (aclarado por Ernesto 08/10/2026)."
       },
       {
         "n": 5,
@@ -494,6 +494,8 @@
         "notas": "Comprobante Lemon 17/07/2026 11:06hs. Cuota 3 queda saldada, pagada 2 días antes del vencimiento."
       }
     ],
+    "excedente_acumulado_ars": 123753,
+    "excedente_acumulado_nota": "Acumulado hasta la cuota 4 inclusive. Los excedentes de cada pago ($41.251 c/u en cuotas 2, 3 y 4, por pagar $4.000.000 contra $3.958.749 de cuota) NO se imputan a cuotas siguientes — quedan como saldo a favor acumulado (aclarado por Ernesto 08/10/2026). No incluye el efecto del pago de la cuota 5, cuyos datos reales siguen sin cargar.",
     "ultima_actualizacion": "2026-10-08"
   },
   "plan_iibb_san_juan": {
