@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-10-08",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -312,8 +312,8 @@
     },
     "estado_general": "AL DÍA",
     "proximo_vencimiento": {
-      "cuota": 5,
-      "fecha": "2026-09-17",
+      "cuota": 6,
+      "fecha": "2026-10-17",
       "monto_neto": 3958749
     },
     "cronograma": [
@@ -377,7 +377,7 @@
         "capital": 3186422,
         "interes": 772328,
         "neto_a_pagar": 3958749,
-        "estado": "pendiente"
+        "estado": "PAGADA — pago informado por Ernesto el 08/10/2026 (cuota con vencimiento 17/09/2026). Fecha real, monto pagado, canal y comprobante [no disponible — pendiente de carga]. Tampoco se sabe si se imputó el excedente de $123.753 arrastrado de la cuota 4."
       },
       {
         "n": 6,
@@ -494,7 +494,7 @@
         "notas": "Comprobante Lemon 17/07/2026 11:06hs. Cuota 3 queda saldada, pagada 2 días antes del vencimiento."
       }
     ],
-    "ultima_actualizacion": "2026-07-17"
+    "ultima_actualizacion": "2026-10-08"
   },
   "plan_iibb_san_juan": {
     "organismo": "Rentas — Provincia de San Juan (IIBB)",

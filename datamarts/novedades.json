@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "fecha": "08/10/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Cuota 5 del préstamo Banco Macro (vencimiento 17/09/2026) registrada como pagada según indicación de Ernesto; próxima cuota: la 6, vence 17/10/2026 por $3.958.749. Fecha real, monto y canal del pago quedan pendientes de carga."
+    },
+    {
       "fecha": "01/10/2026",
       "visibility": "socios_asesores",
       "resumen": "BROU Track Gerencial: factura real emitida (USD 11.535, antes estimado USD 11.590) — la emitió Ernesto Corona a título personal (Monotributo) a Alquimia.IA S.A., no BHP SA a Red Hat de Argentina como documentaba la Orden de Trabajo. Diferencia no conciliada, aún sin confirmación de cobro."
@@ -33,11 +38,6 @@
     {
       "fecha": "22/09/2026",
       "resumen": "Nueva deuda registrada: $2.500.000 ARS acumulados con Héctor López por asesoramiento laboral en Argentina, sin fecha de pago definida todavía.",
-      "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "22/09/2026",
-      "resumen": "Costos operativos actualizados con datos reales de facturación (Vercel $20, Supabase $83,34, Claude Max $100, Network Solutions $47,55, API Anthropic ~$12 variable) — total estimado sube de $434 a $610,06/mes. Reemplaza estimaciones de junio; el stack de hosting Netlify/Cloudflare Worker quedó marcado como migrado a Vercel/Supabase.",
       "visibility": "socios_asesores"
     }
   ],
