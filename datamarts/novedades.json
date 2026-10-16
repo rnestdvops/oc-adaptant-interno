@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "fecha": "16/10/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Nuevo embargo AFIP cargado sobre BHP SA: SOJ 11824412, $60.607.885,35, Expediente 39054/2026 (Juzgado Federal 2, Ejecuciones Fiscales, San Juan). No es deuda nueva — es la ejecución fiscal de deuda anterior ya registrada. Fecha de notificación y estado de retención sin confirmar."
+    },
+    {
       "fecha": "08/10/2026",
       "visibility": "socios_asesores",
       "resumen": "Cuota 5 del préstamo Banco Macro (vencimiento 17/09/2026) registrada como pagada según indicación de Ernesto; próxima cuota: la 6, vence 17/10/2026 por $3.958.749. Fecha real, monto y canal del pago quedan pendientes de carga."
@@ -33,11 +38,6 @@
     {
       "fecha": "22/09/2026",
       "resumen": "Factura Red Hat A 00002-00000995 (USD 4.840): cobrada y retenida en su totalidad por embargo AFIP (SOJ 11588282). El cobro del proyecto BROU quedó en manos de AFIP.",
-      "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "22/09/2026",
-      "resumen": "Nueva deuda registrada: $2.500.000 ARS acumulados con Héctor López por asesoramiento laboral en Argentina, sin fecha de pago definida todavía.",
       "visibility": "socios_asesores"
     }
   ],
