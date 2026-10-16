@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 01/10/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 facturado sin cobrar, 1 cobrado parcialmente; 7 potenciales) + 1 cancelado (Alfil Digital Agency, USD 8000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($15.000.000, cobrado parcialmente) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
-    "total_pipeline_usd": 493262.83,
+    "estado_actual": "Pipeline actualizado al 16/10/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 facturado sin cobrar, 1 cobrado parcialmente; 7 potenciales) + 1 cancelado (Alfil Digital Agency, USD 8000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($15.000.000, cobrado parcialmente) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
+    "total_pipeline_usd": 493862.83,
     "confirmado_usd": 46129.83,
-    "potencial_usd": 447133,
+    "potencial_usd": 447733,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -150,14 +150,22 @@
       {
         "id": "gbm-bccr-telecom",
         "cliente": "GBM - BCCR",
-        "proyecto": "GBM-BCCR-Escritorio Digital",
-        "monto_total_usd": 57000,
+        "proyecto": "Cloud Adoption Readiness — Alineación Organizacional y Diseño de Flujos de Valor (GBM-BCCR, Escritorio Digital y Telecomunicaciones)",
+        "monto_total_usd": 57600,
         "duracion_meses": 6,
-        "monto_mes_usd": 9500,
+        "monto_mes_usd": 9600,
         "estado": "potencial_confirmado_activo",
         "mes_inicio": "2026-11",
-        "entidad": "Adaptant",
-        "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS. Actualizado 22/09/2026: inicio desplazado a noviembre 2026 (antes septiembre). Monto y duración sin cambio (USD 57.000, 6 cuotas de USD 9.500)."
+        "entidad": "d-Vops LLC",
+        "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS. Actualizado 22/09/2026: inicio desplazado a noviembre 2026 (antes septiembre). Monto y duración sin cambio (USD 57.000, 6 cuotas de USD 9.500). ACTUALIZADO 16/10/2026 con la propuesta formal 'Cloud Adoption Readiness — Alineación Organizacional y Diseño de Flujos de Valor' (v1.3, octubre 2026; archivo Adaptant_CloudAdoptionReadiness_Propuesta_v9.pdf), que reemplaza el esquema de 3 sets de la versión anterior: 6 meses, USD 9.600/mes = USD 57.600 (antes USD 9.500/mes = USD 57.000). Dedicación de GBM-Adaptant ~80 hs/mes (2 coaches/ingenieros de procesos): taller mensual 12-16 hs + tutoría 64-68 hs; Strategy, Plan y Organize avanzan en paralelo los 6 meses. Inicio en noviembre 2026 (indicado por Ernesto). PAGO A MES VENCIDO: sin anticipo; se factura cada mes completado y el pago es inmediato contra presentación de la factura — primer pago al cierre del Mes 1 (cobro estimado diciembre 2026) y sexto en mayo 2027. Factura emitida por D-VOPS LLC (Estados Unidos), cobro por transferencia a la cuenta de d-Vops LLC; precios sin IVA ni impuestos. Se contrata por el canal de entrenamientos de GBM. Próximos pasos según la propuesta: validar con el Sponsor del Banco y el partner de GBM, confirmar áreas y padrón, agendar kickoff y definir con GBM el mecanismo de facturación mensual. No hay confirmación del cliente registrada.",
+        "montos_mes_explicitos": {
+          "2026-12": 9600,
+          "2027-01": 9600,
+          "2027-02": 9600,
+          "2027-03": 9600,
+          "2027-04": 9600,
+          "2027-05": 9600
+        }
       },
       {
         "id": "docuprint",
