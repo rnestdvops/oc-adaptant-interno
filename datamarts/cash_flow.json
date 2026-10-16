@@ -78,7 +78,9 @@
       "monto_mes_usd": 16000,
       "duracion_meses": 6,
       "nota_comercial": "Postergado a 2027 según indicación de Ernesto (23/09/2026). Originalmente previsto desde jul/2026 sin confirmación del cliente.",
-      "monto_total_usd": 96000
+      "monto_total_usd": 96000,
+      "incluir_en_flujo": false,
+      "nota_flujo": "Excluido del flujo de caja el 16/10/2026 por indicación de Ernesto: no está confirmado. Sigue en el pipeline como potencial."
     },
     {
       "id": "gbm-hyperauto",
@@ -114,7 +116,9 @@
       "mes_inicio": "2027-03",
       "monto_mes_usd": 30000,
       "duracion_meses": 6,
-      "monto_total_usd": 180000
+      "monto_total_usd": 180000,
+      "incluir_en_flujo": false,
+      "nota_flujo": "Excluido del flujo de caja el 16/10/2026 por indicación de Ernesto: no está confirmado. Sigue en el pipeline como potencial."
     },
     {
       "id": "gbm-bccr-telecom",
@@ -148,7 +152,9 @@
       "monto_mes_usd": 3500,
       "duracion_meses": 6,
       "nota_comercial": "Postergado a 2027 según indicación de Ernesto (23/09/2026). Originalmente previsto desde sep/2026.",
-      "monto_total_usd": 21000
+      "monto_total_usd": 21000,
+      "incluir_en_flujo": false,
+      "nota_flujo": "Excluido del flujo de caja el 16/10/2026 por indicación de Ernesto: no está confirmado. Sigue en el pipeline como potencial."
     },
     {
       "id": "gbm-bccr-dex-practitioner",
@@ -202,7 +208,7 @@
     "neto_total_nerdcube_ars": 828617.66
   },
   "pipeline_resumen": {
-    "nota": "Resincronizado el 22/09/2026 contra adaptant_sas.json → pipeline (fuente canónica). Este resumen NO recalcula ingresos_confirmados_por_mes / ingresos_potenciales_por_mes / proyeccion_mensual — esos siguen con su propio armado manual, pendiente de revisión aparte si hace falta reflejar estos cambios en la proyección de caja. Ingresos_detalle/ingresos_confirmados_por_mes/ingresos_potenciales_por_mes reconstruidos el 22/09/2026 a partir del pipeline real (antes tenían datos de julio/agosto sin sincronizar — ej. Docuprint marcado 'confirmado' sin serlo, un placeholder de ISPE que ya no existe). Los saldos por escenario (saldo_v3..v8, egresos_v4..v8, neto_*, saldo_acumulado_*) NO se tocaron — dependen de una metodología de proyección acumulada que no está documentada acá; quedan pendientes de una revisión aparte si hace falta que reflejen el pipeline actualizado. Actualizado 16/10/2026: ingresos_potenciales_por_mes reconstruido desde el pipeline vigente (incluye ANTEL y Docuprint postergados a 2027 y la propuesta Cloud Adoption Readiness de GBM-BCCR con cobro a mes vencido); ingresos_confirmados_por_mes ajustado solo para BROU (USD 11.535 en octubre). proyeccion_mensual y los saldos por escenario siguen sin recalcular.",
+    "nota": "Resincronizado el 22/09/2026 contra adaptant_sas.json → pipeline (fuente canónica). Este resumen NO recalcula ingresos_confirmados_por_mes / ingresos_potenciales_por_mes / proyeccion_mensual — esos siguen con su propio armado manual, pendiente de revisión aparte si hace falta reflejar estos cambios en la proyección de caja. Ingresos_detalle/ingresos_confirmados_por_mes/ingresos_potenciales_por_mes reconstruidos el 22/09/2026 a partir del pipeline real (antes tenían datos de julio/agosto sin sincronizar — ej. Docuprint marcado 'confirmado' sin serlo, un placeholder de ISPE que ya no existe). Los saldos por escenario (saldo_v3..v8, egresos_v4..v8, neto_*, saldo_acumulado_*) NO se tocaron — dependen de una metodología de proyección acumulada que no está documentada acá; quedan pendientes de una revisión aparte si hace falta que reflejen el pipeline actualizado. Actualizado 16/10/2026: ingresos_potenciales_por_mes reconstruido desde el pipeline vigente (incluye ANTEL y Docuprint postergados a 2027 y la propuesta Cloud Adoption Readiness de GBM-BCCR con cobro a mes vencido); ingresos_confirmados_por_mes ajustado solo para BROU (USD 11.535 en octubre). proyeccion_mensual y los saldos por escenario siguen sin recalcular. Ajuste 16/10/2026: ANTEL (Value Stream 2026 y Fase 2 2027) y Docuprint se excluyen de ingresos_potenciales_por_mes por no estar confirmados (campo incluir_en_flujo=false en su ítem); siguen contando en los totales del pipeline como potenciales.",
     "perdidos": 1,
     "confirmados": 4,
     "potenciales": 7,
@@ -2735,13 +2741,10 @@
     "2026-09": 16000,
     "2026-10": 10000,
     "2026-12": 9600,
-    "2027-01": 29100,
-    "2027-02": 29100,
-    "2027-03": 59100,
-    "2027-04": 59100,
-    "2027-05": 59100,
-    "2027-06": 49500,
-    "2027-07": 30000,
-    "2027-08": 30000
+    "2027-01": 9600,
+    "2027-02": 9600,
+    "2027-03": 9600,
+    "2027-04": 9600,
+    "2027-05": 9600
   }
 }
