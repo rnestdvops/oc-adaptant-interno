@@ -3,6 +3,11 @@
     {
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
+      "resumen": "BROU Track Gerencial: el cobro pendiente se hará por la factura 00003-00000011 (USD 11.535) emitida por Ernesto a título personal. Cadena de pago: BROU → Red Hat → Alquimia.IA → Ernesto (Adaptant). Aún sin confirmación de cobro."
+    },
+    {
+      "fecha": "16/10/2026",
+      "visibility": "socios_asesores",
       "resumen": "Acuerdo con Carolina Hernández: el esquema final pasa a ser un mutuo en USD (capital USD 21.096,46, 7% TNA) con asunción de deuda por Ernesto Corona, que libera a BHP SA. Cuota inicial de solo intereses (USD 123,06) el 15/10/2026 y 24 cuotas de capital hasta 15/10/2028. Contrato y recibo siguen sin firmar; certificado de trabajo F.984 ya emitido el 12/10."
     },
     {
@@ -34,11 +39,6 @@
       "fecha": "23/09/2026",
       "resumen": "Deuda ARCA registrada como latente — sin pagos activos, a procesar vía facilidades o moratoria cuando las condiciones lo permitan.",
       "visibility": "socios_asesores"
-    },
-    {
-      "fecha": "22/09/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Carolina Hernández: versión final del plan de pagos ofrecido suma 4 sueldos adeudados de 2026 ($7.313.119 ARS) al capital de la gratificación — capital dolarizado sube de USD 16.478 a USD 21.096. No confirmado si Carolina ya aceptó esta versión ampliada."
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
