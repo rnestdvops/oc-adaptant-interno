@@ -29,16 +29,16 @@
       "concepto": "GPS-Consultoría Organizacional · Opp 71265369 · PA 66593 · UY-BROU Standard Purchase Order 2010020425",
       "moneda": "USD",
       "importes_usd": {
-        "neto_gravado": 4000.00,
-        "iva_21": 840.00,
-        "total": 4840.00
+        "neto_gravado": 4000.0,
+        "iva_21": 840.0,
+        "total": 4840.0
       },
-      "tc_consignado_ars_por_usd": 1436.50,
-      "total_en_ars": 6952660.00,
+      "tc_consignado_ars_por_usd": 1436.5,
+      "total_en_ars": 6952660.0,
       "condicion_pago": "Contado / Cuenta Corriente / Transferencia Bancaria",
       "fecha_vto_pago": "2026-06-17",
-      "estado_cobro": "pendiente",
-      "monto_cobrado_usd": 0,
+      "estado_cobro": "cobrado_embargado",
+      "monto_cobrado_usd": 4840,
       "cuenta_destino_esperada": {
         "banco": "Banco Supervielle",
         "sucursal": "San Juan Rivadavia 74 Este",
@@ -47,11 +47,11 @@
         "titular": "BHP SA"
       },
       "pasivos_fiscales_generados": {
-        "iva_debito_fiscal_usd": 840.00,
-        "iva_debito_fiscal_ars_aprox": 1206660.00,
+        "iva_debito_fiscal_usd": 840.0,
+        "iva_debito_fiscal_ars_aprox": 1206660.0,
         "iva_periodo_devengamiento": "06/2026",
         "iva_vto_aprox": "2026-07-21",
-        "iibb_base_imponible_ars": 6952660.00
+        "iibb_base_imponible_ars": 6952660.0
       },
       "gestiones": [
         {
@@ -59,7 +59,7 @@
           "accion": "Factura emitida y autorizada por ARCA — CAE 86240082707364 obtenido"
         }
       ],
-      "proxima_accion": "Seguimiento de cobranza por canales habituales con Red Hat AR."
+      "proxima_accion": "Cobro recibido en cuenta USD Supervielle y retenido íntegramente por embargo AFIP (SOJ 11588282, Expte. 21184/2026). Sin saldo disponible."
     }
   ]
 }

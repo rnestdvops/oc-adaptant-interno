@@ -110,9 +110,9 @@
         "duracion_meses": 6,
         "monto_mes_usd": 16000,
         "estado": "potencial",
-        "mes_inicio": "2026-07",
+        "mes_inicio": "2027-01",
         "entidad": "Adaptant",
-        "nota_comercial": "Sin confirmación del cliente todavía (corregido 12/08/2026 — no hay categoría 'en suspenso', queda como potencial simple)."
+        "nota_comercial": "Postergado a 2027 según indicación de Ernesto (23/09/2026). Originalmente previsto desde jul/2026 sin confirmación del cliente."
       },
       {
         "id": "gbm-hyperauto",
@@ -150,7 +150,7 @@
       {
         "id": "gbm-bccr-telecom",
         "cliente": "GBM - BCCR",
-        "proyecto": "Telecomunicaciones — Workshops + Tutorías de Implementación",
+        "proyecto": "GBM-BCCR-Escritorio Digital",
         "monto_total_usd": 57000,
         "duracion_meses": 6,
         "monto_mes_usd": 9500,
@@ -167,9 +167,9 @@
         "duracion_meses": 6,
         "monto_mes_usd": 3500,
         "estado": "potencial",
-        "mes_inicio": "2026-09",
+        "mes_inicio": "2027-01",
         "entidad": "Adaptant",
-        "nota_comercial": "Confirmado originalmente (6 cuotas de USD 3.500 desde 09/2026), sin confirmación del cliente todavía (corregido 12/08/2026 — no hay categoría 'en suspenso', queda como potencial simple)."
+        "nota_comercial": "Postergado a 2027 según indicación de Ernesto (23/09/2026). Originalmente previsto desde sep/2026."
       },
       {
         "id": "gbm-bccr-dex-practitioner",
