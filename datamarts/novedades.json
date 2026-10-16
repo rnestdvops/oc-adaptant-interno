@@ -3,6 +3,11 @@
     {
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
+      "resumen": "IIBB personal de Ernesto (Convenio Multilateral, CABA y San Juan) presentado y pagado hoy: anticipos 07/2026 $82.154,85 y 08/2026 $20.700, más 09/2026 sin importe — total $102.854,85, por sus últimas facturas."
+    },
+    {
+      "fecha": "16/10/2026",
+      "visibility": "socios_asesores",
       "resumen": "Cargada en cash_flow la proyección mensual por persona (oct 2026 – abr 2027): sin sueldos fijos, el saldo tras gastos se divide en dos. Ajustada el 16/10: Sociedades Americanas al 50 por ciento en noviembre y en diciembre, y plan IIBB excluido — unos $30.190.233 por persona hasta abril, partiendo de saldo cero. Octubre sin ingresos; los ingresos arrancan en noviembre."
     },
     {
@@ -34,11 +39,6 @@
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
       "resumen": "Sara Pérez Herrera: registrada la carta documento de respuesta de BHP SA (HD020909413AR, impuesta 06/10/2026) al telegrama de ella del 15/09. Quedó en espera en sucursal del Correo tras dos intentos de entrega fallidos (domicilio cerrado); sin constancia de entrega todavía."
-    },
-    {
-      "fecha": "16/10/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Nuevo embargo AFIP cargado sobre BHP SA: SOJ 11824412, $60.607.885,35, Expediente 39054/2026 (Juzgado Federal 2, Ejecuciones Fiscales, San Juan). No es deuda nueva — es la ejecución fiscal de deuda anterior ya registrada. Fecha de notificación y estado de retención sin confirmar."
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-29",
+  "last_updated": "2026-10-16",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "vencimientos": [
@@ -71,10 +71,26 @@
       "remitente": "OSTSAMPJBON (Obra Social Trabajadores Socios Bancos Oficiales Jerarquicos)",
       "referencia": "HD01522612AR · Resumen N° 3605776",
       "detalle_periodos": {
-        "ago_2025": { "capital": 35565.59, "interes": 9567.14, "total": 45132.73 },
-        "sep_2025": { "capital": 35565.59, "interes": 8500.18, "total": 44065.77 },
-        "oct_2025": { "capital": 35565.59, "interes": 7362.08, "total": 42927.67 },
-        "nov_2025": { "capital": 6625.84,  "interes": 1535.40, "total": 10161.24 },
+        "ago_2025": {
+          "capital": 35565.59,
+          "interes": 9567.14,
+          "total": 45132.73
+        },
+        "sep_2025": {
+          "capital": 35565.59,
+          "interes": 8500.18,
+          "total": 44065.77
+        },
+        "oct_2025": {
+          "capital": 35565.59,
+          "interes": 7362.08,
+          "total": 42927.67
+        },
+        "nov_2025": {
+          "capital": 6625.84,
+          "interes": 1535.4,
+          "total": 10161.24
+        },
         "subtotal_periodos": 142287.41
       },
       "nota": "Carta Documento sellada 12/06/2026. Plazo 48hs ya vencido. Reclamo Ley 23.660 por aportes OS no registrados de empleados BHP declarados en F931. Monto total reclamado $266.803,27 (incluye capital $142.287,41 + intereses moratorios + costos carta + honorarios). Contacto: fiscalizaciones@jerarquicos.com / 0342-4504828. Pendiente revisión con contador."
@@ -143,7 +159,7 @@
       "fecha": "2026-05-01",
       "entidad": "BHP SA",
       "obligacion": "Liquidación final — Casarino Walter (proyecto Claro Argentina)",
-      "monto_ars": 636854.40,
+      "monto_ars": 636854.4,
       "tipo": "liquidacion_laboral",
       "nivel": "URGENTE",
       "estado": "vencida_sin_pago",
@@ -215,6 +231,48 @@
       "nivel": "PLANIFICAR",
       "nota": "Aún sin intereses. Próximo en sumar costo financiero si no se paga.",
       "estado": "futuro"
+    },
+    {
+      "fecha": "2026-10-16",
+      "entidad": "Ernesto Corona (personal, CUIT 20-22159405-4)",
+      "tipo": "pago",
+      "nivel": "NORMAL",
+      "estado": "pagado",
+      "obligacion": "IIBB Convenio Multilateral — DJ mensual CM03 anticipo 2026-07",
+      "monto_ars": 82154.85,
+      "detalle_jurisdicciones_ars": {
+        "CABA": 65723.88,
+        "San Juan": 16430.97
+      },
+      "nota_pago": "DJ presentada y pagada el 16/10/2026 (según Ernesto, por las últimas facturas). N° verificador 32309, transacción ARCA 1200126298. Fecha de vencimiento original no informada; el comprobante de pago (VEP/transferencia) no fue provisto — se asume pagado el total a pagar de la DJ."
+    },
+    {
+      "fecha": "2026-10-16",
+      "entidad": "Ernesto Corona (personal, CUIT 20-22159405-4)",
+      "tipo": "pago",
+      "nivel": "NORMAL",
+      "estado": "pagado",
+      "obligacion": "IIBB Convenio Multilateral — DJ mensual CM03 anticipo 2026-08",
+      "monto_ars": 20700.0,
+      "detalle_jurisdicciones_ars": {
+        "CABA": 16560.0,
+        "San Juan": 4140.0
+      },
+      "nota_pago": "DJ presentada y pagada el 16/10/2026 (según Ernesto, por las últimas facturas). N° verificador 791925, transacción ARCA 1200127112. Fecha de vencimiento original no informada; el comprobante de pago (VEP/transferencia) no fue provisto — se asume pagado el total a pagar de la DJ."
+    },
+    {
+      "fecha": "2026-10-16",
+      "entidad": "Ernesto Corona (personal, CUIT 20-22159405-4)",
+      "tipo": "pago",
+      "nivel": "NORMAL",
+      "estado": "presentada_sin_importe",
+      "obligacion": "IIBB Convenio Multilateral — DJ mensual CM03 anticipo 2026-09",
+      "monto_ars": 0,
+      "detalle_jurisdicciones_ars": {
+        "CABA": 0,
+        "San Juan": 0
+      },
+      "nota_pago": "DJ presentada el 16/10/2026 sin impuesto a pagar ($0). N° verificador 782520, transacción ARCA 1200126294."
     }
   ],
   "totales_proximos_30_dias": {
@@ -234,5 +292,6 @@
     "Regularizar Bienes Personales 2017-2021 — Franco Buglioni (5 períodos)",
     "Evaluar baja como empleados de BHP de Ernesto y Franco — solo rol de directores",
     "Continuar proceso de constitución Adaptant SAS — ejecución del checklist"
-  ]
+  ],
+  "nota_ernesto_iibb_cm_16_10_2026": "Cargado el 16/10/2026: Ernesto presentó y pagó hoy las DJ mensuales de IIBB (Convenio Multilateral, CABA y San Juan) de sus facturas personales — anticipos 07/2026 ($82.154,85), 08/2026 ($20.700,00) y 09/2026 ($0). Total pagado: $102.854,85. El resto de este datamart sigue sin actualizar desde junio."
 }
