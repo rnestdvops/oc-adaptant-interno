@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-10-16",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "razon_social": "d-Vops LLC",
@@ -44,7 +44,8 @@
       "Annual report Wyoming",
       "BOI / FinCEN"
     ],
-    "asesor_de_referencia": "CPA EEUU"
+    "asesor_de_referencia": "CPA EEUU",
+    "nota_16_10_2026": "Según Ernesto, el CPA (Sociedades Americanas) presentó ante el IRS los impuestos del año 2025 en septiembre de 2026 para evitar multas; sus honorarios (USD 1.250) siguen adeudados — ver deuda_privada.json → deuda_sociedades_americanas. La lista 'pendientes_verificacion' no se actualizó: no está confirmado cuáles de esos puntos quedaron resueltos."
   },
   "cumplimiento_recurrente_requerido": [
     "IRS Form 1065 + K-1 anual",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-10-16",
   "data_owner": "Franco Buglioni",
   "visibility": "socios_asesores",
   "estado_general": "REAL — todos los ítems de la lista confirmados con factura/cuenta real al 22/09/2026: Vercel, Supabase, Claude Max, Network Solutions, Sociedades Americanas LLC, LinkedIn Premium Business, Amazon Prime. ChatGPT Plus y buffer de herramientas varias, dados de baja (redundantes).",
@@ -129,8 +129,8 @@
           "fecha_factura": "2026-01-02",
           "monto_usd_anual": 350,
           "estimado_usd_mes": 29.17,
-          "estado": "PAGADA",
-          "nota": "Renovación anual de la LLC en Wyoming. Pagada en enero 2026."
+          "estado": "ADEUDADA",
+          "nota": "Factura 'Company Renewal' del 02/01/2026 (vto. 02/01/2026), USD 350. Corregido el 16/10/2026: figuraba como pagada en enero 2026, pero sigue adeudada (Balance Due completo). Según Ernesto corresponde al trabajo de impuestos 2025 ante el IRS hecho en septiembre 2026. Ver deuda_privada.json → deuda_sociedades_americanas."
         },
         {
           "item": "Company Tax Return - Partnership (declaración impositiva anual EEUU)",
@@ -138,8 +138,8 @@
           "fecha_factura": "2026-01-02",
           "monto_usd_anual": 900,
           "estimado_usd_mes": 75,
-          "estado": "PAGADA",
-          "nota": "Preparación y presentación del tax return anual de d-Vops LLC como Partnership (Form 1065). Pagada en enero 2026."
+          "estado": "ADEUDADA",
+          "nota": "Company Tax Return - Partnership (Form 1065), USD 900, factura del 02/01/2026 (vto. 30/01/2026). Corregido el 16/10/2026: figuraba como pagada en enero 2026, pero sigue adeudada (Balance Due completo). Según Ernesto es el tax return 2025 presentado ante el IRS en septiembre 2026 para evitar multas. Ver deuda_privada.json → deuda_sociedades_americanas."
         }
       ],
       "subtotal_estimado_usd_mes": 104.17,

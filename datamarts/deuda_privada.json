@@ -339,6 +339,38 @@
     "estado": "Deuda acumulada — sin fecha de pago ni plan de pago definido todavía.",
     "nota": "Cargado el 22/09/2026 según indicación de Ernesto. Sin confirmar si el monto es un total cerrado o sigue acumulando por asesoramiento continuo, ni si hay cronograma de pago en danza aunque no esté formalizado."
   },
+  "deuda_sociedades_americanas": {
+    "concepto": "Honorarios del CPA de EEUU por impuestos y cumplimiento de d-Vops LLC del año 2025 (presentaciones ante el IRS)",
+    "acreedor": {
+      "nombre": "Sociedades Americanas LLC",
+      "domicilio": "1057 NW 136th Ave, Miami, FL 33182, USA"
+    },
+    "deudora": "d-Vops LLC",
+    "moneda": "USD",
+    "capital": 1250,
+    "facturas": [
+      {
+        "numero": "INV-0001169",
+        "fecha": "2026-01-02",
+        "vencimiento": "2026-01-02",
+        "monto_usd": 350,
+        "concepto_en_factura": "Company Renewal",
+        "saldo_pendiente_usd": 350,
+        "estado": "adeudada"
+      },
+      {
+        "numero": "INV-0001170",
+        "fecha": "2026-01-02",
+        "vencimiento": "2026-01-30",
+        "monto_usd": 900,
+        "concepto_en_factura": "Company Tax Return - Partnership",
+        "saldo_pendiente_usd": 900,
+        "estado": "adeudada"
+      }
+    ],
+    "estado": "Adeudada en su totalidad — las dos facturas muestran Balance Due por el monto completo y no hay pagos registrados. Vencimientos de las facturas ya pasados (02/01/2026 y 30/01/2026).",
+    "nota": "Cargado el 16/10/2026 según indicación de Ernesto: corresponden a los impuestos del año 2025 presentados por Sociedades Americanas ante el IRS, trabajo realizado en septiembre de 2026 para evitar multas del IRS. Las facturas llevan fecha 02/01/2026 y la INV-0001169 se describe como 'Company Renewal', no como impuestos; se registra tal cual surge de cada comprobante y de lo que indicó Ernesto, sin conciliar. Corrige el registro anterior de costos_operativos.json, que las daba por pagadas en enero 2026. Es una deuda de d-Vops LLC, no de BHP SA, por lo que no integra pasivo_total_consolidado_bhp_sa. El pago estaba atado al cobro de GBM (ver proceso_ordenamiento.json, tarea C2)."
+  },
   "prestamo_banco_macro": {
     "banco": "Banco Macro",
     "titular_formal": {
