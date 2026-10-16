@@ -2921,7 +2921,8 @@
       "ISPE segundo pago: noviembre 2026 (indicado por Ernesto).",
       "BCCR: inicio estimado noviembre 2026, cobro a mes vencido desde diciembre; el sexto cobro (mayo 2027) queda fuera del período. Fecha de inicio aún sin confirmar.",
       "Potenciales (ANTEL, Docuprint, DEX) y proyectos caídos (Hyperauto, OC Piloto) no cuentan como ingreso.",
-      "Gastos: cuotas de Macro, interés mensual de Moroni (sin amortizar capital), Rocío cuotas 3 a 6, liquidación de Sara en noviembre, suscripciones operativas (USD 361,87/mes) y Sociedades Americanas (USD 1.250 en total: 50% en noviembre y 50% en diciembre, USD 625 c/u). Plan de pagos IIBB San Juan EXCLUIDO por indicación de Ernesto (16/10/2026)."
+      "Gastos: cuotas de Macro, interés mensual de Moroni (sin amortizar capital), Rocío cuotas 3 a 6, liquidación de Sara en noviembre, suscripciones operativas (USD 361,87/mes) y Sociedades Americanas (USD 1.250 en total: 50% en noviembre y 50% en diciembre, USD 625 c/u). Plan de pagos IIBB San Juan EXCLUIDO por indicación de Ernesto (16/10/2026).",
+      "Aclarado por Ernesto el 16/10/2026: los USD 104,17/mes de Sociedades Americanas incluidos en las suscripciones son un prorrateo del cumplimiento societario del año 2027; el 50% de noviembre y diciembre corresponde a la deuda pasada (impuestos 2025, INV-0001169 e INV-0001170). No se superponen: no hay doble conteo."
     ],
     "no_incluye": [
       "Sueldos (a propósito: se reparte el saldo)",
@@ -2933,8 +2934,7 @@
     ],
     "riesgos_de_lectura": [
       "Si el cobro de BROU o el de ISPE ya entró a una cuenta, ya está en el saldo y no debe contarse de nuevo como ingreso.",
-      "Los cobros entran a cuentas distintas (BCCR a d-Vops en USD, BROU a la cuenta personal de Ernesto, ISPE a MP BHP); el reparto en dos asume una sola caja.",
-      "Las suscripciones operativas (USD 361,87/mes) ya incluyen USD 104,17/mes prorrateados de Sociedades Americanas; sumar además el 50% de su deuda en noviembre y diciembre cuenta parte de ese costo dos veces (~$160.000/mes)."
+      "Los cobros entran a cuentas distintas (BCCR a d-Vops en USD, BROU a la cuenta personal de Ernesto, ISPE a MP BHP); el reparto en dos asume una sola caja."
     ]
   }
 }
