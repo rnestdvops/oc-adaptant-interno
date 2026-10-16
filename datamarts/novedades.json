@@ -3,6 +3,11 @@
     {
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
+      "resumen": "Ajustes del pipeline y el flujo: GBM-BCCR confirmado (USD 57.600, a mes vencido; falta fecha de inicio, se estima noviembre) y GBM HyperAutomation y OC Piloto caídos, fuera del flujo. Macro cuota 5 pagada con Personal Pay. Plan de Carolina sin fecha de inicio (lo está revisando). Pago adeudado a Sara programable para noviembre. Intereses de ARCA sin recalcular hasta consolidar."
+    },
+    {
+      "fecha": "16/10/2026",
+      "visibility": "socios_asesores",
       "resumen": "Corrección: las dos facturas de Sociedades Americanas (INV-0001169 y INV-0001170, USD 1.250 en total) figuraban como pagadas y están adeudadas por d-Vops LLC. Corresponden a los impuestos 2025 presentados ante el IRS en septiembre 2026 para evitar multas."
     },
     {
@@ -34,11 +39,6 @@
       "fecha": "08/10/2026",
       "visibility": "socios_asesores",
       "resumen": "Cuota 5 del préstamo Banco Macro (vencimiento 17/09/2026) registrada como pagada según indicación de Ernesto; próxima cuota: la 6, vence 17/10/2026 por $3.958.749. Fecha real, monto y canal del pago quedan pendientes de carga."
-    },
-    {
-      "fecha": "01/10/2026",
-      "visibility": "socios_asesores",
-      "resumen": "BROU Track Gerencial: factura real emitida (USD 11.535, antes estimado USD 11.590) — la emitió Ernesto Corona a título personal (Monotributo) a Alquimia.IA S.A., no BHP SA a Red Hat de Argentina como documentaba la Orden de Trabajo. Diferencia no conciliada, aún sin confirmación de cobro."
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",

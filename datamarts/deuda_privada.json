@@ -164,7 +164,7 @@
       "cuil": "27-32689167-9"
     },
     "deudora": "BHP SA hasta la firma del contrato; según el borrador, pasa a ser Ernesto Raúl Corona a título personal (asunción de deuda, libera a BHP SA) — ver asuncion_de_deuda",
-    "estado_acuerdo": "Plan final con asunción de deuda por Ernesto Corona preparado el 12-16/10/2026: contrato de mutuo y recibo de liquidación en BORRADOR sin firmar, certificado de trabajo F.984 ya emitido (12/10/2026), certificación de servicios pendiente en ANSES. No consta que Carolina haya firmado ni aceptado esta versión. Pendiente de instrumentar y, según el Resumen, de homologar.",
+    "estado_acuerdo": "Plan final con asunción de deuda por Ernesto Corona preparado el 12-16/10/2026: contrato de mutuo y recibo de liquidación en BORRADOR sin firmar, certificado de trabajo F.984 ya emitido (12/10/2026), certificación de servicios pendiente en ANSES. No consta que Carolina haya firmado ni aceptado esta versión. Pendiente de instrumentar y, según el Resumen, de homologar. Fecha de inicio del plan aún sin definir; Carolina está revisando la propuesta y puede haber modificaciones.",
     "referencia_full_si_se_pagara_completo_art245_ars": {
       "indemnizacion_antiguedad_preaviso_sac_preaviso_100pct": 31205579.95,
       "sac_proporcional_jul_2026": 183562.24,
@@ -232,15 +232,16 @@
     "plazo_maximo_meses": 24,
     "amortizacion_capital_fija_mensual_usd": 879.02,
     "fecha_primera_cuota": "2026-10-15",
-    "estructura_cuotas": "Cuota inicial de solo intereses el 15/10/2026 (USD 123,06) + 24 cuotas mensuales de capital de USD 879,02 más intereses sobre saldo, del 15/11/2026 al 15/10/2028. Reemplaza el esquema de la versión anterior (24 cuotas con amortización desde el 15/10/2026). Totales según Anexo I: intereses USD 1.661,35; total a pagar USD 22.757,81.",
+    "estructura_cuotas": "Cuota inicial de solo intereses el 15/10/2026 (USD 123,06) + 24 cuotas mensuales de capital de USD 879,02 más intereses sobre saldo, del 15/11/2026 al 15/10/2028. Reemplaza el esquema de la versión anterior (24 cuotas con amortización desde el 15/10/2026). Totales según Anexo I: intereses USD 1.661,35; total a pagar USD 22.757,81. PROVISIONAL: las fechas del cronograma (cuota inicial 15/10/2026, 24 cuotas desde 15/11/2026) no rigen hasta que se defina el inicio del plan.",
     "modalidad_vigente": "Interés simple mensual sobre saldo pendiente + amortización de capital fija mensual (cuota decreciente). Capital pactado en USD (art. 765 CCyC), cancelable en pesos al TC BNA vendedor del día de cada pago — misma mecánica que el mutuo Moroni. Aportes extraordinarios de capital permitidos en cualquier momento y por cualquier monto, sin necesidad de acuerdo adicional de Carolina (solo benefician al deudor).",
     "ultimo_pagado": null,
     "pendiente_actual": {
       "capital_usd": 21096.46,
-      "estado": "Ningún pago registrado todavía. Contrato sin firmar. La cuota inicial de solo intereses (USD 123,06) tenía vencimiento 15/10/2026 — sin registro de pago [no disponible — pendiente de carga]."
+      "estado": "Ningún pago registrado. Contrato sin firmar y fecha de inicio del plan sin definir (Carolina lo está revisando) — la cuota inicial del 15/10/2026 del borrador NO se considera vencida."
     },
     "cronograma_pagado": [],
-    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. El cronograma completo (interés + capital mes a mes) vive en Cronograma_de_cuotas.xlsx y en el Anexo I del contrato borrador; acá solo se registran los parámetros. Reemplaza el esquema de Propuesta_Pago_Carolina_Hernandez.xlsx (total USD 22.634,74): el cronograma ajustado suma USD 22.757,81."
+    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. El cronograma completo (interés + capital mes a mes) vive en Cronograma_de_cuotas.xlsx y en el Anexo I del contrato borrador; acá solo se registran los parámetros. Reemplaza el esquema de Propuesta_Pago_Carolina_Hernandez.xlsx (total USD 22.634,74): el cronograma ajustado suma USD 22.757,81.",
+    "estado_plan": "Sin fecha de inicio del plan definida: Carolina lo está revisando. Se deja como está pero puede sufrir modificaciones (indicado por Ernesto el 16/10/2026). Fechas y montos del cronograma son provisionales."
   },
   "mutuo_rocio_perez_ortiz": {
     "concepto": "Gratificación por cese — Acuerdo de extinción de la relación laboral por mutuo acuerdo (art. 241 LCT)",
@@ -495,7 +496,7 @@
         "capital": 3186422,
         "interes": 772328,
         "neto_a_pagar": 3958749,
-        "estado": "PAGADA — pago informado por Ernesto el 08/10/2026 (cuota con vencimiento 17/09/2026). Fecha real, monto pagado, canal y comprobante [no disponible — pendiente de carga]. Tampoco se sabe si se imputó el excedente de $123.753 arrastrado de la cuota 4."
+        "estado": "PAGADA — pagada mediante la billetera Personal Pay de Ernesto Corona (confirmado por Ernesto el 16/10/2026). Fecha real y monto exacto sin comprobante propio cargado [no disponible — pendiente de carga]; el comprobante Personal Pay del 21/09/2026 por $4.000.000 está registrado en la cuota 4 y no se confirmó si corresponde a esta cuota. El excedente acumulado no se imputa a cuotas siguientes."
       },
       {
         "n": 6,

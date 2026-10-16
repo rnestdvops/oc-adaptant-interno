@@ -32,10 +32,10 @@
   "primer_ingreso": null,
   "fecha_primer_ingreso": null,
   "pipeline": {
-    "estado_actual": "Pipeline actualizado al 16/10/2026 — 11 proyectos activos (4 confirmados: 2 ya cobrados, 1 facturado sin cobrar, 1 cobrado parcialmente; 7 potenciales) + 1 cancelado (Alfil Digital Agency, USD 8000, excluido de los totales). ISPE Instituto Inteligente está denominado en ARS ($15.000.000, cobrado parcialmente) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
-    "total_pipeline_usd": 493862.83,
-    "confirmado_usd": 46129.83,
-    "potencial_usd": 447733,
+    "estado_actual": "Pipeline actualizado al 16/10/2026 — 9 proyectos activos (5 confirmados: 2 ya cobrados, 1 facturado sin cobrar, 1 cobrado parcialmente, 1 confirmado sin cobrar con fecha de inicio por definir [GBM-BCCR, se estima noviembre]; 4 potenciales) + 3 cancelados/caídos (Alfil USD 8.000, GBM HyperAutomation USD 18.000, GBM OC Piloto USD 30.000; excluidos de los totales). ISPE Instituto Inteligente está denominado en ARS ($15.000.000, cobrado parcialmente) — el USD acá es equivalente aproximado al TC de referencia de la propuesta.",
+    "total_pipeline_usd": 445862.83,
+    "confirmado_usd": 103729.83,
+    "potencial_usd": 342133,
     "proyectos_confirmados": [
       {
         "id": "gbm-bccr-vs",
@@ -99,6 +99,27 @@
           "2026-10": 5172.41
         },
         "nota_comercial": "Corregido el 12/08/2026: pasó a confirmado (sin cobrar todavía). Reemplaza al placeholder anterior 'ispe-anr-ceci' (USD 9.000 estimado) — esta es la propuesta técnica + económica real, presentada al Programa de Fortalecimiento de la Economía del Conocimiento, convocatoria 2026 del CECI San Juan (Centro de Economía del Conocimiento e Innovación). Cliente: ISPE (Instituto Superior de Formación Docente / Instituto Superior de Perfeccionamiento Educativo), razón social Generación Siglo XXI SRL — 70 colaboradores, 750 alumnos. Proyecto de rediseño organizacional y adopción de IA bajo el modelo Organizational Commons. Costo total del proyecto: $24.000.000 ARS (ANR solicitado al CECI $15.000.000 = 62,5%, contraparte ISPE $9.000.000 = 37,5%). Lo que se registra acá es SOLO la porción de honorarios de Adaptant Studio ($18.571.000 ARS = $13.000.000 vía ANR + $5.571.000 aprox. vía contraparte ISPE) — no incluye el rubro de stack tecnológico (~$2.857.000, licencias Anthropic API/Claude Pro/Lovable/GitHub) ni el tiempo del equipo institucional del ISPE (~$2.572.000, sin cargo). El cronograma de facturación (campo cronograma_facturacion_ars) sigue el track de fases/hitos, NO el cronograma de desembolso del ANR del CECI al ISPE (que es distinto: 50%/50% contra firma de convenio y avance del 30%, ver deuda_privada.json si se carga en el futuro). Mes 0 = agosto 2026, según indicación de Ernesto (el track de la propuesta original no fecha el mes 0 en términos absolutos). IMPORTANTE — ajuste por inflación: si la ejecución se extiende más de 3 meses desde la firma del convenio, los honorarios de Adaptant Studio se actualizan por IPC (INDEC) desde el mes 4 — los montos ARS de Fase 4 en adelante son por lo tanto un piso, no un techo. El equivalente en USD usa el TC de referencia de la propuesta ($1.450, junio 2026) solo para comparabilidad con el resto del pipeline (denominado en USD) — la moneda real de facturación y cobro es ARS. Actualizado 22/09/2026: proyecto cerrado en su totalidad. Reemplaza el cronograma de fases previo ($18.571.000 ARS en 7 tramos) por 2 pagos de $7.500.000 ARS cada uno (total $15.000.000 ARS). Primer pago acreditado hoy 22/09/2026 en MP BHP. Segundo pago estimado en ~2 semanas (principios de octubre 2026). Estado pasa a 'cobrado' cuando entre el segundo pago."
+      },
+      {
+        "id": "gbm-bccr-telecom",
+        "cliente": "GBM - BCCR",
+        "proyecto": "Cloud Adoption Readiness — Alineación Organizacional y Diseño de Flujos de Valor (GBM-BCCR, Escritorio Digital y Telecomunicaciones)",
+        "monto_total_usd": 57600,
+        "duracion_meses": 6,
+        "monto_mes_usd": 9600,
+        "estado": "confirmado_sin_cobrar",
+        "mes_inicio": "2026-11",
+        "entidad": "d-Vops LLC",
+        "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS. Actualizado 22/09/2026: inicio desplazado a noviembre 2026 (antes septiembre). Monto y duración sin cambio (USD 57.000, 6 cuotas de USD 9.500). ACTUALIZADO 16/10/2026 con la propuesta formal 'Cloud Adoption Readiness — Alineación Organizacional y Diseño de Flujos de Valor' (v1.3, octubre 2026; archivo Adaptant_CloudAdoptionReadiness_Propuesta_v9.pdf), que reemplaza el esquema de 3 sets de la versión anterior: 6 meses, USD 9.600/mes = USD 57.600 (antes USD 9.500/mes = USD 57.000). Dedicación de GBM-Adaptant ~80 hs/mes (2 coaches/ingenieros de procesos): taller mensual 12-16 hs + tutoría 64-68 hs; Strategy, Plan y Organize avanzan en paralelo los 6 meses. Inicio en noviembre 2026 (indicado por Ernesto). PAGO A MES VENCIDO: sin anticipo; se factura cada mes completado y el pago es inmediato contra presentación de la factura — primer pago al cierre del Mes 1 (cobro estimado diciembre 2026) y sexto en mayo 2027. Factura emitida por D-VOPS LLC (Estados Unidos), cobro por transferencia a la cuenta de d-Vops LLC; precios sin IVA ni impuestos. Se contrata por el canal de entrenamientos de GBM. Próximos pasos según la propuesta: validar con el Sponsor del Banco y el partner de GBM, confirmar áreas y padrón, agendar kickoff y definir con GBM el mecanismo de facturación mensual. No hay confirmación del cliente registrada. CONFIRMADO 16/10/2026 por Ernesto: el BCCR está confirmado, pero falta la fecha de inicio — se estima noviembre 2026. Los cobros mensuales a mes vencido (diciembre 2026 a mayo 2027) son por lo tanto estimados hasta que se fije el inicio.",
+        "montos_mes_explicitos": {
+          "2026-12": 9600,
+          "2027-01": 9600,
+          "2027-02": 9600,
+          "2027-03": 9600,
+          "2027-04": 9600,
+          "2027-05": 9600
+        },
+        "fecha_inicio_confirmada": false
       }
     ],
     "proyectos_potenciales": [
@@ -115,28 +136,6 @@
         "nota_comercial": "Postergado a 2027 según indicación de Ernesto (23/09/2026). Originalmente previsto desde jul/2026 sin confirmación del cliente."
       },
       {
-        "id": "gbm-hyperauto",
-        "cliente": "GBM",
-        "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
-        "monto_total_usd": 18000,
-        "duracion_meses": 3,
-        "monto_mes_usd": 6000,
-        "estado": "potencial",
-        "mes_inicio": "2026-07",
-        "entidad": "Adaptant"
-      },
-      {
-        "id": "gbm-oc-piloto",
-        "cliente": "GBM",
-        "proyecto": "OC Piloto y Experimentación",
-        "monto_total_usd": 30000,
-        "duracion_meses": 3,
-        "monto_mes_usd": 10000,
-        "estado": "potencial",
-        "mes_inicio": "2026-08",
-        "entidad": "Adaptant"
-      },
-      {
         "id": "antel-vs-fase2-2027",
         "cliente": "ANTEL",
         "proyecto": "Value Stream y Rediseño de Equipos (Fase 2)",
@@ -146,26 +145,6 @@
         "estado": "potencial",
         "mes_inicio": "2027-03",
         "entidad": "Adaptant"
-      },
-      {
-        "id": "gbm-bccr-telecom",
-        "cliente": "GBM - BCCR",
-        "proyecto": "Cloud Adoption Readiness — Alineación Organizacional y Diseño de Flujos de Valor (GBM-BCCR, Escritorio Digital y Telecomunicaciones)",
-        "monto_total_usd": 57600,
-        "duracion_meses": 6,
-        "monto_mes_usd": 9600,
-        "estado": "potencial_confirmado_activo",
-        "mes_inicio": "2026-11",
-        "entidad": "d-Vops LLC",
-        "nota_comercial": "Confirmación esperada en agosto 2026 (indicado 12/08/2026). Deck ejecutivo de validación de concepto (agosto 2026). Mismo modelo comercial validado con 'Escritorio Digital': capacitación como vehículo vía canal de entrenamientos de GBM (compra ágil, sin licitación pesada), con consultoría de implementación como contenido real de valor. Hasta 20 dueños del diseño, 6 meses en 3 sets (Fundamentos y Diseño / Refinamiento de Flujos / Tutorías de Implementación). Podría confirmarse en agosto 2026 y empezar a facturar en septiembre. Entidad facturadora a confirmar — el proyecto GBM-BCCR anterior (gbm-bccr-vs) facturó vía d-Vops LLC en lugar de Adaptant SAS. Actualizado 22/09/2026: inicio desplazado a noviembre 2026 (antes septiembre). Monto y duración sin cambio (USD 57.000, 6 cuotas de USD 9.500). ACTUALIZADO 16/10/2026 con la propuesta formal 'Cloud Adoption Readiness — Alineación Organizacional y Diseño de Flujos de Valor' (v1.3, octubre 2026; archivo Adaptant_CloudAdoptionReadiness_Propuesta_v9.pdf), que reemplaza el esquema de 3 sets de la versión anterior: 6 meses, USD 9.600/mes = USD 57.600 (antes USD 9.500/mes = USD 57.000). Dedicación de GBM-Adaptant ~80 hs/mes (2 coaches/ingenieros de procesos): taller mensual 12-16 hs + tutoría 64-68 hs; Strategy, Plan y Organize avanzan en paralelo los 6 meses. Inicio en noviembre 2026 (indicado por Ernesto). PAGO A MES VENCIDO: sin anticipo; se factura cada mes completado y el pago es inmediato contra presentación de la factura — primer pago al cierre del Mes 1 (cobro estimado diciembre 2026) y sexto en mayo 2027. Factura emitida por D-VOPS LLC (Estados Unidos), cobro por transferencia a la cuenta de d-Vops LLC; precios sin IVA ni impuestos. Se contrata por el canal de entrenamientos de GBM. Próximos pasos según la propuesta: validar con el Sponsor del Banco y el partner de GBM, confirmar áreas y padrón, agendar kickoff y definir con GBM el mecanismo de facturación mensual. No hay confirmación del cliente registrada.",
-        "montos_mes_explicitos": {
-          "2026-12": 9600,
-          "2027-01": 9600,
-          "2027-02": 9600,
-          "2027-03": 9600,
-          "2027-04": 9600,
-          "2027-05": 9600
-        }
       },
       {
         "id": "docuprint",
@@ -205,6 +184,32 @@
         "fecha_cancelacion": "2026-08-12",
         "motivo_cancelacion": "El cliente decidió no avanzar.",
         "nota_comercial": "Propuesta enviada 16/07/2026 a Tobías y equipo de Alfil Digital Agency (~18 personas, San Juan) — programa de 3 ciclos: Self Selection (1 mes, USD 5.000), Commitment (15 días, USD 2.000), Transform (1,5 meses opcional, USD 1.000). Vigencia de la propuesta vencía ~15/08/2026. Había entrado al Commons solo como señal validada (Fase 10 — email consolidado el 17/07/2026), nunca como ítem estructurado del pipeline; por eso el chat lo sintetizaba desde la señal en vez de leerlo de acá. Cancelado el 12/08/2026."
+      },
+      {
+        "id": "gbm-hyperauto",
+        "cliente": "GBM",
+        "proyecto": "HyperAutomation Ventas: Workshops y entrenamiento",
+        "monto_total_usd": 18000,
+        "duracion_meses": 3,
+        "monto_mes_usd": 6000,
+        "estado": "caido",
+        "mes_inicio": "2026-07",
+        "entidad": "Adaptant",
+        "fecha_baja": "2026-10-16",
+        "nota_comercial": "Se cayó — indicado por Ernesto el 16/10/2026. Sale del pipeline y del flujo de caja."
+      },
+      {
+        "id": "gbm-oc-piloto",
+        "cliente": "GBM",
+        "proyecto": "OC Piloto y Experimentación",
+        "monto_total_usd": 30000,
+        "duracion_meses": 3,
+        "monto_mes_usd": 10000,
+        "estado": "caido",
+        "mes_inicio": "2026-08",
+        "entidad": "Adaptant",
+        "fecha_baja": "2026-10-16",
+        "nota_comercial": "Se cayó — indicado por Ernesto el 16/10/2026. Sale del pipeline y del flujo de caja."
       }
     ]
   },

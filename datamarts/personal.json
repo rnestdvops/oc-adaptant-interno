@@ -123,7 +123,7 @@
           },
           "preaviso": "No corresponde — prestó servicios hasta el último día",
           "total": 779116.47,
-          "estado": "Pendiente de pago — a abonar en agosto 2026, condicionado a la liberación de las cuentas bancarias de BHP (embargos AFIP, ver deuda_arca.json).",
+          "estado": "Pendiente de pago — se puede programar para noviembre 2026 (indicado por Ernesto el 16/10/2026), a la espera de que Sara confirme/reciba la carta documento de respuesta. Antes figuraba para agosto 2026, condicionado a la liberación de las cuentas bancarias de BHP (embargos AFIP, ver deuda_arca.json).",
           "nota": "Actualizado 24/08/2026 con la planilla de liquidación final real — reemplaza el cálculo informal anterior ($266.666,67, SAC+vacaciones sobre un sueldo base de $500.000 mencionado en el WhatsApp a Sara). El sueldo base real usado en esta liquidación es $602.409,64, distinto del certificado art. 80 LCT (que consigna $500.000/mes) — no se concilió el origen de la diferencia."
         },
         "conflicto_laboral_potencial": {

@@ -88,7 +88,8 @@
         "pct_del_total": 0.0
       }
     ],
-    "total_general_nota": "Tratar como PISO, no como total real — ver nota_actualizacion sobre intereses no recalculados a hoy."
+    "total_general_nota": "Tratar como PISO, no como total real — ver nota_actualizacion sobre intereses no recalculados a hoy.",
+    "consolidacion_pendiente": "Indicado por Ernesto el 16/10/2026: NO recalcular intereses por ahora. Falta información para consolidar lo vencido y lo que está entrando como embargo (incluye el SOJ 11824412). Los totales de este datamart son parciales y no están consolidados."
   },
   "sistema_unico_de_deuda": {
     "descripcion": "Vista operativa ARCA — base para ejecuciones y planes de pago",
