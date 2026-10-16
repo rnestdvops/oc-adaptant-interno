@@ -3,6 +3,11 @@
     {
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
+      "resumen": "Cargada en cash_flow la proyección mensual por persona (oct 2026 – abr 2027): sin sueldos fijos, el saldo tras gastos se divide en dos — unos $26,6 millones por persona hasta abril, partiendo de saldo cero. Octubre sin ingresos; los ingresos arrancan en noviembre."
+    },
+    {
+      "fecha": "16/10/2026",
+      "visibility": "socios_asesores",
       "resumen": "Ajustes del pipeline y el flujo: GBM-BCCR confirmado (USD 57.600, a mes vencido; falta fecha de inicio, se estima noviembre) y GBM HyperAutomation y OC Piloto caídos, fuera del flujo. Macro cuota 5 pagada con Personal Pay. Plan de Carolina sin fecha de inicio (lo está revisando). Pago adeudado a Sara programable para noviembre. Intereses de ARCA sin recalcular hasta consolidar."
     },
     {
@@ -34,11 +39,6 @@
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
       "resumen": "Nuevo embargo AFIP cargado sobre BHP SA: SOJ 11824412, $60.607.885,35, Expediente 39054/2026 (Juzgado Federal 2, Ejecuciones Fiscales, San Juan). No es deuda nueva — es la ejecución fiscal de deuda anterior ya registrada. Fecha de notificación y estado de retención sin confirmar."
-    },
-    {
-      "fecha": "08/10/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Cuota 5 del préstamo Banco Macro (vencimiento 17/09/2026) registrada como pagada según indicación de Ernesto; próxima cuota: la 6, vence 17/10/2026 por $3.958.749. Fecha real, monto y canal del pago quedan pendientes de carga."
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",

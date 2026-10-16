@@ -2746,5 +2746,199 @@
     "2027-04": 9600,
     "2027-05": 9600
   },
-  "ingresos_potenciales_por_mes": {}
+  "ingresos_potenciales_por_mes": {},
+  "distribucion_mensual_por_persona": {
+    "fecha_calculo": "2026-10-16",
+    "moneda": "ARS",
+    "tc_referencia_ars_usd": 1535,
+    "descripcion": "Proyección octubre 2026 – abril 2027 de cuánto le correspondería cobrar a cada uno de los dos socios (reparto en partes iguales) después de gastos. Sin sueldos fijos: lo que queda de los ingresos luego de los gastos se divide en dos.",
+    "base": "Parte de saldo inicial CERO: no incluye el saldo actual de las cuentas (Chase d-Vops, MP BHP, Supervielle, Personal Pay), pendiente de informar. Cada $1.000.000 de saldo inicial suma $500.000 por persona.",
+    "meses": [
+      {
+        "mes": "2026-10",
+        "ingresos_ars": 0,
+        "ingresos_detalle": [],
+        "gastos_del_mes_ars": 5339165.35,
+        "gastos_detalle_ars": {
+          "macro_cuota_6": 3958749,
+          "moroni_periodo_12_intereses": 302858,
+          "rocio_cuota_3": 522088.35,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 0.0,
+        "neto_ars": 0.0,
+        "por_persona_ars": 0.0,
+        "por_persona_usd_aprox": 0,
+        "nota": "Sin ingresos en octubre. Los gastos del mes se acumulan como deuda y se imputan a noviembre."
+      },
+      {
+        "mes": "2026-11",
+        "ingresos_ars": 25206225,
+        "ingresos_detalle": [
+          {
+            "concepto": "BROU Track Gerencial — factura 00003-00000011",
+            "monto_usd": 11535,
+            "monto_ars": 17706225
+          },
+          {
+            "concepto": "ISPE Instituto Inteligente — segundo pago",
+            "monto_ars": 7500000
+          }
+        ],
+        "gastos_del_mes_ars": 7636030.76,
+        "gastos_detalle_ars": {
+          "macro_cuota_7": 3958749,
+          "moroni_intereses": 302858,
+          "rocio_cuota_4": 522088.35,
+          "iibb_san_juan": 1517748.94,
+          "sara_liquidacion": 779116.47,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 12975196.11,
+        "neto_ars": 12231028.89,
+        "por_persona_ars": 6115514.45,
+        "por_persona_usd_aprox": 3984,
+        "nota": "Incluye los gastos de octubre diferidos."
+      },
+      {
+        "mes": "2026-12",
+        "ingresos_ars": 14736000,
+        "ingresos_detalle": [
+          {
+            "concepto": "GBM-BCCR Cloud Adoption Readiness (cobro a mes vencido, estimado)",
+            "monto_usd": 9600,
+            "monto_ars": 14736000
+          }
+        ],
+        "gastos_del_mes_ars": 6856914.29,
+        "gastos_detalle_ars": {
+          "macro_cuota_8": 3958749,
+          "moroni_intereses": 302858,
+          "rocio_cuota_5": 522088.35,
+          "iibb_san_juan": 1517748.94,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 6856914.29,
+        "neto_ars": 7879085.71,
+        "por_persona_ars": 3939542.86,
+        "por_persona_usd_aprox": 2566
+      },
+      {
+        "mes": "2027-01",
+        "ingresos_ars": 14736000,
+        "ingresos_detalle": [
+          {
+            "concepto": "GBM-BCCR Cloud Adoption Readiness (cobro a mes vencido, estimado)",
+            "monto_usd": 9600,
+            "monto_ars": 14736000
+          }
+        ],
+        "gastos_del_mes_ars": 6856914.29,
+        "gastos_detalle_ars": {
+          "macro_cuota_9": 3958749,
+          "moroni_intereses": 302858,
+          "rocio_cuota_6": 522088.35,
+          "iibb_san_juan": 1517748.94,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 6856914.29,
+        "neto_ars": 7879085.71,
+        "por_persona_ars": 3939542.86,
+        "por_persona_usd_aprox": 2566
+      },
+      {
+        "mes": "2027-02",
+        "ingresos_ars": 14736000,
+        "ingresos_detalle": [
+          {
+            "concepto": "GBM-BCCR Cloud Adoption Readiness (cobro a mes vencido, estimado)",
+            "monto_usd": 9600,
+            "monto_ars": 14736000
+          }
+        ],
+        "gastos_del_mes_ars": 6334825.94,
+        "gastos_detalle_ars": {
+          "macro_cuota_10": 3958749,
+          "moroni_intereses": 302858,
+          "iibb_san_juan": 1517748.94,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 6334825.94,
+        "neto_ars": 8401174.06,
+        "por_persona_ars": 4200587.03,
+        "por_persona_usd_aprox": 2737
+      },
+      {
+        "mes": "2027-03",
+        "ingresos_ars": 14736000,
+        "ingresos_detalle": [
+          {
+            "concepto": "GBM-BCCR Cloud Adoption Readiness (cobro a mes vencido, estimado)",
+            "monto_usd": 9600,
+            "monto_ars": 14736000
+          }
+        ],
+        "gastos_del_mes_ars": 6334825.94,
+        "gastos_detalle_ars": {
+          "macro_cuota_11": 3958749,
+          "moroni_intereses": 302858,
+          "iibb_san_juan": 1517748.94,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 6334825.94,
+        "neto_ars": 8401174.06,
+        "por_persona_ars": 4200587.03,
+        "por_persona_usd_aprox": 2737
+      },
+      {
+        "mes": "2027-04",
+        "ingresos_ars": 14736000,
+        "ingresos_detalle": [
+          {
+            "concepto": "GBM-BCCR Cloud Adoption Readiness (cobro a mes vencido, estimado)",
+            "monto_usd": 9600,
+            "monto_ars": 14736000
+          }
+        ],
+        "gastos_del_mes_ars": 6334825.94,
+        "gastos_detalle_ars": {
+          "macro_cuota_12": 3958749,
+          "moroni_intereses": 302858,
+          "iibb_san_juan": 1517748.94,
+          "suscripciones_operativas": 555470
+        },
+        "gastos_imputados_ars": 6334825.94,
+        "neto_ars": 8401174.06,
+        "por_persona_ars": 4200587.03,
+        "por_persona_usd_aprox": 2737
+      }
+    ],
+    "total": {
+      "ingresos_ars": 98886225,
+      "gastos_imputados_ars": 45693502.51,
+      "neto_ars": 53192722.49,
+      "por_persona_ars": 26596361.25,
+      "por_persona_usd_aprox": 17327
+    },
+    "criterios": [
+      "Octubre no tiene ingresos (indicado por Ernesto 16/10/2026): los ingresos empiezan en noviembre y los gastos de octubre se imputan a noviembre.",
+      "ISPE segundo pago: noviembre 2026 (indicado por Ernesto).",
+      "BCCR: inicio estimado noviembre 2026, cobro a mes vencido desde diciembre; el sexto cobro (mayo 2027) queda fuera del período. Fecha de inicio aún sin confirmar.",
+      "Gastos: cuotas de Macro, interés mensual de Moroni (sin amortizar capital), Rocío cuotas 3 a 6, plan IIBB San Juan desde noviembre, liquidación de Sara en noviembre y suscripciones operativas (USD 361,87/mes).",
+      "Potenciales (ANTEL, Docuprint, DEX) y proyectos caídos (Hyperauto, OC Piloto) no cuentan como ingreso."
+    ],
+    "no_incluye": [
+      "Sueldos (a propósito: se reparte el saldo)",
+      "IVA mensual, aportes y contribuciones de BHP, anticipos de Ganancias, alquiler, honorarios de asesores (sin monto ni fecha)",
+      "Héctor López ($2.500.000, sin fecha)",
+      "Sociedades Americanas (USD 1.250, sin fecha)",
+      "Plan de pagos de Carolina Hernández (sin fecha de inicio)",
+      "Deuda de ARCA (latente, sin pagos programados)",
+      "Cuota del plan IIBB de octubre y anteriores (no consta qué cuotas se pagaron)"
+    ],
+    "riesgos_de_lectura": [
+      "Si el cobro de BROU o el de ISPE ya entró a una cuenta, ya está en el saldo y no debe contarse de nuevo como ingreso.",
+      "Los cobros entran a cuentas distintas (BCCR a d-Vops en USD, BROU a la cuenta personal de Ernesto, ISPE a MP BHP); el reparto en dos asume una sola caja."
+    ]
+  }
 }
