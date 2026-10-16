@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08",
+  "last_updated": "2026-10-16",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad": "BHP SA",
@@ -158,13 +158,13 @@
     ]
   },
   "mutuo_carolina_hernandez": {
-    "concepto": "Gratificación por cese — Acuerdo de extinción de la relación laboral por mutuo acuerdo (art. 241 LCT)",
+    "concepto": "Gratificación por cese + sueldos adeudados 2026 — liquidación final de la relación laboral con BHP SA, instrumentada como mutuo en USD con asunción de deuda por Ernesto Corona (documentos en borrador, sin firmar)",
     "acreedora": {
       "nombre": "Carolina Hernández",
       "cuil": "27-32689167-9"
     },
-    "deudora": "BHP SA",
-    "estado_acuerdo": "Versión final del plan de pagos (incluye sueldos adeudados 2026, no solo gratificación) ofrecida a Carolina — cargada el 22/09/2026 desde Propuesta_Pago_Carolina_Hernandez.xlsx. No confirmado si esta versión ampliada ya fue aceptada por Carolina (la aceptación previa registrada era sobre la versión anterior, solo gratificación). Pendiente de instrumentar como Anexo del acuerdo de extinción por mutuo acuerdo, homologado ante SECLO / Ministerio de Trabajo.",
+    "deudora": "BHP SA hasta la firma del contrato; según el borrador, pasa a ser Ernesto Raúl Corona a título personal (asunción de deuda, libera a BHP SA) — ver asuncion_de_deuda",
+    "estado_acuerdo": "Plan final con asunción de deuda por Ernesto Corona preparado el 12-16/10/2026: contrato de mutuo y recibo de liquidación en BORRADOR sin firmar, certificado de trabajo F.984 ya emitido (12/10/2026), certificación de servicios pendiente en ANSES. No consta que Carolina haya firmado ni aceptado esta versión. Pendiente de instrumentar y, según el Resumen, de homologar.",
     "referencia_full_si_se_pagara_completo_art245_ars": {
       "indemnizacion_antiguedad_preaviso_sac_preaviso_100pct": 31205579.95,
       "sac_proporcional_jul_2026": 183562.24,
@@ -185,6 +185,32 @@
       "total": 7313119.44,
       "nota": "Crédito salarial (art. 12 LCT, irrenunciable), de naturaleza distinta a la gratificación — se incorpora al mismo capital del préstamo por decisión de las partes en esta versión final del plan."
     },
+    "asuncion_de_deuda": {
+      "estado": "BORRADOR SIN FIRMAR — Contrato de Mutuo en Dólares Estadounidenses y Asunción de Deuda, fecha en blanco (octubre 2026)",
+      "partes": "Carolina Hernández (acreedora), Ernesto Raúl Corona (deudor, DNI 22.159.405, CUIL 20-22159405-4, domicilio Santa Fe 3176 4° B, CABA), BHP SA (la empresa, representada por Ernesto Corona, interviene para la asunción y la liberación).",
+      "mecanismo": "Cláusula 2: Ernesto asume personalmente, en nombre y por cuenta de BHP SA, el pago de $32.277.583,40 (gratificación $24.964.463,96 + sueldos adeudados $7.313.119,44); Carolina acepta y libera a BHP SA de toda obligación por esos conceptos, quedando Ernesto como único obligado. Cláusula 3: ese importe se convierte a USD al TC BNA vendedor $1.530 y se imputa por novación como capital de un mutuo que Carolina otorga a Ernesto, por USD 21.096,46.",
+      "liberacion": "Cláusula 9: con la firma, Carolina declara que nada más tiene que reclamar a BHP SA ni a Ernesto como representante o integrante de ella por la relación laboral y su extinción, salvo las obligaciones asumidas en el contrato y el SAC proporcional.",
+      "gastos_e_impuestos": "Cláusula 11: sellado y demás gastos a cargo del deudor (Ernesto).",
+      "nota": "Hasta que se firme, el registro sigue contabilizando la obligación como de BHP SA en el resto de los datamarts. Cargado el 16/10/2026."
+    },
+    "documentos_fuente_16_10_2026": [
+      "Resumen_del_acuerdo_Carolina.pdf — carta explicativa a Carolina",
+      "Contrato_de_mutuo_BORRADOR_sin_firmar.pdf — con Anexo I (cronograma)",
+      "Recibo_de_liquidacion_BORRADOR_sin_firmar.pdf",
+      "Cronograma_de_cuotas.xlsx — cronograma ajustado, con columna de pagos extraordinarios a capital",
+      "Certificado_de_Trabajo_F984_emitido.pdf — emitido y aceptado en ARCA el 12/10/2026 (identificador 000000009823088)"
+    ],
+    "extincion_laboral": {
+      "fecha_ingreso": "2014-12-01",
+      "fecha_egreso": "2026-08-31",
+      "notificacion": "Carta Documento recibida por Carolina el 17/09/2026 (así la nombran el contrato y el recibo; el Resumen para Carolina la llama 'telegrama').",
+      "nota_encuadre": "El Resumen para Carolina describe la notificación como despido sin causa (decisión de la empresa), mientras que registros anteriores de este datamart lo tratan como extinción por mutuo acuerdo (art. 241 LCT) y la planilla anterior advertía que el 80% sobre rubros negociables solo es correcto bajo mutuo acuerdo. El contrato y el recibo hablan de liquidación 'acordada' aceptada voluntariamente. No se concilia; se registra tal cual surge de cada documento."
+    },
+    "documentacion_laboral": {
+      "certificado_de_trabajo_art_80_f984": "Emitido el 12/10/2026 y entregado junto con el Resumen.",
+      "certificacion_de_servicios_y_remuneraciones": "Iniciada en ANSES, pendiente de habilitación en el sistema — se envía a Carolina cuando salga.",
+      "seguro_de_desempleo": "A cargo de Carolina (ANSES, dentro de los 90 días hábiles desde el cese del 31/08/2026)."
+    },
     "moneda": "USD",
     "capital": 21096.46,
     "capital_desglose_usd": {
@@ -194,7 +220,7 @@
     },
     "capital_intacto": true,
     "fecha_origen": "2026-08-04",
-    "fecha_version_actualizada": "2026-09-22",
+    "fecha_version_actualizada": "2026-10-16",
     "tc_referencia_inicial": {
       "fecha": "no especificada en la planilla — versión final recibida 22/09/2026",
       "valor": 1530,
@@ -206,14 +232,15 @@
     "plazo_maximo_meses": 24,
     "amortizacion_capital_fija_mensual_usd": 879.02,
     "fecha_primera_cuota": "2026-10-15",
+    "estructura_cuotas": "Cuota inicial de solo intereses el 15/10/2026 (USD 123,06) + 24 cuotas mensuales de capital de USD 879,02 más intereses sobre saldo, del 15/11/2026 al 15/10/2028. Reemplaza el esquema de la versión anterior (24 cuotas con amortización desde el 15/10/2026). Totales según Anexo I: intereses USD 1.661,35; total a pagar USD 22.757,81.",
     "modalidad_vigente": "Interés simple mensual sobre saldo pendiente + amortización de capital fija mensual (cuota decreciente). Capital pactado en USD (art. 765 CCyC), cancelable en pesos al TC BNA vendedor del día de cada pago — misma mecánica que el mutuo Moroni. Aportes extraordinarios de capital permitidos en cualquier momento y por cualquier monto, sin necesidad de acuerdo adicional de Carolina (solo benefician al deudor).",
     "ultimo_pagado": null,
     "pendiente_actual": {
       "capital_usd": 21096.46,
-      "estado": "Ningún pago registrado todavía — cronograma recién generado (versión final), primera cuota estimada 15/10/2026."
+      "estado": "Ningún pago registrado todavía. Contrato sin firmar. La cuota inicial de solo intereses (USD 123,06) tenía vencimiento 15/10/2026 — sin registro de pago [no disponible — pendiente de carga]."
     },
     "cronograma_pagado": [],
-    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. Cronograma completo de 24 meses (interés + amortización mes a mes) vive en la planilla fuente (Propuesta_Pago_Carolina_Hernandez.xlsx, hoja Liquidacion Final); acá solo se registran los parámetros del acuerdo. Total a pagar en 24 meses según planilla: USD 22.634,74 (USD 1.538,28 de interés total)."
+    "nota": "SAC proporcional ($183.562,24) se sugiere pagar de contado al egreso, sin descuento — no confirmado si ya se abonó. El cronograma completo (interés + capital mes a mes) vive en Cronograma_de_cuotas.xlsx y en el Anexo I del contrato borrador; acá solo se registran los parámetros. Reemplaza el esquema de Propuesta_Pago_Carolina_Hernandez.xlsx (total USD 22.634,74): el cronograma ajustado suma USD 22.757,81."
   },
   "mutuo_rocio_perez_ortiz": {
     "concepto": "Gratificación por cese — Acuerdo de extinción de la relación laboral por mutuo acuerdo (art. 241 LCT)",
@@ -236,12 +263,46 @@
     "cuota_mensual_ars": 522088.35,
     "cantidad_cuotas": 6,
     "cronograma": [
-      { "n": 1, "vencimiento": "2026-08-19", "monto": 522088.35, "estado": "pagado", "fecha_pago": "2026-08-19", "mp_operacion": "174659906826" },
-      { "n": 2, "vencimiento": "2026-09-19", "monto": 522088.35, "estado": "pagado", "fecha_pago": "2026-09-22", "mp_operacion": "179393827609" },
-      { "n": 3, "vencimiento": "2026-10-19", "monto": 522088.35, "estado": "pendiente" },
-      { "n": 4, "vencimiento": "2026-11-19", "monto": 522088.35, "estado": "pendiente" },
-      { "n": 5, "vencimiento": "2026-12-19", "monto": 522088.35, "estado": "pendiente" },
-      { "n": 6, "vencimiento": "2027-01-19", "monto": 522088.35, "estado": "pendiente" }
+      {
+        "n": 1,
+        "vencimiento": "2026-08-19",
+        "monto": 522088.35,
+        "estado": "pagado",
+        "fecha_pago": "2026-08-19",
+        "mp_operacion": "174659906826"
+      },
+      {
+        "n": 2,
+        "vencimiento": "2026-09-19",
+        "monto": 522088.35,
+        "estado": "pagado",
+        "fecha_pago": "2026-09-22",
+        "mp_operacion": "179393827609"
+      },
+      {
+        "n": 3,
+        "vencimiento": "2026-10-19",
+        "monto": 522088.35,
+        "estado": "pendiente"
+      },
+      {
+        "n": 4,
+        "vencimiento": "2026-11-19",
+        "monto": 522088.35,
+        "estado": "pendiente"
+      },
+      {
+        "n": 5,
+        "vencimiento": "2026-12-19",
+        "monto": 522088.35,
+        "estado": "pendiente"
+      },
+      {
+        "n": 6,
+        "vencimiento": "2027-01-19",
+        "monto": 522088.35,
+        "estado": "pendiente"
+      }
     ],
     "ultimo_pagado": "2026-09-22",
     "pagos_realizados": [
@@ -336,8 +397,16 @@
         "neto_a_pagar": 3958749,
         "monto_pagado_total": 4000000,
         "pagos": [
-          { "fecha": "2026-06-17", "monto": 2000000 },
-          { "fecha": "2026-06-19", "monto": 2000000, "canal": "Lemon / Equinus Srl", "coelsa_id": "Z4K6DVNOWY644J1K25J8LQ" }
+          {
+            "fecha": "2026-06-17",
+            "monto": 2000000
+          },
+          {
+            "fecha": "2026-06-19",
+            "monto": 2000000,
+            "canal": "Lemon / Equinus Srl",
+            "coelsa_id": "Z4K6DVNOWY644J1K25J8LQ"
+          }
         ],
         "excedente_ars": 41251,
         "estado": "PAGADA — $4.000.000 pagados ($2M el 17/06 + $2M el 19/06 vía Lemon). Excedente $41.251 que se acumula (no se imputa a cuotas siguientes)."
@@ -351,7 +420,12 @@
         "neto_a_pagar": 3958749,
         "monto_pagado_total": 4000000,
         "pagos": [
-          { "fecha": "2026-07-17", "monto": 4000000, "canal": "Lemon / Equinus Srl", "coelsa_id": "RD06ZO9W41YXVEWK25GP7X" }
+          {
+            "fecha": "2026-07-17",
+            "monto": 4000000,
+            "canal": "Lemon / Equinus Srl",
+            "coelsa_id": "RD06ZO9W41YXVEWK25GP7X"
+          }
         ],
         "excedente_ars": 82502,
         "estado": "PAGADA — $4.000.000 pagados el 17/07/2026 vía Lemon (2 días antes del vencimiento). Excedente acumulado resultante $82.502 ($41.251 de cuota 2 + $41.251 de este pago); se acumula, no se imputa a cuotas siguientes."
@@ -365,7 +439,19 @@
         "neto_a_pagar": 3958749,
         "monto_pagado_total": 4000000,
         "pagos": [
-          { "fecha": "2026-09-21", "hora": "16:14", "monto": 4000000, "canal": "Personal Pay", "cuenta_origen": "Personal Pay — Ernesto Corona (CUIT 20-22159405-4)", "destinatario": "Equinus Srl", "cuit_destinatario": "30-70885325-5", "banco_destino": "Banco Macro S.A.", "cbu_destinatario": "2850322430094215460691", "nro_operacion": "3135510136", "coelsa_id": "PDX4OGNY4L0ODO8V20L6EY" }
+          {
+            "fecha": "2026-09-21",
+            "hora": "16:14",
+            "monto": 4000000,
+            "canal": "Personal Pay",
+            "cuenta_origen": "Personal Pay — Ernesto Corona (CUIT 20-22159405-4)",
+            "destinatario": "Equinus Srl",
+            "cuit_destinatario": "30-70885325-5",
+            "banco_destino": "Banco Macro S.A.",
+            "cbu_destinatario": "2850322430094215460691",
+            "nro_operacion": "3135510136",
+            "coelsa_id": "PDX4OGNY4L0ODO8V20L6EY"
+          }
         ],
         "excedente_ars": 123753,
         "estado": "PAGADA — $4.000.000 pagados el 21/09/2026 vía transferencia Personal Pay (cuenta Ernesto Corona). Excedente acumulado resultante $123.753 ($82.502 de cuotas anteriores + $41.251 de este pago); se acumula, no se imputa a cuotas siguientes (aclarado por Ernesto 08/10/2026)."
