@@ -3,6 +3,11 @@
     {
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
+      "resumen": "Sara Pérez Herrera: registrada la carta documento de respuesta de BHP SA (HD020909413AR, impuesta 06/10/2026) al telegrama de ella del 15/09. Quedó en espera en sucursal del Correo tras dos intentos de entrega fallidos (domicilio cerrado); sin constancia de entrega todavía."
+    },
+    {
+      "fecha": "16/10/2026",
+      "visibility": "socios_asesores",
       "resumen": "Nuevo embargo AFIP cargado sobre BHP SA: SOJ 11824412, $60.607.885,35, Expediente 39054/2026 (Juzgado Federal 2, Ejecuciones Fiscales, San Juan). No es deuda nueva — es la ejecución fiscal de deuda anterior ya registrada. Fecha de notificación y estado de retención sin confirmar."
     },
     {
@@ -34,11 +39,6 @@
       "fecha": "22/09/2026",
       "visibility": "socios_asesores",
       "resumen": "Pipeline actualizado: ISPE Instituto Inteligente cerrado con 2 pagos de $7.500.000 ARS (el primero ya cobrado hoy vía MP BHP), BROU Track Gerencial ajustado a USD 11.590 en un solo pago estimado para noviembre, y GBM-BCCR Telecomunicaciones desplazado a noviembre — DEX Practitioner queda sin fecha por ahora."
-    },
-    {
-      "fecha": "22/09/2026",
-      "resumen": "Factura Red Hat A 00002-00000995 (USD 4.840): cobrada y retenida en su totalidad por embargo AFIP (SOJ 11588282). El cobro del proyecto BROU quedó en manos de AFIP.",
-      "visibility": "socios_asesores"
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",

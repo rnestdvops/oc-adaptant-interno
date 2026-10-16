@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-10-16",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "entidad_empleadora": "BHP SA",
@@ -121,7 +121,31 @@
         "conflicto_laboral_potencial": {
           "monto_ars": 3500000,
           "estado": "En gestión judicial",
-          "nota": "Cargado el 22/09/2026 según indicación de Ernesto. Sin más detalle sobre el reclamo (causa, juzgado, abogado interviniente) ni si tiene relación directa con la liquidación de liquidacion_a_pagar_ars de arriba."
+          "nota": "Cargado el 22/09/2026 según indicación de Ernesto. Sin más detalle sobre el reclamo (causa, juzgado, abogado interviniente) ni si tiene relación directa con la liquidación de liquidacion_a_pagar_ars de arriba.",
+          "telegrama_sara": {
+            "descripcion": "Telegrama Ley 23.789 de Sara Pérez Herrera, fechado 15/09/2026, recibido por BHP SA el 28/09/2026. Su texto no fue provisto — solo se conoce lo que surge de la respuesta.",
+            "fecha": "2026-09-15",
+            "fecha_recepcion": "2026-09-28"
+          },
+          "carta_documento_respuesta": {
+            "nro_pieza": "HD020909413AR",
+            "remitente": "Ernesto Raúl Corona, en representación de BHP SA",
+            "destinatario": "Sara Micaela Pérez Herrera — Martí Sur José 1057, San Juan (CP J5402GDK)",
+            "fecha_imposicion": "2026-10-06",
+            "costo_envio_ars": 24000,
+            "contenido_resumen": "Rechaza el telegrama por improcedente, malicioso y falso. Niega fecha de ingreso, jornada laboral, categoría y convenio colectivo invocados; niega deficiente registración ante ARCA (art. 52 LCT), diferencias salariales y privación de tareas. Sostiene que el contrato se extinguió el 31/07/2026 por rescisión durante el período de prueba (art. 92 bis LCT), que cualquier intimación posterior carece de objeto, y que BHP SA está en concurso preventivo y cerró su único establecimiento (Calle Mendoza 188 sur), sin operar desde julio/2026. Rechaza la aplicación de los arts. 9, 10 y 15 de la Ley 24.013 y toda pretensión resarcitoria de derecho común; rechaza el carácter de empleador, empleador plural, conjunto económico o responsable solidario atribuido a Ernesto Corona y Franco Buglioni (su única empleadora fue BHP SA). Informa que la liquidación final se acreditará en su cuenta sueldo dentro de los 30 días hábiles de recibida la carta; si no es posible, se depositará ante la Subsecretaría de Trabajo de San Juan, al igual que los certificados del art. 80 LCT enviados por medio digital.",
+            "estado_envio": "En espera en sucursal (OAM San Juan Suc.) desde el 09/10/2026 08:08, tras dos intentos de entrega fallidos por domicilio cerrado (07/10 y 08/10/2026). No hay constancia de entrega ni firma del destinatario a la fecha del seguimiento provisto.",
+            "seguimiento_correo_argentino": [
+              { "fecha": "2026-10-06 16:20", "planta": "CTP Buenos Aires", "evento": "Ingreso al correo" },
+              { "fecha": "2026-10-07 08:43", "planta": "CDD/CTP San Juan", "evento": "En poder del distribuidor" },
+              { "fecha": "2026-10-07 11:35", "planta": "CDD/CTP San Juan", "evento": "Intento de entrega — domicilio cerrado, 1ª visita" },
+              { "fecha": "2026-10-08 08:23", "planta": "CDD/CTP San Juan", "evento": "En poder del distribuidor" },
+              { "fecha": "2026-10-08 11:31", "planta": "CDD/CTP San Juan", "evento": "Intento de entrega — domicilio cerrado, 2ª visita" },
+              { "fecha": "2026-10-08 16:29", "planta": "CDD/CTP San Juan", "evento": "En proceso de clasificación" },
+              { "fecha": "2026-10-09 08:08", "planta": "OAM San Juan Suc.", "evento": "Llegada al centro de procesamiento / intento de entrega — en espera en sucursal" }
+            ],
+            "nota": "Cargado el 16/10/2026 desde la copia fiel de la carta y el detalle de seguimiento adjuntos por Ernesto."
+          }
         }
       },
       {
