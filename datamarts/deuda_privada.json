@@ -434,11 +434,12 @@
       "estado": "Sin impacto",
       "razon": "BHP removida del listado (saldo a favor dic/ene)"
     },
-    "estado_general": "AL DÍA",
+    "estado_general": "AL DÍA frente al banco según Ernesto (cuota 6 cubierta con dinero de Juan Corona, titular formal); pendiente de regularizar con él junto con la cuota 7 en noviembre",
     "proximo_vencimiento": {
       "cuota": 6,
       "fecha": "2026-10-17",
-      "monto_neto": 3958749
+      "monto_neto": 3958749,
+      "nota": "Cuota 6 sin pagar por BHP pero cubierta con dinero de Juan Corona; se paga junto con la cuota 7 (vence 16/11) en noviembre."
     },
     "cronograma": [
       {
@@ -535,7 +536,7 @@
         "capital": 3274048,
         "interes": 684701,
         "neto_a_pagar": 3958749,
-        "estado": "pendiente"
+        "estado": "NO PAGADA por BHP, pero CUBIERTA con dinero de Juan Corona (titular formal del préstamo, hermano de Ernesto) — informado por Ernesto el 29/10/2026. Pendiente de regularizar: se paga junto con la cuota 7 en noviembre, cuando entre el próximo ingreso."
       },
       {
         "n": 7,
@@ -645,7 +646,24 @@
     ],
     "excedente_acumulado_ars": 123753,
     "excedente_acumulado_nota": "Acumulado hasta la cuota 4 inclusive. Los excedentes de cada pago ($41.251 c/u en cuotas 2, 3 y 4, por pagar $4.000.000 contra $3.958.749 de cuota) NO se imputan a cuotas siguientes — quedan como saldo a favor acumulado (aclarado por Ernesto 08/10/2026). No incluye el efecto del pago de la cuota 5, cuyos datos reales siguen sin cargar.",
-    "ultima_actualizacion": "2026-10-08"
+    "ultima_actualizacion": "2026-10-08",
+    "adelanto_juan_corona": {
+      "cuota": 6,
+      "monto_ars": 3958749,
+      "fecha_informe": "2026-10-29",
+      "estado": "adeudado a Juan Corona — pendiente de regularizar",
+      "plan_de_pago": "En noviembre 2026, cuando entre el próximo ingreso, se pagan juntas la cuota 6 (vencida el 17/10) y la cuota 7 (vence el 16/11): total $7.917.498.",
+      "nota": "Cargado el 29/10/2026 según indicación de Ernesto. No se informó la fecha en que Juan cubrió la cuota, ni si el pago lo recibió el banco directamente o si hay que reintegrárselo a Juan; no se asume ninguna de las dos. La cuota 6 sigue figurando pendiente en el cronograma hasta que BHP la pague."
+    },
+    "pago_conjunto_previsto": {
+      "cuotas": [
+        6,
+        7
+      ],
+      "monto_total_ars": 7917498,
+      "cuando": "noviembre 2026, al entrar el próximo ingreso",
+      "estado": "previsto — sin fecha exacta"
+    }
   },
   "plan_iibb_san_juan": {
     "organismo": "Rentas — Provincia de San Juan (IIBB)",
