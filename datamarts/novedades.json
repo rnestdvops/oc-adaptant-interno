@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "fecha": "29/10/2026",
+      "visibility": "socios_asesores",
+      "resumen": "Pagos registrados vía Mercado Pago: Moroni período 12 ($302.858, pagado el 29/10, 14 días después del vencimiento; próximo: período 13, vence el 15/11 por USD 203,84) y Rocío Pérez Ortiz cuota 3 ($522.088,35, pagada el 19/10). A Rocío le quedan 3 cuotas."
+    },
+    {
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
       "resumen": "IIBB personal de Ernesto (Convenio Multilateral, CABA y San Juan) presentado y pagado hoy: anticipos 07/2026 $82.154,85 y 08/2026 $20.700, más 09/2026 sin importe — total $102.854,85, por sus últimas facturas."
@@ -34,11 +39,6 @@
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
       "resumen": "Acuerdo con Carolina Hernández: el esquema final pasa a ser un mutuo en USD (capital USD 21.096,46, 7% TNA) con asunción de deuda por Ernesto Corona, que libera a BHP SA. Cuota inicial de solo intereses (USD 123,06) el 15/10/2026 y 24 cuotas de capital hasta 15/10/2028. Contrato y recibo siguen sin firmar; certificado de trabajo F.984 ya emitido el 12/10."
-    },
-    {
-      "fecha": "16/10/2026",
-      "visibility": "socios_asesores",
-      "resumen": "Sara Pérez Herrera: registrada la carta documento de respuesta de BHP SA (HD020909413AR, impuesta 06/10/2026) al telegrama de ella del 15/09. Quedó en espera en sucursal del Correo tras dos intentos de entrega fallidos (domicilio cerrado); sin constancia de entrega todavía."
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
