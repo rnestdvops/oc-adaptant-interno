@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "fecha": "17/11/2026",
+      "visibility": "socios_asesores",
+      "resumen": "IIBB personal de Ernesto, período 10/2026 (Convenio Multilateral): DJ presentada con $524.957,85 a pagar (CABA $419.966,28 + San Juan $104.991,57), pendiente de pago. Corresponde a su última factura personal (00003-00000011, proyecto BROU / Red Hat / Alquimia.IA)."
+    },
+    {
       "fecha": "29/10/2026",
       "visibility": "socios_asesores",
       "resumen": "Macro cuota 6 (vencida el 17/10, $3.958.749): no está pagada por BHP, pero fue cubierta con dinero de Juan Corona, titular formal del préstamo. En noviembre, cuando entre el próximo ingreso, se pagan juntas la cuota 6 y la 7 ($7.917.498 en total)."
@@ -34,17 +39,12 @@
       "fecha": "16/10/2026",
       "visibility": "socios_asesores",
       "resumen": "GBM-BCCR: cargada la propuesta formal Cloud Adoption Readiness (USD 9.600/mes × 6 = USD 57.600, factura d-Vops LLC), inicio noviembre 2026 con pago a mes vencido — primer cobro en diciembre, último en mayo 2027. Reemplaza el esquema anterior de USD 57.000. Sigue sin confirmación del cliente. En el flujo también quedaron reflejados ANTEL y Docuprint postergados a 2027."
-    },
-    {
-      "fecha": "16/10/2026",
-      "visibility": "socios_asesores",
-      "resumen": "BROU Track Gerencial: el cobro pendiente se hará por la factura 00003-00000011 (USD 11.535) emitida por Ernesto a título personal. Cadena de pago: BROU → Red Hat → Alquimia.IA → Ernesto (Adaptant). Aún sin confirmación de cobro."
     }
   ],
   "proposito": "Lista rotativa de las últimas actualizaciones de datos incorporadas al Commons. Se muestra al entrar al chat para invitar a preguntar sobre lo último cargado. Cada item tiene su propio campo 'visibility' — el Worker filtra por nivel de sesión igual que con el resto de los datamarts (socios/asesores/contador ven todo; inversores y demo solo los items 'publico').",
   "convencion": "Cada vez que se actualiza un datamart con un commit `data(<datamart>): <cambio> [<fecha>]`, agregar un item acá con un resumen breve orientado a invitar la pregunta, no a agotar el detalle. Mantener como máximo 6-8 items — el más nuevo primero.",
   "data_owner": "Ernesto Corona",
   "visibility": "mixta_por_item",
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-11-17",
   "max_items_mostrados": 6
 }

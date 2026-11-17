@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-16",
+  "last_updated": "2026-11-17",
   "data_owner": "Ernesto Corona",
   "visibility": "socios_asesores",
   "vencimientos": [
@@ -273,6 +273,21 @@
         "San Juan": 0
       },
       "nota_pago": "DJ presentada el 16/10/2026 sin impuesto a pagar ($0). N° verificador 782520, transacción ARCA 1200126294."
+    },
+    {
+      "fecha": "2026-11-17",
+      "entidad": "Ernesto Corona (personal, CUIT 20-22159405-4)",
+      "tipo": "pago",
+      "nivel": "PENDIENTE",
+      "estado": "presentada_pendiente_pago",
+      "obligacion": "IIBB Convenio Multilateral — DJ mensual período 2026-10 (régimen General)",
+      "monto_ars": 524957.85,
+      "detalle_jurisdicciones_ars": {
+        "CABA": 419966.28,
+        "San Juan": 104991.57
+      },
+      "intereses_ars": 0,
+      "nota": "DJ presentada (estado 4 PRESENTADA). Total a pagar $524.957,85 (CABA $419.966,28 + San Juan $104.991,57, intereses $0). Según Ernesto corresponde a la última factura emitida a título personal (00003-00000011, USD 11.535 — proyecto BROU; cadena de pago BROU → Red Hat → Alquimia.IA → Ernesto). La captura muestra la pantalla de selección de red de pago para el VEP; no hay comprobante de pago, se considera pendiente. Fecha de vencimiento y N° verificador no informados."
     }
   ],
   "totales_proximos_30_dias": {
@@ -293,5 +308,6 @@
     "Evaluar baja como empleados de BHP de Ernesto y Franco — solo rol de directores",
     "Continuar proceso de constitución Adaptant SAS — ejecución del checklist"
   ],
-  "nota_ernesto_iibb_cm_16_10_2026": "Cargado el 16/10/2026: Ernesto presentó y pagó hoy las DJ mensuales de IIBB (Convenio Multilateral, CABA y San Juan) de sus facturas personales — anticipos 07/2026 ($82.154,85), 08/2026 ($20.700,00) y 09/2026 ($0). Total pagado: $102.854,85. El resto de este datamart sigue sin actualizar desde junio."
+  "nota_ernesto_iibb_cm_16_10_2026": "Cargado el 16/10/2026: Ernesto presentó y pagó hoy las DJ mensuales de IIBB (Convenio Multilateral, CABA y San Juan) de sus facturas personales — anticipos 07/2026 ($82.154,85), 08/2026 ($20.700,00) y 09/2026 ($0). Total pagado: $102.854,85. El resto de este datamart sigue sin actualizar desde junio.",
+  "nota_ernesto_iibb_periodo_10_2026": "Cargado el 17/11/2026: DJ mensual de IIBB (Convenio Multilateral, CABA y San Juan) de Ernesto, período 10/2026, presentada con $524.957,85 a pagar y pendiente de pago, asociada a su última factura personal (proyecto BROU / Red Hat / Alquimia.IA)."
 }
